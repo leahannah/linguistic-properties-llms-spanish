@@ -1,0 +1,17 @@
+id	sentence	masked_token1	predicted_token1	probability1	predicted_token2	probability2	predicted_token3	probability3	predicted_token4	probability4	predicted_token5	probability5
+1	[CLS] Felipe eliminó [MASK] un rehén en pocos segundos. [SEP]	a	a	0.9932	también	0.0011	rápidamente	0.0004	de	0.0004	solo	0.0003
+2	[CLS] Amaya neutralizó [MASK] un enemigo en cinco minutos. [SEP]	a	a	0.9904	rápidamente	0.0014	fácilmente	0.0007	completamente	0.0006	definitivamente	0.0003
+3	[CLS] Joaquín abatió [MASK] un contrincante en unos minutos. [SEP]	a	a	0.9794	sobre	0.0063	contra	0.005	de	0.0014	ante	0.001
+4	[CLS] Martina arrolló [MASK] un peatón en cuestión de segundos. [SEP]	a	a	0.9979	contra	0.0006	por	0.0004	sobre	0.0003	accidentalmente	0.0002
+5	[CLS] Carlos derribó [MASK] un futbolista en dos segundos. [SEP]	a	a	0.9978	contra	0.0003	de	0.0002	por	0.0002	sobre	0.0001
+6	[CLS] Lucía destrozó [MASK] un oponente en dos asaltos. [SEP]	a	a	0.9963	contra	0.0004	fácilmente	0.0003	ante	0.0002	de	0.0002
+7	[CLS] Mateo quemó [MASK] una bruja en poco más de media hora. [SEP]	a	a	0.9863	con	0.0031	viva	0.0019	como	0.0011	también	0.0008
+8	[CLS] Valentina venció [MASK] un adversario en menos de una hora. [SEP]	a	a	0.992	ante	0.0013	contra	0.0008	fácilmente	0.0005	nuevamente	0.0003
+9	[CLS] Luis zarandeó [MASK] un hombre durante algunos minutos. [SEP]	a	a	0.8395	como	0.0596	con	0.0529	contra	0.0105	de	0.0091
+10	[CLS] María transportó [MASK] un mochilero durante todo el día. [SEP]	a	a	0.9409	como	0.0255	con	0.0097	consigo	0.0029	de	0.0017
+11	[CLS] Lucas arrastró [MASK] un soldado durante un buen rato. [SEP]	a	a	0.9846	como	0.0054	con	0.0025	de	0.0005	por	0.0004
+12	[CLS] Claudia maltrató [MASK] una compañera durante varios años. [SEP]	a	a	0.9989	con	0.0003	de	0.0001	constantemente	0.0001	como	0.0
+13	[CLS] Hugo apaleó [MASK] un rebelde durante varios minutos. [SEP]	a	a	0.9965	con	0.0008	como	0.0007	contra	0.0003	en	0.0003
+14	[CLS] Carla asedió [MASK] una contrincante durante bastante tiempo. [SEP]	a	a	0.9085	como	0.045	con	0.0061	ser	0.005	contra	0.0034
+15	[CLS] Daniel remolcó [MASK] un enfermo durante algunos minutos. [SEP]	a	a	0.8807	como	0.0828	con	0.0099	por	0.0047	de	0.0019
+16	[CLS] Coral guio [MASK] un turista durante toda la mañana. [SEP]	a	a	0.9699	como	0.0097	por	0.0086	con	0.0024	en	0.0012
