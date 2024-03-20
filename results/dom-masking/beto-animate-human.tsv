@@ -1,0 +1,19 @@
+id	sentence	masked_token1	predicted_token1	probability1	predicted_token2	probability2	predicted_token3	probability3	predicted_token4	probability4	predicted_token5	probability5
+1	[CLS] La cebra que ensució [MASK] la turista descansaba plácidamente. [SEP]	a	a	0.9759	con	0.0022	tanto	0.0019	,	0.0016	toda	0.0009
+2	[CLS] La cabra que empujó [MASK] la pastora respiraba velozmente. [SEP]	a	a	0.9795	sobre	0.0026	de	0.0023	,	0.0022	era	0.0016
+3	[CLS] La serpiente que detestaba [MASK] la veterinaria entró sigilosamente. [SEP]	a	a	0.7911	era	0.0723	de	0.0473	,	0.0282	ser	0.0133
+4	[CLS] La leoparda que oyó [MASK] la dueña corrió repentinamente. [SEP]	a	a	0.8362	de	0.0501	gritar	0.0109	hablar	0.0089	llorar	0.0069
+5	[CLS] El pony que buscaba [MASK] jinete chillaba tristemente. [SEP]	al	al	0.4939	el	0.2067	un	0.1448	su	0.0855	otro	0.0303
+6	[CLS] El león que mató [MASK] cazador caminaba lentamente. [SEP]	al	al	0.9795	el	0.0182	un	0.0008	a	0.0003	del	0.0003
+7	[CLS] El caballo que miraba [MASK] cuidador gruñía desconsoladamente. [SEP]	al	al	0.6617	el	0.3126	del	0.0061	su	0.0056	a	0.0036
+8	[CLS] El tigre que atacó [MASK] domador dormía tranquilamente. [SEP]	al	al	0.9103	el	0.0619	su	0.0171	y	0.0031	a	0.0011
+9	[CLS] El loro que observó [MASK] cantante cantaba claramente. [SEP]	al	al	0.3621	la	0.3073	el	0.2402	como	0.0286	del	0.0083
+10	[CLS] Las panteras que atacaron [MASK] las empleadas descansaban tranquilamente. [SEP]	a	a	0.9974	contra	0.0006	##on	0.0004	y	0.0003	##ban	0.0001
+11	[CLS] Las burras que pisaron [MASK] las mujeres gruñían claramente. [SEP]	a	,	0.3868	a	0.2852	y	0.1526	por	0.0317	de	0.0178
+12	[CLS] Las conejas que olieron [MASK] las chicas saltaban continuamente. [SEP]	a	a	0.8328	y	0.0275	de	0.0211	por	0.02	,	0.0189
+13	[CLS] Las gallinas que detestaban [MASK] las señoras comían lentamente. [SEP]	a	a	0.9342	,	0.0227	y	0.0175	de	0.0062	eran	0.0039
+14	[CLS] Las lobas que empujaron [MASK] las ecólogas salieron repentinamente. [SEP]	a	a	0.9869	contra	0.0018	por	0.0015	sobre	0.0015	hacia	0.0013
+15	[CLS] Los pájaros que miraban [MASK] los críos cantaban alegremente. [SEP]	a	a	0.9576	y	0.012	hacia	0.0103	,	0.0033	con	0.0024
+16	[CLS] Los delfines que mataron [MASK] los pescadores gemían fuertemente. [SEP]	a	a	0.9978	de	0.0003	##on	0.0002	y	0.0002	con	0.0002
+17	[CLS] Los cocodrilos que vieron [MASK] los asistentes nadaban frenéticamente. [SEP]	a	a	0.7216	en	0.0834	entre	0.0414	y	0.0364	por	0.0272
+18	[CLS] Los flamencos que escucharon [MASK] los ayudantes dormían felizmente. [SEP]	a	a	0.8335	y	0.0653	por	0.0241	de	0.0192	con	0.0108

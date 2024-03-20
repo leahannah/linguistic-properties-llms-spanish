@@ -1,0 +1,17 @@
+id	sentence	masked_token1	predicted_token1	probability1	predicted_token2	probability2	predicted_token3	probability3	predicted_token4	probability4	predicted_token5	probability5	masked_token2	predicted_token1	probability1	predicted_token2	probability2	predicted_token3	probability3	predicted_token4	probability4	predicted_token5	probability5
+1	[CLS] Felipe eliminó a [MASK] [MASK] en pocos segundos. [SEP]	un	los	0.0287	la	0.0263	[UNK]	0.0151	W	0.0136	su	0.0123	rehén	##o	0.0298	##a	0.0273	##i	0.0186	##y	0.0143	##s	0.0127
+2	[CLS] Amaya neutralizó a [MASK] [MASK] en cinco minutos. [SEP]	un	los	0.045	la	0.0435	Ama	0.0143	W	0.014	su	0.011	enemigo	##a	0.0239	##o	0.0186	##ya	0.0141	##s	0.0127	[UNK]	0.0113
+3	[CLS] Joaquín abatió a [MASK] [MASK] en unos minutos. [SEP]	un	[UNK]	0.1191	un	0.1141	la	0.0657	los	0.0358	otro	0.0151	contrincante	[UNK]	0.1187	,	0.0257	y	0.0225	hombre	0.0061	hombres	0.0059
+4	[CLS] Martina arrolló a [MASK] [MASK] en cuestión de segundos. [SEP]	un	la	0.0505	los	0.0361	su	0.0259	un	0.0181	W	0.0124	peatón	##a	0.0501	##o	0.0188	##s	0.0161	##i	0.0151	##y	0.0134
+5	[CLS] Carlos derribó a [MASK] [MASK] en dos segundos. [SEP]	un	la	0.0306	W	0.029	los	0.0204	[UNK]	0.0143	un	0.0097	futbolista	##a	0.0244	##o	0.0181	##y	0.0169	##s	0.0162	[UNK]	0.0133
+6	[CLS] Lucía destrozó a [MASK] [MASK] en dos asaltos. [SEP]	un	[UNK]	0.0225	la	0.0185	W	0.0137	Gar	0.0118	su	0.0107	oponente	##a	0.028	[UNK]	0.0251	##o	0.0195	##s	0.0172	##son	0.0113
+7	[CLS] Mateo quemó a [MASK] [MASK] en poco más de media hora. [SEP]	una	la	0.0691	los	0.0678	su	0.0577	sus	0.0205	un	0.0136	bruja	##a	0.0392	##o	0.0162	madre	0.0136	familia	0.013	##s	0.011
+8	[CLS] Valentina venció a [MASK] [MASK] en menos de una hora. [SEP]	un	Valent	0.0487	W	0.0137	[UNK]	0.0131	Fab	0.0102	Ross	0.0101	adversario	##ina	0.083	##i	0.0464	##a	0.0453	##na	0.0241	##da	0.0152
+9	[CLS] Luis zarandeó a [MASK] [MASK] durante algunos minutos. [SEP]	un	la	0.0956	su	0.0747	los	0.0386	sus	0.0151	W	0.0092	hombre	##a	0.0438	##o	0.0159	madre	0.0149	##y	0.0099	##do	0.0095
+10	[CLS] María transportó a [MASK] [MASK] durante todo el día. [SEP]	un	los	0.1429	la	0.0781	su	0.0758	sus	0.055	las	0.0179	mochilero	niños	0.0654	familia	0.0495	##a	0.0334	hijos	0.0259	bebé	0.0173
+11	[CLS] Lucas arrastró a [MASK] [MASK] durante un buen rato. [SEP]	un	la	0.0836	su	0.0783	los	0.0473	W	0.0322	sus	0.0199	soldado	##y	0.03	##a	0.0245	##ie	0.0224	##e	0.0182	madre	0.0177
+12	[CLS] Claudia maltrató a [MASK] [MASK] durante varios años. [SEP]	una	su	0.0643	la	0.0222	los	0.0179	W	0.0132	sus	0.0123	compañera	##a	0.0516	##o	0.0264	##ia	0.014	padre	0.013	hijo	0.0127
+13	[CLS] Hugo apaleó a [MASK] [MASK] durante varios minutos. [SEP]	un	la	0.0529	W	0.0224	los	0.0194	su	0.017	un	0.0064	rebelde	##a	0.0425	##y	0.0233	##o	0.0221	##s	0.0123	##i	0.0119
+14	[CLS] Carla asedió a [MASK] [MASK] durante bastante tiempo. [SEP]	una	la	0.0665	su	0.0563	W	0.0349	los	0.0347	sus	0.0129	contrincante	##a	0.0269	familia	0.0235	madre	0.0171	##y	0.0153	##e	0.0145
+15	[CLS] Daniel remolcó a [MASK] [MASK] durante algunos minutos. [SEP]	un	la	0.0783	su	0.049	los	0.0337	W	0.0313	un	0.0201	enfermo	##y	0.0243	##a	0.0192	##s	0.0158	##e	0.0148	##son	0.0094
+16	[CLS] Coral guio a [MASK] [MASK] durante toda la mañana. [SEP]	un	los	0.1478	la	0.1047	su	0.0416	las	0.0278	sus	0.0202	turista	##y	0.0293	##l	0.0239	niños	0.0221	familia	0.021	madre	0.0191

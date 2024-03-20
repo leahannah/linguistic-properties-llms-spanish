@@ -2,7 +2,7 @@ import re
 import pandas as pd
 from transformers import BertForMaskedLM, BertTokenizer
 
-def load_targets(filename, mode):
+def load_targets(filename, mode, remove_dom=False):
     assert mode in ['mask_dom', 'mask_dobj']
     with open(filename, mode='r', encoding='utf-8') as f:
         ids, sentences, dobjects, indices, en_sents = [],[], [], [], []
@@ -21,7 +21,7 @@ def load_targets(filename, mode):
                 idx = find_dom_index(sent.split())
             elif mode == 'mask_dobj':
                 idx = find_dobj_indices(sent.split())
-            indices.append([idx])
+            indices.append(idx)
     return pd.DataFrame(
             {'id': ids,
             'sentence': sentences,
@@ -37,7 +37,7 @@ def find_dom_index(sent_list, char='['):
             idx = i-1
     if idx < 0:
         print('Index not found in sentence: {}'.format(sent_list))
-    return idx
+    return [idx]
 
 def find_dobj_indices(sent_list, start='[', end=']'):
     for i, w in enumerate(sent_list):
@@ -46,7 +46,6 @@ def find_dobj_indices(sent_list, start='[', end=']'):
         if w[-1] == end:
             idx2 = i
     idx = list(range(idx1, idx2+1))
-    print(idx)
     if idx == []:
         print('Index not found in sentence: {}'.format(sent_list))
     return idx
@@ -99,11 +98,9 @@ def prep_input(inputfile, outputfile):
             for line in f.readlines():
                 cols = line.split('\t')
                 sentence = cols[1]
-                print(sentence)
                 pattern = r'(\w+\s+\w+)\s+/\s+(\w+\s+\w+)'
                 replacement = r'[\1]'
                 new_sentence = re.sub(pattern, replacement, sentence)
-                print(new_sentence)
                 cols[1] = new_sentence
                 out_f.write('\t'.join(cols))
 
@@ -127,11 +124,8 @@ def prep_input2(inputfile, outputfile, single_token_dobj=False):
                         dobj2 = sent_list[6] + ']'
                         sent_list[6] = dobj2
                     sentence = ' '.join(sent_list)
-                    print(cnt)
-                    print(sentence)
                 else:
                     en_sentence = line.strip()[1:-1]
-                    print(en_sentence)
                     out_f.write('\t'.join([str(cnt), sentence, en_sentence]))
                     out_f.write('\n')
 
@@ -144,13 +138,10 @@ def mark_dobj_en(file, start, end):
             ids.append(cols[0])
             sentences.append(cols[1])
             en_sent = cols[2]
-            print(en_sent)
             sent_list = en_sent.strip('\n').split()
             sent_list[start] = '[' + sent_list[start]
             sent_list[end] = sent_list[end] + ']'
             en_sent = ' '.join(sent_list)
             en_sentences.append(en_sent)
-            print(en_sent)
     df = pd.DataFrame({'id': ids, 'es': sentences, 'en': en_sentences})
-    print(df.head())
     return df

@@ -1,19 +1,19 @@
-id	es	en
-1	La cebra que ensució a [la turista] descansaba plácidamente.	The zebra that got [the tourist] dirty rested placidly
-2	La cabra que empujó a [la pastora] respiraba velozmente.	The goat that pushed [the goatherd] was breathing rapidly
-3	La serpiente que detestaba a [la veterinaria] entró sigilosamente.	The snake that detested [the veterinary] entered stealthily
-4	La leoparda que oyó a [la dueña] corrió repentinamente.	The leopard that heard [the owner] ran suddenly
-1	El pony que buscaba al [jinete] chillaba tristemente.	The pony that looked for [the horse rider] screamed sadly
-2	El león que mató al [cazador] caminaba lentamente.	The lion that killed [the hunter] walked slowly
-3	El caballo que miraba al [cuidador] gruñía desconsoladamente.	The horse that looked at [the keeper] growled inconsolably
-4	El tigre que atacó al [domador] dormía tranquilamente.	The tiger that attacked [the tamer] slept peacefully
-5	El loro que observó al [cantante] cantaba claramente.	The parrot that observed [the singer] sang clearly
-1	Las panteras que atacaron a [las empleadas] descansaban tranquilamente.	The panthers that attacked [the employees] rested peacefully
-2	Las burras que pisaron a [las mujeres] gruñían claramente.	The donkeys that stepped on [the women] snarled clearly
-3	Las conejas que olieron a [las chicas] saltaban continuamente.	The rabbits that smelled [the girls] hopped continuously
-4	Las gallinas que detestaban a [las señoras] comían lentamente.	The chickens that detested [the women] ate slowly
-5	Las lobas que empujaron a [las ecólogas] salieron repentinamente.	The wolves that pushed [the ecologists] left suddenly
-1	Los pájaros que miraban a [los críos] cantaban alegremente.	The birds that looked at [the children] sang happily
-2	Los delfines que mataron a [los pescadores] gemían fuertemente.	The dolphins that killed [the fishermen] moaned loudly
-3	Los cocodrilos que vieron a [los asistentes] nadaban frenéticamente.	The crocodiles that saw [the assistants] swam frantically
-4	Los flamencos que escucharon a [los ayudantes] dormían felizmente.	The flamingos that heard [the assistants] slept happily
+id	es	en	gen	num
+1	La cebra que ensució a [la turista] descansaba plácidamente.	The zebra that got [the tourist] dirty rested placidly	f	sing
+2	La cabra que empujó a [la pastora] respiraba velozmente.	The goat that pushed [the goatherd] was breathing rapidly	f	sing
+3	La serpiente que detestaba a [la veterinaria] entró sigilosamente.	The snake that detested [the veterinary] entered stealthily	f	sing
+4	La leoparda que oyó a [la dueña] corrió repentinamente.	The leopard that heard [the owner] ran suddenly	f	sing
+5	El pony que buscaba al [jinete] chillaba tristemente.	The pony that looked for [the horse rider] screamed sadly	m	sing
+6	El león que mató al [cazador] caminaba lentamente.	The lion that killed [the hunter] walked slowly	m	sing
+7	El caballo que miraba al [cuidador] gruñía desconsoladamente.	The horse that looked at [the keeper] growled inconsolably	m	sing
+8	El tigre que atacó al [domador] dormía tranquilamente.	The tiger that attacked [the tamer] slept peacefully	m	sing
+9	El loro que observó al [cantante] cantaba claramente.	The parrot that observed [the singer] sang clearly	m	sing
+10	Las panteras que atacaron a [las empleadas] descansaban tranquilamente.	The panthers that attacked [the employees] rested peacefully	f	plur
+11	Las burras que pisaron a [las mujeres] gruñían claramente.	The donkeys that stepped on [the women] snarled clearly	f	plur
+12	Las conejas que olieron a [las chicas] saltaban continuamente.	The rabbits that smelled [the girls] hopped continuously	f	plur
+13	Las gallinas que detestaban a [las señoras] comían lentamente.	The chickens that detested [the women] ate slowly	f	plur
+14	Las lobas que empujaron a [las ecólogas] salieron repentinamente.	The wolves that pushed [the ecologists] left suddenly	f	plur
+15	Los pájaros que miraban a [los críos] cantaban alegremente.	The birds that looked at [the children] sang happily	m	plur
+16	Los delfines que mataron a [los pescadores] gemían fuertemente.	The dolphins that killed [the fishermen] moaned loudly	m	plur
+17	Los cocodrilos que vieron a [los asistentes] nadaban frenéticamente.	The crocodiles that saw [the assistants] swam frantically	m	plur
+18	Los flamencos que escucharon a [los ayudantes] dormían felizmente.	The flamingos that heard [the assistants] slept happily	m	plur
