@@ -4,15 +4,15 @@ import numpy as np
 
 # specify input and output path
 # TODO: use argparse or config file
-input_file = '../data/animacy/animate-animal-targets.tsv'
-output_file = '../results/dobject-masking/animate-animal-dom.tsv'
+input_file = '../data/affected-targets.tsv'
+output_file = '../results/dobject-masking/unmarked-affected.tsv'
 top_n = 5
 
 # load targets
-df = load_targets(input_file, mode='mask_dobj')
+df = load_targets(input_file, mode='mask_dobj', remove_dom=True)
+print(df.head())
 num_mask = len(df['mask_idx'].iloc[0])
 initialize_result_file(output_file, num_mask=num_mask, top_n=top_n)
-print(df.head())
 
 # load model
 tokenizer, model = load_model('dccuchile/bert-base-spanish-wwm-cased')
@@ -30,7 +30,8 @@ for index, row in df.iterrows():
     print(f'top predictions: {top_fillers}')
     top_probs = mlm_sent.get_top_probabilities()
     probabilities.append(top_probs)
-    for i in range(mlm_sent.num_masks):
+    mask_cnt = mlm_sent.get_num_masks()
+    for i in range(mask_cnt):
         filler, prob = mlm_sent.get_token_prob(0, mask=i+1)
         print(f'{i+1} filler token: {filler}, probability {prob: .4f}')
     mlm_sent.save_to_file(output_file)
@@ -38,4 +39,4 @@ for index, row in df.iterrows():
 # add columns to df
 df['top_fillers'] = fillers
 df['filler_probs'] = probabilities
-print(df.head())
+# print(df.head())

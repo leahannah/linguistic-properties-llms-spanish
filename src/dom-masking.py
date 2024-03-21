@@ -4,8 +4,8 @@ import numpy as np
 
 # specify input and output path
 # TODO: use argparse or config file
-input_file = '../data/animacy/animate-human-targets.tsv'
-output_file = '../results/animacy/beto-animate-human-targets.tsv'
+input_file = '../data/animate-human-targets.tsv'
+output_file = '../results/dom-masking/beto-animate-human-targets.tsv'
 top_n = 5
 
 # load targets

@@ -1,5 +1,4 @@
 import torch
-import os
 
 class MLMSentence:
     def __init__(self, data, model, tokenizer, top_n=5):
@@ -22,7 +21,10 @@ class MLMSentence:
         return(self.top_fillers)
     
     def get_top_probabilities(self):
-     return(self.top_probs)
+        return(self.top_probs)
+    
+    def get_num_masks(self):
+        return(self.num_masks)
     
     def get_token_prob(self, rank, mask=1):
         if rank > self.top_n-1 or rank < 0:

@@ -15,12 +15,17 @@ def load_targets(filename, mode, remove_dom=False):
             pattern = r'\[(.*?)\]'
             matches = re.findall(pattern, sent)
             do = matches[0]
-            sentences.append(sent)
             dobjects.append(do)
             if mode == 'mask_dom':
                 idx = find_dom_index(sent.split())
             elif mode == 'mask_dobj':
-                idx = find_dobj_indices(sent.split())
+                sent_list = sent.split()
+                if remove_dom:
+                    dom_idx = find_dom_index(sent_list)[0]
+                    sent_list.pop(dom_idx)
+                    sent = ' '.join(sent_list)
+                idx = find_dobj_indices(sent_list)
+            sentences.append(sent)
             indices.append(idx)
     return pd.DataFrame(
             {'id': ids,
@@ -39,7 +44,8 @@ def find_dom_index(sent_list, char='['):
         print('Index not found in sentence: {}'.format(sent_list))
     return [idx]
 
-def find_dobj_indices(sent_list, start='[', end=']'):
+def find_dobj_indices(sent_list, start='[', end=']', remove_dom=False):
+    idx1, idx2 = 0, 0
     for i, w in enumerate(sent_list):
         if w[0] == start:
             idx1 = i
