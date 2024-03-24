@@ -47,7 +47,8 @@ class MLMSentence:
 
     def get_dom_prob_rank(self, mask=1):
         token = self.masked_tokens[0]
-        # assert token == 'a' or token == 'al'
+        if token not in ['a', 'al']:
+            print(f'WARNING: Masked token is {token}, not DOM')
         rank, prob = -1, 0.0
         if mask > self.num_masks:
             print(f'Mask {mask} is out of range, only {self.num_masks} tokens masked')

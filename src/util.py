@@ -2,6 +2,7 @@ import re
 import pandas as pd
 from transformers import BertForMaskedLM, BertTokenizer
 
+# read and prepare targets from input file, return pandas dataframe
 def load_targets(filename, mode, remove_dom=False):
     assert mode in ['mask_dom', 'mask_dobj']
     with open(filename, mode='r', encoding='utf-8') as f:
@@ -35,6 +36,7 @@ def load_targets(filename, mode, remove_dom=False):
             'dobj': dobjects
             })
 
+# helper function: find index of dom-marker (a/ al) in target sentence
 def find_dom_index(sent_list, char='['):
     idx = -1
     for i, w in enumerate(sent_list):
@@ -44,6 +46,7 @@ def find_dom_index(sent_list, char='['):
         print('Index not found in sentence: {}'.format(sent_list))
     return [idx]
 
+# helper function: find index of direct object in target sentence
 def find_dobj_indices(sent_list, start='[', end=']', remove_dom=False):
     idx1, idx2 = 0, 0
     for i, w in enumerate(sent_list):
@@ -56,6 +59,13 @@ def find_dobj_indices(sent_list, start='[', end=']', remove_dom=False):
         print('Index not found in sentence: {}'.format(sent_list))
     return idx
 
+# setup tokenizer and model
+def load_model(modelname):
+    tokenizer = BertTokenizer.from_pretrained(modelname, do_lower_case=False)
+    model = BertForMaskedLM.from_pretrained(modelname)
+    return tokenizer, model
+
+# initialize file for MLM outputs, print header
 def initialize_result_file(outputfile, num_mask, top_n):
     with open(outputfile, mode='w', encoding='utf-8') as f:
         f.write('id'+'\t'+'sentence')
@@ -67,35 +77,15 @@ def initialize_result_file(outputfile, num_mask, top_n):
             f.write('\t'+'predicted_token'+str(j+2)+'\t'+'probability'+str(j+2))
         f.write('\n')
 
-# setup tokenizer and model
-def load_model(modelname):
-    tokenizer = BertTokenizer.from_pretrained(modelname, do_lower_case=False)
-    model = BertForMaskedLM.from_pretrained(modelname)
-    return tokenizer, model
-
-# prepare targets for MLM experiments
-def prep_dom_masking(sentences, indices):
-    tokens_masked = []
-    for i, s  in enumerate(sentences):
-        idx = indices[i]
-        s = s.replace('[', '').replace(']', '')
-        s_list = s.split()
-        toks = []
-        for masked_index in idx:
-            toks.append(s_list[masked_index])
-            s_list[masked_index] = '[MASK]' 
-        s = ' '.join(s_list)
-        s = '[CLS] ' + s + ' [SEP]'
-        sentences[i] = s
-        tokens_masked.append(toks)
-    return sentences, tokens_masked
-
-def get_masked_indices(tokenized):
-    masked_indices = []
-    for i, token in enumerate(tokenized):
-        if token == '[MASK]':
-            masked_indices.append(i)
-    return masked_indices
+# look for specific words in MLM predictions
+def search_fillers(fillers, probs, wordlist):
+    fillers_found, filler_probs, filler_ranks = [], [], []
+    for i, filler in enumerate(fillers):
+        if filler in wordlist:
+            fillers_found.append(filler)
+            filler_probs.append(probs[i])
+            filler_ranks.append(i)
+    return fillers_found, filler_probs, filler_ranks
 
 # get input into correct format
 def prep_input(inputfile, outputfile):
@@ -135,6 +125,7 @@ def prep_input2(inputfile, outputfile, single_token_dobj=False):
                     out_f.write('\t'.join([str(cnt), sentence, en_sentence]))
                     out_f.write('\n')
 
+# mark direct object with [] in english translations of targets
 def mark_dobj_en(file, start, end):
     sentences, en_sentences, ids = [], [], []
     with open(file, mode='r', encoding='utf-8') as f:

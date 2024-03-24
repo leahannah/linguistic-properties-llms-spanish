@@ -1,0 +1,19 @@
+id	sentence	masked_token1	predicted_token1	probability1	predicted_token2	probability2	predicted_token3	probability3	predicted_token4	probability4	predicted_token5	probability5	masked_token2	predicted_token1	probability1	predicted_token2	probability2	predicted_token3	probability3	predicted_token4	probability4	predicted_token5	probability5
+33	[CLS] La cebra que ensució [MASK] [MASK] descansaba plácidamente. [SEP]	la	el	0.2913	su	0.2628	la	0.1827	sus	0.0648	al	0.03	turista	casa	0.0565	nido	0.0382	tierra	0.0329	suelo	0.0309	camino	0.0281
+34	[CLS] La cabra que empujó [MASK] [MASK] respiraba velozmente. [SEP]	la	el	0.3206	al	0.2208	la	0.1624	su	0.0528	a	0.0402	pastora	caballo	0.0533	león	0.0438	toro	0.0295	tronco	0.0221	carro	0.0219
+35	[CLS] La serpiente que detestaba [MASK] [MASK] entró sigilosamente. [SEP]	la	a	0.1227	el	0.1091	la	0.0811	su	0.0663	al	0.0534	veterinaria	,	0.0762	[UNK]	0.0399	##se	0.0352	##la	0.0253	##ar	0.0154
+36	[CLS] La leoparda que oyó [MASK] [MASK] corrió repentinamente. [SEP]	la	el	0.2649	la	0.1785	su	0.0551	sus	0.0326	sil	0.0289	dueña	ruido	0.1396	grito	0.1195	disparo	0.1094	gritos	0.0898	voz	0.0595
+37	[CLS] El pony que buscaba [MASK] chillaba tristemente. [SEP]	jinete	,	0.125	refugio	0.0614	agua	0.059	ayuda	0.0437	[UNK]	0.0297
+38	[CLS] El león que mató [MASK] caminaba lentamente. [SEP]	cazador	,	0.3178	[UNK]	0.1583	también	0.05	no	0.0425	él	0.0182
+39	[CLS] El caballo que miraba [MASK] gruñía desconsoladamente. [SEP]	cuidador	,	0.5479	##ba	0.0452	atrás	0.0352	[UNK]	0.0213	no	0.0132
+40	[CLS] El tigre que atacó [MASK] dormía tranquilamente. [SEP]	domador	,	0.2029	no	0.1664	[UNK]	0.0965	también	0.0372	ya	0.0228
+41	[CLS] El loro que observó [MASK] cantaba claramente. [SEP]	cantante	no	0.4676	,	0.1513	esto	0.0282	le	0.0243	lo	0.0204
+42	[CLS] Las panteras que atacaron [MASK] [MASK] descansaban tranquilamente. [SEP]	las	el	0.1933	la	0.1906	al	0.1113	a	0.0838	su	0.0299	empleadas	ciudad	0.0562	[UNK]	0.0546	pueblo	0.0291	lugar	0.0154	aldea	0.0148
+43	[CLS] Las burras que pisaron [MASK] [MASK] gruñían claramente. [SEP]	las	los	0.1483	el	0.123	la	0.0462	,	0.0462	las	0.04	mujeres	,	0.0472	caballo	0.0242	tierra	0.0175	perro	0.0155	perros	0.0146
+44	[CLS] Las conejas que olieron [MASK] [MASK] saltaban continuamente. [SEP]	las	el	0.1578	la	0.0696	a	0.0639	su	0.0308	sus	0.0229	chicas	olor	0.064	##s	0.0446	veneno	0.0371	sangre	0.0212	perfume	0.0196
+45	[CLS] Las gallinas que detestaban [MASK] [MASK] comían lentamente. [SEP]	las	el	0.1741	comer	0.124	la	0.1128	las	0.0588	al	0.0281	señoras	gallinas	0.1459	se	0.0618	carne	0.0432	comida	0.0416	,	0.0363
+46	[CLS] Las lobas que empujaron [MASK] [MASK] salieron repentinamente. [SEP]	las	el	0.3108	al	0.2589	la	0.1614	las	0.0404	los	0.0365	ecólogas	barco	0.038	árbol	0.031	carro	0.0275	agua	0.0265	[UNK]	0.0219
+47	[CLS] Los pájaros que miraban [MASK] [MASK] cantaban alegremente. [SEP]	los	al	0.2379	la	0.1587	el	0.1526	hacia	0.0886	a	0.0418	críos	cielo	0.2008	ella	0.0252	él	0.0222	,	0.0217	noche	0.0207
+48	[CLS] Los delfines que mataron [MASK] [MASK] gemían fuertemente. [SEP]	los	a	0.4393	al	0.2969	en	0.0184	el	0.016	la	0.0115	pescadores	[UNK]	0.2268	ellos	0.0197	##mente	0.0152	todos	0.0115	ella	0.011
+49	[CLS] Los cocodrilos que vieron [MASK] [MASK] nadaban frenéticamente. [SEP]	los	al	0.0715	el	0.0636	la	0.0584	esta	0.0581	a	0.0552	asistentes	,	0.041	noche	0.0368	[UNK]	0.0337	tierra	0.0261	##s	0.0247
+50	[CLS] Los flamencos que escucharon [MASK] [MASK] dormían felizmente. [SEP]	los	la	0.1487	el	0.1271	esta	0.0541	en	0.0342	este	0.0294	ayudantes	noche	0.0983	canción	0.0431	música	0.0286	##mente	0.0183	canto	0.0157

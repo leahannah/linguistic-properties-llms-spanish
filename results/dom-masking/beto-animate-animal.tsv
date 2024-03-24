@@ -1,19 +1,19 @@
 id	sentence	masked_token1	predicted_token1	probability1	predicted_token2	probability2	predicted_token3	probability3	predicted_token4	probability4	predicted_token5	probability5
-5	[CLS] La artista que pisó [MASK] la perra andaba sigilosamente. [SEP]	a	a	0.9234	en	0.0099	,	0.0087	con	0.0083	sobre	0.0035
-6	[CLS] La bióloga que abrazó [MASK] la gorila sonreía incesantemente. [SEP]	a	a	0.9981	de	0.0003	con	0.0002	como	0.0002	,	0.0001
-7	[CLS] La voluntaria que tocó [MASK] la tortuga bebía continuamente. [SEP]	a	a	0.9652	con	0.0089	,	0.0035	tocó	0.003	fue	0.0019
-8	[CLS] La ciclista que vio [MASK] la vaca comía distraídamente. [SEP]	a	a	0.8876	era	0.0167	,	0.0133	en	0.0093	pasar	0.0066
-9	[CLS] La granjera que olió [MASK] la cerda salió inesperadamente. [SEP]	a	a	0.8334	como	0.1006	en	0.0061	mal	0.006	de	0.0055
-6	[CLS] El entrenador que escuchó [MASK] delfín nadaba rápidamente. [SEP]	al	al	0.5583	del	0.2109	el	0.1764	este	0.011	un	0.0095
-7	[CLS] El conductor que persiguió [MASK] camello paseaba felizmente. [SEP]	al	al	0.7189	el	0.2144	su	0.051	un	0.0049	ese	0.0021
-8	[CLS] El hombre que adoraba [MASK] canguro saltaba incesantemente. [SEP]	al	al	0.7308	el	0.1435	la	0.0615	su	0.0155	ser	0.0139
-9	[CLS] El amo que pegó [MASK] orangután gemía desconsoladamente. [SEP]	al	al	0.9247	el	0.0603	ese	0.0039	un	0.0025	a	0.0017
-6	[CLS] Las zoólogas que observaron [MASK] las palomas bebían plácidamente. [SEP]	a	que	0.5969	a	0.19	,	0.122	en	0.008	como	0.007
-7	[CLS] Las hermanas que buscaron [MASK] las gatas entraron inesperadamente. [SEP]	a	a	0.926	por	0.0128	entre	0.0097	en	0.0095	,	0.0074
-8	[CLS] Las niñas que adoraban [MASK] las ardillas chillaban alegremente. [SEP]	a	a	0.9967	de	0.0005	todas	0.0002	tanto	0.0002	,	0.0001
-9	[CLS] Las estudiantes que pegaron [MASK] las monas paseaban tristemente. [SEP]	a	a	0.9649	en	0.0092	con	0.0089	contra	0.0065	por	0.0015
-5	[CLS] Los payasos que abrazaron [MASK] los chimpancés caminaban rápidamente. [SEP]	a	a	0.9956	de	0.0006	y	0.0005	como	0.0004	por	0.0002
-6	[CLS] Los trabajadores que perseguían [MASK] los guepardos corrían velozmente. [SEP]	a	a	0.9912	eran	0.0024	de	0.0015	,	0.0007	y	0.0004
-7	[CLS] Los niños que ensuciaron [MASK] los macacos sonreían frenéticamente. [SEP]	a	a	0.9755	en	0.0066	con	0.0044	todos	0.0025	tanto	0.0009
-8	[CLS] Los viejos que oyeron [MASK] los pollos respiraban fuertemente. [SEP]	a	a	0.7406	de	0.0411	cantar	0.0222	sobre	0.0166	tocar	0.0166
-9	[CLS] Los técnicos que tocaron [MASK] los hámsters andaban distraídamente. [SEP]	a	a	0.7898	con	0.1278	para	0.0189	en	0.01	como	0.0078
+51	[CLS] La artista que pisó [MASK] la perra andaba sigilosamente. [SEP]	a	a	0.9234	en	0.0099	,	0.0087	con	0.0083	sobre	0.0035
+52	[CLS] La bióloga que abrazó [MASK] la gorila sonreía incesantemente. [SEP]	a	a	0.9981	de	0.0003	con	0.0002	como	0.0002	,	0.0001
+53	[CLS] La voluntaria que tocó [MASK] la tortuga bebía continuamente. [SEP]	a	a	0.9652	con	0.0089	,	0.0035	tocó	0.003	fue	0.0019
+54	[CLS] La ciclista que vio [MASK] la vaca comía distraídamente. [SEP]	a	a	0.8876	era	0.0167	,	0.0133	en	0.0093	pasar	0.0066
+55	[CLS] La granjera que olió [MASK] la cerda salió inesperadamente. [SEP]	a	a	0.8334	como	0.1006	en	0.0061	mal	0.006	de	0.0055
+56	[CLS] El entrenador que escuchó [MASK] delfín nadaba rápidamente. [SEP]	al	al	0.5583	del	0.2109	el	0.1764	este	0.011	un	0.0095
+57	[CLS] El conductor que persiguió [MASK] camello paseaba felizmente. [SEP]	al	al	0.7189	el	0.2144	su	0.051	un	0.0049	ese	0.0021
+58	[CLS] El hombre que adoraba [MASK] canguro saltaba incesantemente. [SEP]	al	al	0.7308	el	0.1435	la	0.0615	su	0.0155	ser	0.0139
+59	[CLS] El amo que pegó [MASK] orangután gemía desconsoladamente. [SEP]	al	al	0.9247	el	0.0603	ese	0.0039	un	0.0025	a	0.0017
+60	[CLS] Las zoólogas que observaron [MASK] las palomas bebían plácidamente. [SEP]	a	que	0.5969	a	0.19	,	0.122	en	0.008	como	0.007
+61	[CLS] Las hermanas que buscaron [MASK] las gatas entraron inesperadamente. [SEP]	a	a	0.926	por	0.0128	entre	0.0097	en	0.0095	,	0.0074
+62	[CLS] Las niñas que adoraban [MASK] las ardillas chillaban alegremente. [SEP]	a	a	0.9967	de	0.0005	todas	0.0002	tanto	0.0002	,	0.0001
+63	[CLS] Las estudiantes que pegaron [MASK] las monas paseaban tristemente. [SEP]	a	a	0.9649	en	0.0092	con	0.0089	contra	0.0065	por	0.0015
+64	[CLS] Los payasos que abrazaron [MASK] los chimpancés caminaban rápidamente. [SEP]	a	a	0.9956	de	0.0006	y	0.0005	como	0.0004	por	0.0002
+65	[CLS] Los trabajadores que perseguían [MASK] los guepardos corrían velozmente. [SEP]	a	a	0.9912	eran	0.0024	de	0.0015	,	0.0007	y	0.0004
+66	[CLS] Los niños que ensuciaron [MASK] los macacos sonreían frenéticamente. [SEP]	a	a	0.9755	en	0.0066	con	0.0044	todos	0.0025	tanto	0.0009
+67	[CLS] Los viejos que oyeron [MASK] los pollos respiraban fuertemente. [SEP]	a	a	0.7406	de	0.0411	cantar	0.0222	sobre	0.0166	tocar	0.0166
+68	[CLS] Los técnicos que tocaron [MASK] los hámsters andaban distraídamente. [SEP]	a	a	0.7898	con	0.1278	para	0.0189	en	0.01	como	0.0078
