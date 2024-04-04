@@ -101,29 +101,33 @@ def prep_input(inputfile, outputfile):
                 out_f.write('\t'.join(cols))
 
 # get targets into correct format
-def prep_input2(inputfile, outputfile, single_token_dobj=False):
+def prep_input2(inputfile, outputfile, idx=5, single_token_dobj=False):
     with open(outputfile, mode='w', encoding='utf-8') as out_f:
         out_f.write('id\tes\ten\n')
         with open(inputfile, mode='r', encoding='utf-8') as f:
             next(f)
             cnt = 0
-            for i, line in enumerate(f.readlines()):
-                if i % 2 == 0:
-                    sentence = line.strip()
+            for line in f:
+                    line_list = line.split('\t')
+                    print(line_list)
+                    sentence = line_list[1]
                     cnt += 1
                     sent_list = sentence.split()
-                    dobj1 = '[' + sent_list[5] 
+                    dobj1 = '[' + sent_list[idx] 
                     if single_token_dobj:
                         dobj1 += ']'
-                    sent_list[5] = dobj1
+                    sent_list[idx] = dobj1
                     if not single_token_dobj:
-                        dobj2 = sent_list[6] + ']'
-                        sent_list[6] = dobj2
+                        dobj2 = sent_list[idx+1] + ']'
+                        sent_list[idx+1] = dobj2
                     sentence = ' '.join(sent_list)
-                else:
-                    en_sentence = line.strip()[1:-1]
-                    out_f.write('\t'.join([str(cnt), sentence, en_sentence]))
-                    out_f.write('\n')
+                    id = line_list[0]
+                    en_sentence = line_list[2]
+                    en_sent_list = en_sentence.split()
+                    en_sent_list[idx-1] = '[' + en_sent_list[idx-1]
+                    en_sent_list[idx] = en_sent_list[idx] + ']'
+                    en_sentence = ' '.join(en_sent_list)
+                    out_f.write('\t'.join([id, sentence, en_sentence+'\n']))
 
 # mark direct object with [] in english translations of targets
 def mark_dobj_en(file, start, end):
@@ -142,3 +146,5 @@ def mark_dobj_en(file, start, end):
             en_sentences.append(en_sent)
     df = pd.DataFrame({'id': ids, 'es': sentences, 'en': en_sentences})
     return df
+
+prep_input2('../data/definite-targets.tsv', '../data/definite-targets1.tsv', idx=3, single_token_dobj=True)

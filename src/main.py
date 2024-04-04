@@ -3,7 +3,7 @@ from util import load_targets, load_model, initialize_result_file, search_filler
 from mlm_sentence import MLMSentence
 import numpy as np
 
-# TODO: plot results
+#TODO: plot results
 # parse config file
 with open('../config.json') as f:
     config = json.load(f)
