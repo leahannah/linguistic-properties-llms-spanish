@@ -18,7 +18,7 @@ print_mode = config['PRINT_TO_CONSOLE']
 save_mode = config['SAVE_RESULTS']
 plot_mode = config['PLOT_RESULTS']
 
-print(f'Start MLM experiment {experiment_type}')
+print(f'Start MLM experiment {experiment_type} with {input_file}')
 print()
 
 # load targets
@@ -45,19 +45,20 @@ if save_mode:
     name = model_mapping[modelname] if modelname in model_mapping else modelname
     output_path = f'../results/{experiment_type}/{name}{str_mode}-{filename}'
     num_mask = len(df['mask_idx'].iloc[0])
-    initialize_result_file(output_path, num_mask=num_mask, top_n=num_top_preds)
+    # initialize_result_file(output_path, num_mask=num_mask, top_n=num_top_preds)
 
 # run experiment
 print('start experiment')
 print()
 # compute masked language model probabilites for sentence
-fillers, probabilities, dom_rank, dom_prob = [], [], [], []
+fillers, probabilities, dom_rank, dom_prob, masked_tokens = [], [], [], [], []
 for index, row in df.iterrows():
     mlm_sent = MLMSentence(row, model, tokenizer)
     top_fillers = mlm_sent.get_top_fillers()
     fillers.append(top_fillers)
     top_probs = mlm_sent.get_top_probabilities()
     probabilities.append(top_probs)
+    masked_tokens.append(mlm_sent.get_masked_tokens())
     if mode == 'mask_dom':
         filler, prob = mlm_sent.get_token_prob(0)
         rank, prob = mlm_sent.get_dom_prob_rank()
@@ -86,20 +87,26 @@ for index, row in df.iterrows():
                     print(w)
                     print(f'found {fillers_found} at ranks {filler_ranks} with probability {filler_probs}')
         print()
-    if save_mode: 
-        mlm_sent.save_to_file(output_path)
+    # if save_mode: 
+    #     mlm_sent.save_to_file(output_path)
 
 # add columns to df
+df['masked'] = masked_tokens
 df['top_fillers'] = fillers
-df['filler_probs'] = probabilities
+df['probabilities'] = probabilities
+if print_mode:
+    print(df)
+    print(df.columns)
 
 # print results
-if experiment_type == 'dom_masking' and print_mode:
+if experiment_type == 'dom-masking':
     df['dom_rank'] = dom_rank
     df['dom_prob'] = dom_prob
-    print(df[['dom_rank', 'dom_prob', 'sentence']])
-    print('mean probability dom: {:.4f}'.format(np.mean(df['dom_prob'])))
-else:
-    pass
+    if print_mode:
+        print('mean probability dom: {:.4f}'.format(np.mean(df['dom_prob'])))
+
+if save_mode:
+    df_print = df[['id', 'sentence', 'masked', 'top_fillers', 'probabilities']]
+    df_print.to_csv(output_path, index=False, sep='\t')
 
 print(f'Successfully completed {experiment_type} with {input_file}')

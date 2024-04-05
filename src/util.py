@@ -146,5 +146,3 @@ def mark_dobj_en(file, start, end):
             en_sentences.append(en_sent)
     df = pd.DataFrame({'id': ids, 'es': sentences, 'en': en_sentences})
     return df
-
-prep_input2('../data/definite-targets.tsv', '../data/definite-targets1.tsv', idx=3, single_token_dobj=True)

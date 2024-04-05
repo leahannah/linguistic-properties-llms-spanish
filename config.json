@@ -1,8 +1,8 @@
 {
-    "INPUT_FILE": "non-affected-targets.tsv",
+    "INPUT_FILE": "animate-human-targets.tsv",
     "EXPERIMENT_TYPE": "dom-masking",
-    "REMOVE_DOM": true,
     "MODEL_NAME": "dccuchile/bert-base-spanish-wwm-cased",
+    "REMOVE_DOM": true,
     "NUM_PREDS": 5,
     "PRINT_TO_CONSOLE": true,
     "SAVE_RESULTS": true,

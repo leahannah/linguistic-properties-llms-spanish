@@ -1,19 +1,19 @@
-id	sentence	masked_token1	predicted_token1	probability1	predicted_token2	probability2	predicted_token3	probability3	predicted_token4	probability4	predicted_token5	probability5
-33	[CLS] La cebra que ensució [MASK] la turista descansaba plácidamente. [SEP]	a	a	0.9759	con	0.0022	tanto	0.0019	,	0.0016	toda	0.0009
-34	[CLS] La cabra que empujó [MASK] la pastora respiraba velozmente. [SEP]	a	a	0.9795	sobre	0.0026	de	0.0023	,	0.0022	era	0.0016
-35	[CLS] La serpiente que detestaba [MASK] la veterinaria entró sigilosamente. [SEP]	a	a	0.7911	era	0.0723	de	0.0473	,	0.0282	ser	0.0133
-36	[CLS] La leoparda que oyó [MASK] la dueña corrió repentinamente. [SEP]	a	a	0.8362	de	0.0501	gritar	0.0109	hablar	0.0089	llorar	0.0069
-37	[CLS] El pony que buscaba [MASK] jinete chillaba tristemente. [SEP]	al	al	0.4939	el	0.2067	un	0.1448	su	0.0855	otro	0.0303
-38	[CLS] El león que mató [MASK] cazador caminaba lentamente. [SEP]	al	al	0.9795	el	0.0182	un	0.0008	a	0.0003	del	0.0003
-39	[CLS] El caballo que miraba [MASK] cuidador gruñía desconsoladamente. [SEP]	al	al	0.6617	el	0.3126	del	0.0061	su	0.0056	a	0.0036
-40	[CLS] El tigre que atacó [MASK] domador dormía tranquilamente. [SEP]	al	al	0.9103	el	0.0619	su	0.0171	y	0.0031	a	0.0011
-41	[CLS] El loro que observó [MASK] cantante cantaba claramente. [SEP]	al	al	0.3621	la	0.3073	el	0.2402	como	0.0286	del	0.0083
-42	[CLS] Las panteras que atacaron [MASK] las empleadas descansaban tranquilamente. [SEP]	a	a	0.9974	contra	0.0006	##on	0.0004	y	0.0003	##ban	0.0001
-43	[CLS] Las burras que pisaron [MASK] las mujeres gruñían claramente. [SEP]	a	,	0.3868	a	0.2852	y	0.1526	por	0.0317	de	0.0178
-44	[CLS] Las conejas que olieron [MASK] las chicas saltaban continuamente. [SEP]	a	a	0.8328	y	0.0275	de	0.0211	por	0.02	,	0.0189
-45	[CLS] Las gallinas que detestaban [MASK] las señoras comían lentamente. [SEP]	a	a	0.9342	,	0.0227	y	0.0175	de	0.0062	eran	0.0039
-46	[CLS] Las lobas que empujaron [MASK] las ecólogas salieron repentinamente. [SEP]	a	a	0.9869	contra	0.0018	por	0.0015	sobre	0.0015	hacia	0.0013
-47	[CLS] Los pájaros que miraban [MASK] los críos cantaban alegremente. [SEP]	a	a	0.9576	y	0.012	hacia	0.0103	,	0.0033	con	0.0024
-48	[CLS] Los delfines que mataron [MASK] los pescadores gemían fuertemente. [SEP]	a	a	0.9978	de	0.0003	##on	0.0002	y	0.0002	con	0.0002
-49	[CLS] Los cocodrilos que vieron [MASK] los asistentes nadaban frenéticamente. [SEP]	a	a	0.7216	en	0.0834	entre	0.0414	y	0.0364	por	0.0272
-50	[CLS] Los flamencos que escucharon [MASK] los ayudantes dormían felizmente. [SEP]	a	a	0.8335	y	0.0653	por	0.0241	de	0.0192	con	0.0108
+id	sentence	masked	top_fillers	probabilities
+33	La cebra que ensució a [la turista] descansaba plácidamente.	['a']	[['a', 'con', 'tanto', ',', 'toda']]	[[0.9759472012519836, 0.0021613186690956354, 0.0018841722048819065, 0.0016325119649991393, 0.0009478171705268323]]
+34	La cabra que empujó a [la pastora] respiraba velozmente.	['a']	[['a', 'sobre', 'de', ',', 'era']]	[[0.9794966578483582, 0.002570295473560691, 0.002279789187014103, 0.002218010136857629, 0.0016247269231826067]]
+35	La serpiente que detestaba a [la veterinaria] entró sigilosamente.	['a']	[['a', 'era', 'de', ',', 'ser']]	[[0.791085422039032, 0.07229888439178467, 0.047278858721256256, 0.028240220621228218, 0.013292862102389336]]
+36	La leoparda que oyó a [la dueña] corrió repentinamente.	['a']	[['a', 'de', 'gritar', 'hablar', 'llorar']]	[[0.836165189743042, 0.05012485757470131, 0.01086435467004776, 0.008900600485503674, 0.006854304112493992]]
+37	El pony que buscaba al [jinete] chillaba tristemente.	['al']	[['al', 'el', 'un', 'su', 'otro']]	[[0.4939492642879486, 0.2066984325647354, 0.144771546125412, 0.08545603603124619, 0.030272461473941803]]
+38	El león que mató al [cazador] caminaba lentamente.	['al']	[['al', 'el', 'un', 'a', 'del']]	[[0.9794651865959167, 0.018189240247011185, 0.0008298818138428032, 0.0003445468901190907, 0.00030283856904134154]]
+39	El caballo que miraba al [cuidador] gruñía desconsoladamente.	['al']	[['al', 'el', 'del', 'su', 'a']]	[[0.6617361307144165, 0.3125763535499573, 0.006113490089774132, 0.005632096901535988, 0.003586997976526618]]
+40	El tigre que atacó al [domador] dormía tranquilamente.	['al']	[['al', 'el', 'su', 'y', 'a']]	[[0.9103086590766907, 0.06191869452595711, 0.017064495012164116, 0.0030512374360114336, 0.0010715387761592865]]
+41	El loro que observó al [cantante] cantaba claramente.	['al']	[['al', 'la', 'el', 'como', 'del']]	[[0.36207276582717896, 0.3073018193244934, 0.2402191460132599, 0.028628753498196602, 0.008257443085312843]]
+42	Las panteras que atacaron a [las empleadas] descansaban tranquilamente.	['a']	[['a', 'contra', '##on', 'y', '##ban']]	[[0.9974073767662048, 0.0005962909199297428, 0.000416713475715369, 0.0002979665296152234, 0.00012817898823413998]]
+43	Las burras que pisaron a [las mujeres] gruñían claramente.	['a']	[[',', 'a', 'y', 'por', 'de']]	[[0.38684332370758057, 0.2852226793766022, 0.15262489020824432, 0.03165217489004135, 0.01781322993338108]]
+44	Las conejas que olieron a [las chicas] saltaban continuamente.	['a']	[['a', 'y', 'de', 'por', ',']]	[[0.8328481912612915, 0.027487779036164284, 0.021106183528900146, 0.019975578412413597, 0.018947266042232513]]
+45	Las gallinas que detestaban a [las señoras] comían lentamente.	['a']	[['a', ',', 'y', 'de', 'eran']]	[[0.9341617226600647, 0.022651374340057373, 0.017485039308667183, 0.006203156895935535, 0.003912151791155338]]
+46	Las lobas que empujaron a [las ecólogas] salieron repentinamente.	['a']	[['a', 'contra', 'por', 'sobre', 'hacia']]	[[0.986890971660614, 0.0018003771547228098, 0.0014815035974606872, 0.001477231620810926, 0.0012604512739926577]]
+47	Los pájaros que miraban a [los críos] cantaban alegremente.	['a']	[['a', 'y', 'hacia', ',', 'con']]	[[0.9576455354690552, 0.012004934251308441, 0.010343464091420174, 0.003319250652566552, 0.002374728210270405]]
+48	Los delfines que mataron a [los pescadores] gemían fuertemente.	['a']	[['a', 'de', '##on', 'y', 'con']]	[[0.9978051781654358, 0.0002691387780942023, 0.00020490858878474683, 0.0001847614475991577, 0.00017354232841171324]]
+49	Los cocodrilos que vieron a [los asistentes] nadaban frenéticamente.	['a']	[['a', 'en', 'entre', 'y', 'por']]	[[0.7215601801872253, 0.08341775089502335, 0.04143992438912392, 0.03639160096645355, 0.027241913601756096]]
+50	Los flamencos que escucharon a [los ayudantes] dormían felizmente.	['a']	[['a', 'y', 'por', 'de', 'con']]	[[0.8334817290306091, 0.0653245598077774, 0.024132132530212402, 0.019238034263253212, 0.010790633037686348]]
