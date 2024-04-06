@@ -45,17 +45,17 @@ class MLMSentence:
             prob = self.top_probs[mask-1][rank]
         return rank, prob
 
-    def get_dom_prob_rank(self, mask=1):
-        token = self.masked_tokens[0]
-        if token not in ['a', 'al']:
-            print(f'WARNING: Masked token is {token}, not DOM')
+    # find instances of list in fillers (e.g. dom markers, (in)definite articles)
+    def get_filler_prob_rank(self, list, mask=1):
         rank, prob = -1, 0.0
         if mask > self.num_masks:
             print(f'Mask {mask} is out of range, only {self.num_masks} tokens masked')
             return
-        if token in self.top_fillers[mask-1]:
-            rank = self.top_fillers[mask-1].index(token)
-            prob = self.top_probs[mask-1][rank]
+        for token in list:
+            if token in self.top_fillers[mask-1]:
+                rank = self.top_fillers[mask-1].index(token)
+                prob = self.top_probs[mask-1][rank]
+                break # prevent reiterating and searching for other tokens in list
         return rank, prob
 
     def compute_mlm_tokens_probs(self):
