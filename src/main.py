@@ -71,12 +71,10 @@ for index, row in df.iterrows():
     dom_prob.append(prob)
     if mode == 'mask_dobj':
         rank2, prob2 = mlm_sent.get_filler_prob_rank(['el', 'la', 'las', 'los'])
-        if rank2 > -1:
-            def_rank.append(rank2)
+        def_rank.append(rank2)
         def_prob.append(prob2)
         rank3, prob3 = mlm_sent.get_filler_prob_rank(['un', 'una', 'unas', 'unos'])
-        if rank3 > -1:
-            indef_rank.append(rank3)
+        indef_rank.append(rank3)
         indef_prob.append(prob3)
     if print_mode:
         print(row['sentence'])
@@ -104,8 +102,13 @@ df['probabilities'] = probabilities
 if print_mode:
     print(df)
 
+stats = {'dom': [round(np.mean(dom_prob), 4), round(np.std(dom_prob), 4), round(np.mean(dom_rank), 4)]}
+if mode == 'mask_dobj':
+    stats['def'] = [round(np.mean(def_prob), 4), round(np.std(def_prob), 4), round(np.mean(def_rank), 4)]
+    stats['indef'] = [round(np.mean(indef_prob), 4), round(np.std(indef_prob), 4), round(np.mean(indef_rank), 4)]
+    if remove_dom==True: experiment_type+='-unmarked'
 if print_mode:
-    print(f'mean probability dom: {np.mean(dom_prob):.4f} std: {np.std(dom_rank):.4f}, mean rank: {np.mean(dom_rank)}')
+    print(f'mean probability dom: {np.mean(dom_prob):.4f} std: {np.std(dom_prob):.4f}, mean rank: {np.mean(dom_rank)}')
     if mode == 'mask_dobj':
         print(f'mean probability definite: {np.mean(def_prob):.4f} std: {np.std(def_prob):.4f}, mean rank: {np.mean(def_rank)}')
         print(f'mean probability dom: {np.mean(indef_prob):.4f} std: {np.std(indef_prob):.4f}, mean rank: {np.mean(indef_rank)}')
@@ -113,9 +116,9 @@ if print_mode:
 if save_mode:
     df_print = df[['id', 'sentence', 'masked', 'top_fillers', 'probabilities']]
     df_print.to_csv(output_path+filename, index=False, sep='\t')
-    #TODO: save statistics
-    # with open(output_path+'statistics.tsv', mode='a', encoding='utf-8') as f:
-    #     writer.write(f'input_file   experiment_type   name   filler_type   mean_prob   std_prob    mean_rank')
+    with open(output_path+'statistics.tsv', mode='a', encoding='utf-8') as f:
+        for key in stats.keys():
+            f.write(f'{input_file}\t{experiment_type}\t{name}\t{key}\t{stats[key][0]}\t{stats[key][1]}\t{stats[key][2]}\n')
 
-
+print()
 print(f'Successfully completed {experiment_type} with {input_file}')

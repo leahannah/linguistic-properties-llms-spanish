@@ -1,6 +1,6 @@
 {
     "INPUT_FILE": "animate-human-targets.tsv",
-    "EXPERIMENT_TYPE": "dobject-masking",
+    "EXPERIMENT_TYPE": "dom-masking",
     "MODEL_NAME": "dccuchile/bert-base-spanish-wwm-cased",
     "REMOVE_DOM": false,
     "NUM_PREDS": 5,

@@ -1,0 +1,2 @@
+input   experiment_type   model   filler_type   mean_prob   std_prob    mean_rank
+animate-human-targets.tsv	dom-masking	BETO	dom	0.6662	0.3628	0.6667

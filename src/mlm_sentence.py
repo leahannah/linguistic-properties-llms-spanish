@@ -36,7 +36,7 @@ class MLMSentence:
         return self.top_fillers[mask-1][rank], self.top_probs[mask-1][rank]
 
     def get_token_prob_rank(self, token, mask=1):
-        rank, prob = -1, 0.0
+        rank, prob = 5, 0.0
         if mask > self.num_masks:
             print(f'Mask {mask} is out of range, only {self.num_masks} tokens masked')
             return
@@ -47,7 +47,7 @@ class MLMSentence:
 
     # find instances of list in fillers (e.g. dom markers, (in)definite articles)
     def get_filler_prob_rank(self, list, mask=1):
-        rank, prob = -1, 0.0
+        rank, prob = 5, 0.0
         if mask > self.num_masks:
             print(f'Mask {mask} is out of range, only {self.num_masks} tokens masked')
             return
