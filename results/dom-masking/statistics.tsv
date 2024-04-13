@@ -1,2 +1,11 @@
 input   experiment_type   model   filler_type   mean_prob   std_prob    mean_rank
 animate-human-targets.tsv	dom-masking	BETO	dom	0.6662	0.3628	0.6667
+indefinite-targets.tsv	dom-masking	BETO	dom	0.8963	0.1542	0.0
+definite-targets.tsv	dom-masking	BETO	dom	0.1372	0.2787	2.25
+definite-targets.tsv	dom-masking	BETO	dom	0.7615	0.2424	0.25
+definite-modified-targets.tsv	dom-masking	BETO	dom	0.1447	0.1678	3.25
+definite-fem-targets.tsv	dom-masking	BETO	dom	0.8201	0.2748	0.125
+indefinite-fem-targets.tsv	dom-masking	BETO	dom	0.8559	0.1771	0.0
+definite-fem-targets.tsv	dom-masking	BETO	dom	0.9256	0.1205	0.0
+definite-fem-targets.tsv	dom-masking	BETO	dom	0.9256	0.1205	0.0
+affected-targets.tsv	dom-masking	BETO	dom	0.9658	0.0469	0.0

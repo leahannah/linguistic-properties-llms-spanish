@@ -1,29 +1,29 @@
-id	es	en	type
-97	Alejandra escuchó la música.	Alejandra listened to the music.	child
-98	Blanca Nieves comió la manzana.	Snow White ate the apple.	child
-99	El niño aprendío las matemáticas.	The boy learned mathematics.	child
-100	Antonio bebió un refresco.	Antonio drank a soda.	child
-101	Alfonso arregló la bicicleta.	Alfonso fixed the bike.	child
-102	Mafalda leyó el libro.	Mafalda read the book.	child
-103	Los amigos firmaron el papel.	The friends signed the paper.	child
-104	El niño tocó la planta.	The boy touched the plant.	child
-105	El hombre llevó el paraguas.	The man took/carried the umbrella.	child
-106	La niña abrazó el oso.	The girl hugged the bear.	child
-107	María besó el arbol.	Maria kissed the tree.	child
-108	Miguel vio la pelota.	Miguel saw the ball.	child
-109	Los niños visitaron el museo.	The children visited the museum.	child
-110	Jimmy Newtron conoció Six Flags.	Jimmy Neutron went to Six Flags (for the first time).	child
-111	Julián tocó la planta.	Julian touched the plant.	adult
-112	El viejo llevó el paraguas.	The man took/carried the umbrella.	adult
-113	La niña abrazó el osito.	The girl hugged the teddy bear.	adult
-114	Beto besó el trofeo.	Beto kissed the trophy.	adult
-115	Victor vio la pelota.	Victor saw the ball.	adult
-116	Los niños visitaron el museo.	The children visited the museum.	adult
-117	Raquel conoció Chicago.	Raquel went to Chicago (for the first time).	adult
-118	Esteban estudió matemáticas.	Esteban studied math.	adult
-119	Alfonso arregló la bicicleta roja.	Alfonso fixed the red bike.	adult
-120	Antonio bebió la coca cola.	Antonio drank a coke.	adult
-121	Estefanía compró un auto.	Estefanía bought a car.	adult
-122	Mercedes escuchó música.	Mercedes listened to music.	adult
-123	Carlos leyó una novela.	Carlos read a novel.	adult
-124	Los novios firmaron el contrato.	The couple signed the contract.	adult
+id	es	en
+97	Alejandra escuchó [la música].	Alejandra listened to [the music].
+98	Blanca Nieves comió [la manzana].	Snow White ate [the apple].
+99	El niño aprendío [las matemáticas].	The boy learned [mathematics].
+100	Antonio bebió [un refresco].	Antonio drank [a soda].
+101	Alfonso arregló [la bicicleta].	Alfonso fixed [the bike].
+102	Mafalda leyó [el libro].	Mafalda read [the book].
+103	Los amigos firmaron [el papel].	The friends signed [the paper].
+104	El niño tocó [la planta].	The boy touched [the plant].
+105	El hombre llevó [el paraguas].	The man took/carried [the umbrella].
+106	La niña abrazó [el oso].	The girl hugged [the bear].
+107	María besó [el arbol].	Maria kissed [the tree].
+108	Miguel vio [la pelota].	Miguel saw [the ball].
+109	Los niños visitaron [el museo].	The children visited [the museum].
+110	Jimmy Newtron conoció [Six Flags].	Jimmy Neutron went to [Six Flags] (for the first time).
+111	Julián tocó [la planta].	Julian touched [the plant].
+112	El viejo llevó [el paraguas].	The man took/carried [the umbrella].
+113	La niña abrazó [el osito].	The girl [hugged the] teddy bear.
+114	Beto besó [el trofeo].	Beto kissed [the trophy].
+115	Victor vio [la pelota].	Victor saw [the ball].
+116	Los niños visitaron [el museo].	The children visited [the museum].
+117	Raquel conoció [Chicago].	Raquel went to [Chicago] (for the first time).
+118	Esteban estudió [matemáticas].	Esteban studied [math].
+119	Alfonso arregló [la bicicleta roja].	Alfonso fixed [the red bike].
+120	Antonio bebió la [coca cola].	Antonio drank [a coke].
+121	Estefanía compró [un auto].	Estefanía bought [a car].
+122	Mercedes escuchó [música].	Mercedes listened to [music].
+123	Carlos leyó [una novela].	Carlos read [a novel].
+124	Los novios firmaron [el contrato].	The couple signed [the contract].

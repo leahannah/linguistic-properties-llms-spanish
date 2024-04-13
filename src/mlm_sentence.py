@@ -10,6 +10,7 @@ class MLMSentence:
         self.tokens = self.tokenizer.tokenize(self.sentence)
         self.top_n = top_n
         self.top_fillers, self.top_probs = self.compute_mlm_tokens_probs()
+
     
     def get_sentence(self):
         return self.sentence
@@ -53,9 +54,11 @@ class MLMSentence:
             return
         for token in list:
             if token in self.top_fillers[mask-1]:
-                rank = self.top_fillers[mask-1].index(token)
-                prob = self.top_probs[mask-1][rank]
-                break # prevent reiterating and searching for other tokens in list
+                new_rank = self.top_fillers[mask-1].index(token)
+                new_prob = self.top_probs[mask-1][new_rank]
+                if new_rank < rank:
+                    rank = new_rank
+                    prob = new_prob
         return rank, prob
 
     def compute_mlm_tokens_probs(self):

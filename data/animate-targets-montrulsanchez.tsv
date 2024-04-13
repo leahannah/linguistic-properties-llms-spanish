@@ -1,29 +1,29 @@
-id	es	en	type
-69	Bob Esponja saludó a Squidward.	Spongebob greeted Squidward.	child
-70	La abuela recibió a los niños.	The grandmother received the children.	child
-71	El Goblin verde atacó a Spiderman.	Green Goblin attacked Spiderman.	child
-72	La maestra ayudó al niño.	The teacher helped the boy.	child
-73	El ladrón secuestró a la señora.	The thief kidnapped the woman.	child
-74	Snoopy miró a su amigo.	Snoopy stared at his friend.	child
-75	La maestra castigó al estudiante.	The teacher grounded the student.	child
-76	Buzz Lightyear llevó a Woody.	Buzz Lightyear took/carried Woody.	child
-77	Plankton conoció a Bob Esponja.	Plankton met Spongebob.	child
-78	Mickey abrazó a Pluto.	Mickey huged Pluto.	child
-79	La abuelita visitó al niño.	The grandmother visited the boy.	child
-80	Fiona besó a Shrek.	Fiona kissed Shrek.	child
-81	La mamá tocó al bebé.	The mother touched the baby.	child
-82	Hello Kitty vio a Keroppi.	Hello Kitty saw Keroppi.	child
-83	Diego llevó a Isabel.	Diego carried Isabel	adult
-84	Eduardo conoció a Bella.	Eduardo met Bella	adult
-85	Alejandro abrazó a Consuelo.	Alejandro hugged Consuelo	adult
-86	Mario vio a Jaime.	Mario saw James	adult
-87	El niño visitó a su abuela.	The boy visited the grandmother	adult
-88	Julieta besó a Romeo.	Julieta kissed Romeo	adult
-89	Ana tocó al bebé.	Ana touched the baby	adult
-90	La familia acogió a la inmigrante.	The family welcomed the immigrant	adult
-91	El ladrón atacó al presidente.	The robber attacked the president	adult
-92	Cristina saludó a los novios.	Cristina greeted the couple	adult
-93	El bandido secuestró a la mujer.	The bandit kidnapped the woman	adult
-94	La maestra ayudó al niño.	The teacher helped the boy	adult
-95	La maestra castigó al estudiante.	The teacher grounded the student.	adult
-96	El juez juzgó al criminal.	The judge judged the criminal	adult
+id	es	en
+69	Bob Esponja saludó a [Squidward].	Spongebob greeted [Squidward].
+70	La abuela recibió a [los niños].	The grandmother received [the children].
+71	El Goblin verde atacó a [Spiderman].	Green Goblin attacked [Spiderman].
+72	La maestra ayudó al [niño].	The teacher helped [the boy].
+73	El ladrón secuestró a [la señora].	The thief kidnapped [the woman].
+74	Snoopy miró a [su amigo].	Snoopy stared at [his friend].
+75	La maestra castigó al [estudiante].	The teacher grounded [the student].
+76	Buzz Lightyear llevó a [Woody].	Buzz Lightyear took/carried [Woody].
+77	Plankton conoció a [Bob Esponja].	Plankton met [Spongebob].
+78	Mickey abrazó a [Pluto].	Mickey huged [Pluto].
+79	La abuelita visitó al [niño].	The grandmother visited [the boy].
+80	Fiona besó a [Shrek].	Fiona kissed [Shrek].
+81	La mamá tocó al [bebé].	The mother touched [the baby].
+82	Hello Kitty vio a [Keroppi].	Hello Kitty saw [Keroppi].
+83	Diego llevó a [Isabel].	Diego carried [Isabel].
+84	Eduardo conoció a [Bella].	Eduardo met [Bella].
+85	Alejandro abrazó a [Consuelo].	Alejandro hugged [Consuelo].
+86	Mario vio a [Jaime].	Mario saw [James].
+87	El niño visitó a [su abuela].	The boy visited [the grandmother].
+88	Julieta besó a [Romeo].	Julieta kissed [Romeo].
+89	Ana tocó al [bebé].	Ana touched [the baby].
+90	La familia acogió a [la inmigrante].	The family welcomed [the immigrant].
+91	El ladrón atacó al [presidente].	The robber attacked [the president].
+92	Cristina saludó a [los novios].	Cristina greeted [the couple].
+93	El bandido secuestró a [la mujer].	The bandit kidnapped [the woman].
+94	La maestra ayudó al [niño].	The teacher helped [the boy].
+95	La maestra castigó al [estudiante].	The teacher grounded [the student].
+96	El juez juzgó al [criminal].	The judge judged [the criminal].
