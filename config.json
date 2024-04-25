@@ -8,5 +8,5 @@
     "MASK_TYPE": "det",
     "NUM_PREDS": 5,
     "PRINT_TO_CONSOLE": true,
-    "SAVE_RESULTS": true
+    "SAVE_RESULTS": false
 }

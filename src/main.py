@@ -17,7 +17,7 @@ with open(config_path) as f:
 # access parameters
 INPUT_FILE = config['INPUT_FILE']
 EXPERIMENT_TYPE = config['EXPERIMENT_TYPE']
-SOURCE = config['SOURCE']
+SOURCE = [config['SOURCE']]
 CONDITION = config['CONDITION']
 REMOVE_DOM = config['REMOVE_DOM']
 MODEL_NAME = config['MODEL_NAME']
@@ -36,7 +36,8 @@ print()
 # load model
 tokenizer, model = load_model(MODEL_NAME)
 
-for SOURCE in ['hg-2023', 'ms-2013', 'sa-2020', 're-2021', 'self-re', 'self-sa']:
+# SOURCE = ['hg-2023', 'ms-2013', 'sa-2020', 're-2021', 'self-re', 'self-sa']
+for SOURCE in SOURCE:
     # load targets
     input_path = os.path.join(pathlib.Path(__file__).parent.absolute(), '../data/', INPUT_FILE)
     if EXPERIMENT_TYPE == 'dom-masking': 
