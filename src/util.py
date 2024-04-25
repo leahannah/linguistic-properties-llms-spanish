@@ -3,62 +3,55 @@ import os
 import pandas as pd
 from transformers import BertForMaskedLM, BertTokenizer
 
-# read and prepare targets from input file, return pandas dataframe
-def load_targets(filename, mode, remove_dom=False, det_only=False, noun_only=False):
-    with open(filename, mode='r', encoding='utf-8') as f:
-        ids, sentences, dobjects, indices, en_sents = [],[], [], [], []
-        next(f)
-        for line in f:
-            cols = line.split('\t')
-            sent = cols[1].strip()
-            pattern = r'\[(.*?)\]'
-            matches = re.findall(pattern, sent)
-            do = matches[0]
+def load_targets(input_path, source, condition, mask_type, remove_dom):
+    df = pd.read_csv(input_path, sep='\t')
+    idx = []
+    if source is not None:
+        df = df[df['source']==source]
+    if condition is not None:
+        df = df[df['condition']==condition]
+    if mask_type == 'dom':
+        idx = list(df['dom_idx'])
+    else:
+        sentences = []
+        for i, row in df.iterrows():
+            sent = row['sentence']
+            dom_idx = row['dom_idx']
             sent_list = sent.split()
-            dom_idx = find_dom_index(sent_list)
-            if mode == 'dom-masking':
-                idx = [dom_idx]
-            elif mode == 'dobject-masking':
-                if remove_dom:
-                    if sent_list[dom_idx] == 'al':
-                        sent_list[dom_idx] = '[el'
-                    else:
-                        sent_list.pop(dom_idx)
-                    sent = ' '.join(sent_list)
-                dobj_idx = find_dobj_indices(sent_list)
-                if det_only and not noun_only:
-                    if sent_list[dom_idx] == 'al': # skip sentence, no separate determiner
-                        continue
-                    idx = [dobj_idx[0]]
-                elif noun_only and not det_only:
-                    idx = [dobj_idx[-1]]
+            if remove_dom:
+                if row['dom'] == 'al':
+                    sent_list[dom_idx] == '[el'
+                    sent_list[dom_idx+1] = sent_list[dom_idx+1][1:]
                 else:
-                    idx = dobj_idx
-            ids.append(cols[0].strip())
-            en_sents.append(cols[2].strip())
-            sentences.append(sent)
-            indices.append(idx)
-            dobjects.append(do)
-    return pd.DataFrame(
-            {'id': ids,
-            'sentence': sentences,
-            'en_sentence': en_sents,
-            'mask_idx': indices,
-            'dobj': dobjects
-            })
+                    sent_list.pop(dom_idx)
+                    dom_idx -= 1
+            sentences.append(' '.join(sent_list))
+            dobj_len = len(row['dobject'].split())
+            if mask_type == 'noun':
+                idx.append(dom_idx+dobj_len)
+            else:
+                if dobj_len > 1: # skip sentence, no separate determiner
+                    idx.append(dom_idx+1)
+                else:
+                    idx.append(-1)
+        df['sentence'] = sentences
+    df['mask_idx'] = idx
+    df = df[df['mask_idx'] > 0] # remove sentences that have no tokens to masked
+    return df
 
 # helper function: find index of dom-marker (a/ al) in target sentence
 def find_dom_index(sent_list, char='['):
     idx = -1
     for i, w in enumerate(sent_list):
-        if w[0] == char:
-            idx = i-1
+        if w in ['a', 'al'] and sent_list[i+1][0] == char:
+            idx = i
+            break
     if idx < 0:
         print('Index not found in sentence: {}'.format(sent_list))
     return idx
 
 # helper function: find index of direct object in target sentence
-def find_dobj_indices(sent_list, start='[', end=']', remove_dom=False):
+def find_dobj_indices(sent_list, start='[', end=']'):
     idx1, idx2 = 0, 0
     for i, w in enumerate(sent_list):
         if w[0] == start:
@@ -76,18 +69,6 @@ def load_model(modelname):
     model = BertForMaskedLM.from_pretrained(modelname)
     return tokenizer, model
 
-# initialize file for MLM outputs, print header
-def initialize_result_file(outputfile, num_mask, top_n):
-    with open(outputfile, mode='w', encoding='utf-8') as f:
-        f.write('id'+'\t'+'sentence')
-        for i in range(num_mask):
-            f.write('\t'+'masked_token'+str(i+1))
-            for j in range(top_n-1):
-                f.write('\t'+'predicted_token'+str(j+1))
-                f.write('\t'+'probability'+str(j+1))
-            f.write('\t'+'predicted_token'+str(j+2)+'\t'+'probability'+str(j+2))
-        f.write('\n')
-
 # look for specific words in MLM predictions
 def search_fillers(fillers, probs, wordlist):
     fillers_found, filler_probs, filler_ranks = [], [], []
@@ -98,21 +79,8 @@ def search_fillers(fillers, probs, wordlist):
             filler_ranks.append(i)
     return fillers_found, filler_probs, filler_ranks
 
-# get input into correct format
-def prep_input(inputfile, outputfile):
-    with open(inputfile, mode='r', encoding='utf-8') as f:
-        with open(outputfile, mode='w', encoding='utf-8') as out_f:
-            for line in f.readlines():
-                cols = line.split('\t')
-                sentence = cols[1]
-                pattern = r'(\w+\s+\w+)\s+/\s+(\w+\s+\w+)'
-                replacement = r'[\1]'
-                new_sentence = re.sub(pattern, replacement, sentence)
-                cols[1] = new_sentence
-                out_f.write('\t'.join(cols))
-
 # get targets into correct format
-def prep_input2(inputfile, outputfile, idx=5):
+def prep_input(inputfile, outputfile, idx=5):
     with open(outputfile, mode='w', encoding='utf-8') as out_f:
         out_f.write('id\tes\ten\n')
         with open(inputfile, mode='r', encoding='utf-8') as f:
@@ -147,3 +115,70 @@ def prep_input2(inputfile, outputfile, idx=5):
                         en_sent_list[-1] = en_sent_list[-1] + ']'
                     en_sentence = ' '.join(en_sent_list)
                     out_f.write('\t'.join([id, sentence, en_sentence+'\n']))
+
+def merge_test_data(directory):
+    es_sents, en_sents, dom_markers, dobjects, dom_idxs, genus, numerus, source, conditions = [], [], [], [], [], [], [], [], []
+    cnt = 0 
+    for file in os.listdir(directory):
+        print(file)
+        sou = file.split('_')[0]
+        name = file.split('_')[1]
+        cond = name.split('-')[0]
+        print(sou)
+        path = directory + file
+        with open(path, mode='r', encoding='utf-8') as f:
+            next(f)
+            for line in f.readlines():
+                cnt += 1
+                line_list = line.split('\t')
+                es_sent = line_list[1]
+                pattern = r'\[(.*?)\]'
+                matches = re.findall(pattern, es_sent)
+                dobject = matches[0]
+                sent_list = es_sent.split()
+                dom_idx = find_dom_index(sent_list)
+                dom = sent_list[dom_idx] if dom_idx > -1 else ''
+                if len(dobject.split()) > 1:
+                    det = dobject.split()[0]
+                    det_sing = ['la', 'el', 'un', 'una']
+                    det_fem = ['la', 'las', 'una'] 
+                    if det in det_sing: 
+                        num = 'sing'
+                    else:
+                        num = 'pl'
+                    if det in det_fem:
+                        gen = 'f'
+                    else:
+                        gen = 'm'
+                else:
+                    num = 'sing'
+                    gen = 'm'
+                source.append(sou)
+                conditions.append(cond)
+                es_sents.append(es_sent)
+                dom_markers.append(dom)
+                dobjects.append(dobject)
+                dom_idxs.append(dom_idx)
+                genus.append(gen)
+                numerus.append(num)
+                en_sents.append(line_list[2].strip('\n'))
+    ids = list(range(1, cnt+1)) 
+    animate = ['?' for x in ids]
+    definite = animate
+    affected = animate
+    df = pd.DataFrame(
+            {'id': ids,
+             'source': source,
+             'condition': conditions,
+             'sentence': es_sents,
+             'dom': dom_markers, 
+             'dom_idx': dom_idxs,
+             'dobjects': dobjects,
+             'gender': genus, 
+             'number': numerus,
+             'animate': animate,
+             'definite': definite,
+             'affected': affected,
+            'en_sentence': en_sents
+            })
+    return df

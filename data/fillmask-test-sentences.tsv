@@ -1,0 +1,175 @@
+id	source	condition	sentence	dom	dom_idx	dobject	gender	number	animate	definite	affected	other_condition	en_sentence
+1	hg-2023	affected	Felipe eliminó a [un rehén] en pocos segundos.	a	2	un rehén	m	sing	?	?	1		Felipe eliminated [a hostage] in a few seconds.
+2	hg-2023	affected	Amaya neutralizó a [un enemigo] en cinco minutos.	a	2	un enemigo	m	sing	?	?	1		Amaya neutralized [an enemy] in five minutes.
+3	hg-2023	affected	Joaquín abatió a [un contrincante] en unos minutos.	a	2	un contrincante	m	sing	?	?	1		Joaquín knocked down [an opponent] within minutes.
+4	hg-2023	affected	Martina arrolló a [un peatón] en cuestión de segundos.	a	2	un peatón	m	sing	?	?	1		Martina ran over [a pedestrian] in a matter of seconds.
+5	hg-2023	affected	Carlos derribó a [un futbolista] en dos segundos.	a	2	un futbolista	m	sing	?	?	1		Carlos knocked down [a football player] in two seconds.
+6	hg-2023	affected	Lucía destrozó a [un oponente] en dos asaltos.	a	2	un oponente	m	sing	?	?	1		Lucia destroyed [an opponent] in two rounds.
+7	hg-2023	affected	Mateo quemó a [una bruja] en poco más de media hora.	a	2	una bruja	f	sing	?	?	1		Matthew burnt [a witch] in little more than half an hour.
+8	hg-2023	affected	Valentina venció a [un adversario] en menos de una hora.	a	2	un adversario	m	sing	?	?	1		Valentina defeated [an opponent] in less than an hour.
+9	hg-2023	affected	Luis zarandeó a [un hombre] durante algunos minutos.	a	2	un hombre	m	sing	?	?	1		Luis shook [a man] for a few minutes.
+10	hg-2023	affected	María transportó a [un mochilero] durante todo el día.	a	2	un mochilero	m	sing	?	?	1		María transported [a backpacker] for the whole day.
+11	hg-2023	affected	Lucas arrastró a [un soldado] durante un buen rato.	a	2	un soldado	m	sing	?	?	1		Lucas dragged [a soldier] for quite a while.
+12	hg-2023	affected	Claudia maltrató a [una compañera] durante varios años.	a	2	una compañera	f	sing	?	?	1		Claudia mistreated [a classmate] for several years.
+13	hg-2023	affected	Hugo apaleó a [un rebelde] durante varios minutos.	a	2	un rebelde	m	sing	?	?	1		Hugo beat up [a rebel] for several minutes.
+14	hg-2023	affected	Carla asedió a [una contrincante] durante bastante tiempo.	a	2	una contrincante	f	sing	?	?	1		Carla besieged [an opponent] for quite some time.
+15	hg-2023	affected	Daniel remolcó a [un enfermo] durante algunos minutos.	a	2	un enfermo	m	sing	?	?	1		Daniel towed [a sick person] for several minutes.
+16	hg-2023	affected	Coral guio a [un turista] durante toda la mañana.	a	2	un turista	m	sing	?	?	1		Coral guided [a tourist] for the whole morning.
+17	hg-2023	nonaffected	Carlos vigiló a [un bebé] durante unos minutos.	a	2	un bebé	m	sing	?	?	0		Carlos watched [a baby] for a few minutes.
+18	hg-2023	nonaffected	Irene oyó a [una niña] durante horas.	a	2	una niña	f	sing	?	?	0		Irene heard [a girl] for hours.
+19	hg-2023	nonaffected	Pablo tuvo a [un ayudante] durante varios años.	a	2	un ayudante	m	sing	?	?	0		Pablo had [a helper] for several years.
+20	hg-2023	nonaffected	Isabel vio a [un estudiante] durante toda la mañana.	a	2	un estudiante	m	sing	?	?	0		Isabel saw [a student] for the whole morning.
+21	hg-2023	nonaffected	Unai amó a [una joven] durante varios años.	a	2	una joven	f	sing	?	?	0		Unai loved [a young woman] for several years.
+22	hg-2023	nonaffected	Valeria admiró a [un cantante] durante toda su vida.	a	2	un cantante	m	sing	?	?	0		Valeria admired [a singer] all her life.
+23	hg-2023	nonaffected	Adrián percibió a [una mujer] durante algunos minutos.	a	2	una mujer	f	sing	?	?	0		Adrián perceived [a woman] for a few minutes.
+24	hg-2023	nonaffected	Emma investigó a [un político] durante varias semanas.	a	2	un político	m	sing	?	?	0		Emma investigated [a politician] for several weeks.
+25	hg-2023	nonaffected	Ismael encontró a [un conocido] en cuestión de segundos.	a	2	un conocido	m	sing	?	?	0		Ismael identified [an acquaintance] in a matter of seconds.
+26	hg-2023	nonaffected	Sofía conoció a [un chico] en un par de días.	a	2	un chico	m	sing	?	?	0		Sofia met [a boy] in a couple of days.
+27	hg-2023	nonaffected	Martín detectó a [un intruso] en un par de minutos.	a	2	un intruso	m	sing	?	?	0		Martín detected [an intruder] in a couple of minutes.
+28	hg-2023	nonaffected	Elena localizó a [una amiga] al cabo de dos horas.	a	2	una amiga	f	sing	?	?	0		Elena located [a friend] within two hours.
+29	hg-2023	nonaffected	Alejandro identificó a [un agresor] en menos de dos minutos.	a	2	un agresor	m	sing	?	?	0		Alejandro identified [an aggressor] in less than two minutes.
+30	hg-2023	nonaffected	Marta descartó a [un aspirante] en un minuto.	a	2	un aspirante	m	sing	?	?	0		Marta discarded [an applicant] in one minute.
+31	hg-2023	nonaffected	Samuel descubrió a [un infiltrado] en un par de días.	a	2	un infiltrado	m	sing	?	?	0		Samuel spotted [an infiltrator] in a couple of days.
+32	hg-2023	nonaffected	Alba mencionó a [un actor] tras varios minutos de reflexión.	a	2	un actor	m	sing	?	?	0		Alba mentioned [an actor] after several minutes of reflection.
+33	ms-2013	animate	Bob Esponja saludó a [Squidward].	a	3	Squidward	m	sing	1	?	?	child	Spongebob greeted [Squidward].
+34	ms-2013	animate	La abuela recibió a [los niños].	a	3	los niños	m	pl	1	?	?	child	The grandmother received [the children].
+35	ms-2013	animate	El Goblin verde atacó a [Spiderman].	a	4	Spiderman	m	sing	1	?	?	child	Green Goblin attacked [Spiderman].
+36	ms-2013	animate	La maestra ayudó al [niño].	al	3	niño	m	sing	1	?	?	child	The teacher helped [the boy].
+37	ms-2013	animate	El ladrón secuestró a [la señora].	a	3	la señora	f	sing	1	?	?	child	The thief kidnapped [the woman].
+38	ms-2013	animate	Snoopy miró a [su amigo].	a	2	su amigo	m	pl	1	?	?	child	Snoopy stared at [his friend].
+39	ms-2013	animate	La maestra castigó al [estudiante].	al	3	estudiante	m	sing	1	?	?	child	The teacher grounded [the student].
+40	ms-2013	animate	Buzz Lightyear llevó a [Woody].	a	3	Woody	m	sing	1	?	?	child	Buzz Lightyear took/carried [Woody].
+41	ms-2013	animate	Plankton conoció a [Bob Esponja].	a	2	Bob Esponja	m	pl	1	?	?	child	Plankton met [Spongebob].
+42	ms-2013	animate	Mickey abrazó a [Pluto].	a	2	Pluto	m	sing	1	?	?	child	Mickey huged [Pluto].
+43	ms-2013	animate	La abuelita visitó al [niño].	al	3	niño	m	sing	1	?	?	child	The grandmother visited [the boy].
+44	ms-2013	animate	Fiona besó a [Shrek].	a	2	Shrek	m	sing	1	?	?	child	Fiona kissed [Shrek].
+45	ms-2013	animate	La mamá tocó al [bebé].	al	3	bebé	m	sing	1	?	?	child	The mother touched [the baby].
+46	ms-2013	animate	Hello Kitty vio a [Keroppi].	a	3	Keroppi	m	sing	1	?	?	child	Hello Kitty saw [Keroppi].
+47	ms-2013	animate	Diego llevó a [Isabel].	a	2	Isabel	m	sing	1	?	?	adult	Diego carried [Isabel].
+48	ms-2013	animate	Eduardo conoció a [Bella].	a	2	Bella	m	sing	1	?	?	adult	Eduardo met [Bella].
+49	ms-2013	animate	Alejandro abrazó a [Consuelo].	a	2	Consuelo	m	sing	1	?	?	adult	Alejandro hugged [Consuelo].
+50	ms-2013	animate	Mario vio a [Jaime].	a	2	Jaime	m	sing	1	?	?	adult	Mario saw [James].
+51	ms-2013	animate	El niño visitó a [su abuela].	a	3	su abuela	m	pl	1	?	?	adult	The boy visited [the grandmother].
+52	ms-2013	animate	Julieta besó a [Romeo].	a	2	Romeo	m	sing	1	?	?	adult	Julieta kissed [Romeo].
+53	ms-2013	animate	Ana tocó al [bebé].	al	2	bebé	m	sing	1	?	?	adult	Ana touched [the baby].
+54	ms-2013	animate	La familia acogió a [la inmigrante].	a	3	la inmigrante	f	sing	1	?	?	adult	The family welcomed [the immigrant].
+55	ms-2013	animate	El ladrón atacó al [presidente].	al	3	presidente	m	sing	1	?	?	adult	The robber attacked [the president].
+56	ms-2013	animate	Cristina saludó a [los novios].	a	2	los novios	m	pl	1	?	?	adult	Cristina greeted [the couple].
+57	ms-2013	animate	El bandido secuestró a [la mujer].	a	3	la mujer	f	sing	1	?	?	adult	The bandit kidnapped [the woman].
+58	ms-2013	animate	La maestra ayudó al [niño].	al	3	niño	m	sing	1	?	?	adult	The teacher helped [the boy].
+59	ms-2013	animate	La maestra castigó al [estudiante].	al	3	estudiante	m	sing	1	?	?	adult	The teacher grounded [the student].
+60	ms-2013	animate	El juez juzgó al [criminal].	al	3	criminal	m	sing	1	?	?	adult	The judge judged [the criminal].
+61	ms-2013	inanimate	Alejandra escuchó [la música].		-1	la música	f	sing	0	?	?	child	Alejandra listened to [the music].
+62	ms-2013	inanimate	Blanca Nieves comió [la manzana].		-1	la manzana	f	sing	0	?	?	child	Snow White ate [the apple].
+63	ms-2013	inanimate	El niño aprendío [las matemáticas].		-1	las matemáticas	f	pl	0	?	?	child	The boy learned [mathematics].
+64	ms-2013	inanimate	Antonio bebió [un refresco].		-1	un refresco	m	sing	0	?	?	child	Antonio drank [a soda].
+65	ms-2013	inanimate	Alfonso arregló [la bicicleta].		-1	la bicicleta	f	sing	0	?	?	child	Alfonso fixed [the bike].
+66	ms-2013	inanimate	Mafalda leyó [el libro].		-1	el libro	m	sing	0	?	?	child	Mafalda read [the book].
+67	ms-2013	inanimate	Los amigos firmaron [el papel].		-1	el papel	m	sing	0	?	?	child	The friends signed [the paper].
+68	ms-2013	inanimate	El niño tocó [la planta].		-1	la planta	f	sing	0	?	?	child	The boy touched [the plant].
+69	ms-2013	inanimate	El hombre llevó [el paraguas].		-1	el paraguas	m	sing	0	?	?	child	The man took/carried [the umbrella].
+70	ms-2013	inanimate	La niña abrazó [el oso].		-1	el oso	m	sing	0	?	?	child	The girl hugged [the bear].
+71	ms-2013	inanimate	María besó [el arbol].		-1	el arbol	m	sing	0	?	?	child	Maria kissed [the tree].
+72	ms-2013	inanimate	Miguel vio [la pelota].		-1	la pelota	f	sing	0	?	?	child	Miguel saw [the ball].
+73	ms-2013	inanimate	Los niños visitaron [el museo].		-1	el museo	m	sing	0	?	?	child	The children visited [the museum].
+74	ms-2013	inanimate	Jimmy Newtron conoció [Six Flags].		-1	Six Flags	m	pl	0	?	?	child	Jimmy Neutron went to [Six Flags] (for the first time).
+75	ms-2013	inanimate	Julián tocó [la planta].		-1	la planta	f	sing	0	?	?	adult	Julian touched [the plant].
+76	ms-2013	inanimate	El viejo llevó [el paraguas].		-1	el paraguas	m	sing	0	?	?	adult	The man took/carried [the umbrella].
+77	ms-2013	inanimate	La niña abrazó [el osito].		-1	el osito	m	sing	0	?	?	adult	The girl [hugged the] teddy bear.
+78	ms-2013	inanimate	Beto besó [el trofeo].		-1	el trofeo	m	sing	0	?	?	adult	Beto kissed [the trophy].
+79	ms-2013	inanimate	Victor vio [la pelota].		-1	la pelota	f	sing	0	?	?	adult	Victor saw [the ball].
+80	ms-2013	inanimate	Los niños visitaron [el museo].		-1	el museo	m	sing	0	?	?	adult	The children visited [the museum].
+81	ms-2013	inanimate	Raquel conoció [Chicago].		-1	Chicago	m	sing	0	?	?	adult	Raquel went to [Chicago] (for the first time).
+82	ms-2013	inanimate	Esteban estudió [matemáticas].		-1	matemáticas	m	sing	0	?	?	adult	Esteban studied [math].
+83	ms-2013	inanimate	Alfonso arregló [la bicicleta roja].		-1	la bicicleta roja	f	sing	0	?	?	adult	Alfonso fixed [the red bike].
+84	ms-2013	inanimate	Antonio bebió la [coca cola].		-1	coca cola	m	pl	0	?	?	adult	Antonio drank [a coke].
+85	ms-2013	inanimate	Estefanía compró [un auto].		-1	un auto	m	sing	0	?	?	adult	Estefanía bought [a car].
+86	ms-2013	inanimate	Mercedes escuchó [música].		-1	música	m	sing	0	?	?	adult	Mercedes listened to [music].
+87	ms-2013	inanimate	Carlos leyó [una novela].		-1	una novela	f	sing	0	?	?	adult	Carlos read [a novel].
+88	ms-2013	inanimate	Los novios firmaron [el contrato].		-1	el contrato	m	sing	0	?	?	adult	The couple signed [the contract].
+89	re-2021	definite	Gonzalo mató al [mafioso] en el parque.	al	2	mafioso	m	sing	?	1	?		Gonzalo killed [the mobster] in the park.
+90	re-2021	definite	Patricio lesionó al [portero] en la discoteca.	al	2	portero	m	sing	?	1	?		Patricio injured [the doorman] at the nightclub
+91	re-2021	definite	Carolina golpeó al [futbolista] en el vestuario.	al	2	futbolista	m	sing	?	1	?		Carolina hit [the soccer] player in the locker room.
+92	re-2021	definite	Elena cuidó al [herido] durante dos semanas.	al	2	herido	m	sing	?	1	?		Elena took care of [the injured person] for two weeks.
+93	re-2021	definite	Irene acusó al [secretario] general en la asamblea.	al	2	secretario	m	sing	?	1	?		Irene accused [the general secretary] at the assembly.
+94	re-2021	definite	Cecilia denunció al [ladrón] en la comisaría de policía.	al	2	ladrón	m	sing	?	1	?		Cecilia reported [the thief] at the police station.
+95	re-2021	definite	Josefina vio al [cura] en el parque.	al	2	cura	m	sing	?	1	?		Josefina saw [the priest] in the park.
+96	re-2021	definite	Julio oyó al [basurero] desde la cocina.	al	2	basurero	m	sing	?	1	?		Julio heard [the garbage collector] from the kitchen.
+97	re-2021	indefinite	Pablo mató a [un rehén] durante el secuestro.	a	2	un rehén	m	sing	?	0	?		Pablo killed [a hostage] during the kidnapping.
+98	re-2021	indefinite	Alberto lesionó a [un defensa] en el partido de la semana pasada.	a	2	un defensa	m	sing	?	0	?		Alberto injured [a defender] during last weeks match.
+99	re-2021	indefinite	Andrea golpeó a [un fotógrafo] a la salida del restaurante.	a	2	un fotógrafo	m	sing	?	0	?		Andrea hit [a photographer] at the restaurants exit.
+100	re-2021	indefinite	Javier cuidó a [un enfermo] con gran profesionalidad.	a	2	un enfermo	m	sing	?	0	?		Javier took care of [an injured person] very professionally.
+101	re-2021	indefinite	Laura acusó a [un trabajador] en la reunión.	a	2	un trabajador	m	sing	?	0	?		Laura accused [a worker] at the meeting.
+102	re-2021	indefinite	Carlos denunció a [un camarero] tras una disputa.	a	2	un camarero	m	sing	?	0	?		Carlos reported [a waiter] after an argument.
+103	re-2021	indefinite	Ana vio a [un político] en la tienda del barrio.	a	2	un político	m	sing	?	0	?		Ana saw [a politician] at the neighbourhoods shop.
+104	re-2021	indefinite	Esther oyó a [un bebé] en el apartamento de al lado.	a	2	un bebé	m	sing	?	0	?		Esther heard [a baby] in the apartment next door.
+105	sa-2020	animate	La artista que pisó a [la perra] andaba sigilosamente.	a	4	la perra	f	sing	1	?	?	animal	The artist that stepped on [the dog] walked stealthily
+106	sa-2020	animate	La bióloga que abrazó a [la gorila] sonreía incesantemente.	a	4	la gorila	f	sing	1	?	?	animal	The biologist that hugged [the gorilla] smiled unceasingly
+107	sa-2020	animate	La voluntaria que tocó a [la tortuga] bebía continuamente.	a	4	la tortuga	f	sing	1	?	?	animal	The volunteer that touched [the turtle] drank continuously
+108	sa-2020	animate	La ciclista que vio a [la vaca] comía distraídamente.	a	4	la vaca	f	sing	1	?	?	animal	The cyclist that saw [the cow] ate absent-minded
+109	sa-2020	animate	La granjera que olió a [la cerda] salió inesperadamente.	a	4	la cerda	f	sing	1	?	?	animal	The farmer that smelled [the pig] left unexpectedly
+110	sa-2020	animate	El entrenador que escuchó al [delfín] nadaba rápidamente.	al	4	delfín	m	sing	1	?	?	animal	The trainer that listened to [the dolphin] swam quickly
+111	sa-2020	animate	El conductor que persiguió al [camello] paseaba felizmente.	al	4	camello	m	sing	1	?	?	animal	The driver that chased [the camel] went for a walk happily
+112	sa-2020	animate	El hombre que adoraba al [canguro] saltaba incesantemente.	al	4	canguro	m	sing	1	?	?	animal	The man that loved [the kangaroo] jumped unceasingly
+113	sa-2020	animate	El amo que pegó al [orangután] gemía desconsoladamente.	al	4	orangután	m	sing	1	?	?	animal	The owner that hit [the orangután] moaned inconsolably
+114	sa-2020	animate	Las zoólogas que observaron a [las palomas] bebían plácidamente.	a	4	las palomas	f	pl	1	?	?	animal	The zoologists that observed [the pigeons] drank placidly
+115	sa-2020	animate	Las hermanas que buscaron a [las gatas] entraron inesperadamente.	a	4	las gatas	f	pl	1	?	?	animal	The sisters that looked for [the cats] entered unexpectedly
+116	sa-2020	animate	Las niñas que adoraban a [las ardillas] chillaban alegremente.	a	4	las ardillas	f	pl	1	?	?	animal	The girls that loved [the squirrels] screamed happily
+117	sa-2020	animate	Las estudiantes que pegaron a [las monas] paseaban tristemente.	a	4	las monas	f	pl	1	?	?	animal	The students that hit [the monkeys] went for a walk sadly
+118	sa-2020	animate	Los payasos que abrazaron a [los chimpancés] caminaban rápidamente.	a	4	los chimpancés	m	pl	1	?	?	animal	The clowns that hugged [the chimpanzees] walked fast
+119	sa-2020	animate	Los trabajadores que perseguían a [los guepardos] corrían velozmente.	a	4	los guepardos	m	pl	1	?	?	animal	The workers that chased [the cheetahs] ran fast
+120	sa-2020	animate	Los niños que ensuciaron a [los macacos] sonreían frenéticamente.	a	4	los macacos	m	pl	1	?	?	animal	The children that got [the macaques] dirty smiled frantically
+121	sa-2020	animate	Los viejos que oyeron a [los pollos] respiraban fuertemente.	a	4	los pollos	m	pl	1	?	?	animal	The old men that heard [the chickens] breathed loudly
+122	sa-2020	animate	Los técnicos que tocaron a [los hámsters] andaban distraídamente.	a	4	los hámsters	m	pl	1	?	?	animal	The technicians that touched [the hamsters] walked absent-minded
+123	sa-2020	animate	La cebra que ensució a [la turista] descansaba plácidamente.	a	4	la turista	f	sing	1	?	?	human	The zebra that got [the tourist] dirty rested placidly
+124	sa-2020	animate	La cabra que empujó a [la pastora] respiraba velozmente.	a	4	la pastora	f	sing	1	?	?	human	The goat that pushed [the goatherd] was breathing rapidly
+125	sa-2020	animate	La serpiente que detestaba a [la veterinaria] entró sigilosamente.	a	4	la veterinaria	f	sing	1	?	?	human	The snake that detested [the veterinary] entered stealthily
+126	sa-2020	animate	La leoparda que oyó a [la dueña] corrió repentinamente.	a	4	la dueña	f	sing	1	?	?	human	The leopard that heard [the owner] ran suddenly
+127	sa-2020	animate	El pony que buscaba al [jinete] chillaba tristemente.	al	4	jinete	m	sing	1	?	?	human	The pony that looked for [the horse rider] screamed sadly
+128	sa-2020	animate	El león que mató al [cazador] caminaba lentamente.	al	4	cazador	m	sing	1	?	?	human	The lion that killed [the hunter] walked slowly
+129	sa-2020	animate	El caballo que miraba al [cuidador] gruñía desconsoladamente.	al	4	cuidador	m	sing	1	?	?	human	The horse that looked at [the keeper] growled inconsolably
+130	sa-2020	animate	El tigre que atacó al [domador] dormía tranquilamente.	al	4	domador	m	sing	1	?	?	human	The tiger that attacked [the tamer] slept peacefully
+131	sa-2020	animate	El loro que observó al [cantante] cantaba claramente.	al	4	cantante	m	sing	1	?	?	human	The parrot that observed [the singer] sang clearly
+132	sa-2020	animate	Las panteras que atacaron a [las empleadas] descansaban tranquilamente.	a	4	las empleadas	f	pl	1	?	?	human	The panthers that attacked [the employees] rested peacefully
+133	sa-2020	animate	Las burras que pisaron a [las mujeres] gruñían claramente.	a	4	las mujeres	f	pl	1	?	?	human	The donkeys that stepped on [the women] snarled clearly
+134	sa-2020	animate	Las conejas que olieron a [las chicas] saltaban continuamente.	a	4	las chicas	f	pl	1	?	?	human	The rabbits that smelled [the girls] hopped continuously
+135	sa-2020	animate	Las gallinas que detestaban a [las señoras] comían lentamente.	a	4	las señoras	f	pl	1	?	?	human	The chickens that detested [the women] ate slowly
+136	sa-2020	animate	Las lobas que empujaron a [las ecólogas] salieron repentinamente.	a	4	las ecólogas	f	pl	1	?	?	human	The wolves that pushed [the ecologists] left suddenly
+137	sa-2020	animate	Los pájaros que miraban a [los críos] cantaban alegremente.	a	4	los críos	m	pl	1	?	?	human	The birds that looked at [the children] sang happily
+138	sa-2020	animate	Los delfines que mataron a [los pescadores] gemían fuertemente.	a	4	los pescadores	m	pl	1	?	?	human	The dolphins that killed [the fishermen] moaned loudly
+139	sa-2020	animate	Los cocodrilos que vieron a [los asistentes] nadaban frenéticamente.	a	4	los asistentes	m	pl	1	?	?	human	The crocodiles that saw [the assistants] swam frantically
+140	sa-2020	animate	Los flamencos que escucharon a [los ayudantes] dormían felizmente.	a	4	los ayudantes	m	pl	1	?	?	human	The flamingos that heard [the assistants] slept happily
+141	self-re	definite	Gonzalo mató a [la mujer] en el parque.	a	2	la mujer	f	sing	?	1	?		Gonzalo killed [the woman] in the park.
+142	self-re	definite	Patricio lesionó a [la camarera] en la discoteca.	a	2	la camarera	f	sing	?	1	?		Patricio injured [the waitress] at the nightclub
+143	self-re	definite	Carolina golpeó a [la jugadora] en el vestuario.	a	2	la jugadora	f	sing	?	1	?		Carolina hit [the player] in the locker room.
+144	self-re	definite	Elena cuidó a [la paciente] durante dos semanas.	a	2	la paciente	f	sing	?	1	?		Elena took care of [the patient] for two weeks.
+145	self-re	definite	Irene acusó a [la secretaria general] en la asamblea.	a	2	la secretaria general	f	sing	?	1	?		Irene accused [the general secretary] at the assembly.
+146	self-re	definite	Cecilia denunció a [la mujer] en la comisaría de policía.	a	2	la mujer	f	sing	?	1	?		Cecilia reported [the woman] at the police station.
+147	self-re	definite	Josefina vio a [la pastora] en el parque.	a	2	la pastora	f	sing	?	1	?		Josefina saw [the pastor] in the park.
+148	self-re	definite	Julio oyó a [la madre] desde la cocina.	a	2	la madre	f	sing	?	1	?		Julio heard [the mother] from the kitchen.
+149	self-re	indefinite	Pablo mató a [una mujer] durante el secuestro.	a	2	una mujer	f	sing	?	0	?		Pablo killed [a woman] during the kidnapping.
+150	self-re	indefinite	Alberto lesionó a [una adversaria] en el partido de la semana pasada.	a	2	una adversaria	f	sing	?	0	?		Alberto injured [an opponent] during last weeks match.
+151	self-re	indefinite	Andrea golpeó a [una fotógrafa] a la salida del restaurante.	a	2	una fotógrafa	f	sing	?	0	?		Andrea hit [a photographer] at the restaurants exit.
+152	self-re	indefinite	Javier cuidó a [una paciente] con gran profesionalidad.	a	2	una paciente	f	sing	?	0	?		Javier took care of [an patient] very professionally.
+153	self-re	indefinite	Laura acusó a [una trabajadora] en la reunión.	a	2	una trabajadora	f	sing	?	0	?		Laura accused [a worker] at the meeting.
+154	self-re	indefinite	Carlos denunció a [una camarera] tras una disputa.	a	2	una camarera	f	sing	?	0	?		Carlos reported [a waitress] after an argument.
+155	self-re	indefinite	Ana vio a [una política] en la tienda del barrio.	a	2	una política	f	sing	?	0	?		Ana saw [a politician] at the neighbourhoods shop.
+156	self-re	indefinite	Esther oyó a [una niña] en el apartamento de al lado.	a	2	una niña	f	sing	?	0	?		Esther heard [a girl] in the apartment next door.
+157	self-sa	inanimate	La artista que pisó a [la manzana] andaba sigilosamente.	a	4	la manzana	f	sing	0	?	?		The artist that stepped on [the apple] walked stealthily
+158	self-sa	inanimate	La bióloga que abrazó a [la silla] sonreía incesantemente.	a	4	la silla	f	sing	0	?	?		The biologist that hugged [the chair] smiled unceasingly
+159	self-sa	inanimate	La voluntaria que tocó a [la mesa] bebía continuamente.	a	4	la mesa	f	sing	0	?	?		The volunteer that touched [the table] drank continuously
+160	self-sa	inanimate	La ciclista que vio a [la montaña] comía distraídamente.	a	4	la montaña	f	sing	0	?	?		The cyclist that saw [the mountain] ate absent-minded
+161	self-sa	inanimate	La granjera que olió a [la cena] salió inesperadamente.	a	4	la cena	f	sing	0	?	?		The farmer that smelled [the dinner] left unexpectedly
+162	self-sa	inanimate	El entrenador que escuchó al [piano] nadaba rápidamente.	al	4	piano	m	sing	0	?	?		The trainer that listened to [the piano] swam quickly
+163	self-sa	inanimate	El conductor que persiguió al [coche] paseaba felizmente.	al	4	coche	m	sing	0	?	?		The driver that chased [the car] went for a walk happily
+164	self-sa	inanimate	El hombre que adoraba al [sol] saltaba incesantemente.	al	4	sol	m	sing	0	?	?		The man that loved [the sun] jumped unceasingly
+165	self-sa	inanimate	El amo que pegó al [armario] gemía desconsoladamente.	al	4	armario	m	sing	0	?	?		The owner that hit [the closet] moaned inconsolably
+166	self-sa	inanimate	Las zoólogas que observaron a [las hoja] bebían plácidamente.	a	4	las hoja	f	pl	0	?	?		The zoologists that observed [the leaves] drank placidly
+167	self-sa	inanimate	Las hermanas que buscaron a [las bicicletas] entraron inesperadamente.	a	4	las bicicletas	f	pl	0	?	?		The sisters that looked for [the bikes] entered unexpectedly
+168	self-sa	inanimate	Las niñas que adoraban a [las fresas] chillaban alegremente.	a	4	las fresas	f	pl	0	?	?		The girls that loved [the strawberries] screamed happily
+169	self-sa	inanimate	Las estudiantes que pegaron a [las flores] paseaban tristemente.	a	4	las flores	f	pl	0	?	?		The students that hit [the flowers] went for a walk sadly
+170	self-sa	inanimate	Los payasos que abrazaron a [los árboles] caminaban rápidamente.	a	4	los árboles	m	pl	0	?	?		The clowns that hugged [the trees] walked fast
+171	self-sa	inanimate	Los trabajadores que perseguían a [los autobuses] corrían velozmente.	a	4	los autobuses	m	pl	0	?	?		The workers that chased [the buses] ran fast
+172	self-sa	inanimate	Los niños que ensuciaron a [los zapatos] sonreían frenéticamente.	a	4	los zapatos	m	pl	0	?	?		The children that got [the macaques] dirty smiled frantically
+173	self-sa	inanimate	Los viejos que oyeron a [los aviones] respiraban fuertemente.	a	4	los aviones	m	pl	0	?	?		The old men that heard [the airplanes] breathed loudly
+174	self-sa	inanimate	Los técnicos que tocaron a [los teléfonos] andaban distraídamente.	a	4	los teléfonos	m	pl	0	?	?		The technicians that touched [the telephones] walked absent-minded

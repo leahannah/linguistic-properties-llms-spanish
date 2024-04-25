@@ -1,0 +1,9 @@
+id	input_sentence	masked	top_fillers	probabilities
+34	[CLS] La abuela recibió a [MASK] niños. [SEP]	['los']	[['los', 'ambos', 'dos', 'muchos', 'varios']]	[[0.7836 0.0318 0.0204 0.0176 0.0165]]
+37	[CLS] El ladrón secuestró a [MASK] señora. [SEP]	['la']	[['la', 'una', 'esa', 'mi', 'esta']]	[[0.4648 0.3547 0.0419 0.0404 0.0381]]
+38	[CLS] Snoopy miró a [MASK] amigo. [SEP]	['su']	[['su', 'un', 'mi', 'otro', 'sus']]	[[0.9129 0.0705 0.0047 0.0031 0.0014]]
+41	[CLS] Plankton conoció a [MASK] Esponja. [SEP]	['Bob']	[['Bob', 'Ted', 'Cara', 'Gran', '[UNK]']]	[[0.9986 0.0004 0.0001 0.0001 0.0001]]
+51	[CLS] El niño visitó a [MASK] abuela. [SEP]	['su']	[['su', 'la', 'una', 'mi', 'tu']]	[[0.762  0.2079 0.0244 0.0016 0.001 ]]
+54	[CLS] La familia acogió a [MASK] inmigrante. [SEP]	['la']	[['un', 'otro', 'una', 'la', 'algún']]	[[0.8352 0.0614 0.0449 0.0096 0.0092]]
+56	[CLS] Cristina saludó a [MASK] novios. [SEP]	['los']	[['los', 'sus', 'ambos', 'otros', 'su']]	[[0.8505 0.1307 0.0091 0.0018 0.001 ]]
+57	[CLS] El bandido secuestró a [MASK] mujer. [SEP]	['la']	[['una', 'la', 'su', 'otra', 'esta']]	[[0.3879 0.3604 0.1609 0.032  0.0273]]

@@ -1,0 +1,9 @@
+id	input_sentence	masked	top_fillers	probabilities
+34	[CLS] La abuela recibió [MASK] niños. [SEP]	['los']	[['dos', 'tres', 'cinco', 'cuatro', 'seis']]	[[0.121  0.1016 0.084  0.0763 0.0497]]
+37	[CLS] El ladrón secuestró [MASK] señora. [SEP]	['la']	[['una', 'la', 'a', 'mi', 'esta']]	[[0.643  0.1247 0.0504 0.0408 0.0286]]
+38	[CLS] Snoopy miró [MASK] amigo. [SEP]	['su']	[[',', 'al', 'su', 'mi', 'tu']]	[[0.4973 0.2195 0.1036 0.0365 0.0231]]
+41	[CLS] Plankton conoció [MASK] Esponja. [SEP]	['Bob']	[['Bob', 'Cuerpo', 'Ted', 'a', 'Boca']]	[[0.9964 0.0005 0.0004 0.0003 0.0003]]
+51	[CLS] El niño visitó [MASK] abuela. [SEP]	['su']	[['su', 'la', 'una', 'a', 'al']]	[[0.4492 0.2671 0.1412 0.1015 0.0051]]
+54	[CLS] La familia acogió [MASK] inmigrante. [SEP]	['la']	[['al', 'un', 'a', 'como', 'una']]	[[0.806  0.0989 0.0205 0.0159 0.0069]]
+56	[CLS] Cristina saludó [MASK] novios. [SEP]	['los']	[['los', 'sus', 'a', 'como', 'al']]	[[0.5806 0.1006 0.0774 0.0771 0.0734]]
+57	[CLS] El bandido secuestró [MASK] mujer. [SEP]	['la']	[['una', 'la', 'otra', 'su', 'a']]	[[0.8253 0.0507 0.0406 0.0383 0.0141]]

@@ -1,10 +1,11 @@
 {
-    "INPUT_FILE": "affected-targets.tsv",
+    "INPUT_FILE": "fillmask-test-sentences.tsv",
     "EXPERIMENT_TYPE": "dobject-masking",
-    "MODEL_NAME": "dccuchile/bert-base-spanish-wwm-cased",
+    "MODEL_NAME": "google-bert/bert-base-multilingual-cased",
+    "SOURCE": "hg-2023",
+    "CONDITION": null,
     "REMOVE_DOM": false,
-    "MASK_DET_ONLY": false,
-    "MASK_NOUN_ONLY":  true,
+    "MASK_TYPE": "det",
     "NUM_PREDS": 5,
     "PRINT_TO_CONSOLE": true,
     "SAVE_RESULTS": true

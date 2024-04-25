@@ -1,0 +1,9 @@
+id	input_sentence	masked	top_fillers	probabilities
+141	[CLS] Gonzalo mató a [MASK] mujer en el parque. [SEP]	['la']	[['su', 'una', 'la', 'mi', 'esa']]	[[0.7529 0.1585 0.0416 0.0144 0.0106]]
+142	[CLS] Patricio lesionó a [MASK] camarera en la discoteca. [SEP]	['la']	[['una', 'la', 'su', 'un', 'otra']]	[[0.8717 0.0982 0.0133 0.0064 0.0052]]
+143	[CLS] Carolina golpeó a [MASK] jugadora en el vestuario. [SEP]	['la']	[['la', 'una', 'otra', 'esta', 'su']]	[[0.8111 0.1275 0.0405 0.0063 0.0043]]
+144	[CLS] Elena cuidó a [MASK] paciente durante dos semanas. [SEP]	['la']	[['la', 'su', 'un', 'cada', 'este']]	[[0.7003 0.114  0.0622 0.0347 0.0248]]
+145	[CLS] Irene acusó a [MASK] secretaria general en la asamblea. [SEP]	['la']	[['la', 'su', 'una', 'ser', 'un']]	[[0.7644 0.1134 0.0518 0.0484 0.0018]]
+146	[CLS] Cecilia denunció a [MASK] mujer en la comisaría de policía. [SEP]	['la']	[['su', 'la', 'una', 'esta', 'otra']]	[[0.8307 0.1175 0.025  0.0131 0.0049]]
+147	[CLS] Josefina vio a [MASK] pastora en el parque. [SEP]	['la']	[['la', 'una', 'su', 'otra', 'esta']]	[[0.5725 0.3324 0.0695 0.0116 0.0044]]
+148	[CLS] Julio oyó a [MASK] madre desde la cocina. [SEP]	['la']	[['su', 'la', 'mi', 'tu', 'una']]	[[0.8413 0.1261 0.0123 0.0118 0.0025]]

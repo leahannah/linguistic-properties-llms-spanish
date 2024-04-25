@@ -1,0 +1,9 @@
+id	input_sentence	masked	top_fillers	probabilities
+97	[CLS] Pablo mató [MASK] un rehén durante el secuestro. [SEP]	['a']	[['a', 'de', 'también', 'en', 'al']]	[[0.9955 0.0005 0.0004 0.0003 0.0003]]
+98	[CLS] Alberto lesionó [MASK] un defensa en el partido de la semana pasada. [SEP]	['a']	[['a', 'en', 'con', 'por', 'de']]	[[0.3556 0.1702 0.084  0.051  0.0464]]
+99	[CLS] Andrea golpeó [MASK] un fotógrafo a la salida del restaurante. [SEP]	['a']	[['a', 'con', 'de', 'por', 'al']]	[[0.9741 0.0136 0.0024 0.0011 0.0006]]
+100	[CLS] Javier cuidó [MASK] un enfermo con gran profesionalidad. [SEP]	['a']	[['de', 'a', 'por', 'con', 'como']]	[[0.8857 0.075  0.0114 0.002  0.002 ]]
+101	[CLS] Laura acusó [MASK] un trabajador en la reunión. [SEP]	['a']	[['a', 'de', 'al', 'con', '##se']]	[[0.8369 0.132  0.008  0.0056 0.0019]]
+102	[CLS] Carlos denunció [MASK] un camarero tras una disputa. [SEP]	['a']	[['a', 'como', 'ser', 'era', 'con']]	[[0.7836 0.1179 0.048  0.0045 0.0036]]
+103	[CLS] Ana vio [MASK] un político en la tienda del barrio. [SEP]	['a']	[['a', 'vio', '##le', '##se', '##ló']]	[[0.6831 0.2174 0.0185 0.0112 0.0045]]
+104	[CLS] Esther oyó [MASK] un bebé en el apartamento de al lado. [SEP]	['a']	[['a', 'con', 'de', 'también', 'en']]	[[0.8829 0.0338 0.0113 0.0085 0.0037]]

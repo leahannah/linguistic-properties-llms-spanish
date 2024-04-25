@@ -79,23 +79,15 @@ class MLMSentence:
             top_fillers.append(top_t)
         return top_fillers, top_probs
 
-    def save_to_file(self, outputfile):
-        with open(outputfile, mode='a', encoding='utf-8') as f:
-            f.write(str(self.id)+'\t'+self.sentence)
-            for i in range(self.num_masks):
-                f.write('\t'+self.masked_tokens[i])
-                for j in range(self.top_n-1):
-                    f.write('\t'+self.top_fillers[i][j])
-                    f.write('\t'+str(round(self.top_probs[i][j], 4)))
-                f.write('\t'+self.top_fillers[i][-1]+'\t'+str(round(self.top_probs[i][-1], 4)))
-            f.write('\n')
-
     # helper function to add special tokens to sentence in order to use in MLM
     def prep_target(self, sentence, indices):
         s = sentence
         s = s.replace('[', '').replace(']', '')
         s_list = s.split()
         masked_tokens = []
+        if type(indices) != list:
+            indices = [indices]
+        # iteratively mask tokens
         for masked_index in indices:
             masked_tokens.append(s_list[masked_index])
             s_list[masked_index] = '[MASK]' 
