@@ -141,7 +141,7 @@ for SOURCE in SOURCE:
             df_print = df[['id', 'input_sentence', 'masked', 'top_fillers', 'probabilities']]
             full_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, filename)
             df_print.to_csv(full_path, index=False, sep='\t')
-            stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path.replace(f'/{modelname}', ''), 'statistics.tsv')
+            stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'statistics.tsv')
             with open(stats_path, mode='a', encoding='utf-8') as f:
                 str_type = EXPERIMENT_TYPE + str_type
                 for key in stats.keys():
@@ -155,6 +155,7 @@ if PRINT_MODE:
         stats = statistics[i]
         for key in stats.keys():
             print(f'{key} mean probability: {stats[key][0]}, std: {stats[key][1]}, median: {stats[key][2]}, mean rank {stats[key][3]}')
+        print()
 
 
 print()

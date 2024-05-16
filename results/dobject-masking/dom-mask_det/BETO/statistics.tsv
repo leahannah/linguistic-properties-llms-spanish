@@ -8,6 +8,9 @@ hg-2023_nonaffected	dobject-masking-dom-mask_det	BETO	indef	0.1986	0.1974	0.1274
 ms-2013_animate	dobject-masking-dom-mask_det	BETO	dom	0.0	0.0	0.0	5.0
 ms-2013_animate	dobject-masking-dom-mask_det	BETO	def	0.3346	0.3223	0.2841	1.875
 ms-2013_animate	dobject-masking-dom-mask_det	BETO	indef	0.2091	0.2805	0.0475	2.375
+ms-2013_inanimate	dobject-masking-dom-mask_det	BETO	dom	0.0	0.0	0.0	5.0
+ms-2013_inanimate	dobject-masking-dom-mask_det	BETO	def	0.2392	0.3085	0.0039	2.64
+ms-2013_inanimate	dobject-masking-dom-mask_det	BETO	indef	0.0818	0.1377	0.0	3.32
 sa-2020_animate	dobject-masking-dom-mask_det	BETO	dom	0.0	0.0	0.0	5.0
 sa-2020_animate	dobject-masking-dom-mask_det	BETO	def	0.7685	0.2234	0.8622	0.2593
 sa-2020_animate	dobject-masking-dom-mask_det	BETO	indef	0.0237	0.0623	0.0	4.0
