@@ -59,34 +59,34 @@ id	source	condition	sentence	dom	dom_idx	dobject	gender	number	animate	definite	
 58	ms-2013	animate	La maestra ayudó al [niño].	al	3	niño	m	sing	1	?	?	adult	The teacher helped [the boy].
 59	ms-2013	animate	La maestra castigó al [estudiante].	al	3	estudiante	m	sing	1	?	?	adult	The teacher grounded [the student].
 60	ms-2013	animate	El juez juzgó al [criminal].	al	3	criminal	m	sing	1	?	?	adult	The judge judged [the criminal].
-61	ms-2013	inanimate	Alejandra escuchó [la música].		-1	la música	f	sing	0	?	?	child	Alejandra listened to [the music].
-62	ms-2013	inanimate	Blanca Nieves comió [la manzana].		-1	la manzana	f	sing	0	?	?	child	Snow White ate [the apple].
-63	ms-2013	inanimate	El niño aprendío [las matemáticas].		-1	las matemáticas	f	pl	0	?	?	child	The boy learned [mathematics].
-64	ms-2013	inanimate	Antonio bebió [un refresco].		-1	un refresco	m	sing	0	?	?	child	Antonio drank [a soda].
-65	ms-2013	inanimate	Alfonso arregló [la bicicleta].		-1	la bicicleta	f	sing	0	?	?	child	Alfonso fixed [the bike].
-66	ms-2013	inanimate	Mafalda leyó [el libro].		-1	el libro	m	sing	0	?	?	child	Mafalda read [the book].
-67	ms-2013	inanimate	Los amigos firmaron [el papel].		-1	el papel	m	sing	0	?	?	child	The friends signed [the paper].
-68	ms-2013	inanimate	El niño tocó [la planta].		-1	la planta	f	sing	0	?	?	child	The boy touched [the plant].
-69	ms-2013	inanimate	El hombre llevó [el paraguas].		-1	el paraguas	m	sing	0	?	?	child	The man took/carried [the umbrella].
-70	ms-2013	inanimate	La niña abrazó [el oso].		-1	el oso	m	sing	0	?	?	child	The girl hugged [the bear].
-71	ms-2013	inanimate	María besó [el arbol].		-1	el arbol	m	sing	0	?	?	child	Maria kissed [the tree].
-72	ms-2013	inanimate	Miguel vio [la pelota].		-1	la pelota	f	sing	0	?	?	child	Miguel saw [the ball].
-73	ms-2013	inanimate	Los niños visitaron [el museo].		-1	el museo	m	sing	0	?	?	child	The children visited [the museum].
-74	ms-2013	inanimate	Jimmy Newtron conoció [Six Flags].		-1	Six Flags	m	pl	0	?	?	child	Jimmy Neutron went to [Six Flags] (for the first time).
-75	ms-2013	inanimate	Julián tocó [la planta].		-1	la planta	f	sing	0	?	?	adult	Julian touched [the plant].
-76	ms-2013	inanimate	El viejo llevó [el paraguas].		-1	el paraguas	m	sing	0	?	?	adult	The man took/carried [the umbrella].
-77	ms-2013	inanimate	La niña abrazó [el osito].		-1	el osito	m	sing	0	?	?	adult	The girl [hugged the] teddy bear.
-78	ms-2013	inanimate	Beto besó [el trofeo].		-1	el trofeo	m	sing	0	?	?	adult	Beto kissed [the trophy].
-79	ms-2013	inanimate	Victor vio [la pelota].		-1	la pelota	f	sing	0	?	?	adult	Victor saw [the ball].
-80	ms-2013	inanimate	Los niños visitaron [el museo].		-1	el museo	m	sing	0	?	?	adult	The children visited [the museum].
-81	ms-2013	inanimate	Raquel conoció [Chicago].		-1	Chicago	m	sing	0	?	?	adult	Raquel went to [Chicago] (for the first time).
-82	ms-2013	inanimate	Esteban estudió [matemáticas].		-1	matemáticas	m	sing	0	?	?	adult	Esteban studied [math].
-83	ms-2013	inanimate	Alfonso arregló [la bicicleta roja].		-1	la bicicleta roja	f	sing	0	?	?	adult	Alfonso fixed [the red bike].
-84	ms-2013	inanimate	Antonio bebió la [coca cola].		-1	coca cola	m	pl	0	?	?	adult	Antonio drank [a coke].
-85	ms-2013	inanimate	Estefanía compró [un auto].		-1	un auto	m	sing	0	?	?	adult	Estefanía bought [a car].
-86	ms-2013	inanimate	Mercedes escuchó [música].		-1	música	m	sing	0	?	?	adult	Mercedes listened to [music].
-87	ms-2013	inanimate	Carlos leyó [una novela].		-1	una novela	f	sing	0	?	?	adult	Carlos read [a novel].
-88	ms-2013	inanimate	Los novios firmaron [el contrato].		-1	el contrato	m	sing	0	?	?	adult	The couple signed [the contract].
+61	ms-2013	inanimate	Alejandra escuchó a [la música].		2	la música	f	sing	0	?	?	child	Alejandra listened to a [the music].
+62	ms-2013	inanimate	Blanca Nieves comió a [la manzana].		3	la manzana	f	sing	0	?	?	child	Snow White ate a [the apple].
+63	ms-2013	inanimate	El niño aprendío a [las matemáticas].		3	las matemáticas	f	pl	0	?	?	child	The boy learned [mathematics].
+64	ms-2013	inanimate	Antonio bebió a [un refresco].		2	un refresco	m	sing	0	?	?	child	Antonio drank [a soda].
+65	ms-2013	inanimate	Alfonso arregló a [la bicicleta].		2	la bicicleta	f	sing	0	?	?	child	Alfonso fixed [the bike].
+66	ms-2013	inanimate	Mafalda leyó al [libro].		2	el libro	m	sing	0	?	?	child	Mafalda read [the book].
+67	ms-2013	inanimate	Los amigos firmaron al [papel].		3	el papel	m	sing	0	?	?	child	The friends signed [the paper].
+68	ms-2013	inanimate	El niño tocó a [la planta].		3	la planta	f	sing	0	?	?	child	The boy touched [the plant].
+69	ms-2013	inanimate	El hombre llevó al [paraguas].		3	el paraguas	m	sing	0	?	?	child	The man took/carried [the umbrella].
+70	ms-2013	inanimate	La niña abrazó al [oso].		3	el oso	m	sing	0	?	?	child	The girl hugged [the bear].
+71	ms-2013	inanimate	María besó al [arbol].		2	el arbol	m	sing	0	?	?	child	Maria kissed [the tree].
+72	ms-2013	inanimate	Miguel vio a [la pelota].		2	la pelota	f	sing	0	?	?	child	Miguel saw [the ball].
+73	ms-2013	inanimate	Los niños visitaron a [museo].		3	el museo	m	sing	0	?	?	child	The children visited [the museum].
+74	ms-2013	inanimate	Jimmy Newtron conoció a [Six Flags].		3	Six Flags	m	pl	0	?	?	child	Jimmy Neutron went to [Six Flags] (for the first time).
+75	ms-2013	inanimate	Julián tocó a [la planta].		2	la planta	f	sing	0	?	?	adult	Julian touched [the plant].
+76	ms-2013	inanimate	El viejo llevó al [paraguas].		3	el paraguas	m	sing	0	?	?	adult	The man took/carried [the umbrella].
+77	ms-2013	inanimate	La niña abrazó al [osito].		3	el osito	m	sing	0	?	?	adult	The girl [hugged the] teddy bear.
+78	ms-2013	inanimate	Beto besó al [trofeo].		2	el trofeo	m	sing	0	?	?	adult	Beto kissed [the trophy].
+79	ms-2013	inanimate	Victor vio a [la pelota].		2	la pelota	f	sing	0	?	?	adult	Victor saw [the ball].
+80	ms-2013	inanimate	Los niños visitaron al [museo].		3	el museo	m	sing	0	?	?	adult	The children visited [the museum].
+81	ms-2013	inanimate	Raquel conoció a [Chicago].		2	Chicago	m	sing	0	?	?	adult	Raquel went to [Chicago] (for the first time).
+82	ms-2013	inanimate	Esteban estudió a [matemáticas].		2	matemáticas	m	sing	0	?	?	adult	Esteban studied [math].
+83	ms-2013	inanimate	Alfonso arregló a [la bicicleta roja].		2	la bicicleta roja	f	sing	0	?	?	adult	Alfonso fixed [the red bike].
+84	ms-2013	inanimate	Antonio bebió a [la coca cola].		2	coca cola	m	pl	0	?	?	adult	Antonio drank [a coke].
+85	ms-2013	inanimate	Estefanía compró a [un auto].		2	un auto	m	sing	0	?	?	adult	Estefanía bought [a car].
+86	ms-2013	inanimate	Mercedes escuchó a [música].		2	música	m	sing	0	?	?	adult	Mercedes listened to [music].
+87	ms-2013	inanimate	Carlos leyó a [una novela].		2	una novela	f	sing	0	?	?	adult	Carlos read [a novel].
+88	ms-2013	inanimate	Los novios firmaron a [el contrato].		3	el contrato	m	sing	0	?	?	adult	The couple signed [the contract].
 89	re-2021	definite	Gonzalo mató al [mafioso] en el parque.	al	2	mafioso	m	sing	?	1	?		Gonzalo killed [the mobster] in the park.
 90	re-2021	definite	Patricio lesionó al [portero] en la discoteca.	al	2	portero	m	sing	?	1	?		Patricio injured [the doorman] at the nightclub
 91	re-2021	definite	Carolina golpeó al [futbolista] en el vestuario.	al	2	futbolista	m	sing	?	1	?		Carolina hit [the soccer] player in the locker room.

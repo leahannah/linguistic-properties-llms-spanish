@@ -11,7 +11,6 @@ class MLMSentence:
         self.top_n = top_n
         self.top_fillers, self.top_probs = self.compute_mlm_tokens_probs()
 
-    
     def get_sentence(self):
         return self.sentence
     
@@ -65,12 +64,12 @@ class MLMSentence:
         # tokenize
         indexed_tokens = self.tokenizer.convert_tokens_to_ids(self.tokens)
         tokens_tensor = torch.tensor([indexed_tokens])
-        # get masked token indices
-        mask_idx = self.get_masked_indices()
         # predict
         predictions = self.model(tokens_tensor)[0]
         # get mask token predictions
         top_fillers, top_probs = [], []
+        # get masked token indices
+        mask_idx = self.get_masked_indices()
         for msk in mask_idx:
             probs = torch.nn.functional.softmax(predictions[0, msk], dim=-1) 
             top_p, top_indices = torch.topk(probs, self.top_n, sorted=True) # get highest probabilites

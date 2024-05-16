@@ -2,6 +2,7 @@ input	experiment_type	model	filler_type	mean_prob	std_prob	median_prob	mean_rank
 hg-2023_affected	dom-masking	BETO	dom	0.9658	0.0469	0.9883	0.0
 hg-2023_nonaffected	dom-masking	BETO	dom	0.839	0.2599	0.9547	0.125
 ms-2013_animate	dom-masking	BETO	dom	0.9181	0.1912	0.9882	0.0
+ms-2013_inanimate	dom-masking	BETO	dom	0.1453	0.271	0.0044	3.2143
 sa-2020_animate-animal	dom-masking	BETO	dom	0.8395	0.1987	0.9241	0.0556
 sa-2020_animate-human	dom-masking	BETO	dom	0.8076	0.2162	0.8732	0.0556
 re-2021_definite	dom-masking	BETO	dom	0.7615	0.2424	0.8569	0.25
@@ -12,6 +13,7 @@ self-sa_inanimate	dom-masking	BETO	dom	0.352	0.3265	0.264	1.5
 hg-2023_affected	dom-masking	mBERT	dom	0.8637	0.2142	0.9324	0.125
 hg-2023_nonaffected	dom-masking	mBERT	dom	0.6798	0.2553	0.7011	0.125
 ms-2013_animate	dom-masking	mBERT	dom	0.5358	0.3529	0.6455	1.0
+ms-2013_inanimate	dom-masking	mBERT	dom	0.1639	0.1658	0.1148	1.9286
 sa-2020_animate-animal	dom-masking	mBERT	dom	0.4819	0.3414	0.3584	0.7222
 sa-2020_animate-human	dom-masking	mBERT	dom	0.7017	0.3091	0.8567	0.2222
 re-2021_definite	dom-masking	mBERT	dom	0.4358	0.3229	0.4488	1.5

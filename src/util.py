@@ -6,10 +6,14 @@ from transformers import BertForMaskedLM, BertTokenizer
 def load_targets(input_path, source, condition, mask_type, remove_dom):
     df = pd.read_csv(input_path, sep='\t')
     idx = []
+    print(df.shape)
     if source is not None:
         df = df[df['source']==source]
+    print(df.shape)
     if condition is not None:
         df = df[df['condition']==condition]
+    print(source)
+    print(condition)
     if mask_type == 'dom':
         idx = list(df['dom_idx'])
     else:

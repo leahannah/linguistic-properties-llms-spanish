@@ -31,13 +31,14 @@ model_mapping = {'dccuchile/bert-base-spanish-wwm-cased': 'BETO',
                  'microsoft/mdeberta-v3-base': 'mDeBERTa'}
 
 print(f'Start MLM experiment {EXPERIMENT_TYPE} with {INPUT_FILE}')
-print()
 
 # load model
 tokenizer, model = load_model(MODEL_NAME)
 
 # SOURCE = ['hg-2023', 'ms-2013', 'sa-2020', 're-2021', 'self-re', 'self-sa']
 for SOURCE in SOURCE:
+    print(f'SOURCE: {SOURCE}')
+    print()
     # load targets
     input_path = os.path.join(pathlib.Path(__file__).parent.absolute(), '../data/', INPUT_FILE)
     if EXPERIMENT_TYPE == 'dom-masking': 
@@ -118,19 +119,20 @@ for SOURCE in SOURCE:
 
         # save
         if SAVE_MODE:
-            print('SAVE NOW')
+            print('save results')
+            print()
             # initialize output
             str_type = ''
-            name = model_mapping[MODEL_NAME] if MODEL_NAME in model_mapping else MODEL_NAME
+            modelname = model_mapping[MODEL_NAME] if MODEL_NAME in model_mapping else MODEL_NAME
             if EXPERIMENT_TYPE == 'dobject-masking':
                 str_type = '-unmarked-' if REMOVE_DOM else '-dom-' 
                 if MASK_TYPE == 'det':
                     str_type += 'mask_det'
                 if MASK_TYPE == 'noun':
                     str_type += 'mask_noun'
-                output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/{EXPERIMENT_TYPE}/{str_type.strip("-")}/', name)
+                output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/{EXPERIMENT_TYPE}/{str_type.strip("-")}/', modelname)
             else:
-                output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/{EXPERIMENT_TYPE}/', name)
+                output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/{EXPERIMENT_TYPE}/', modelname)
             if not os.path.exists(output_path):
                 os.makedirs(output_path)
             # save
@@ -139,11 +141,11 @@ for SOURCE in SOURCE:
             df_print = df[['id', 'input_sentence', 'masked', 'top_fillers', 'probabilities']]
             full_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, filename)
             df_print.to_csv(full_path, index=False, sep='\t')
-            stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'statistics.tsv')
+            stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path.replace(f'/{modelname}', ''), 'statistics.tsv')
             with open(stats_path, mode='a', encoding='utf-8') as f:
                 str_type = EXPERIMENT_TYPE + str_type
                 for key in stats.keys():
-                    f.write(f'{str_input}\t{str_type}\t{name}\t{key}\t{stats[key][0]}\t{stats[key][1]}\t{stats[key][2]}\t{stats[key][3]}\n')
+                    f.write(f'{str_input}\t{str_type}\t{modelname}\t{key}\t{stats[key][0]}\t{stats[key][1]}\t{stats[key][2]}\t{stats[key][3]}\n')
 
 # print
 if PRINT_MODE:
@@ -152,8 +154,7 @@ if PRINT_MODE:
         print(f'condition: {cond}')
         stats = statistics[i]
         for key in stats.keys():
-            for key in stats.keys():
-                print(f'{key} mean probability: {stats[key][0]}, std: {stats[key][1]}, median: {stats[key][2]}, mean rank {stats[key][3]}')
+            print(f'{key} mean probability: {stats[key][0]}, std: {stats[key][1]}, median: {stats[key][2]}, mean rank {stats[key][3]}')
 
 
 print()
