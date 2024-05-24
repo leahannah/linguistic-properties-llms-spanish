@@ -1,14 +1,15 @@
 import json
 import os
-from util import load_targets, load_model
-from mlm_sentence import MLMSentence
+import pandas as pd
 import numpy as np
 import os
 import pathlib
+from util import load_targets, load_model
+from mlm_sentence import MLMSentence
+# suppress warnings
+pd.set_option('mode.chained_assignment', None)
 np.set_printoptions(suppress=True)
 
-
-#TODO: plot results
 # parse config file
 config_path = os.path.join(pathlib.Path(__file__).parent.absolute(), '..', 'config.json')
 with open(config_path) as f:
@@ -68,7 +69,7 @@ for SOURCE in SOURCE:
         # compute masked language model probabilites for sentence
         inputs, fillers, probabilities, masked_tokens = [], [], [], []
         for index, row in df.iterrows():
-            mlm_sent = MLMSentence(row, model, tokenizer)
+            mlm_sent = MLMSentence(row['sentence'], row['mask_idx'], model, tokenizer)
             input_sent = mlm_sent.get_sentence()
             inputs.append(input_sent)
             top_fillers = mlm_sent.get_top_fillers()
@@ -76,15 +77,15 @@ for SOURCE in SOURCE:
             top_probs = mlm_sent.get_top_probabilities()
             probabilities.append(np.round(top_probs, decimals=4))
             masked_tokens.append(mlm_sent.get_masked_tokens())
-            filler, prob = mlm_sent.get_token_prob(0)
-            rank1, prob1 = mlm_sent.get_filler_prob_rank(['a', 'al'])
+            filler, prob = mlm_sent.get_filler_prob()
+            rank1, prob1 = mlm_sent.get_list_prob_rank(['a', 'al'])
             dom_rank.append(rank1)
             dom_prob.append(prob1)
             if EXPERIMENT_TYPE == 'dobject-masking':
-                rank2, prob2 = mlm_sent.get_filler_prob_rank(['el', 'la', 'las', 'los'])
+                rank2, prob2 = mlm_sent.get_list_prob_rank(['el', 'la', 'las', 'los'])
                 def_rank.append(rank2)
                 def_prob.append(prob2)
-                rank3, prob3 = mlm_sent.get_filler_prob_rank(['un', 'una', 'unas', 'unos'])
+                rank3, prob3 = mlm_sent.get_list_prob_rank(['un', 'una', 'unas', 'unos'])
                 indef_rank.append(rank3)
                 indef_prob.append(prob3)
             if PRINT_MODE:
@@ -98,7 +99,7 @@ for SOURCE in SOURCE:
                 else:
                     mask_cnt = mlm_sent.get_num_masks()
                     for i in range(mask_cnt):
-                        filler, prob = mlm_sent.get_token_prob(0, mask=i+1)
+                        filler, prob = mlm_sent.get_filler_prob(rank=0, mask=i)
                         print(f'{i+1} TOP filler token: {filler}, probability {prob:.4f}')
                     print(f'dom probability: {prob1:.4f} rank: {rank1}')
                     print(f'definite article probability: {prob2:.4f} rank: {rank2}')
