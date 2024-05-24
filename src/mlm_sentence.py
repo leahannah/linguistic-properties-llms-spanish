@@ -4,23 +4,20 @@ import numpy as np
 
 
 class MLMSentence:
-    def __init__(self, sentence, indices, model, tokenizer, sentence_score=False, top_n=5):
+    def __init__(self, sentence, index, model, tokenizer, top_k=5):
         """
         constructor to create a new MLMSentence object
         :param sentence: a sentence marked with []
-        :param indices: token indices to be masked
+        :param index: token index to be masked
         :param model: a loaded pretrained Spanish model suitable for MLM
         :param tokenizer: a loaded tokenizer based on the same model
-        :param top_n: number of most likely fillers to predict for a [MASK]
-        :param: mode='fill-mask' to perform fill mask experiment, 'sentence-score' to score a sentence
+        :param top_k: number of most likely fillers to predict for a [MASK]
         """
-        self.sentence, self.masked_tokens = self.prep_input(sentence, indices)  # prepare sentence
-        self.num_masks = len(self.masked_tokens)
+        self.sentence, self.masked_token = self.prep_input(sentence, index)  # prepare sentence
         self.model = model
         self.tokenizer = tokenizer
-        self.top_n = top_n #TODO: auf top_n verzichten, nach bestimmten Token in allen Vorhersagen suchen, -1 for all tokens in vocab
-        #TODO: conditional: run function separately
-        self.top_fillers, self.top_probs = self.compute_mlm_tokens_probs()  # execute mlm for sentence
+        self.top_k = top_k #TODO: auf top_k verzichten, nach bestimmten Token in allen Vorhersagen suchen, -1 for all tokens in vocaby
+        self.top_fillers, self.top_probs = None, None  # execute mlm for sentence
 
     def get_sentence(self):
         """
@@ -29,87 +26,91 @@ class MLMSentence:
         """
         return self.sentence
 
-    def get_masked_tokens(self):
+    def get_masked_token(self):
         """
-        Get the masked tokens
-        :return: list of masked tokens
+        Get the masked token
+        :return: string masked token
         """
-        return self.masked_tokens
+        return self.masked_token
 
-    def get_num_masks(self):
+    def get_top_fillers(self, num=5):
         """
-        get the number of masked tokens
-        :return: number of masked tokens as integer
-        """
-        return self.num_masks
-
-    def get_top_fillers(self):
-        """
-        get the top_n fillers for each masked token
+        get the top_k fillers for masked token
+        :param num: number of most likely fillers to return
         :return: list of lists containing most likely fillers
         """
-        return self.top_fillers
+        if self.top_fillers is None:
+            print(f'No top fillers have been computed yet. Run function compute_mlm_fillers_probs first.')
+        if num <= len(self.top_fillers):
+            fillers = self.top_fillers[:num]
+        else:
+            fillers = self.top_fillers
+        return fillers
 
-    def get_top_probabilities(self):
+    def get_top_probabilities(self, num=5):
         """
-        get the probabilities for the top_n filler tokens for each masked token
+        get the probabilities for the top_k filler tokens for masked token
+        :param num: number of highest probabilities to return
         :return: list of lists containing softmax probabilities
         """
-        return self.top_probs
+        if self.top_fillers is None:
+            print(f'No top probabilities have been computed yet. Run function compute_mlm_fillers_probs first.')
+        if num < len(self.top_probs):
+            probs = self.top_probs[:num]
+        else:
+            probs = self.top_probs
+        return probs
 
-    def get_filler_prob(self, rank=0, mask=0):
+    def get_filler_prob(self, rank=0):
         """
         get filler and its probability at given rank for given mask index
         :param rank: the rank of the filler, 0 returns the most likely filler (default 0)
-        :param mask: mask index, 0 returns the filler for first mask (default 0)
         :return: filler and probability
         """
-        if rank > self.top_n - 1 or rank < 0:
-            print(f'Rank {rank} is out of range for top {self.top_n} ranking (first rank is 0)')
+        if rank > self.top_k - 1 or rank < 0:
+            print(f'Rank {rank} is out of range for top {self.top_k} ranking (first rank is 0)')
             return
-        if mask > self.num_masks - 1:
-            print(f'Mask {mask} is out of range, only {self.num_masks} tokens masked')
+        if self.top_fillers is None or self.top_probs is None:
+            print(f'No fillers and probabilities have been computed yet. Run function compute_mlm_fillers_probs first.')
             return
-        return self.top_fillers[mask][rank], self.top_probs[mask][rank]
+        return self.top_fillers[rank], self.top_probs[rank]
 
-    def get_token_prob_rank(self, token, mask=0):
+    def get_token_prob_rank(self, token):
         """
         get rank and probability for given token being predicted at given mask index
         :param token: list of tokens to look for
-        :param mask: mask index, 0 checks for token in predictions for first mask (default 0)
         :return: rank and probability for token, if not found 5 and 0.0
         """
-        rank, prob = 5, 0.0
-        if mask > self.num_masks - 1 or self.get_num_masks() == 0:
-            print(f'Mask {mask} is out of range, only {self.num_masks} tokens masked')
+        rank, prob = self.top_k, 0.0
+        if self.top_fillers is None or self.top_probs is None:
+            print(f'No fillers and probabilities have been computed yet. Run function compute_mlm_fillers_probs first.')
             return
-        if token in self.top_fillers[mask]:
-            rank = self.top_fillers[mask].index(token)
-            prob = self.top_probs[mask][rank]
+        if token in self.top_fillers:
+            rank = self.top_fillers.index(token)
+            prob = self.top_probs[rank]
         return rank, prob
 
     # find instances of list in fillers (e.g. dom markers, (in)definite articles)
-    def get_list_prob_rank(self, li, mask=0):
+    def get_list_prob_rank(self, li):
         """
         get probability of an item list of tokens being predicted at given mask index
         :param li: list of tokens to look for
-        :param mask: mask index, 0 checks for token in predictions for first mask (default 0)
-        :return: rank and probability for most likely from list, if none found 5 and 0.0
+        :return: rank and probability for most likely from list, if none found top_k and 0.0
         """
-        rank, prob = 5, 0.0
-        if mask > self.num_masks or self.get_num_masks() == 0:
-            print(f'Mask {mask} is out of range, only {self.num_masks} tokens masked')
+        rank, prob = self.top_k, 0.0
+        if self.top_fillers is None or self.top_probs is None:
+            print(f'No fillers and probabilities have been computed yet. Run function compute_mlm_fillers_probs first.')
             return
         for token in li:
-            new_rank, new_prob = self.get_token_prob_rank(token, mask=mask)
+            new_rank, new_prob = self.get_token_prob_rank(token)
             if new_rank < rank:
                 rank = new_rank
                 prob = new_prob
         return rank, prob
 
-    def compute_mlm_tokens_probs(self):
+    def compute_mlm_fillers_probs(self):
         """
-        compute most likely fillers and their softmax probabilities for all masked tokens
+        compute most likely fillers and their softmax probabilities for masked token
         :return: two lists of lists containing most likely fillers and their probability
         """
         # tokenize
@@ -119,32 +120,29 @@ class MLMSentence:
         tokens_tensor = torch.tensor([indexed_tokens])
         # predict
         predictions = self.model(tokens_tensor)[0]
-        # get mask token predictions
-        top_fillers, top_probs = [], []
-        # get masked token indices
-        mask_idx = self.get_masked_indices(tokens)
-        for msk in mask_idx:
-            # TODO: sorted probs for all tokens in vocab --> compute dom rank even if > 5
-            # sorted_probs, sorted_idx = torch.topk(log_probs, k=probs.shape[0], sorted=True)
-            # index = sorted_idx.tolist().index(indexed_masked)
-            probs = torch.nn.functional.softmax(predictions[0, msk], dim=-1) # get softmwax outputs
-            top_p, top_indices = torch.topk(probs, self.top_n, sorted=True)  # get highest probabilites
-            top_t = self.tokenizer.convert_ids_to_tokens(top_indices)  # get tokens with highest probability
-            top_probs.append(top_p.tolist())
-            top_fillers.append(top_t)
+        # get masked token index
+        mask_idx = self.get_masked_index(tokens)
+        probs = torch.nn.functional.softmax(predictions[0, mask_idx], dim=-1) # get softmwax outputs
+        # if top_k < 1, get sorted probabilities for all tokens in vocab
+        if self.top_k < 1:
+            self.top_k = probs.shape[0]
+        top_probs, top_indices = torch.topk(probs, self.top_k, sorted=True)  # get highest probabilites
+        top_fillers = self.tokenizer.convert_ids_to_tokens(top_indices)  # get tokens with highest probability
+        self.top_fillers = top_fillers
+        self.top_probs = top_probs.tolist()
         return top_fillers, top_probs
 
-    def sentence_score(self, log=True, return_ranks=False, per_token=False):
+    def compute_sentence_score(self, log=True, per_token=False, return_ranks=False):
         """
         function to compute a likelihood score for a sentence based on the softmax (log) probabilities of each token
         :param log: if True, score is based on logarithmic probability (default True)
-        :param return_ranks: if True, function returns a list of ranks for each token in the probability distribution (default False)
-        :param per_token: if True, function returns a list of (log) probabilites for each token (default False)S
-        :return: the (log) probability score for the sentence or a list of probabilities, optional: list of ranks
+        :param per_token: if True, function returns a list of (log) probabilites for each token (default False)
+        :param return_ranks: if True and per_token True, function additionally returns a list of ranks for each token in the probability distribution (default False)
+        :return: the (log) probability score for the sentence or a list of probabilities plus optional: list of ranks
         """
         probabilities, ranks = [], []
         for i in range(len(self.sentence.split())):
-            s, masked = self.prep_input(self.sentence, indices=[i]) # mask token at index i
+            s, masked = self.prep_input(self.sentence, index=i) # mask token at index i
             s = '[CLS]' + s + '[SEP]' # add special tokens
             # tokenize
             tokens = self.tokenizer.tokenize(s)
@@ -154,15 +152,15 @@ class MLMSentence:
             indexed_masked = self.tokenizer.convert_tokens_to_ids(tokenized_masked)[0]
             # predict
             predictions = self.model(tokens_tensor)[0]
-            # get masked token indices
-            mask_idx = self.get_masked_indices(tokens)[0]
+            # get masked token index
+            mask_idx = self.get_masked_index(tokens)
             # get (log) probabilities
             if log:
                 probs = torch.nn.functional.log_softmax(predictions[0, mask_idx], dim=-1)
             else:
                 probs = torch.nn.functional.softmax(predictions[0, mask_idx], dim=-1)
             # return rank of masked token
-            if return_ranks:
+            if per_token and return_ranks:
                 top_probs, top_idx = torch.topk(probs, probs.shape[0], sorted=True)
                 rank = top_idx.tolist().index(indexed_masked)
                 ranks.append(rank)
@@ -174,65 +172,62 @@ class MLMSentence:
             return (probabilities, ranks) if return_ranks else probabilities
         else: # return probability score
             if log: # sum for logarithmic probabilities
-                return (np.sum(probabilities), ranks) if return_ranks else np.sum(probabilities)
+                score = np.sum(probabilities)
             else: # product for probabilities
-                return (np.prod(probabilities), ranks) if return_ranks else np.prod(probabilities)
+                score = np.prod(probabilities)
+            return score
 
     # helper function to add special tokens to sentence in order to use in MLM
-    def prep_input(self, sent, indices):
+    def prep_input(self, sent, index):
         """
         prepare sentence by inserting [MASK] tokens and begin and end of sentence markers
         :param sentence: the sentence to be prepped
-        :param indices: token indices to be masked
+        :param index: token index to be masked
         :return: the prepared sentence, and the tokens replaced with [MASK]
         """
         s_list = re.findall(r'[\w?!,]+|[^\s\w]+', sent)
-        masked_tokens = []
-        if type(indices) is not list:
-            indices = [indices]
-        # iteratively mask tokens
-        for masked_index in indices:
-            if masked_index in range(len(s_list)):
-                masked_tokens.append(s_list[masked_index])
-                s_list[masked_index] = '[MASK]'
+        # mask token if index in sentence range
+        masked_token = None
+        if index in range(len(s_list)):
+            masked_token = s_list[index]
+            s_list[index] = '[MASK]'
         s = ' '.join(s_list)
-        return s, masked_tokens
+        return s, masked_token
 
-    # helper function to get masked indices from tokenized sentence
-    def get_masked_indices(self, tokens):
+    # helper function to get masked index from tokenized sentence
+    def get_masked_index(self, tokens):
         """
-        get indices of [MASK] tokens
+        get index of [MASK] tokens
         :param tokens: list of tokenized sentence
-        :return: list of indices
+        :return: int index
         """
-        masked_indices = []
+        masked_index = None
         for i, token in enumerate(tokens):
             if token == '[MASK]':
-                masked_indices.append(i)
-        return masked_indices
+                masked_index = i
+        return masked_index
 
 
-from util import load_model
-
-tokenizer, model = load_model('dccuchile/bert-base-spanish-wwm-cased')
-
-sentence1 = 'Cristina saludó a la mujer.'
-mlm_sent1 = MLMSentence(sentence1, indices=-1, model=model, tokenizer=tokenizer, sentence_score=True)
-score1, ranks1 = mlm_sent1.sentence_score(return_ranks=True)
-
-sentence2 = 'Cristina saludó la mujer.'
-mlm_sent2 = MLMSentence(sentence2, indices=-1, model=model, tokenizer=tokenizer, sentence_score=True)
-score2, ranks2 = mlm_sent2.sentence_score(return_ranks=True)
-
-print(f'DOM score: {score1}, ranks: {ranks1}')
-print(f'unmarked score: {score2}, ranks: {ranks2}')
+# from util import load_model
+#
+# tokenizer, model = load_model('dccuchile/bert-base-spanish-wwm-cased')
+#
+# sentence1 = 'Cristina saludó a la mujer.'
+# mlm_sent1 = MLMSentence(sentence1, index=-1, model=model, tokenizer=tokenizer, sentence_score=True)
+# score1, ranks1 = mlm_sent1.sentence_score(return_ranks=True)
+#
+# sentence2 = 'Cristina saludó la mujer.'
+# mlm_sent2 = MLMSentence(sentence2, index=-1, model=model, tokenizer=tokenizer, sentence_score=True)
+# score2, ranks2 = mlm_sent2.sentence_score(return_ranks=True)
+#
+# print(f'DOM score: {score1}, ranks: {ranks1}')
+# print(f'unmarked score: {score2}, ranks: {ranks2}')
 
 
 
 # # basic info about sentence
 # print(mlm_sent.get_sentence())
-# print(mlm_sent.get_masked_tokens())
-# print(mlm_sent.get_num_masks())
+# print(mlm_sent.get_masked_token())
 # print()
 #
 # # info about fill mask predictions

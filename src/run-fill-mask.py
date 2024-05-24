@@ -1,5 +1,4 @@
 import json
-import os
 import pandas as pd
 import numpy as np
 import os
@@ -69,38 +68,39 @@ for SOURCE in SOURCE:
         # compute masked language model probabilites for sentence
         inputs, fillers, probabilities, masked_tokens = [], [], [], []
         for index, row in df.iterrows():
-            mlm_sent = MLMSentence(row['sentence'], row['mask_idx'], model, tokenizer)
-            input_sent = mlm_sent.get_sentence()
+            mlm_sent = MLMSentence(row['sentence'], row['mask_idx'], model, tokenizer, top_k=-1)
+            mlm_sent.compute_mlm_fillers_probs() # compute mask fillers and probabilities
+            input_sent = mlm_sent.get_sentence() # get input sentence as string
             inputs.append(input_sent)
-            top_fillers = mlm_sent.get_top_fillers()
+            top_fillers = mlm_sent.get_top_fillers() # get top predicted fillers
             fillers.append(top_fillers)
-            top_probs = mlm_sent.get_top_probabilities()
+            top_probs = mlm_sent.get_top_probabilities() # get probabilities for top fillers
             probabilities.append(np.round(top_probs, decimals=4))
-            masked_tokens.append(mlm_sent.get_masked_tokens())
-            filler, prob = mlm_sent.get_filler_prob()
-            rank1, prob1 = mlm_sent.get_list_prob_rank(['a', 'al'])
+            masked_tokens.append(mlm_sent.get_masked_token()) # get tokens masked
+            filler, prob = mlm_sent.get_filler_prob() # get most likely filler and its probability
+            rank1, prob1 = mlm_sent.get_list_prob_rank(['a', 'al']) # get rank and probability for most likely dom filler
             dom_rank.append(rank1)
             dom_prob.append(prob1)
             if EXPERIMENT_TYPE == 'dobject-masking':
+                # get rank and probability for most likely definite article
                 rank2, prob2 = mlm_sent.get_list_prob_rank(['el', 'la', 'las', 'los'])
                 def_rank.append(rank2)
                 def_prob.append(prob2)
+                # get rank and probability for most likely indefinite article
                 rank3, prob3 = mlm_sent.get_list_prob_rank(['un', 'una', 'unas', 'unos'])
                 indef_rank.append(rank3)
                 indef_prob.append(prob3)
             if PRINT_MODE:
                 print(input_sent)
                 print(row['en_sentence'])
-                print(f'masked tokens: {mlm_sent.get_masked_tokens()}')
+                print(f'masked token: {mlm_sent.get_masked_token()}')
                 print(f'top predictions: {top_fillers}')
                 if EXPERIMENT_TYPE == 'dom-masking':
                     print(f'most likely filler tokens: {filler} probability {prob: .4f}')
                     print(f'dom probability: {prob1:.4f} rank: {rank1}')
                 else:
-                    mask_cnt = mlm_sent.get_num_masks()
-                    for i in range(mask_cnt):
-                        filler, prob = mlm_sent.get_filler_prob(rank=0, mask=i)
-                        print(f'{i+1} TOP filler token: {filler}, probability {prob:.4f}')
+                    filler, prob = mlm_sent.get_filler_prob(rank=0)
+                    print(f'TOP filler token: {filler}, probability {prob:.4f}')
                     print(f'dom probability: {prob1:.4f} rank: {rank1}')
                     print(f'definite article probability: {prob2:.4f} rank: {rank2}')
                     print(f'indefinite article probability: {prob3:.4f} rank: {rank3}')
@@ -159,5 +159,4 @@ if PRINT_MODE:
         print()
 
 
-print()
 print(f'Successfully completed {EXPERIMENT_TYPE} with {INPUT_FILE}')

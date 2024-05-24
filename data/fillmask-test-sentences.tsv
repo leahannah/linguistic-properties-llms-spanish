@@ -155,21 +155,3 @@ id	source	condition	sentence	dom	dom_idx	dobject	gender	number	animate	definite	
 154	self-re	indefinite	Carlos denunció a [una camarera] tras una disputa.	a	2	una camarera	f	sing	?	0	?		Carlos reported [a waitress] after an argument.
 155	self-re	indefinite	Ana vio a [una política] en la tienda del barrio.	a	2	una política	f	sing	?	0	?		Ana saw [a politician] at the neighbourhoods shop.
 156	self-re	indefinite	Esther oyó a [una niña] en el apartamento de al lado.	a	2	una niña	f	sing	?	0	?		Esther heard [a girl] in the apartment next door.
-157	self-sa	inanimate	La artista que pisó a [la manzana] andaba sigilosamente.	a	4	la manzana	f	sing	0	?	?		The artist that stepped on [the apple] walked stealthily
-158	self-sa	inanimate	La bióloga que abrazó a [la silla] sonreía incesantemente.	a	4	la silla	f	sing	0	?	?		The biologist that hugged [the chair] smiled unceasingly
-159	self-sa	inanimate	La voluntaria que tocó a [la mesa] bebía continuamente.	a	4	la mesa	f	sing	0	?	?		The volunteer that touched [the table] drank continuously
-160	self-sa	inanimate	La ciclista que vio a [la montaña] comía distraídamente.	a	4	la montaña	f	sing	0	?	?		The cyclist that saw [the mountain] ate absent-minded
-161	self-sa	inanimate	La granjera que olió a [la cena] salió inesperadamente.	a	4	la cena	f	sing	0	?	?		The farmer that smelled [the dinner] left unexpectedly
-162	self-sa	inanimate	El entrenador que escuchó al [piano] nadaba rápidamente.	al	4	piano	m	sing	0	?	?		The trainer that listened to [the piano] swam quickly
-163	self-sa	inanimate	El conductor que persiguió al [coche] paseaba felizmente.	al	4	coche	m	sing	0	?	?		The driver that chased [the car] went for a walk happily
-164	self-sa	inanimate	El hombre que adoraba al [sol] saltaba incesantemente.	al	4	sol	m	sing	0	?	?		The man that loved [the sun] jumped unceasingly
-165	self-sa	inanimate	El amo que pegó al [armario] gemía desconsoladamente.	al	4	armario	m	sing	0	?	?		The owner that hit [the closet] moaned inconsolably
-166	self-sa	inanimate	Las zoólogas que observaron a [las hoja] bebían plácidamente.	a	4	las hoja	f	pl	0	?	?		The zoologists that observed [the leaves] drank placidly
-167	self-sa	inanimate	Las hermanas que buscaron a [las bicicletas] entraron inesperadamente.	a	4	las bicicletas	f	pl	0	?	?		The sisters that looked for [the bikes] entered unexpectedly
-168	self-sa	inanimate	Las niñas que adoraban a [las fresas] chillaban alegremente.	a	4	las fresas	f	pl	0	?	?		The girls that loved [the strawberries] screamed happily
-169	self-sa	inanimate	Las estudiantes que pegaron a [las flores] paseaban tristemente.	a	4	las flores	f	pl	0	?	?		The students that hit [the flowers] went for a walk sadly
-170	self-sa	inanimate	Los payasos que abrazaron a [los árboles] caminaban rápidamente.	a	4	los árboles	m	pl	0	?	?		The clowns that hugged [the trees] walked fast
-171	self-sa	inanimate	Los trabajadores que perseguían a [los autobuses] corrían velozmente.	a	4	los autobuses	m	pl	0	?	?		The workers that chased [the buses] ran fast
-172	self-sa	inanimate	Los niños que ensuciaron a [los zapatos] sonreían frenéticamente.	a	4	los zapatos	m	pl	0	?	?		The children that got [the macaques] dirty smiled frantically
-173	self-sa	inanimate	Los viejos que oyeron a [los aviones] respiraban fuertemente.	a	4	los aviones	m	pl	0	?	?		The old men that heard [the airplanes] breathed loudly
-174	self-sa	inanimate	Los técnicos que tocaron a [los teléfonos] andaban distraídamente.	a	4	los teléfonos	m	pl	0	?	?		The technicians that touched [the telephones] walked absent-minded
