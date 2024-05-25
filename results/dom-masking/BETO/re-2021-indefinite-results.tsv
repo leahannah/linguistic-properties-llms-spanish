@@ -1,9 +1,0 @@
-id	input_sentence	masked	top_fillers	probabilities
-97	[CLS] Pablo mató [MASK] un rehén durante el secuestro. [SEP]	['a']	[['a', 'también', 'accidentalmente', 'además', 'al']]	[[0.9967 0.0017 0.0002 0.0002 0.0001]]
-98	[CLS] Alberto lesionó [MASK] un defensa en el partido de la semana pasada. [SEP]	['a']	[['a', 'con', 'contra', 'por', 'gravemente']]	[[0.9546 0.0222 0.0077 0.0059 0.0026]]
-99	[CLS] Andrea golpeó [MASK] un fotógrafo a la salida del restaurante. [SEP]	['a']	[['a', 'con', 'contra', 'por', 'accidentalmente']]	[[0.9961 0.0019 0.0005 0.0005 0.0002]]
-100	[CLS] Javier cuidó [MASK] un enfermo con gran profesionalidad. [SEP]	['a']	[['a', 'de', 'siempre', 'del', 'hasta']]	[[0.5611 0.4357 0.0005 0.0002 0.0001]]
-101	[CLS] Laura acusó [MASK] un trabajador en la reunión. [SEP]	['a']	[['a', 'de', 'ser', 'con', 'como']]	[[0.978  0.0075 0.0026 0.0021 0.001 ]]
-102	[CLS] Carlos denunció [MASK] un camarero tras una disputa. [SEP]	['a']	[['a', 'ante', 'contra', 'ser', 'con']]	[[0.9923 0.0017 0.0011 0.001  0.0009]]
-103	[CLS] Ana vio [MASK] un político en la tienda del barrio. [SEP]	['a']	[['a', 'pasar', 'entrar', 'aparecer', 'llegar']]	[[0.9753 0.0038 0.0037 0.0028 0.0014]]
-104	[CLS] Esther oyó [MASK] un bebé en el apartamento de al lado. [SEP]	['a']	[['a', 'de', 'nacer', 'sobre', 'como']]	[[0.7166 0.1443 0.0208 0.0188 0.0152]]

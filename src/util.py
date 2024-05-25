@@ -4,17 +4,11 @@ import pandas as pd
 from transformers import BertForMaskedLM, BertTokenizer
 
 
-def load_targets(input_path, source, condition, mask_type, remove_dom):
+def load_targets(input_path, source, mask_type=None, remove_dom=False):
     df = pd.read_csv(input_path, sep='\t')
     idx = []
-    print(df.shape)
     if source is not None:
         df = df[df['source']==source]
-    print(df.shape)
-    if condition is not None:
-        df = df[df['condition']==condition]
-    print(source)
-    print(condition)
     if mask_type == 'dom':
         idx = list(df['dom_idx'])
     else:
@@ -41,8 +35,9 @@ def load_targets(input_path, source, condition, mask_type, remove_dom):
                     idx.append(-1)
         df['sentence'] = sentences
     df['sentence'] = df['sentence'].str.replace('[', '').str.replace(']', '') # remove brackets
-    df['mask_idx'] = idx
-    df = df[df['mask_idx'] > 0] # remove sentences that have no tokens to mask
+    if mask_type is not None:
+        df['mask_idx'] = idx
+        df = df[df['mask_idx'] > 0] # remove sentences that have no tokens to mask
     return df
 
 # helper function: find index of dom-marker (a/ al) in target sentence

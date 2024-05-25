@@ -1,10 +1,12 @@
+import math
+
 import torch
 import re
 import numpy as np
 
 
 class MLMSentence:
-    def __init__(self, sentence, index, model, tokenizer, top_k=5):
+    def __init__(self, sentence, model, tokenizer, index, top_k=5):
         """
         constructor to create a new MLMSentence object
         :param sentence: a sentence marked with []
@@ -132,10 +134,11 @@ class MLMSentence:
         self.top_probs = top_probs.tolist()
         return top_fillers, top_probs
 
-    def compute_sentence_score(self, log=True, per_token=False, return_ranks=False):
+    def sentence_score(self, reduce='mean', log=False, per_token=False, return_ranks=False):
         """
         function to compute a likelihood score for a sentence based on the softmax (log) probabilities of each token
-        :param log: if True, score is based on logarithmic probability (default True)
+        :param reduce: method to reduce token probabilities to a single score, either mean or prod (default mean)
+        :param log: if True, score is based on logarithmic probability (default False)
         :param per_token: if True, function returns a list of (log) probabilites for each token (default False)
         :param return_ranks: if True and per_token True, function additionally returns a list of ranks for each token in the probability distribution (default False)
         :return: the (log) probability score for the sentence or a list of probabilities plus optional: list of ranks
@@ -167,15 +170,23 @@ class MLMSentence:
             # get probability of masked token being predicted for [MASK]
             filler_prob = probs[indexed_masked]
             probabilities.append(float(filler_prob))
+        probabilities = torch.tensor(probabilities)
         # return
         if per_token: # return list of probabilities
+            probabilities = probabilities.tolist()
             return (probabilities, ranks) if return_ranks else probabilities
-        else: # return probability score
-            if log: # sum for logarithmic probabilities
-                score = np.sum(probabilities)
-            else: # product for probabilities
-                score = np.prod(probabilities)
-            return score
+        else: # return probability
+            if reduce == 'prod': # product
+                if log: # sum for logarithmic probabilities
+                    score = probabilities.sum()
+                else: # product for probabilities
+                    score = probabilities.prod()
+            else: # mean
+                if log:
+                    score = probabilities.logsumexp(0) - math.log(probabilities.shape[0])
+                else:
+                    score = probabilities.mean()
+            return float(score)
 
     # helper function to add special tokens to sentence in order to use in MLM
     def prep_input(self, sent, index):
@@ -206,33 +217,3 @@ class MLMSentence:
             if token == '[MASK]':
                 masked_index = i
         return masked_index
-
-
-# from util import load_model
-#
-# tokenizer, model = load_model('dccuchile/bert-base-spanish-wwm-cased')
-#
-# sentence1 = 'Cristina saludó a la mujer.'
-# mlm_sent1 = MLMSentence(sentence1, index=-1, model=model, tokenizer=tokenizer, sentence_score=True)
-# score1, ranks1 = mlm_sent1.sentence_score(return_ranks=True)
-#
-# sentence2 = 'Cristina saludó la mujer.'
-# mlm_sent2 = MLMSentence(sentence2, index=-1, model=model, tokenizer=tokenizer, sentence_score=True)
-# score2, ranks2 = mlm_sent2.sentence_score(return_ranks=True)
-#
-# print(f'DOM score: {score1}, ranks: {ranks1}')
-# print(f'unmarked score: {score2}, ranks: {ranks2}')
-
-
-
-# # basic info about sentence
-# print(mlm_sent.get_sentence())
-# print(mlm_sent.get_masked_token())
-# print()
-#
-# # info about fill mask predictions
-# print(mlm_sent.get_top_fillers())
-# print(mlm_sent.get_top_probabilities())
-# print(mlm_sent.get_filler_prob())
-# print(mlm_sent.get_token_prob_rank('a'))
-# print(mlm_sent.get_list_prob_rank(['a', 'al']))

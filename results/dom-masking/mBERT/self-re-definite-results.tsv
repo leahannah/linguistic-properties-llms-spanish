@@ -1,9 +1,0 @@
-id	input_sentence	masked	top_fillers	probabilities
-141	[CLS] Gonzalo mató [MASK] la mujer en el parque. [SEP]	['a']	[['a', 'al', 'de', 'A', 'la']]	[[0.9987 0.0001 0.0001 0.0001 0.    ]]
-142	[CLS] Patricio lesionó [MASK] la camarera en la discoteca. [SEP]	['a']	[['a', 'con', 'de', 'en', ',']]	[[0.9528 0.0115 0.0057 0.0047 0.0013]]
-143	[CLS] Carolina golpeó [MASK] la jugadora en el vestuario. [SEP]	['a']	[['a', 'de', 'con', 'al', 'por']]	[[0.9927 0.0014 0.0009 0.0005 0.0004]]
-144	[CLS] Elena cuidó [MASK] la paciente durante dos semanas. [SEP]	['a']	[['de', 'a', 'sobre', 'con', '##a']]	[[0.9574 0.0342 0.001  0.0007 0.0007]]
-145	[CLS] Irene acusó [MASK] la secretaria general en la asamblea. [SEP]	['a']	[['a', 'de', '##se', ',', 'ser']]	[[0.888  0.0648 0.0078 0.0029 0.0023]]
-146	[CLS] Cecilia denunció [MASK] la mujer en la comisaría de policía. [SEP]	['a']	[['a', 'de', 'ser', 'con', 'por']]	[[0.9833 0.0027 0.001  0.0009 0.0008]]
-147	[CLS] Josefina vio [MASK] la pastora en el parque. [SEP]	['a']	[['a', 'vio', '##le', '##ló', '##la']]	[[0.9607 0.0157 0.0098 0.0017 0.0015]]
-148	[CLS] Julio oyó [MASK] la madre desde la cocina. [SEP]	['a']	[['a', 'con', 'de', 'sobre', 'por']]	[[0.9494 0.0116 0.0086 0.003  0.0025]]

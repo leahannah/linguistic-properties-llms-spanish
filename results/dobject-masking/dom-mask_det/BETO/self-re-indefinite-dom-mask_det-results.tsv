@@ -1,9 +1,0 @@
-id	input_sentence	masked	top_fillers	probabilities
-149	[CLS] Pablo mató a [MASK] mujer durante el secuestro. [SEP]	['una']	[['su', 'una', 'la', 'otra', 'esa']]	[[0.6767 0.1894 0.0922 0.0241 0.0068]]
-150	[CLS] Alberto lesionó a [MASK] adversaria en el partido de la semana pasada. [SEP]	['una']	[['una', 'su', 'otra', 'la', 'un']]	[[0.4901 0.4795 0.0144 0.0094 0.0038]]
-151	[CLS] Andrea golpeó a [MASK] fotógrafa a la salida del restaurante. [SEP]	['una']	[['la', 'una', 'otra', 'su', 'un']]	[[0.5743 0.3955 0.0128 0.0092 0.0033]]
-152	[CLS] Javier cuidó a [MASK] paciente con gran profesionalidad. [SEP]	['una']	[['su', 'la', 'cada', 'este', 'un']]	[[0.3747 0.3005 0.2101 0.0341 0.0173]]
-153	[CLS] Laura acusó a [MASK] trabajadora en la reunión. [SEP]	['una']	[['una', 'la', 'su', 'otra', 'un']]	[[0.5538 0.1766 0.0804 0.0521 0.0224]]
-154	[CLS] Carlos denunció a [MASK] camarera tras una disputa. [SEP]	['una']	[['una', 'la', 'su', 'otra', 'un']]	[[0.4812 0.4432 0.0601 0.004  0.0024]]
-155	[CLS] Ana vio a [MASK] política en la tienda del barrio. [SEP]	['una']	[['la', 'una', 'un', 'su', 'los']]	[[0.4297 0.0696 0.0496 0.0418 0.0204]]
-156	[CLS] Esther oyó a [MASK] niña en el apartamento de al lado. [SEP]	['una']	[['la', 'una', 'esa', 'su', 'otra']]	[[0.6959 0.2581 0.0168 0.0095 0.0064]]

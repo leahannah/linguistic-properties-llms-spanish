@@ -1,9 +1,0 @@
-id	input_sentence	masked	top_fillers	probabilities
-97	[CLS] Pablo mató [MASK] rehén durante el secuestro. [SEP]	['un']	[['un', 'al', 'una', 'otro', 'el']]	[[0.4824 0.4326 0.0425 0.0238 0.0058]]
-98	[CLS] Alberto lesionó [MASK] defensa en el partido de la semana pasada. [SEP]	['un']	[['su', 'una', 'la', 'al', 'un']]	[[0.3114 0.277  0.1577 0.1179 0.0572]]
-99	[CLS] Andrea golpeó [MASK] fotógrafo a la salida del restaurante. [SEP]	['un']	[['al', 'un', 'a', 'el', 'una']]	[[0.9509 0.0215 0.0143 0.0077 0.0008]]
-100	[CLS] Javier cuidó [MASK] enfermo con gran profesionalidad. [SEP]	['un']	[['al', 'del', 'el', 'aquel', 'su']]	[[0.6427 0.3134 0.0387 0.0013 0.0011]]
-101	[CLS] Laura acusó [MASK] trabajador en la reunión. [SEP]	['un']	[['al', 'de', 'a', 'un', 'del']]	[[0.7117 0.0741 0.063  0.0472 0.0141]]
-102	[CLS] Carlos denunció [MASK] camarero tras una disputa. [SEP]	['un']	[['al', 'un', 'a', 'su', 'el']]	[[0.9172 0.0203 0.0157 0.0124 0.0111]]
-103	[CLS] Ana vio [MASK] político en la tienda del barrio. [SEP]	['un']	[['al', 'el', 'un', 'lo', 'a']]	[[0.5795 0.1472 0.0979 0.0387 0.0268]]
-104	[CLS] Esther oyó [MASK] bebé en el apartamento de al lado. [SEP]	['un']	[['al', 'un', 'del', 'el', 'una']]	[[0.5655 0.1976 0.1215 0.0613 0.0142]]

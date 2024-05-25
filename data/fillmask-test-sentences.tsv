@@ -86,7 +86,7 @@ id	source	condition	sentence	dom	dom_idx	dobject	gender	number	animate	definite	
 85	ms-2013	inanimate	Estefanía compró a [un auto].		2	un auto	m	sing	0	?	?	adult	Estefanía bought [a car].
 86	ms-2013	inanimate	Mercedes escuchó a [música].		2	música	m	sing	0	?	?	adult	Mercedes listened to [music].
 87	ms-2013	inanimate	Carlos leyó a [una novela].		2	una novela	f	sing	0	?	?	adult	Carlos read [a novel].
-88	ms-2013	inanimate	Los novios firmaron a [el contrato].		3	el contrato	m	sing	0	?	?	adult	The couple signed [the contract].
+88	ms-2013	inanimate	Los novios firmaron al [contrato].		3	el contrato	m	sing	0	?	?	adult	The couple signed [the contract].
 89	re-2021	definite	Gonzalo mató al [mafioso] en el parque.	al	2	mafioso	m	sing	?	1	?		Gonzalo killed [the mobster] in the park.
 90	re-2021	definite	Patricio lesionó al [portero] en la discoteca.	al	2	portero	m	sing	?	1	?		Patricio injured [the doorman] at the nightclub
 91	re-2021	definite	Carolina golpeó al [futbolista] en el vestuario.	al	2	futbolista	m	sing	?	1	?		Carolina hit [the soccer] player in the locker room.
@@ -139,19 +139,19 @@ id	source	condition	sentence	dom	dom_idx	dobject	gender	number	animate	definite	
 138	sa-2020	animate	Los delfines que mataron a [los pescadores] gemían fuertemente.	a	4	los pescadores	m	pl	1	?	?	human	The dolphins that killed [the fishermen] moaned loudly
 139	sa-2020	animate	Los cocodrilos que vieron a [los asistentes] nadaban frenéticamente.	a	4	los asistentes	m	pl	1	?	?	human	The crocodiles that saw [the assistants] swam frantically
 140	sa-2020	animate	Los flamencos que escucharon a [los ayudantes] dormían felizmente.	a	4	los ayudantes	m	pl	1	?	?	human	The flamingos that heard [the assistants] slept happily
-141	self-re	definite	Gonzalo mató a [la mujer] en el parque.	a	2	la mujer	f	sing	?	1	?		Gonzalo killed [the woman] in the park.
-142	self-re	definite	Patricio lesionó a [la camarera] en la discoteca.	a	2	la camarera	f	sing	?	1	?		Patricio injured [the waitress] at the nightclub
-143	self-re	definite	Carolina golpeó a [la jugadora] en el vestuario.	a	2	la jugadora	f	sing	?	1	?		Carolina hit [the player] in the locker room.
-144	self-re	definite	Elena cuidó a [la paciente] durante dos semanas.	a	2	la paciente	f	sing	?	1	?		Elena took care of [the patient] for two weeks.
-145	self-re	definite	Irene acusó a [la secretaria general] en la asamblea.	a	2	la secretaria general	f	sing	?	1	?		Irene accused [the general secretary] at the assembly.
-146	self-re	definite	Cecilia denunció a [la mujer] en la comisaría de policía.	a	2	la mujer	f	sing	?	1	?		Cecilia reported [the woman] at the police station.
-147	self-re	definite	Josefina vio a [la pastora] en el parque.	a	2	la pastora	f	sing	?	1	?		Josefina saw [the pastor] in the park.
-148	self-re	definite	Julio oyó a [la madre] desde la cocina.	a	2	la madre	f	sing	?	1	?		Julio heard [the mother] from the kitchen.
-149	self-re	indefinite	Pablo mató a [una mujer] durante el secuestro.	a	2	una mujer	f	sing	?	0	?		Pablo killed [a woman] during the kidnapping.
-150	self-re	indefinite	Alberto lesionó a [una adversaria] en el partido de la semana pasada.	a	2	una adversaria	f	sing	?	0	?		Alberto injured [an opponent] during last weeks match.
-151	self-re	indefinite	Andrea golpeó a [una fotógrafa] a la salida del restaurante.	a	2	una fotógrafa	f	sing	?	0	?		Andrea hit [a photographer] at the restaurants exit.
-152	self-re	indefinite	Javier cuidó a [una paciente] con gran profesionalidad.	a	2	una paciente	f	sing	?	0	?		Javier took care of [an patient] very professionally.
-153	self-re	indefinite	Laura acusó a [una trabajadora] en la reunión.	a	2	una trabajadora	f	sing	?	0	?		Laura accused [a worker] at the meeting.
-154	self-re	indefinite	Carlos denunció a [una camarera] tras una disputa.	a	2	una camarera	f	sing	?	0	?		Carlos reported [a waitress] after an argument.
-155	self-re	indefinite	Ana vio a [una política] en la tienda del barrio.	a	2	una política	f	sing	?	0	?		Ana saw [a politician] at the neighbourhoods shop.
-156	self-re	indefinite	Esther oyó a [una niña] en el apartamento de al lado.	a	2	una niña	f	sing	?	0	?		Esther heard [a girl] in the apartment next door.
+141	re-2021-modified	definite	Gonzalo mató a [la mujer] en el parque.	a	2	la mujer	f	sing	?	1	?		Gonzalo killed [the woman] in the park.
+142	re-2021-modified	definite	Patricio lesionó a [la camarera] en la discoteca.	a	2	la camarera	f	sing	?	1	?		Patricio injured [the waitress] at the nightclub
+143	re-2021-modified	definite	Carolina golpeó a [la jugadora] en el vestuario.	a	2	la jugadora	f	sing	?	1	?		Carolina hit [the player] in the locker room.
+144	re-2021-modified	definite	Elena cuidó a [la paciente] durante dos semanas.	a	2	la paciente	f	sing	?	1	?		Elena took care of [the patient] for two weeks.
+145	re-2021-modified	definite	Irene acusó a [la secretaria general] en la asamblea.	a	2	la secretaria general	f	sing	?	1	?		Irene accused [the general secretary] at the assembly.
+146	re-2021-modified	definite	Cecilia denunció a [la mujer] en la comisaría de policía.	a	2	la mujer	f	sing	?	1	?		Cecilia reported [the woman] at the police station.
+147	re-2021-modified	definite	Josefina vio a [la pastora] en el parque.	a	2	la pastora	f	sing	?	1	?		Josefina saw [the pastor] in the park.
+148	re-2021-modified	definite	Julio oyó a [la madre] desde la cocina.	a	2	la madre	f	sing	?	1	?		Julio heard [the mother] from the kitchen.
+149	re-2021-modified	indefinite	Pablo mató a [una mujer] durante el secuestro.	a	2	una mujer	f	sing	?	0	?		Pablo killed [a woman] during the kidnapping.
+150	re-2021-modified	indefinite	Alberto lesionó a [una adversaria] en el partido de la semana pasada.	a	2	una adversaria	f	sing	?	0	?		Alberto injured [an opponent] during last weeks match.
+151	re-2021-modified	indefinite	Andrea golpeó a [una fotógrafa] a la salida del restaurante.	a	2	una fotógrafa	f	sing	?	0	?		Andrea hit [a photographer] at the restaurants exit.
+152	re-2021-modified	indefinite	Javier cuidó a [una paciente] con gran profesionalidad.	a	2	una paciente	f	sing	?	0	?		Javier took care of [an patient] very professionally.
+153	re-2021-modified	indefinite	Laura acusó a [una trabajadora] en la reunión.	a	2	una trabajadora	f	sing	?	0	?		Laura accused [a worker] at the meeting.
+154	re-2021-modified	indefinite	Carlos denunció a [una camarera] tras una disputa.	a	2	una camarera	f	sing	?	0	?		Carlos reported [a waitress] after an argument.
+155	re-2021-modified	indefinite	Ana vio a [una política] en la tienda del barrio.	a	2	una política	f	sing	?	0	?		Ana saw [a politician] at the neighbourhoods shop.
+156	re-2021-modified	indefinite	Esther oyó a [una niña] en el apartamento de al lado.	a	2	una niña	f	sing	?	0	?		Esther heard [a girl] in the apartment next door.
