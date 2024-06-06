@@ -1,0 +1,11 @@
+input	condition	model	mean	median	std
+hg-2023	affected	mBERT	discrepancy	0.5741	0.1606	0.6234
+hg-2023	nonaffected	mBERT	discrepancy	0.4564	0.1905	0.4781
+ms-2013	animate	mBERT	discrepancy	0.7412	0.9734	0.499
+ms-2013	inanimate	mBERT	discrepancy	0.2363	0.818	0.0229
+re-2021	definite	mBERT	discrepancy	0.0186	0.0381	0.0069
+re-2021	indefinite	mBERT	discrepancy	0.4967	0.2379	0.5669
+sa-2020	animate-animal	mBERT	discrepancy	0.3042	0.2793	0.1582
+sa-2020	animate-human	mBERT	discrepancy	0.4098	0.3194	0.588
+re-2021-modified	definite	mBERT	discrepancy	0.5578	0.2426	0.6358
+re-2021-modified	indefinite	mBERT	discrepancy	0.4835	0.3347	0.6163

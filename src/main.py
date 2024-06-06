@@ -1,7 +1,13 @@
 import json
 import os
 import pathlib
+import time
 import fill_mask, sentence_score
+
+
+# measure time
+start_time = time.time()
+print(f'Start time: {time.ctime()}')
 
 # parse config file
 config_path = os.path.join(pathlib.Path(__file__).parent.absolute(), '..', 'config.json')
@@ -41,3 +47,8 @@ else:
     print(f'EXPERIMENT parameter {EXPERIMENT} is not in the set of valid experiments.\n'
           f'Choose from: {valid_experiments}.')
 
+# measure time
+end_time = time.time()
+total_seconds = end_time-start_time
+print(f'Measured time: {int(total_seconds/60)}.{int(total_seconds%60)} minutes')
+print(f'End time: {time.ctime()}')

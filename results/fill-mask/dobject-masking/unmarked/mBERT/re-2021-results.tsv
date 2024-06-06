@@ -1,0 +1,9 @@
+id	condition	input_sentence	masked	top_fillers	probabilities
+97	indefinite	Pablo mató [MASK] rehén durante el secuestro .	un	['al', 'un', 'el', 'otro', 'su']	[0.4391 0.2958 0.1416 0.0441 0.0224]
+98	indefinite	Alberto lesionó [MASK] defensa en el partido de la semana pasada .	un	['la', 'su', 'en', 'una', 'el']	[0.5803 0.2915 0.0284 0.0234 0.0218]
+99	indefinite	Andrea golpeó [MASK] fotógrafo a la salida del restaurante .	un	['al', 'el', 'un', 'su', 'otro']	[0.5038 0.2504 0.1852 0.0103 0.0083]
+100	indefinite	Javier cuidó [MASK] enfermo con gran profesionalidad .	un	['al', 'del', 'de', 'el', 'como']	[0.3046 0.2121 0.1681 0.053  0.0271]
+101	indefinite	Laura acusó [MASK] trabajador en la reunión .	un	['al', 'un', 'el', 'a', 'de']	[0.8801 0.047  0.0316 0.0114 0.0059]
+102	indefinite	Carlos denunció [MASK] camarero tras una disputa .	un	['como', 'al', 'a', 'el', 'un']	[0.4665 0.3118 0.0808 0.036  0.035 ]
+103	indefinite	Ana vio [MASK] político en la tienda del barrio .	un	['vio', 'un', 'el', 'otro', 'partido']	[0.3955 0.2479 0.0516 0.0169 0.0123]
+104	indefinite	Esther oyó [MASK] bebé en el apartamento de al lado .	un	['al', 'un', 'el', 'otro', 'su']	[0.3704 0.3072 0.2433 0.0305 0.0276]

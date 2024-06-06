@@ -1,4 +1,3 @@
-import json
 import pandas as pd
 import numpy as np
 import os
@@ -9,6 +8,7 @@ from mlm_sentence import MLMSentence
 # suppress warnings
 pd.set_option('mode.chained_assignment', None)
 np.set_printoptions(suppress=True)
+
 
 def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE):
     model_mapping = {'dccuchile/bert-base-spanish-wwm-cased': 'BETO',
@@ -111,10 +111,18 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
                                   round(np.median(indef_prob), 4), round(np.mean(indef_rank), 4)]
             statistics.append(stats)
 
+        # add columns to df
+        data['input_sentence'] = inputs
+        data['masked'] = masked_tokens
+        data['top_fillers'] = fillers
+        data['probabilities'] = probabilities
+        data['condition'] = condis
+
         # print
         if PRINT_MODE:
             print(data.head())
             print(data.shape)
+            print()
             print(f'{source} {TYPE} result statistics')
             for i, cond in enumerate(conditions):
                 print(f'condition: {cond}')
@@ -124,13 +132,6 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
                         f'{key} mean probability: {stats[key][0]}, std: {stats[key][1]}, median: {stats[key][2]}, mean rank {stats[key][3]}')
                 print()
 
-        # add columns to df
-        data['input_sentence'] = inputs
-        data['masked'] = masked_tokens
-        data['top_fillers'] = fillers
-        data['probabilities'] = probabilities
-        data['conditions'] = condis
-
         # save
         if SAVE_MODE:
             print('save results')
@@ -139,27 +140,25 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
             str_type = ''
             modelname = model_mapping[MODEL_NAME] if MODEL_NAME in model_mapping else MODEL_NAME
             if TYPE == 'dobject-masking':
-                str_type = '-unmarked-' if REMOVE_DOM else '-dom-'
-                str_type += MASK_TYPE
+                str_type = 'unmarked' if REMOVE_DOM else 'dom'
                 output_path = os.path.join(pathlib.Path(__file__).parent.absolute(),
-                                           f'../results/fill-mask/{TYPE}/{str_type.strip("-")}/', modelname)
+                                           f'../results/fill-mask/{TYPE}/{str_type}/', modelname)
             else:
-                output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/fill-mask/{TYPE}/',
-                                           modelname)
+                output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/fill-mask/{TYPE}/', modelname)
             if not os.path.exists(output_path):
                 os.makedirs(output_path)
             # save
-            filename = f'{SOURCE}-{str_type}-results.tsv'
-            df_print = data[['id', 'input_sentence', 'masked', 'top_fillers', 'probabilities']]
+            filename = f'{source}-results.tsv'
+            df_print = data[['id', 'condition', 'input_sentence', 'masked', 'top_fillers', 'probabilities']]
             full_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, filename)
             df_print.to_csv(full_path, index=False, sep='\t')
             stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'statistics.tsv')
+            exp_type = TYPE + '-' + str_type if TYPE == 'dobject' else TYPE
             for i, cond in enumerate(conditions):
                 stats = statistics[i]
                 with open(stats_path, mode='a', encoding='utf-8') as f:
-                    str_type = TYPE + str_type
                     for key in stats.keys():
                         f.write(
-                            f'{SOURCE}-{cond}\t{str_type}\t{modelname}\t{key}\t{stats[key][0]}\t{stats[key][1]}\t{stats[key][2]}\t{stats[key][3]}\n')
+                            f'{source}\t{cond}\t{exp_type}\t{modelname}\t{key}\t{stats[key][0]}\t{stats[key][1]}\t{stats[key][2]}\t{stats[key][3]}\n')
 
     print(f'Successfully completed fill-mask {TYPE} experiment with {INPUT_FILE}')

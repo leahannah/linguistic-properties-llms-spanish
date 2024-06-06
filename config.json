@@ -1,11 +1,11 @@
 {
     "EXPERIMENT": "sentence-score",
     "MODEL_NAME": "dccuchile/bert-base-spanish-wwm-cased",
-    "INPUT_FILE": "fillmask-test-sentences.tsv",
-    "SOURCE": "ms-2013",
+    "INPUT_FILE": "testdata-merged.tsv",
+    "SOURCE": null,
     "PRINT_TO_CONSOLE": true,
-    "SAVE_RESULTS": false,
-    "TYPE": "dom-masking",
+    "SAVE_RESULTS": true,
+    "TYPE": "dobject-masking",
     "MASK_TYPE": "det",
-    "REMOVE_DOM": false
+    "REMOVE_DOM": true
 }
