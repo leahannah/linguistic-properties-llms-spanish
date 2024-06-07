@@ -183,6 +183,7 @@ class MLMSentence:
                     score = probabilities.prod()
             else: # mean
                 if log:
+                    # based on https://github.com/simonepri/lm-scorer/blob/master/lm_scorer/models/abc/base.py
                     score = probabilities.logsumexp(0) - math.log(probabilities.shape[0])
                 else:
                     score = probabilities.mean()
