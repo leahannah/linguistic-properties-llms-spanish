@@ -47,7 +47,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
         # find unique conditions
         conditions = list(data['condition'].unique())
         statistics = []
-        inputs, fillers, probabilities, masked_tokens, condis = [], [], [], [], []
+        inputs, fillers, probabilities, masked_tokens, dom_ranks, dom_probs, condis = [], [], [], [], [], [], []
         for cond in conditions:
             # filter data for condition
             df = data[data['condition'] == cond]
@@ -102,6 +102,8 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
                         print(f'indefinite article probability: {prob3:.4f} rank: {rank3}')
                     print()
 
+            dom_probs.extend(dom_prob)
+            dom_ranks.extend(dom_rank)
             stats = {'dom': [round(np.mean(dom_prob), 4), round(np.std(dom_prob), 4), round(np.median(dom_prob), 4),
                              round(np.mean(dom_rank), 4)]}
             if TYPE == 'dobject-masking':
@@ -117,6 +119,8 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
         data['top_fillers'] = fillers
         data['probabilities'] = probabilities
         data['condition'] = condis
+        data['dom_prob'] = [round(x, 4) for x in dom_probs]
+        data['dom_rank'] = [round(x, 4) for x in dom_ranks]
 
         # print
         if PRINT_MODE:
@@ -149,7 +153,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
                 os.makedirs(output_path)
             # save
             filename = f'{source}-results.tsv'
-            df_print = data[['id', 'condition', 'input_sentence', 'masked', 'top_fillers', 'probabilities']]
+            df_print = data[['id', 'condition', 'input_sentence', 'masked', 'top_fillers', 'probabilities', 'dom_prob', 'dom_rank']]
             full_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, filename)
             df_print.to_csv(full_path, index=False, sep='\t')
             stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'statistics.tsv')
