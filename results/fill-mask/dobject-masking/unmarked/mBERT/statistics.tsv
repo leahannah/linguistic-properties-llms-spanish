@@ -1,3 +1,4 @@
+input	condition	experiment_type	model	filler_type	mean	median	std	mean_rank
 hg-2023	affected	dobject-masking	mBERT	dom	0.4813	0.3125	0.5416	0.625
 hg-2023	affected	dobject-masking	mBERT	def	0.3217	0.2966	0.199	0.875
 hg-2023	affected	dobject-masking	mBERT	indef	0.0195	0.0184	0.0128	4.1875

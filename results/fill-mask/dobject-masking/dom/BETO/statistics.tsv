@@ -1,4 +1,4 @@
-input	condition	experiment_type	model	filler_type	mean_prob
+input	condition	experiment_type	model	filler_type	mean	median	std	mean_rank
 hg-2023	affected	dobject-masking-dom	BETO	dom	0.0012	0.0019	0.0004	38.0
 hg-2023	affected	dobject-masking-dom	BETO	def	0.113	0.2021	0.0216	5.75
 hg-2023	affected	dobject-masking-dom	BETO	indef	0.2304	0.2567	0.1969	0.75

@@ -1,57 +1,57 @@
-id	condition	input_sentence	masked	top_fillers	probabilities
-33	animate	Bob Esponja saludó [MASK] Squidward .	a	['a', 'al', 'de', 'en', 'con']	[0.9184 0.0378 0.0068 0.0063 0.0055]
-34	animate	La abuela recibió [MASK] los niños .	a	['a', 'todos', 'con', 'también', 'hasta']	[0.9826 0.006  0.0017 0.0012 0.0008]
-35	animate	El Goblin verde atacó [MASK] Spiderman .	a	['a', 'al', 'con', 'por', 'contra']	[0.991  0.0042 0.0007 0.0006 0.0004]
-36	animate	La maestra ayudó [MASK] niño .	al	['al', 'el', 'del', 'a', 'un']	[0.9908 0.0055 0.002  0.0003 0.0002]
-37	animate	El ladrón secuestró [MASK] la señora .	a	['a', 'de', 'con', 'y', ',']	[0.9997 0.0001 0.     0.     0.    ]
-38	animate	Snoopy miró [MASK] su amigo .	a	['a', 'hacia', 'con', 'por', 'para']	[0.931  0.026  0.0197 0.0066 0.0029]
-39	animate	La maestra castigó [MASK] estudiante .	al	['al', 'el', 'la', 'del', 'a']	[0.9937 0.0035 0.0009 0.0005 0.0003]
-40	animate	Buzz Lightyear llevó [MASK] Woody .	a	['a', 'al', 'el', 'con', 'un']	[0.971  0.0104 0.0023 0.0023 0.0021]
-41	animate	Plankton conoció [MASK] Bob Esponja .	a	['a', 'al', 'con', 'en', 'de']	[0.9958 0.0021 0.001  0.0002 0.0001]
-42	animate	Mickey abrazó [MASK] Pluto .	a	['a', 'de', 'al', 'con', 'su']	[0.9872 0.0017 0.0016 0.001  0.0008]
-43	animate	La abuelita visitó [MASK] niño .	al	['al', 'el', 'un', 'a', 'del']	[0.9892 0.0088 0.0005 0.0005 0.0003]
-44	animate	Fiona besó [MASK] Shrek .	a	['a', 'al', '[UNK]', 'en', 'el']	[0.9667 0.011  0.004  0.0027 0.002 ]
-45	animate	La mamá tocó [MASK] bebé .	al	['al', 'el', 'un', 'su', 'la']	[0.8679 0.0946 0.0187 0.0091 0.0041]
-46	animate	Hello Kitty vio [MASK] Keroppi .	a	['a', 'en', 'el', '[UNK]', 'de']	[0.3488 0.0551 0.045  0.0408 0.0325]
-47	animate	Diego llevó [MASK] Isabel .	a	['a', 'hasta', 'con', 'la', 'una']	[0.9743 0.0061 0.0019 0.0017 0.0017]
-48	animate	Eduardo conoció [MASK] Bella .	a	['a', 'en', 'una', 'la', 'de']	[0.9898 0.0017 0.0009 0.0009 0.0008]
-49	animate	Alejandro abrazó [MASK] Consuelo .	a	['a', 'al', 'su', 'la', 'de']	[0.9929 0.0018 0.0013 0.0012 0.0005]
-50	animate	Mario vio [MASK] Jaime .	a	['a', 'la', 'el', 'que', '[UNK]']	[0.1558 0.1242 0.0684 0.038  0.033 ]
-51	animate	El niño visitó [MASK] su abuela .	a	['a', 'con', 'también', 'nuevamente', 'regularmente']	[0.9944 0.0028 0.0005 0.0002 0.0001]
-52	animate	Julieta besó [MASK] Romeo .	a	['a', 'al', 'á', 'de', 'con']	[0.9836 0.0081 0.0019 0.0011 0.0009]
-53	animate	Ana tocó [MASK] bebé .	al	['al', 'el', 'un', 'su', 'la']	[0.8217 0.1035 0.0468 0.0143 0.0034]
-54	animate	La familia acogió [MASK] la inmigrante .	a	['a', 'hasta', 'con', 'allí', 'también']	[0.9984 0.0002 0.0001 0.0001 0.0001]
-55	animate	El ladrón atacó [MASK] presidente .	al	['al', 'el', 'un', 'a', 'su']	[0.9818 0.0147 0.0011 0.0011 0.0004]
-56	animate	Cristina saludó [MASK] los novios .	a	['a', 'por', 'con', 'de', 'ante']	[0.9965 0.0012 0.0007 0.0003 0.0002]
-57	animate	El bandido secuestró [MASK] la mujer .	a	['a', 'de', 'también', 'hasta', 'con']	[0.9994 0.0001 0.0001 0.     0.    ]
-58	animate	La maestra ayudó [MASK] niño .	al	['al', 'el', 'del', 'a', 'un']	[0.9908 0.0055 0.002  0.0003 0.0002]
-59	animate	La maestra castigó [MASK] estudiante .	al	['al', 'el', 'la', 'del', 'a']	[0.9937 0.0035 0.0009 0.0005 0.0003]
-60	animate	El juez juzgó [MASK] criminal .	al	['al', 'el', 'la', 'como', 'a']	[0.901  0.0684 0.0067 0.0056 0.0033]
-61	inanimate	Alejandra escuchó [MASK] la música .	a	['mucho', 'siempre', 'toda', 'a', 'también']	[0.3064 0.0981 0.0782 0.0724 0.0572]
-62	inanimate	Blanca Nieves comió [MASK] la manzana .	a	['toda', 'de', 'accidentalmente', 'primero', 'solo']	[0.8111 0.1278 0.0066 0.0062 0.0038]
-63	inanimate	El niño aprendío [MASK] las matemáticas .	a	['a', 'de', 'con', 'bien', 'también']	[0.2428 0.1144 0.0836 0.0763 0.0671]
-64	inanimate	Antonio bebió [MASK] un refresco .	a	['de', 'también', 'entonces', 'como', 'sólo']	[0.2775 0.1705 0.0627 0.0593 0.0445]
-65	inanimate	Alfonso arregló [MASK] la bicicleta .	a	['bien', 'rápidamente', 'también', 'toda', 'entonces']	[0.1232 0.0696 0.0575 0.0559 0.0516]
-66	inanimate	Mafalda leyó [MASK] libro .	al	['el', 'su', 'un', 'este', 'del']	[0.8899 0.0463 0.018  0.0167 0.0128]
-67	inanimate	Los amigos firmaron [MASK] papel .	al	['el', 'un', 'este', 'su', 'ese']	[0.5979 0.3239 0.0365 0.0098 0.0083]
-68	inanimate	El niño tocó [MASK] la planta .	a	['a', 'en', 'con', 'toda', 'de']	[0.2696 0.178  0.145  0.0405 0.0279]
-69	inanimate	El hombre llevó [MASK] paraguas .	al	['un', 'el', 'su', 'mi', 'otro']	[0.6708 0.2374 0.0681 0.0046 0.0021]
-70	inanimate	La niña abrazó [MASK] oso .	al	['al', 'el', 'un', 'su', 'otro']	[0.7237 0.1466 0.115  0.0079 0.0022]
-71	inanimate	María besó [MASK] arbol .	al	['el', 'un', 'al', 'aquel', 'su']	[0.8062 0.092  0.0753 0.0087 0.0067]
-72	inanimate	Miguel vio [MASK] la pelota .	a	['caer', 'pasar', 'rodar', 'llegar', 'a']	[0.2467 0.1525 0.0806 0.0652 0.0413]
-73	inanimate	Los niños visitaron [MASK] museo .	a	['el', 'al', 'este', 'un', 'su']	[0.9673 0.0088 0.0075 0.0046 0.0033]
-74	inanimate	Jimmy Newtron conoció [MASK] Six Flags .	a	['a', 'en', 'The', 'los', '[UNK]']	[0.9239 0.0277 0.0114 0.0039 0.0034]
-75	inanimate	Julián tocó [MASK] la planta .	a	['en', 'con', 'a', 'de', 'toda']	[0.2462 0.206  0.1668 0.0597 0.0552]
-76	inanimate	El viejo llevó [MASK] paraguas .	al	['el', 'un', 'su', 'mi', 'dos']	[0.509  0.3262 0.1056 0.0079 0.0063]
-77	inanimate	La niña abrazó [MASK] osito .	al	['al', 'el', 'su', 'un', 'a']	[0.791  0.1168 0.0724 0.0162 0.001 ]
-78	inanimate	Beto besó [MASK] trofeo .	al	['el', 'su', 'un', 'al', 'ese']	[0.8697 0.0724 0.0197 0.0161 0.0046]
-79	inanimate	Victor vio [MASK] la pelota .	a	['caer', 'pasar', 'rodar', 'llegar', 'a']	[0.3305 0.1506 0.0631 0.0546 0.0425]
-80	inanimate	Los niños visitaron [MASK] museo .	al	['el', 'al', 'este', 'un', 'su']	[0.9673 0.0088 0.0075 0.0046 0.0033]
-81	inanimate	Raquel conoció [MASK] Chicago .	a	['a', 'en', 'de', '[UNK]', 'el']	[0.686  0.1955 0.0093 0.0092 0.0062]
-82	inanimate	Esteban estudió [MASK] matemáticas .	a	['también', 'las', 'primero', 'en', 'principalmente']	[0.5845 0.065  0.043  0.0256 0.0247]
-83	inanimate	Alfonso arregló [MASK] la bicicleta roja .	a	['también', 'con', 'entonces', 'primero', 'rápidamente']	[0.099  0.079  0.062  0.0528 0.052 ]
-84	inanimate	Antonio bebió [MASK] la coca cola .	a	['toda', 'de', 'en', 'con', 'también']	[0.4772 0.362  0.0258 0.0202 0.0175]
-85	inanimate	Estefanía compró [MASK] un auto .	a	['entonces', 'también', 'todo', 'rápidamente', 'solo']	[0.1119 0.1017 0.0678 0.0482 0.0335]
-86	inanimate	Mercedes escuchó [MASK] música .	a	['la', 'su', 'esa', 'mucha', 'esta']	[0.5258 0.255  0.0441 0.0362 0.0308]
-87	inanimate	Carlos leyó [MASK] una novela .	a	['también', 'allí', 'recientemente', 'en', 'juntos']	[0.2134 0.1811 0.1042 0.0882 0.0354]
-88	inanimate	Los novios firmaron [MASK] contrato .	al	['el', 'un', 'su', 'este', 'ese']	[0.6691 0.2579 0.0323 0.0123 0.0056]
+id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank
+33	animate	Bob Esponja saludó [MASK] Squidward .	a	['a', 'al', 'de', 'en', 'con']	[0.9184 0.0378 0.0068 0.0063 0.0055]	0.9184	0
+34	animate	La abuela recibió [MASK] los niños .	a	['a', 'todos', 'con', 'también', 'hasta']	[0.9826 0.006  0.0017 0.0012 0.0008]	0.9826	0
+35	animate	El Goblin verde atacó [MASK] Spiderman .	a	['a', 'al', 'con', 'por', 'contra']	[0.991  0.0042 0.0007 0.0006 0.0004]	0.991	0
+36	animate	La maestra ayudó [MASK] niño .	al	['al', 'el', 'del', 'a', 'un']	[0.9908 0.0055 0.002  0.0003 0.0002]	0.9908	0
+37	animate	El ladrón secuestró [MASK] la señora .	a	['a', 'de', 'con', 'y', ',']	[0.9997 0.0001 0.     0.     0.    ]	0.9997	0
+38	animate	Snoopy miró [MASK] su amigo .	a	['a', 'hacia', 'con', 'por', 'para']	[0.931  0.026  0.0197 0.0066 0.0029]	0.931	0
+39	animate	La maestra castigó [MASK] estudiante .	al	['al', 'el', 'la', 'del', 'a']	[0.9937 0.0035 0.0009 0.0005 0.0003]	0.9937	0
+40	animate	Buzz Lightyear llevó [MASK] Woody .	a	['a', 'al', 'el', 'con', 'un']	[0.971  0.0104 0.0023 0.0023 0.0021]	0.971	0
+41	animate	Plankton conoció [MASK] Bob Esponja .	a	['a', 'al', 'con', 'en', 'de']	[0.9958 0.0021 0.001  0.0002 0.0001]	0.9958	0
+42	animate	Mickey abrazó [MASK] Pluto .	a	['a', 'de', 'al', 'con', 'su']	[0.9872 0.0017 0.0016 0.001  0.0008]	0.9872	0
+43	animate	La abuelita visitó [MASK] niño .	al	['al', 'el', 'un', 'a', 'del']	[0.9892 0.0088 0.0005 0.0005 0.0003]	0.9892	0
+44	animate	Fiona besó [MASK] Shrek .	a	['a', 'al', '[UNK]', 'en', 'el']	[0.9667 0.011  0.004  0.0027 0.002 ]	0.9667	0
+45	animate	La mamá tocó [MASK] bebé .	al	['al', 'el', 'un', 'su', 'la']	[0.8679 0.0946 0.0187 0.0091 0.0041]	0.8679	0
+46	animate	Hello Kitty vio [MASK] Keroppi .	a	['a', 'en', 'el', '[UNK]', 'de']	[0.3488 0.0551 0.045  0.0408 0.0325]	0.3488	0
+47	animate	Diego llevó [MASK] Isabel .	a	['a', 'hasta', 'con', 'la', 'una']	[0.9743 0.0061 0.0019 0.0017 0.0017]	0.9743	0
+48	animate	Eduardo conoció [MASK] Bella .	a	['a', 'en', 'una', 'la', 'de']	[0.9898 0.0017 0.0009 0.0009 0.0008]	0.9898	0
+49	animate	Alejandro abrazó [MASK] Consuelo .	a	['a', 'al', 'su', 'la', 'de']	[0.9929 0.0018 0.0013 0.0012 0.0005]	0.9929	0
+50	animate	Mario vio [MASK] Jaime .	a	['a', 'la', 'el', 'que', '[UNK]']	[0.1558 0.1242 0.0684 0.038  0.033 ]	0.1558	0
+51	animate	El niño visitó [MASK] su abuela .	a	['a', 'con', 'también', 'nuevamente', 'regularmente']	[0.9944 0.0028 0.0005 0.0002 0.0001]	0.9944	0
+52	animate	Julieta besó [MASK] Romeo .	a	['a', 'al', 'á', 'de', 'con']	[0.9836 0.0081 0.0019 0.0011 0.0009]	0.9836	0
+53	animate	Ana tocó [MASK] bebé .	al	['al', 'el', 'un', 'su', 'la']	[0.8217 0.1035 0.0468 0.0143 0.0034]	0.8217	0
+54	animate	La familia acogió [MASK] la inmigrante .	a	['a', 'hasta', 'con', 'allí', 'también']	[0.9984 0.0002 0.0001 0.0001 0.0001]	0.9984	0
+55	animate	El ladrón atacó [MASK] presidente .	al	['al', 'el', 'un', 'a', 'su']	[0.9818 0.0147 0.0011 0.0011 0.0004]	0.9818	0
+56	animate	Cristina saludó [MASK] los novios .	a	['a', 'por', 'con', 'de', 'ante']	[0.9965 0.0012 0.0007 0.0003 0.0002]	0.9965	0
+57	animate	El bandido secuestró [MASK] la mujer .	a	['a', 'de', 'también', 'hasta', 'con']	[0.9994 0.0001 0.0001 0.     0.    ]	0.9994	0
+58	animate	La maestra ayudó [MASK] niño .	al	['al', 'el', 'del', 'a', 'un']	[0.9908 0.0055 0.002  0.0003 0.0002]	0.9908	0
+59	animate	La maestra castigó [MASK] estudiante .	al	['al', 'el', 'la', 'del', 'a']	[0.9937 0.0035 0.0009 0.0005 0.0003]	0.9937	0
+60	animate	El juez juzgó [MASK] criminal .	al	['al', 'el', 'la', 'como', 'a']	[0.901  0.0684 0.0067 0.0056 0.0033]	0.901	0
+61	inanimate	Alejandra escuchó [MASK] la música .	a	['mucho', 'siempre', 'toda', 'a', 'también']	[0.3064 0.0981 0.0782 0.0724 0.0572]	0.0724	3
+62	inanimate	Blanca Nieves comió [MASK] la manzana .	a	['toda', 'de', 'accidentalmente', 'primero', 'solo']	[0.8111 0.1278 0.0066 0.0062 0.0038]	0.0014	12
+63	inanimate	El niño aprendío [MASK] las matemáticas .	a	['a', 'de', 'con', 'bien', 'también']	[0.2428 0.1144 0.0836 0.0763 0.0671]	0.2428	0
+64	inanimate	Antonio bebió [MASK] un refresco .	a	['de', 'también', 'entonces', 'como', 'sólo']	[0.2775 0.1705 0.0627 0.0593 0.0445]	0.0045	22
+65	inanimate	Alfonso arregló [MASK] la bicicleta .	a	['bien', 'rápidamente', 'también', 'toda', 'entonces']	[0.1232 0.0696 0.0575 0.0559 0.0516]	0.008	31
+66	inanimate	Mafalda leyó [MASK] libro .	al	['el', 'su', 'un', 'este', 'del']	[0.8899 0.0463 0.018  0.0167 0.0128]	0.0025	6
+67	inanimate	Los amigos firmaron [MASK] papel .	al	['el', 'un', 'este', 'su', 'ese']	[0.5979 0.3239 0.0365 0.0098 0.0083]	0.001	10
+68	inanimate	El niño tocó [MASK] la planta .	a	['a', 'en', 'con', 'toda', 'de']	[0.2696 0.178  0.145  0.0405 0.0279]	0.2696	0
+69	inanimate	El hombre llevó [MASK] paraguas .	al	['un', 'el', 'su', 'mi', 'otro']	[0.6708 0.2374 0.0681 0.0046 0.0021]	0.0007	11
+70	inanimate	La niña abrazó [MASK] oso .	al	['al', 'el', 'un', 'su', 'otro']	[0.7237 0.1466 0.115  0.0079 0.0022]	0.7237	0
+71	inanimate	María besó [MASK] arbol .	al	['el', 'un', 'al', 'aquel', 'su']	[0.8062 0.092  0.0753 0.0087 0.0067]	0.0753	2
+72	inanimate	Miguel vio [MASK] la pelota .	a	['caer', 'pasar', 'rodar', 'llegar', 'a']	[0.2467 0.1525 0.0806 0.0652 0.0413]	0.0413	4
+73	inanimate	Los niños visitaron [MASK] museo .	a	['el', 'al', 'este', 'un', 'su']	[0.9673 0.0088 0.0075 0.0046 0.0033]	0.0088	1
+74	inanimate	Jimmy Newtron conoció [MASK] Six Flags .	a	['a', 'en', 'The', 'los', '[UNK]']	[0.9239 0.0277 0.0114 0.0039 0.0034]	0.9239	0
+75	inanimate	Julián tocó [MASK] la planta .	a	['en', 'con', 'a', 'de', 'toda']	[0.2462 0.206  0.1668 0.0597 0.0552]	0.1668	2
+76	inanimate	El viejo llevó [MASK] paraguas .	al	['el', 'un', 'su', 'mi', 'dos']	[0.509  0.3262 0.1056 0.0079 0.0063]	0.0023	9
+77	inanimate	La niña abrazó [MASK] osito .	al	['al', 'el', 'su', 'un', 'a']	[0.791  0.1168 0.0724 0.0162 0.001 ]	0.791	0
+78	inanimate	Beto besó [MASK] trofeo .	al	['el', 'su', 'un', 'al', 'ese']	[0.8697 0.0724 0.0197 0.0161 0.0046]	0.0161	3
+79	inanimate	Victor vio [MASK] la pelota .	a	['caer', 'pasar', 'rodar', 'llegar', 'a']	[0.3305 0.1506 0.0631 0.0546 0.0425]	0.0425	4
+80	inanimate	Los niños visitaron [MASK] museo .	al	['el', 'al', 'este', 'un', 'su']	[0.9673 0.0088 0.0075 0.0046 0.0033]	0.0088	1
+81	inanimate	Raquel conoció [MASK] Chicago .	a	['a', 'en', 'de', '[UNK]', 'el']	[0.686  0.1955 0.0093 0.0092 0.0062]	0.686	0
+82	inanimate	Esteban estudió [MASK] matemáticas .	a	['también', 'las', 'primero', 'en', 'principalmente']	[0.5845 0.065  0.043  0.0256 0.0247]	0.0009	60
+83	inanimate	Alfonso arregló [MASK] la bicicleta roja .	a	['también', 'con', 'entonces', 'primero', 'rápidamente']	[0.099  0.079  0.062  0.0528 0.052 ]	0.0204	8
+84	inanimate	Antonio bebió [MASK] la coca cola .	a	['toda', 'de', 'en', 'con', 'también']	[0.4772 0.362  0.0258 0.0202 0.0175]	0.0042	8
+85	inanimate	Estefanía compró [MASK] un auto .	a	['entonces', 'también', 'todo', 'rápidamente', 'solo']	[0.1119 0.1017 0.0678 0.0482 0.0335]	0.0158	13
+86	inanimate	Mercedes escuchó [MASK] música .	a	['la', 'su', 'esa', 'mucha', 'esta']	[0.5258 0.255  0.0441 0.0362 0.0308]	0.0003	39
+87	inanimate	Carlos leyó [MASK] una novela .	a	['también', 'allí', 'recientemente', 'en', 'juntos']	[0.2134 0.1811 0.1042 0.0882 0.0354]	0.0113	12
+88	inanimate	Los novios firmaron [MASK] contrato .	al	['el', 'un', 'su', 'este', 'ese']	[0.6691 0.2579 0.0323 0.0123 0.0056]	0.0004	14

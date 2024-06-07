@@ -103,24 +103,6 @@ id	source	condition	sentence	dom	dom_idx	dobject	gender	number	animate	definite	
 102	re-2021	indefinite	Carlos denunció a [un camarero] tras una disputa.	a	2	un camarero	m	sing	?	0	?		Carlos reported [a waiter] after an argument.
 103	re-2021	indefinite	Ana vio a [un político] en la tienda del barrio.	a	2	un político	m	sing	?	0	?		Ana saw [a politician] at the neighbourhoods shop.
 104	re-2021	indefinite	Esther oyó a [un bebé] en el apartamento de al lado.	a	2	un bebé	m	sing	?	0	?		Esther heard [a baby] in the apartment next door.
-105	sa-2020	animate-animal	La artista que pisó a [la perra] andaba sigilosamente.	a	4	la perra	f	sing	1	?	?	animal	The artist that stepped on [the dog] walked stealthily
-106	sa-2020	animate-animal	La bióloga que abrazó a [la gorila] sonreía incesantemente.	a	4	la gorila	f	sing	1	?	?	animal	The biologist that hugged [the gorilla] smiled unceasingly
-107	sa-2020	animate-animal	La voluntaria que tocó a [la tortuga] bebía continuamente.	a	4	la tortuga	f	sing	1	?	?	animal	The volunteer that touched [the turtle] drank continuously
-108	sa-2020	animate-animal	La ciclista que vio a [la vaca] comía distraídamente.	a	4	la vaca	f	sing	1	?	?	animal	The cyclist that saw [the cow] ate absent-minded
-109	sa-2020	animate-animal	La granjera que olió a [la cerda] salió inesperadamente.	a	4	la cerda	f	sing	1	?	?	animal	The farmer that smelled [the pig] left unexpectedly
-110	sa-2020	animate-animal	El entrenador que escuchó al [delfín] nadaba rápidamente.	al	4	delfín	m	sing	1	?	?	animal	The trainer that listened to [the dolphin] swam quickly
-111	sa-2020	animate-animal	El conductor que persiguió al [camello] paseaba felizmente.	al	4	camello	m	sing	1	?	?	animal	The driver that chased [the camel] went for a walk happily
-112	sa-2020	animate-animal	El hombre que adoraba al [canguro] saltaba incesantemente.	al	4	canguro	m	sing	1	?	?	animal	The man that loved [the kangaroo] jumped unceasingly
-113	sa-2020	animate-animal	El amo que pegó al [orangután] gemía desconsoladamente.	al	4	orangután	m	sing	1	?	?	animal	The owner that hit [the orangután] moaned inconsolably
-114	sa-2020	animate-animal	Las zoólogas que observaron a [las palomas] bebían plácidamente.	a	4	las palomas	f	pl	1	?	?	animal	The zoologists that observed [the pigeons] drank placidly
-115	sa-2020	animate-animal	Las hermanas que buscaron a [las gatas] entraron inesperadamente.	a	4	las gatas	f	pl	1	?	?	animal	The sisters that looked for [the cats] entered unexpectedly
-116	sa-2020	animate-animal	Las niñas que adoraban a [las ardillas] chillaban alegremente.	a	4	las ardillas	f	pl	1	?	?	animal	The girls that loved [the squirrels] screamed happily
-117	sa-2020	animate-animal	Las estudiantes que pegaron a [las monas] paseaban tristemente.	a	4	las monas	f	pl	1	?	?	animal	The students that hit [the monkeys] went for a walk sadly
-118	sa-2020	animate-animal	Los payasos que abrazaron a [los chimpancés] caminaban rápidamente.	a	4	los chimpancés	m	pl	1	?	?	animal	The clowns that hugged [the chimpanzees] walked fast
-119	sa-2020	animate-animal	Los trabajadores que perseguían a [los guepardos] corrían velozmente.	a	4	los guepardos	m	pl	1	?	?	animal	The workers that chased [the cheetahs] ran fast
-120	sa-2020	animate-animal	Los niños que ensuciaron a [los macacos] sonreían frenéticamente.	a	4	los macacos	m	pl	1	?	?	animal	The children that got [the macaques] dirty smiled frantically
-121	sa-2020	animate-animal	Los viejos que oyeron a [los pollos] respiraban fuertemente.	a	4	los pollos	m	pl	1	?	?	animal	The old men that heard [the chickens] breathed loudly
-122	sa-2020	animate-animal	Los técnicos que tocaron a [los hámsters] andaban distraídamente.	a	4	los hámsters	m	pl	1	?	?	animal	The technicians that touched [the hamsters] walked absent-minded
 123	sa-2020	animate-human	La cebra que ensució a [la turista] descansaba plácidamente.	a	4	la turista	f	sing	1	?	?	human	The zebra that got [the tourist] dirty rested placidly
 124	sa-2020	animate-human	La cabra que empujó a [la pastora] respiraba velozmente.	a	4	la pastora	f	sing	1	?	?	human	The goat that pushed [the goatherd] was breathing rapidly
 125	sa-2020	animate-human	La serpiente que detestaba a [la veterinaria] entró sigilosamente.	a	4	la veterinaria	f	sing	1	?	?	human	The snake that detested [the veterinary] entered stealthily
@@ -139,6 +121,24 @@ id	source	condition	sentence	dom	dom_idx	dobject	gender	number	animate	definite	
 138	sa-2020	animate-human	Los delfines que mataron a [los pescadores] gemían fuertemente.	a	4	los pescadores	m	pl	1	?	?	human	The dolphins that killed [the fishermen] moaned loudly
 139	sa-2020	animate-human	Los cocodrilos que vieron a [los asistentes] nadaban frenéticamente.	a	4	los asistentes	m	pl	1	?	?	human	The crocodiles that saw [the assistants] swam frantically
 140	sa-2020	animate-human	Los flamencos que escucharon a [los ayudantes] dormían felizmente.	a	4	los ayudantes	m	pl	1	?	?	human	The flamingos that heard [the assistants] slept happily
+105	sa-2020	animate-animal	La artista que pisó a [la perra] andaba sigilosamente.	a	4	la perra	f	sing	1	?	?	animal	The artist that stepped on [the dog] walked stealthily
+106	sa-2020	animate-animal	La bióloga que abrazó a [la gorila] sonreía incesantemente.	a	4	la gorila	f	sing	1	?	?	animal	The biologist that hugged [the gorilla] smiled unceasingly
+107	sa-2020	animate-animal	La voluntaria que tocó a [la tortuga] bebía continuamente.	a	4	la tortuga	f	sing	1	?	?	animal	The volunteer that touched [the turtle] drank continuously
+108	sa-2020	animate-animal	La ciclista que vio a [la vaca] comía distraídamente.	a	4	la vaca	f	sing	1	?	?	animal	The cyclist that saw [the cow] ate absent-minded
+109	sa-2020	animate-animal	La granjera que olió a [la cerda] salió inesperadamente.	a	4	la cerda	f	sing	1	?	?	animal	The farmer that smelled [the pig] left unexpectedly
+110	sa-2020	animate-animal	El entrenador que escuchó al [delfín] nadaba rápidamente.	al	4	delfín	m	sing	1	?	?	animal	The trainer that listened to [the dolphin] swam quickly
+111	sa-2020	animate-animal	El conductor que persiguió al [camello] paseaba felizmente.	al	4	camello	m	sing	1	?	?	animal	The driver that chased [the camel] went for a walk happily
+112	sa-2020	animate-animal	El hombre que adoraba al [canguro] saltaba incesantemente.	al	4	canguro	m	sing	1	?	?	animal	The man that loved [the kangaroo] jumped unceasingly
+113	sa-2020	animate-animal	El amo que pegó al [orangután] gemía desconsoladamente.	al	4	orangután	m	sing	1	?	?	animal	The owner that hit [the orangután] moaned inconsolably
+114	sa-2020	animate-animal	Las zoólogas que observaron a [las palomas] bebían plácidamente.	a	4	las palomas	f	pl	1	?	?	animal	The zoologists that observed [the pigeons] drank placidly
+115	sa-2020	animate-animal	Las hermanas que buscaron a [las gatas] entraron inesperadamente.	a	4	las gatas	f	pl	1	?	?	animal	The sisters that looked for [the cats] entered unexpectedly
+116	sa-2020	animate-animal	Las niñas que adoraban a [las ardillas] chillaban alegremente.	a	4	las ardillas	f	pl	1	?	?	animal	The girls that loved [the squirrels] screamed happily
+117	sa-2020	animate-animal	Las estudiantes que pegaron a [las monas] paseaban tristemente.	a	4	las monas	f	pl	1	?	?	animal	The students that hit [the monkeys] went for a walk sadly
+118	sa-2020	animate-animal	Los payasos que abrazaron a [los chimpancés] caminaban rápidamente.	a	4	los chimpancés	m	pl	1	?	?	animal	The clowns that hugged [the chimpanzees] walked fast
+119	sa-2020	animate-animal	Los trabajadores que perseguían a [los guepardos] corrían velozmente.	a	4	los guepardos	m	pl	1	?	?	animal	The workers that chased [the cheetahs] ran fast
+120	sa-2020	animate-animal	Los niños que ensuciaron a [los macacos] sonreían frenéticamente.	a	4	los macacos	m	pl	1	?	?	animal	The children that got [the macaques] dirty smiled frantically
+121	sa-2020	animate-animal	Los viejos que oyeron a [los pollos] respiraban fuertemente.	a	4	los pollos	m	pl	1	?	?	animal	The old men that heard [the chickens] breathed loudly
+122	sa-2020	animate-animal	Los técnicos que tocaron a [los hámsters] andaban distraídamente.	a	4	los hámsters	m	pl	1	?	?	animal	The technicians that touched [the hamsters] walked absent-minded
 141	re-2021-modified	definite	Gonzalo mató a [la mujer] en el parque.	a	2	la mujer	f	sing	?	1	?		Gonzalo killed [the woman] in the park.
 142	re-2021-modified	definite	Patricio lesionó a [la camarera] en la discoteca.	a	2	la camarera	f	sing	?	1	?		Patricio injured [the waitress] at the nightclub
 143	re-2021-modified	definite	Carolina golpeó a [la jugadora] en el vestuario.	a	2	la jugadora	f	sing	?	1	?		Carolina hit [the player] in the locker room.

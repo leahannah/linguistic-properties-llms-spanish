@@ -1,17 +1,17 @@
-id	condition	input_sentence	masked	top_fillers	probabilities
-141	definite	Gonzalo mató [MASK] la mujer en el parque .	a	['a', 'al', 'de', 'A', 'la']	[0.9987 0.0001 0.0001 0.0001 0.    ]
-142	definite	Patricio lesionó [MASK] la camarera en la discoteca .	a	['a', 'con', 'de', 'en', ',']	[0.9528 0.0115 0.0057 0.0047 0.0013]
-143	definite	Carolina golpeó [MASK] la jugadora en el vestuario .	a	['a', 'de', 'con', 'al', 'por']	[0.9927 0.0014 0.0009 0.0005 0.0004]
-144	definite	Elena cuidó [MASK] la paciente durante dos semanas .	a	['de', 'a', 'sobre', 'con', '##a']	[0.9574 0.0342 0.001  0.0007 0.0007]
-145	definite	Irene acusó [MASK] la secretaria general en la asamblea .	a	['a', 'de', '##se', ',', 'ser']	[0.888  0.0648 0.0078 0.0029 0.0023]
-146	definite	Cecilia denunció [MASK] la mujer en la comisaría de policía .	a	['a', 'de', 'ser', 'con', 'por']	[0.9833 0.0027 0.001  0.0009 0.0008]
-147	definite	Josefina vio [MASK] la pastora en el parque .	a	['a', 'vio', '##le', '##ló', '##la']	[0.9607 0.0157 0.0098 0.0017 0.0015]
-148	definite	Julio oyó [MASK] la madre desde la cocina .	a	['a', 'con', 'de', 'sobre', 'por']	[0.9494 0.0116 0.0086 0.003  0.0025]
-149	indefinite	Pablo mató [MASK] una mujer durante el secuestro .	a	['a', 'también', 'de', 'más', 'sobre']	[0.9945 0.0008 0.0006 0.0003 0.0002]
-150	indefinite	Alberto lesionó [MASK] una adversaria en el partido de la semana pasada .	a	['a', 'de', 'en', 'con', 'por']	[0.8437 0.0277 0.0218 0.0191 0.0061]
-151	indefinite	Andrea golpeó [MASK] una fotógrafa a la salida del restaurante .	a	['a', 'con', 'de', 'por', 'también']	[0.9756 0.0124 0.002  0.001  0.0007]
-152	indefinite	Javier cuidó [MASK] una paciente con gran profesionalidad .	a	['de', 'a', 'por', 'como', 'con']	[0.9688 0.0102 0.0039 0.0016 0.0016]
-153	indefinite	Laura acusó [MASK] una trabajadora en la reunión .	a	['a', 'de', 'con', 'al', 'ser']	[0.8388 0.1252 0.0061 0.0032 0.0024]
-154	indefinite	Carlos denunció [MASK] una camarera tras una disputa .	a	['a', 'como', 'ser', 'con', 'en']	[0.9403 0.025  0.009  0.0023 0.0018]
-155	indefinite	Ana vio [MASK] una política en la tienda del barrio .	a	['vio', 'a', 'como', '##se', 'en']	[0.6463 0.0475 0.0205 0.0192 0.0185]
-156	indefinite	Esther oyó [MASK] una niña en el apartamento de al lado .	a	['a', 'con', 'de', 'una', ',']	[0.9527 0.0071 0.0038 0.0031 0.002 ]
+id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank
+141	definite	Gonzalo mató [MASK] la mujer en el parque .	a	['a', 'al', 'de', 'A', 'la']	[0.9987 0.0001 0.0001 0.0001 0.    ]	0.9987	0
+142	definite	Patricio lesionó [MASK] la camarera en la discoteca .	a	['a', 'con', 'de', 'en', ',']	[0.9528 0.0115 0.0057 0.0047 0.0013]	0.9528	0
+143	definite	Carolina golpeó [MASK] la jugadora en el vestuario .	a	['a', 'de', 'con', 'al', 'por']	[0.9927 0.0014 0.0009 0.0005 0.0004]	0.9927	0
+144	definite	Elena cuidó [MASK] la paciente durante dos semanas .	a	['de', 'a', 'sobre', 'con', '##a']	[0.9574 0.0342 0.001  0.0007 0.0007]	0.0342	1
+145	definite	Irene acusó [MASK] la secretaria general en la asamblea .	a	['a', 'de', '##se', ',', 'ser']	[0.888  0.0648 0.0078 0.0029 0.0023]	0.888	0
+146	definite	Cecilia denunció [MASK] la mujer en la comisaría de policía .	a	['a', 'de', 'ser', 'con', 'por']	[0.9833 0.0027 0.001  0.0009 0.0008]	0.9833	0
+147	definite	Josefina vio [MASK] la pastora en el parque .	a	['a', 'vio', '##le', '##ló', '##la']	[0.9607 0.0157 0.0098 0.0017 0.0015]	0.9607	0
+148	definite	Julio oyó [MASK] la madre desde la cocina .	a	['a', 'con', 'de', 'sobre', 'por']	[0.9494 0.0116 0.0086 0.003  0.0025]	0.9494	0
+149	indefinite	Pablo mató [MASK] una mujer durante el secuestro .	a	['a', 'también', 'de', 'más', 'sobre']	[0.9945 0.0008 0.0006 0.0003 0.0002]	0.9945	0
+150	indefinite	Alberto lesionó [MASK] una adversaria en el partido de la semana pasada .	a	['a', 'de', 'en', 'con', 'por']	[0.8437 0.0277 0.0218 0.0191 0.0061]	0.8437	0
+151	indefinite	Andrea golpeó [MASK] una fotógrafa a la salida del restaurante .	a	['a', 'con', 'de', 'por', 'también']	[0.9756 0.0124 0.002  0.001  0.0007]	0.9756	0
+152	indefinite	Javier cuidó [MASK] una paciente con gran profesionalidad .	a	['de', 'a', 'por', 'como', 'con']	[0.9688 0.0102 0.0039 0.0016 0.0016]	0.0102	1
+153	indefinite	Laura acusó [MASK] una trabajadora en la reunión .	a	['a', 'de', 'con', 'al', 'ser']	[0.8388 0.1252 0.0061 0.0032 0.0024]	0.8388	0
+154	indefinite	Carlos denunció [MASK] una camarera tras una disputa .	a	['a', 'como', 'ser', 'con', 'en']	[0.9403 0.025  0.009  0.0023 0.0018]	0.9403	0
+155	indefinite	Ana vio [MASK] una política en la tienda del barrio .	a	['vio', 'a', 'como', '##se', 'en']	[0.6463 0.0475 0.0205 0.0192 0.0185]	0.0475	1
+156	indefinite	Esther oyó [MASK] una niña en el apartamento de al lado .	a	['a', 'con', 'de', 'una', ',']	[0.9527 0.0071 0.0038 0.0031 0.002 ]	0.9527	0
