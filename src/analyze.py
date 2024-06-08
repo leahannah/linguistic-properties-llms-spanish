@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 
 
 def create_barplot(inpath, modelname, measure, errorbar=False):
-    # plt.clf()
     df = pd.read_csv(inpath, sep='\t')
     print(df.head())
     print(df.shape)
@@ -23,7 +22,7 @@ def create_barplot(inpath, modelname, measure, errorbar=False):
             filtered_df = df[df['filler_type'] == ftype]
         else:
             filtered_df = df
-        filtered_df.sort_values(by='input', inplace=True)
+        filtered_df.sort_values(by='input_condition', inplace=True)
         if filtered_df['mean'].mean() > 0.0:
             sns.set_context('paper', rc={'axes.titlesize': 16, 'axes.labelsize': 14, 'xtick.labelsize': 10,
                                          'ytick.labelsize': 12, 'legend.fontsize': 12, 'legend.title_fontsize': 12})
@@ -58,25 +57,23 @@ def create_barplot(inpath, modelname, measure, errorbar=False):
 
 
 def create_boxplot(dir, modelname, measure):
-    # plt.clf()
     dfs = []
     for file in os.listdir(dir):
-        print(file)
         if file != 'statistics.tsv':
             df = pd.read_csv(os.path.join(dir, file), sep='\t')
             dfs.append(df)
             source = file[:-12]
             df['input'] = [source for x in range(df.shape[0])]
+            df['input_condition'] = df['input'] + '_' + df['condition']
     merged_df = pd.concat(dfs)
-    merged_df['input_condition'] = merged_df['input'] + '_' + merged_df['condition']
-    merged_df.sort_values(by='input', inplace=True)
+    merged_df.sort_values(by='input_condition', inplace=True)
     print(merged_df.head())
     print(merged_df.shape)
     print(merged_df.columns)
     sns.set_context('paper', rc={'axes.titlesize': 16, 'axes.labelsize': 14, 'xtick.labelsize': 10,
                                  'ytick.labelsize': 12, 'legend.fontsize': 12, 'legend.title_fontsize': 12})
     fig, ax = plt.subplots(figsize=(10, 7))
-    ax = sns.boxplot(data=merged_df, x='input_condition', y='dom_prob', hue='condition')#, ax=ax)
+    ax = sns.boxplot(data=merged_df, x='input_condition', y='dom_prob', hue='condition', ax=ax)
     ax.set_title(f'{modelname} DOM {measure} per dataset and condition')
     conditions = list(merged_df['input'].unique())
     items = range(len(merged_df['input_condition'].unique()))
@@ -95,9 +92,8 @@ def create_boxplot(dir, modelname, measure):
     if not os.path.exists(outpath):
         os.makedirs(outpath)
     filename = f'{modelname}-{measure}-boxplot.png'
-    # plt.savefig(os.path.join(outpath, filename))
+    plt.savefig(os.path.join(outpath, filename))
     plt.show()
-
 
 filepath = os.path.join(pathlib.Path(__file__).parent.absolute(), '..', 'results/fill-mask/dom-masking/mBERT/')
 create_boxplot(filepath, modelname='mBERT', measure='probability')
