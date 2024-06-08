@@ -67,8 +67,11 @@ def create_barplot(inpath, modelname, errorbar=False):
             plt.show()
 
 
-def create_boxplot(dir, modelname):
-    measure = 'probability' if 'fill-mask' in dir else 'discrepancy'
+def create_probability_boxplot(dir, modelname):
+    measure = 'Probability'
+    add_str = ''
+    if 'dobject-masking' in dir:
+        add_str = ' unmarked' if 'unmarked' in dir else ' dom'
     dfs = []
     for file in os.listdir(dir):
         if file != 'statistics.tsv':
@@ -85,18 +88,21 @@ def create_boxplot(dir, modelname):
     p_columns = [x for x in merged_df.columns if '_prob' in x]
     sns.set_context('paper', rc={'axes.titlesize': 18, 'axes.labelsize': 14, 'xtick.labelsize': 10,
                                  'ytick.labelsize': 12, 'legend.fontsize': 12, 'legend.title_fontsize': 12})
+    mapping = {'dom_prob': 'DOM', 'def_prob': 'definite article', 'indef_prob': 'indefinite article'}
     # iterate over prob columns
     for col_name in p_columns:
         fig, ax = plt.subplots(figsize=(10, 7))
         ax = sns.boxplot(data=merged_df, x='input_condition', y=col_name, hue='condition', ax=ax)
-        ax.set_title(f'{modelname} DOM {measure}', pad=20, loc='center')
+        ax.set_title(f'{modelname} {mapping[col_name]} {measure.lower()}{add_str}', pad=20, loc='center')
         sns.move_legend(ax, 'upper left', bbox_to_anchor=(1, 1))
+        ax.set_ylim(ymax=1.05)
         ax.yaxis.grid(True)
         positions = []
         stepsize = -1.5
         for inp in list(merged_df['input'].unique()):
             df_filtered = merged_df[merged_df['input'] == inp]
-            stepsize += len(list(df_filtered['condition'].unique()))
+            steps = len(list(df_filtered['condition'].unique()))
+            stepsize += steps
             if stepsize < 0:
                 stepsize = 0.5
             positions.append(stepsize)
@@ -116,7 +122,7 @@ def create_boxplot(dir, modelname):
         print('OUT ', outpath)
         if not os.path.exists(outpath):
             os.makedirs(outpath)
-        filename = f'{modelname}-{measure}-boxplot.png'
+        filename = f'{modelname}-{col_name}-boxplot.png'
         plt.savefig(os.path.join(outpath, filename))
         plt.show()
 
@@ -146,7 +152,7 @@ def create_fillmask_boxplots(dir_path):
                 else:
                     modelname = 'mBERT'
                 path = subdir
-                create_boxplot(path, modelname=modelname)
+                create_probability_boxplot(path, modelname=modelname)
 
 
 dir = os.path.join(pathlib.Path(__file__).parent.absolute(), '..','results/fill-mask/')
