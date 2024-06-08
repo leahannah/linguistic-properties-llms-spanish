@@ -64,7 +64,7 @@ def create_barplot(inpath, modelname, errorbar=False):
                 os.makedirs(outpath)
             filename = f'{modelname}-mean_{ftype}_{measure}'
             plt.savefig(os.path.join(outpath, filename))
-            plt.show()
+            # plt.show()
 
 
 def create_probability_boxplot(dir, modelname):
@@ -124,7 +124,7 @@ def create_probability_boxplot(dir, modelname):
             os.makedirs(outpath)
         filename = f'{modelname}-{col_name}-boxplot.png'
         plt.savefig(os.path.join(outpath, filename))
-        plt.show()
+        # plt.show()
 
 
 def create_all_barplots(dir_path):
