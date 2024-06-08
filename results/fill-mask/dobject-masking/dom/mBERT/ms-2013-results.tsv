@@ -1,34 +1,34 @@
-id	condition	input_sentence	masked	top_fillers	probabilities
-34	animate	La abuela recibió a [MASK] niños .	los	['los', 'las', 'estos', 'niños', 'cuatro']	[0.7504 0.0331 0.019  0.0073 0.007 ]
-37	animate	El ladrón secuestró a [MASK] señora .	la	['la', 'una', 'su', 'otra', 'La']	[0.7759 0.1919 0.0065 0.0045 0.0038]
-38	animate	Snoopy miró a [MASK] amigo .	su	['un', 'su', 'seu', 'ser', 'mi']	[0.4886 0.1761 0.0262 0.016  0.0152]
-41	animate	Plankton conoció a [MASK] Esponja .	Bob	['la', 'La', ':', 'una', '.']	[0.5048 0.1104 0.0449 0.0202 0.0108]
-51	animate	El niño visitó a [MASK] abuela .	su	['su', 'la', 'una', 'sus', 'Su']	[0.5341 0.253  0.1767 0.0038 0.0033]
-54	animate	La familia acogió a [MASK] inmigrante .	la	['un', 'otro', 'la', 'una', 'lo']	[0.7298 0.0948 0.0295 0.0253 0.0129]
-56	animate	Cristina saludó a [MASK] novios .	los	['los', 'sus', 'su', 'nuestros', 'mis']	[0.583  0.375  0.006  0.0043 0.0021]
-57	animate	El bandido secuestró a [MASK] mujer .	la	['una', 'la', 'otra', 'su', 'esa']	[0.6635 0.2417 0.046  0.0197 0.0068]
-61	inanimate	Alejandra escuchó a [MASK] música .	la	['la', 'una', 'mucha', 'su', 'gran']	[0.9647 0.0064 0.0022 0.0021 0.0015]
-62	inanimate	Blanca Nieves comió a [MASK] manzana .	la	['la', 'una', 'La', 'a', 'lo']	[0.8552 0.0333 0.0051 0.004  0.0028]
-63	inanimate	El niño aprendío a [MASK] matemáticas .	las	['las', 'aprender', 'estudiar', 'los', 'tener']	[0.8151 0.0567 0.0122 0.0121 0.0101]
-64	inanimate	Antonio bebió a [MASK] refresco .	un	['un', 'lo', 'este', 'otro', 'su']	[0.5608 0.0372 0.0289 0.028  0.0225]
-65	inanimate	Alfonso arregló a [MASK] bicicleta .	la	['la', 'una', 'su', 'un', 'otra']	[0.7903 0.1295 0.0212 0.0047 0.004 ]
-66	inanimate	Mafalda leyó al [MASK] .	libro	['piano', 'rey', 'poema', 'respecto', 'libro']	[0.0221 0.013  0.0098 0.0091 0.009 ]
-67	inanimate	Los amigos firmaron al [MASK] .	papel	['club', 'contrario', 'al', 'bando', 'volante']	[0.0205 0.0199 0.0182 0.0117 0.0117]
-68	inanimate	El niño tocó a [MASK] planta .	la	['la', 'una', 'su', 'otra', 'esta']	[0.596  0.2335 0.0313 0.0291 0.0205]
-69	inanimate	El hombre llevó al [MASK] .	paraguas	['hombre', 'amor', 'tiempo', 'mundo', 'aire']	[0.1525 0.0194 0.0191 0.0188 0.0137]
-70	inanimate	La niña abrazó al [MASK] .	oso	['hombre', 'niño', 'otro', 'viento', 'aire']	[0.0517 0.0469 0.0346 0.0205 0.0204]
-71	inanimate	María besó al [MASK] .	arbol	['rey', 'hombre', 'matrimonio', 'otro', 'amor']	[0.0436 0.0394 0.0215 0.0187 0.0176]
-72	inanimate	Miguel vio a [MASK] pelota .	la	['uma', 'a', 'sua', 'outra', 'da']	[0.3253 0.1089 0.0851 0.0478 0.0358]
-73	inanimate	Los niños visitaron a [MASK] .	museo	['la', 'pueblo', 'casa', 'Villa', 'Hall']	[0.0183 0.0146 0.0102 0.0095 0.0085]
-74	inanimate	Jimmy Newtron conoció a [MASK] Flags .	Six	['Six', 'Flags', 'Seven', 'Two', 'Three']	[0.7542 0.0626 0.0328 0.021  0.0119]
-75	inanimate	Julián tocó a [MASK] planta .	la	['la', 'segunda', 'esta', 'primera', 'primeira']	[0.2511 0.1237 0.0722 0.0574 0.0434]
-76	inanimate	El viejo llevó al [MASK] .	paraguas	['viento', 'pueblo', 'rey', 'cielo', 'hombre']	[0.0631 0.0419 0.0266 0.0262 0.0207]
-77	inanimate	La niña abrazó al [MASK] .	osito	['hombre', 'niño', 'otro', 'viento', 'aire']	[0.0517 0.0469 0.0346 0.0205 0.0204]
-78	inanimate	Beto besó al [MASK] .	trofeo	['rey', '##ó', 'al', 'aire', '##o']	[0.0312 0.011  0.0087 0.0084 0.0083]
-79	inanimate	Victor vio a [MASK] pelota .	la	['uma', 'sua', 'a', 'da', 'primeira']	[0.256  0.1035 0.0729 0.0294 0.0209]
-80	inanimate	Los niños visitaron al [MASK] .	museo	['pueblo', 'edificio', 'restaurante', 'hotel', 'museo']	[0.1592 0.0753 0.0647 0.0499 0.0229]
-83	inanimate	Alfonso arregló a [MASK] bicicleta roja .	la	['la', 'una', 'su', 'un', 'a']	[0.5554 0.356  0.0212 0.0108 0.0033]
-84	inanimate	Antonio bebió a [MASK] coca cola .	la	['la', 'una', 'su', 'cola', 'esta']	[0.9107 0.0343 0.0077 0.0027 0.0026]
-85	inanimate	Estefanía compró a [MASK] auto .	un	['un', 'la', 'auto', 'o', 'este']	[0.2384 0.0827 0.0761 0.0355 0.0344]
-87	inanimate	Carlos leyó a [MASK] novela .	una	['la', 'esta', '.', 'una', 'La']	[0.6235 0.0228 0.0119 0.0109 0.0107]
-88	inanimate	Los novios firmaron al [MASK] .	contrato	['al', 'D', 'Al', 'R', 'a']	[0.029  0.0262 0.0164 0.016  0.0152]
+id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank	def_prob	def_rank	indef_prob	indef_rank
+34	animate	La abuela recibió a [MASK] niños .	los	['los', 'las', 'estos', 'niños', 'cuatro']	[0.7504 0.0331 0.019  0.0073 0.007 ]	0.0011	46	0.7504	0	0.0015	34
+37	animate	El ladrón secuestró a [MASK] señora .	la	['la', 'una', 'su', 'otra', 'La']	[0.7759 0.1919 0.0065 0.0045 0.0038]	0.0005	9	0.7759	0	0.1919	1
+38	animate	Snoopy miró a [MASK] amigo .	su	['un', 'su', 'seu', 'ser', 'mi']	[0.4886 0.1761 0.0262 0.016  0.0152]	0.0034	18	0.0063	8	0.4886	0
+41	animate	Plankton conoció a [MASK] Esponja .	Bob	['la', 'La', ':', 'una', '.']	[0.5048 0.1104 0.0449 0.0202 0.0108]	0.0036	9	0.5048	0	0.0202	3
+51	animate	El niño visitó a [MASK] abuela .	su	['su', 'la', 'una', 'sus', 'Su']	[0.5341 0.253  0.1767 0.0038 0.0033]	0.0003	22	0.253	1	0.1767	2
+54	animate	La familia acogió a [MASK] inmigrante .	la	['un', 'otro', 'la', 'una', 'lo']	[0.7298 0.0948 0.0295 0.0253 0.0129]	0.0014	15	0.0295	2	0.7298	0
+56	animate	Cristina saludó a [MASK] novios .	los	['los', 'sus', 'su', 'nuestros', 'mis']	[0.583  0.375  0.006  0.0043 0.0021]	0.0001	48	0.583	0	0.0005	15
+57	animate	El bandido secuestró a [MASK] mujer .	la	['una', 'la', 'otra', 'su', 'esa']	[0.6635 0.2417 0.046  0.0197 0.0068]	0.0003	14	0.2417	1	0.6635	0
+61	inanimate	Alejandra escuchó a [MASK] música .	la	['la', 'una', 'mucha', 'su', 'gran']	[0.9647 0.0064 0.0022 0.0021 0.0015]	0.0003	18	0.9647	0	0.0064	1
+62	inanimate	Blanca Nieves comió a [MASK] manzana .	la	['la', 'una', 'La', 'a', 'lo']	[0.8552 0.0333 0.0051 0.004  0.0028]	0.004	3	0.8552	0	0.0333	1
+63	inanimate	El niño aprendío a [MASK] matemáticas .	las	['las', 'aprender', 'estudiar', 'los', 'tener']	[0.8151 0.0567 0.0122 0.0121 0.0101]	0.0001	148	0.8151	0	0.0046	7
+64	inanimate	Antonio bebió a [MASK] refresco .	un	['un', 'lo', 'este', 'otro', 'su']	[0.5608 0.0372 0.0289 0.028  0.0225]	0.0045	14	0.0109	7	0.5608	0
+65	inanimate	Alfonso arregló a [MASK] bicicleta .	la	['la', 'una', 'su', 'un', 'otra']	[0.7903 0.1295 0.0212 0.0047 0.004 ]	0.0019	5	0.7903	0	0.1295	1
+66	inanimate	Mafalda leyó al [MASK] .	libro	['piano', 'rey', 'poema', 'respecto', 'libro']	[0.0221 0.013  0.0098 0.0091 0.009 ]	0.0049	16	0.0007	179	0.0003	512
+67	inanimate	Los amigos firmaron al [MASK] .	papel	['club', 'contrario', 'al', 'bando', 'volante']	[0.0205 0.0199 0.0182 0.0117 0.0117]	0.0182	2	0.0006	230	0.0008	177
+68	inanimate	El niño tocó a [MASK] planta .	la	['la', 'una', 'su', 'otra', 'esta']	[0.596  0.2335 0.0313 0.0291 0.0205]	0.0006	26	0.596	0	0.2335	1
+69	inanimate	El hombre llevó al [MASK] .	paraguas	['hombre', 'amor', 'tiempo', 'mundo', 'aire']	[0.1525 0.0194 0.0191 0.0188 0.0137]	0.0012	117	0.0005	296	0.0005	288
+70	inanimate	La niña abrazó al [MASK] .	oso	['hombre', 'niño', 'otro', 'viento', 'aire']	[0.0517 0.0469 0.0346 0.0205 0.0204]	0.0045	23	0.0022	73	0.0012	125
+71	inanimate	María besó al [MASK] .	arbol	['rey', 'hombre', 'matrimonio', 'otro', 'amor']	[0.0436 0.0394 0.0215 0.0187 0.0176]	0.0038	31	0.0017	72	0.0012	111
+72	inanimate	Miguel vio a [MASK] pelota .	la	['uma', 'a', 'sua', 'outra', 'da']	[0.3253 0.1089 0.0851 0.0478 0.0358]	0.1089	1	0.0194	5	0.0023	29
+73	inanimate	Los niños visitaron a [MASK] .	museo	['la', 'pueblo', 'casa', 'Villa', 'Hall']	[0.0183 0.0146 0.0102 0.0095 0.0085]	0.0033	23	0.0183	0	0.0013	73
+74	inanimate	Jimmy Newtron conoció a [MASK] Flags .	Six	['Six', 'Flags', 'Seven', 'Two', 'Three']	[0.7542 0.0626 0.0328 0.021  0.0119]	0.0003	63	0.0002	83	0.0001	290
+75	inanimate	Julián tocó a [MASK] planta .	la	['la', 'segunda', 'esta', 'primera', 'primeira']	[0.2511 0.1237 0.0722 0.0574 0.0434]	0.007	11	0.2511	0	0.0409	5
+76	inanimate	El viejo llevó al [MASK] .	paraguas	['viento', 'pueblo', 'rey', 'cielo', 'hombre']	[0.0631 0.0419 0.0266 0.0262 0.0207]	0.0025	52	0.0011	132	0.0007	208
+77	inanimate	La niña abrazó al [MASK] .	osito	['hombre', 'niño', 'otro', 'viento', 'aire']	[0.0517 0.0469 0.0346 0.0205 0.0204]	0.0045	23	0.0022	73	0.0012	125
+78	inanimate	Beto besó al [MASK] .	trofeo	['rey', '##ó', 'al', 'aire', '##o']	[0.0312 0.011  0.0087 0.0084 0.0083]	0.0087	2	0.0033	24	0.0008	166
+79	inanimate	Victor vio a [MASK] pelota .	la	['uma', 'sua', 'a', 'da', 'primeira']	[0.256  0.1035 0.0729 0.0294 0.0209]	0.0729	2	0.0091	11	0.0007	115
+80	inanimate	Los niños visitaron al [MASK] .	museo	['pueblo', 'edificio', 'restaurante', 'hotel', 'museo']	[0.1592 0.0753 0.0647 0.0499 0.0229]	0.0028	39	0.0011	96	0.0006	162
+83	inanimate	Alfonso arregló a [MASK] bicicleta roja .	la	['la', 'una', 'su', 'un', 'a']	[0.5554 0.356  0.0212 0.0108 0.0033]	0.0033	4	0.5554	0	0.356	1
+84	inanimate	Antonio bebió a [MASK] coca cola .	la	['la', 'una', 'su', 'cola', 'esta']	[0.9107 0.0343 0.0077 0.0027 0.0026]	0.0014	9	0.9107	0	0.0343	1
+85	inanimate	Estefanía compró a [MASK] auto .	un	['un', 'la', 'auto', 'o', 'este']	[0.2384 0.0827 0.0761 0.0355 0.0344]	0.0133	10	0.0827	1	0.2384	0
+87	inanimate	Carlos leyó a [MASK] novela .	una	['la', 'esta', '.', 'una', 'La']	[0.6235 0.0228 0.0119 0.0109 0.0107]	0.0046	12	0.6235	0	0.0109	3
+88	inanimate	Los novios firmaron al [MASK] .	contrato	['al', 'D', 'Al', 'R', 'a']	[0.029  0.0262 0.0164 0.016  0.0152]	0.029	0	0.001	143	0.0011	122

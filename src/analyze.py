@@ -62,7 +62,7 @@ def create_barplot(inpath, modelname, errorbar=False):
             outpath = outpath[:-cutoff]
             if not os.path.exists(outpath):
                 os.makedirs(outpath)
-            filename = f'{modelname}-mean_{ftype}_{measure}-{add_str.strip()}'
+            filename = f'{modelname}-mean_{ftype}_{measure}'
             plt.savefig(os.path.join(outpath, filename))
             plt.show()
 
@@ -82,45 +82,46 @@ def create_boxplot(dir, modelname):
     print(merged_df.head())
     print(merged_df.shape)
     print(merged_df.columns)
+    p_columns = [x for x in merged_df.columns if '_prob' in x]
     sns.set_context('paper', rc={'axes.titlesize': 18, 'axes.labelsize': 14, 'xtick.labelsize': 10,
                                  'ytick.labelsize': 12, 'legend.fontsize': 12, 'legend.title_fontsize': 12})
-    fig, ax = plt.subplots(figsize=(10, 7))
-    ax = sns.boxplot(data=merged_df, x='input_condition', y='dom_prob', hue='condition', ax=ax)
-    ax.set_title(f'{modelname} DOM {measure}')
-    inputs = list(merged_df['input'])
-    positions = []
-    stepsize = -1.5
-    for inp in list(set(inputs)):
-        stepsize += inputs.count(inp)
-        if stepsize < 0:
-            stepsize = 0.5
-        positions.append(stepsize)
-    ax.set_xticks(positions, labels=list(set(inputs)))
-    sns.move_legend(ax, 'upper left', bbox_to_anchor=(1, 1))
-    ax.yaxis.grid(True)
-    # add vertical lines after every two boxes (1 dataset)
-    for pos in positions:
-        ax.axvline(pos + 1, linewidth=0.5, color='grey')
-    plt.xlabel('Dataset')
-    plt.ylabel(measure)
-    plt.xticks(rotation=45, ha='right', rotation_mode='anchor', fontsize=10)
-    plt.tight_layout()
-    outpath = dir.replace('results', 'plots').replace(f'{modelname}/', '')
-    if not os.path.exists(outpath):
-        os.makedirs(outpath)
-    filename = f'{modelname}-{measure}-boxplot.png'
-    plt.savefig(os.path.join(outpath, filename))
-    plt.show()
+    # iterate over prob columns
+    for col_name in p_columns:
+        fig, ax = plt.subplots(figsize=(10, 7))
+        ax = sns.boxplot(data=merged_df, x='input_condition', y=col_name, hue='condition', ax=ax)
+        ax.set_title(f'{modelname} DOM {measure}', pad=20, loc='center')
+        sns.move_legend(ax, 'upper left', bbox_to_anchor=(1, 1))
+        ax.yaxis.grid(True)
+        positions = []
+        stepsize = -1.5
+        for inp in list(merged_df['input'].unique()):
+            df_filtered = merged_df[merged_df['input'] == inp]
+            stepsize += len(list(df_filtered['condition'].unique()))
+            if stepsize < 0:
+                stepsize = 0.5
+            positions.append(stepsize)
+        ax.set_xticks(positions, labels=list(merged_df['input'].unique()))
+        # add vertical lines after every two boxes (1 dataset)
+        for pos in positions:
+            ax.axvline(pos + 1, linewidth=0.5, color='grey')
+        ax.set_axisbelow(True)
+        ax.yaxis.grid(True)
+        print(f'INPUTS {merged_df["input"].unique()}')
+        print(f'POSITIONS {positions}')
+        plt.xlabel('Dataset')
+        plt.ylabel(measure)
+        plt.xticks(rotation=45, ha='right', rotation_mode='anchor', fontsize=10)
+        plt.tight_layout()
+        outpath = dir.replace('results', 'plots').replace(f'/{modelname}', '')
+        print('OUT ', outpath)
+        if not os.path.exists(outpath):
+            os.makedirs(outpath)
+        filename = f'{modelname}-{measure}-boxplot.png'
+        plt.savefig(os.path.join(outpath, filename))
+        plt.show()
 
 
-def create_plots_for_dir(dir_path, type):
-    if type == 'bar':
-        create_plot = create_barplot
-    elif type == 'box':
-        create_plot = create_boxplot
-    else:
-        print(f'Choose a valid plot type, either bar or box')
-        return
+def create_all_barplots(dir_path):
     for subdir, dirs, files in os.walk(dir_path):
         for file in files:
             print(subdir)
@@ -130,13 +131,23 @@ def create_plots_for_dir(dir_path, type):
                     modelname = 'BETO'
                 else:
                     modelname = 'mBERT'
-                if type == 'bar':
-                    path = os.path.join(subdir, file)
+                path = os.path.join(subdir, file)
+                create_barplot(path, modelname=modelname)
+
+
+def create_fillmask_boxplots(dir_path):
+    for subdir, dirs, files in os.walk(dir_path):
+        for file in files:
+            print(subdir)
+            print(file)
+            if file == 'statistics.tsv':
+                if 'BETO' in subdir:
+                    modelname = 'BETO'
                 else:
-                    path = subdir
-                create_plot(path, modelname=modelname)
+                    modelname = 'mBERT'
+                path = subdir
+                create_boxplot(path, modelname=modelname)
 
 
-dir = os.path.join(pathlib.Path(__file__).parent.absolute(), '..',
-                        'results/')
-create_plots_for_dir(dir, type='bar')
+dir = os.path.join(pathlib.Path(__file__).parent.absolute(), '..','results/fill-mask/')
+create_fillmask_boxplots(dir)

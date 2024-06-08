@@ -3,7 +3,7 @@ import os
 import pathlib
 import time
 import fill_mask, sentence_score
-
+#TODO: remove MASK_TYPE parameter from code
 
 # measure time
 start_time = time.time()

@@ -48,6 +48,8 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
         conditions = list(data['condition'].unique())
         statistics = []
         inputs, fillers, probabilities, masked_tokens, dom_ranks, dom_probs, condis = [], [], [], [], [], [], []
+        if TYPE == 'dobject-masking':
+            def_ranks, def_probs, indef_ranks, indef_probs = [], [], [], []
         for cond in conditions:
             # filter data for condition
             df = data[data['condition'] == cond]
@@ -101,7 +103,6 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
                         print(f'definite article probability: {prob2:.4f} rank: {rank2}')
                         print(f'indefinite article probability: {prob3:.4f} rank: {rank3}')
                     print()
-
             dom_probs.extend(dom_prob)
             dom_ranks.extend(dom_rank)
             stats = {'dom': [round(np.mean(dom_prob), 4), round(np.std(dom_prob), 4), round(np.median(dom_prob), 4),
@@ -111,6 +112,10 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
                                 round(np.mean(def_rank), 4)]
                 stats['indef'] = [round(np.mean(indef_prob), 4), round(np.std(indef_prob), 4),
                                   round(np.median(indef_prob), 4), round(np.mean(indef_rank), 4)]
+                def_probs.extend(def_prob)
+                def_ranks.extend(def_rank)
+                indef_probs.extend(indef_prob)
+                indef_ranks.extend(indef_rank)
             statistics.append(stats)
 
         # add columns to df
@@ -121,6 +126,11 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
         data['condition'] = condis
         data['dom_prob'] = [round(x, 4) for x in dom_probs]
         data['dom_rank'] = [round(x, 4) for x in dom_ranks]
+        if TYPE == 'dobject-masking':
+            data['def_prob'] = [round(x, 4) for x in def_probs]
+            data['def_rank'] = [round(x, 4) for x in def_ranks]
+            data['indef_prob'] = [round(x, 4) for x in indef_probs]
+            data['indef_rank'] = [round(x, 4) for x in indef_ranks]
 
         # print
         if PRINT_MODE:
@@ -153,7 +163,12 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
                 os.makedirs(output_path)
             # save
             filename = f'{source}-results.tsv'
-            df_print = data[['id', 'condition', 'input_sentence', 'masked', 'top_fillers', 'probabilities', 'dom_prob', 'dom_rank']]
+            if TYPE == 'dobject-masking':
+                df_print = data[['id', 'condition', 'input_sentence', 'masked', 'top_fillers', 'probabilities',
+                                 'dom_prob', 'dom_rank', 'def_prob', 'def_rank', 'indef_prob', 'indef_rank']]
+            else:
+                df_print = data[['id', 'condition', 'input_sentence', 'masked', 'top_fillers',
+                                 'probabilities', 'dom_prob', 'dom_rank']]
             full_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, filename)
             df_print.to_csv(full_path, index=False, sep='\t')
             stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'statistics.tsv')
@@ -165,4 +180,4 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
                         f.write(
                             f'{source}\t{cond}\t{exp_type}\t{modelname}\t{key}\t{stats[key][0]}\t{stats[key][1]}\t{stats[key][2]}\t{stats[key][3]}\n')
 
-    print(f'Successfully completed fill-mask {TYPE} experiment with {INPUT_FILE}')
+    print(f'Successfully completed fill-mask {TYPE} experiment with {MODEL_NAME}')

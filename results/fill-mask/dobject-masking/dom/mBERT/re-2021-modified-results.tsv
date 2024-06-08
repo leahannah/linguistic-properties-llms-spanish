@@ -1,17 +1,17 @@
-id	condition	input_sentence	masked	top_fillers	probabilities
-141	definite	Gonzalo mató a [MASK] mujer en el parque .	la	['una', 'la', 'su', 'otra', 'un']	[0.531  0.2399 0.1847 0.0173 0.0045]
-142	definite	Patricio lesionó a [MASK] camarera en la discoteca .	la	['la', 'su', 'una', 'otra', 'un']	[0.7362 0.1326 0.1223 0.0024 0.0016]
-143	definite	Carolina golpeó a [MASK] jugadora en el vestuario .	la	['la', 'una', 'su', 'otra', 'un']	[0.7742 0.1998 0.0074 0.0045 0.0016]
-144	definite	Elena cuidó a [MASK] paciente durante dos semanas .	la	['la', 'un', 'o', 'el', 'paciente']	[0.2971 0.1239 0.0661 0.0433 0.0214]
-145	definite	Irene acusó a [MASK] secretaria general en la asamblea .	la	['la', 'una', 'Irene', 'un', 'a']	[0.5409 0.2111 0.1875 0.0078 0.0038]
-146	definite	Cecilia denunció a [MASK] mujer en la comisaría de policía .	la	['una', 'la', 'su', 'otra', 'un']	[0.4759 0.2676 0.1817 0.0215 0.011 ]
-147	definite	Josefina vio a [MASK] pastora en el parque .	la	['la', 'una', 'su', 'un', 'otra']	[0.9211 0.07   0.0019 0.0015 0.001 ]
-148	definite	Julio oyó a [MASK] madre desde la cocina .	la	['su', 'la', 'una', 'mi', 'Su']	[0.9455 0.0412 0.0017 0.0017 0.0011]
-149	indefinite	Pablo mató a [MASK] mujer durante el secuestro .	una	['la', 'una', 'su', 'otra', 'esta']	[0.5646 0.2217 0.1329 0.013  0.0044]
-150	indefinite	Alberto lesionó a [MASK] adversaria en el partido de la semana pasada .	una	['su', 'la', 'una', 'otra', 'esta']	[0.5072 0.3957 0.0536 0.0133 0.0016]
-151	indefinite	Andrea golpeó a [MASK] fotógrafa a la salida del restaurante .	una	['la', 'una', 'un', 'otra', 'Andrea']	[0.6124 0.3469 0.0186 0.0058 0.0034]
-152	indefinite	Javier cuidó a [MASK] paciente con gran profesionalidad .	una	['la', 'un', 'una', 'su', 'este']	[0.4188 0.213  0.081  0.0809 0.0317]
-153	indefinite	Laura acusó a [MASK] trabajadora en la reunión .	una	['la', 'una', 'Laura', 'un', 'su']	[0.5426 0.2589 0.1124 0.0172 0.0068]
-154	indefinite	Carlos denunció a [MASK] camarera tras una disputa .	una	['la', 'una', 'su', 'un', 'otra']	[0.8145 0.0821 0.0502 0.0057 0.0041]
-155	indefinite	Ana vio a [MASK] política en la tienda del barrio .	una	['la', '##ñera', 'una', 'María', 'un']	[0.7156 0.0351 0.0223 0.0108 0.0082]
-156	indefinite	Esther oyó a [MASK] niña en el apartamento de al lado .	una	['la', 'una', 'otra', 'las', 'un']	[0.8756 0.1093 0.0023 0.002  0.0011]
+id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank	def_prob	def_rank	indef_prob	indef_rank
+141	definite	Gonzalo mató a [MASK] mujer en el parque .	la	['una', 'la', 'su', 'otra', 'un']	[0.531  0.2399 0.1847 0.0173 0.0045]	0.0005	12	0.2399	1	0.531	0
+142	definite	Patricio lesionó a [MASK] camarera en la discoteca .	la	['la', 'su', 'una', 'otra', 'un']	[0.7362 0.1326 0.1223 0.0024 0.0016]	0.0001	15	0.7362	0	0.1223	2
+143	definite	Carolina golpeó a [MASK] jugadora en el vestuario .	la	['la', 'una', 'su', 'otra', 'un']	[0.7742 0.1998 0.0074 0.0045 0.0016]	0.0005	10	0.7742	0	0.1998	1
+144	definite	Elena cuidó a [MASK] paciente durante dos semanas .	la	['la', 'un', 'o', 'el', 'paciente']	[0.2971 0.1239 0.0661 0.0433 0.0214]	0.0176	6	0.2971	0	0.1239	1
+145	definite	Irene acusó a [MASK] secretaria general en la asamblea .	la	['la', 'una', 'Irene', 'un', 'a']	[0.5409 0.2111 0.1875 0.0078 0.0038]	0.0038	4	0.5409	0	0.2111	1
+146	definite	Cecilia denunció a [MASK] mujer en la comisaría de policía .	la	['una', 'la', 'su', 'otra', 'un']	[0.4759 0.2676 0.1817 0.0215 0.011 ]	0.0006	15	0.2676	1	0.4759	0
+147	definite	Josefina vio a [MASK] pastora en el parque .	la	['la', 'una', 'su', 'un', 'otra']	[0.9211 0.07   0.0019 0.0015 0.001 ]	0.0001	15	0.9211	0	0.07	1
+148	definite	Julio oyó a [MASK] madre desde la cocina .	la	['su', 'la', 'una', 'mi', 'Su']	[0.9455 0.0412 0.0017 0.0017 0.0011]	0.0001	19	0.0412	1	0.0017	2
+149	indefinite	Pablo mató a [MASK] mujer durante el secuestro .	una	['la', 'una', 'su', 'otra', 'esta']	[0.5646 0.2217 0.1329 0.013  0.0044]	0.001	18	0.5646	0	0.2217	1
+150	indefinite	Alberto lesionó a [MASK] adversaria en el partido de la semana pasada .	una	['su', 'la', 'una', 'otra', 'esta']	[0.5072 0.3957 0.0536 0.0133 0.0016]	0.0002	25	0.3957	1	0.0536	2
+151	indefinite	Andrea golpeó a [MASK] fotógrafa a la salida del restaurante .	una	['la', 'una', 'un', 'otra', 'Andrea']	[0.6124 0.3469 0.0186 0.0058 0.0034]	0.0002	14	0.6124	0	0.3469	1
+152	indefinite	Javier cuidó a [MASK] paciente con gran profesionalidad .	una	['la', 'un', 'una', 'su', 'este']	[0.4188 0.213  0.081  0.0809 0.0317]	0.0043	10	0.4188	0	0.213	1
+153	indefinite	Laura acusó a [MASK] trabajadora en la reunión .	una	['la', 'una', 'Laura', 'un', 'su']	[0.5426 0.2589 0.1124 0.0172 0.0068]	0.0021	8	0.5426	0	0.2589	1
+154	indefinite	Carlos denunció a [MASK] camarera tras una disputa .	una	['la', 'una', 'su', 'un', 'otra']	[0.8145 0.0821 0.0502 0.0057 0.0041]	0.0017	8	0.8145	0	0.0821	1
+155	indefinite	Ana vio a [MASK] política en la tienda del barrio .	una	['la', '##ñera', 'una', 'María', 'un']	[0.7156 0.0351 0.0223 0.0108 0.0082]	0.0009	41	0.7156	0	0.0223	2
+156	indefinite	Esther oyó a [MASK] niña en el apartamento de al lado .	una	['la', 'una', 'otra', 'las', 'un']	[0.8756 0.1093 0.0023 0.002  0.0011]	0.0003	13	0.8756	0	0.1093	1
