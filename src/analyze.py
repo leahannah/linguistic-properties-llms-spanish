@@ -127,6 +127,47 @@ def create_probability_boxplot(dir, modelname):
         # plt.show()
 
 
+def create_sentencescore_boxplots(dir, modelname):
+    figure, axis = plt.subplots(3, 2, figsize=(10, 13))
+    figure.subplots_adjust(hspace=0.4, wspace=0.3)
+    row, col = 0, 0
+    for file in sorted(os.listdir(dir)):
+        if file != 'statistics.tsv':
+            print(file)
+            print(row, col)
+            df1 = pd.read_csv(os.path.join(dir, file), sep='\t')
+            df2 = df1.copy()
+            df1.drop(columns=['score_unmarked'], inplace=True)
+            df1['type'] = ['DOM' for _ in range(df1.shape[0])]
+            df1.rename(columns={'score_dom': 'score'}, inplace=True)
+            df2.drop(columns=['score_dom'], inplace=True)
+            df2['type'] = ['unmarked' for _ in range(df2.shape[0])]
+            df2.rename(columns={'score_unmarked': 'score'}, inplace=True)
+            df = pd.concat([df1, df2])
+            print(df.head())
+            print(df.shape)
+            print(df.columns)
+            ax = sns.boxplot(data=df, y='score', x='condition', hue='type', ax=axis[row, col], showmeans=True)
+            ax.set_title(file[:-12])
+            ax.legend_.remove()
+            if col == 1:
+                row += 1
+                col = 0
+            else:
+                col += 1
+    plt.delaxes(axis[-1, -1])
+    handles, labels = axis[0, 0].get_legend_handles_labels()
+    legend = figure.legend(handles, labels, loc='center', bbox_to_anchor=(0.6, 0.25), bbox_transform=figure.transFigure,
+                           title='Type', fontsize='large', title_fontsize='x-large')
+    outpath = dir.replace('results', 'plots').replace(f'/{modelname}', '')
+    print('OUT ', outpath)
+    if not os.path.exists(outpath):
+        os.makedirs(outpath)
+    filename = f'{modelname}-multi-boxplot.png'
+    plt.savefig(os.path.join(outpath, filename))
+    plt.show()
+
+
 def create_all_barplots(dir_path):
     for subdir, dirs, files in os.walk(dir_path):
         for file in files:
@@ -155,5 +196,5 @@ def create_fillmask_boxplots(dir_path):
                 create_probability_boxplot(path, modelname=modelname)
 
 
-dir = os.path.join(pathlib.Path(__file__).parent.absolute(), '..','results/fill-mask/')
-create_fillmask_boxplots(dir)
+dir = os.path.join(pathlib.Path(__file__).parent.absolute(), '..','results/sentence-score/mBERT')
+create_sentencescore_boxplots(dir, modelname='mBERT')

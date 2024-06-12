@@ -62,14 +62,14 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
                 # get score with dom
                 mlm_sent1 = MLMSentence(sent, model, tokenizer, index=-1, top_k=-1)
                 input_sent1 = mlm_sent1.get_sentence()
-                score = mlm_sent1.sentence_score(log=False)
+                score = mlm_sent1.sentence_score(log=True)
                 prob = mlm_sent1.sentence_score()
                 token_scores, ranks = mlm_sent1.sentence_score(log=True, per_token=True, return_ranks=True)
                 # get score without dom
                 sent_unmarked = sent.replace(' a ', ' ').replace(' al ', ' el ')
                 mlm_sent2 = MLMSentence(sent_unmarked, model, tokenizer, index=-1, top_k=-1)
                 input_sent2 = mlm_sent2.get_sentence()
-                score_unmarked = mlm_sent2.sentence_score(log=False)
+                score_unmarked = mlm_sent2.sentence_score(log=True)
                 prob_unmarked = mlm_sent2.sentence_score()
                 token_scores_unmarked, ranks_unmarked = mlm_sent2.sentence_score(log=True, per_token=True, return_ranks=True)
                 scores_dom.append(np.round(score, 4))
@@ -120,7 +120,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
             # save
             # define outputpath
             modelname = model_mapping[MODEL_NAME]
-            output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/sentence-score/',
+            output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/sentence-score/non-log/',
                                        modelname)
             if not os.path.exists(output_path):
                 os.makedirs(output_path)
