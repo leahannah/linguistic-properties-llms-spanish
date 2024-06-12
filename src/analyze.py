@@ -136,6 +136,7 @@ def create_sentencescore_boxplots(dir, modelname):
             print(file)
             print(row, col)
             df1 = pd.read_csv(os.path.join(dir, file), sep='\t')
+            print(df1.columns)
             df2 = df1.copy()
             df1.drop(columns=['score_unmarked'], inplace=True)
             df1['type'] = ['DOM' for _ in range(df1.shape[0])]
@@ -196,5 +197,5 @@ def create_fillmask_boxplots(dir_path):
                 create_probability_boxplot(path, modelname=modelname)
 
 
-dir = os.path.join(pathlib.Path(__file__).parent.absolute(), '..','results/sentence-score/mBERT')
+dir = os.path.join(pathlib.Path(__file__).parent.absolute(), '..','results/sentence-score/non-log/mBERT')
 create_sentencescore_boxplots(dir, modelname='mBERT')

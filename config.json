@@ -1,6 +1,6 @@
 {
-    "EXPERIMENT": "fill-mask",
-    "MODEL_NAME": "dccuchile/bert-base-spanish-wwm-cased",
+    "EXPERIMENT": "sentence-score",
+    "MODEL_NAME": "google-bert/bert-base-multilingual-cased",
     "INPUT_FILE": "testdata-merged.tsv",
     "SOURCE": null,
     "PRINT_TO_CONSOLE": true,

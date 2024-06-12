@@ -62,16 +62,16 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
                 # get score with dom
                 mlm_sent1 = MLMSentence(sent, model, tokenizer, index=-1, top_k=-1)
                 input_sent1 = mlm_sent1.get_sentence()
-                score = mlm_sent1.sentence_score(log=True)
+                score = mlm_sent1.sentence_score(log=False)
                 prob = mlm_sent1.sentence_score()
-                token_scores, ranks = mlm_sent1.sentence_score(log=True, per_token=True, return_ranks=True)
+                token_scores, ranks = mlm_sent1.sentence_score(log=False, per_token=True, return_ranks=True)
                 # get score without dom
                 sent_unmarked = sent.replace(' a ', ' ').replace(' al ', ' el ')
                 mlm_sent2 = MLMSentence(sent_unmarked, model, tokenizer, index=-1, top_k=-1)
                 input_sent2 = mlm_sent2.get_sentence()
-                score_unmarked = mlm_sent2.sentence_score(log=True)
+                score_unmarked = mlm_sent2.sentence_score(log=False)
                 prob_unmarked = mlm_sent2.sentence_score()
-                token_scores_unmarked, ranks_unmarked = mlm_sent2.sentence_score(log=True, per_token=True, return_ranks=True)
+                token_scores_unmarked, ranks_unmarked = mlm_sent2.sentence_score(log=False, per_token=True, return_ranks=True)
                 scores_dom.append(np.round(score, 4))
                 scores_unmarked.append(np.round(score_unmarked, 4))
                 disc = score - score_unmarked
@@ -81,10 +81,10 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
                     print(input_sent1)
                     print(row['en_sentence'])
                     print(f'score with dom: {score :4f}')
-                    # print(f'token scores: {np.round(token_scores, 4)}, ranks: {ranks}')
+                    print(f'token scores: {np.round(token_scores, 4)}, ranks: {ranks}')
                     print(input_sent2)
                     print(f'score unmarked: {score_unmarked :4f}')
-                    # print(f'token scores: {np.round(token_scores_unmarked, 4)}, ranks: {ranks_unmarked}')
+                    print(f'token scores: {np.round(token_scores_unmarked, 4)}, ranks: {ranks_unmarked}')
                     print(f'discrepancy: {disc :4f}')
                     print()
             discrepancies.extend(discs)
@@ -128,7 +128,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
             df_print = data[['id', 'condition', 'input_sentence', 'score_dom', 'score_unmarked', 'discrepancy']]
             full_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, filename)
             df_print.to_csv(full_path, index=False, sep='\t')
-            stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'nonlog-statistics.tsv')
+            stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'statistics.tsv')
             for i, cond in enumerate(conditions):
                 stats = statistics[i]
                 with open(stats_path, mode='a', encoding='utf-8') as f:

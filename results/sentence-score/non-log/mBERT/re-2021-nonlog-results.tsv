@@ -1,0 +1,17 @@
+id	condition	input_sentence	score_dom	score_unmarked	discrepancy
+89	definite	Gonzalo mató al/el mafioso en el parque.	0.105	0.1047	0.00028395652770996094
+90	definite	Patricio lesionó al/el portero en la discoteca.	0.1185	0.1188	-0.00035218894481658936
+91	definite	Carolina golpeó al/el futbolista en el vestuario.	0.117	0.1157	0.0012943297624588013
+92	definite	Elena cuidó al/el herido durante dos semanas.	0.1169	0.1136	0.0032400116324424744
+93	definite	Irene acusó al/el secretario general en la asamblea.	0.0882	0.0858	0.0023748576641082764
+94	definite	Cecilia denunció al/el ladrón en la comisaría de policía.	0.0892	0.0799	0.009284906089305878
+95	definite	Josefina vio al/el cura en el parque.	0.095	0.0954	-0.00035772472620010376
+96	definite	Julio oyó al/el basurero desde la cocina.	0.1013	0.1038	-0.00242527574300766
+97	indefinite	Pablo mató (a) un rehén durante el secuestro.	0.2031	0.1045	0.09863348305225372
+98	indefinite	Alberto lesionó (a) un defensa en el partido de la semana pasada.	0.0992	0.0779	0.021248310804367065
+99	indefinite	Andrea golpeó (a) un fotógrafo (a) la salida del restaurante.	0.2252	0.1013	0.12395839393138885
+100	indefinite	Javier cuidó (a) un enfermo con gran profesionalidad.	0.1016	0.0991	0.002537734806537628
+101	indefinite	Laura acusó (a) un trabajador en la reunión.	0.1707	0.0881	0.0825987458229065
+102	indefinite	Carlos denunció (a) un camarero tras una disputa.	0.1875	0.1123	0.0751727893948555
+103	indefinite	Ana vio (a) un político en la tienda del barrio.	0.1457	0.0931	0.05260567367076874
+104	indefinite	Esther oyó (a) un bebé en el apartamento de al/el lado.	0.1484	0.0797	0.06865701824426651

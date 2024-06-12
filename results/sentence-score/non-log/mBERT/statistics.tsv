@@ -1,0 +1,10 @@
+hg-2023	affected	mBERT	discrepancy	0.0804	0.0236	0.0887
+hg-2023	nonaffected	mBERT	discrepancy	0.0591	0.0272	0.0597
+ms-2013	animate	mBERT	discrepancy	0.073	0.0563	0.0903
+ms-2013	inanimate	mBERT	discrepancy	0.0111	0.0335	0.0033
+re-2021	definite	mBERT	discrepancy	0.0017	0.0033	0.0008
+re-2021	indefinite	mBERT	discrepancy	0.0657	0.0371	0.0719
+sa-2020	animate-human	mBERT	discrepancy	0.0489	0.0379	0.0622
+sa-2020	animate-animal	mBERT	discrepancy	0.0362	0.0357	0.0134
+re-2021-modified	definite	mBERT	discrepancy	0.0786	0.0333	0.0929
+re-2021-modified	indefinite	mBERT	discrepancy	0.0652	0.0467	0.0789
