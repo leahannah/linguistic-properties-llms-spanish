@@ -25,20 +25,21 @@ def load_targets(input_path, source, mask_type=None, remove_dom=False):
                     sent_list.pop(dom_idx)
                     dom_idx -= 1
             sentences.append(' '.join(sent_list)) # join to string
-            dobj_len = len(row['dobject'].split())
-            if mask_type == 'noun':
-                idx.append(dom_idx+dobj_len)
-            else:
-                if dobj_len > 1: # skip sentence, no separate determiner
-                    idx.append(dom_idx+1)
-                else:
-                    idx.append(-1)
+            article = row['dobject'].split()[0]
+            # if mask_type == 'noun':
+            #     idx.append(dom_idx+dobj_len)
+            # else:
+            if article in ['el', 'la', 'los', 'las', 'un', 'una', 'su']: # filter out dobjects without article
+                idx.append(dom_idx+1)
+            else: # skip sentence, no separate article
+                idx.append(-1)
         df['sentence'] = sentences
     df['sentence'] = df['sentence'].str.replace('[', '').str.replace(']', '') # remove brackets
     if mask_type is not None:
         df['mask_idx'] = idx
         df = df[df['mask_idx'] > 0] # remove sentences that have no tokens to mask
     return df
+
 
 # helper function: find index of dom-marker (a/ al) in target sentence
 def find_dom_index(sent_list, char='['):

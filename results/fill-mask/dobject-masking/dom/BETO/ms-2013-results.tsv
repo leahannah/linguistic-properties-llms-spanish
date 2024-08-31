@@ -1,4 +1,4 @@
-id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank	def_prob	def_rank	indef_prob	indef_rank
+ id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank	def_prob	def_rank	indef_prob	indef_rank
 34	animate	La abuela recibió a [MASK] niños .	los	['los', 'ambos', 'dos', 'muchos', 'varios']	[0.7836 0.0318 0.0204 0.0176 0.0165]	0.0	141	0.7836	0	0.0016	20
 37	animate	El ladrón secuestró a [MASK] señora .	la	['la', 'una', 'esa', 'mi', 'esta']	[0.4648 0.3547 0.0419 0.0404 0.0381]	0.0	78	0.4648	0	0.3547	1
 38	animate	Snoopy miró a [MASK] amigo .	su	['su', 'un', 'mi', 'otro', 'sus']	[0.9129 0.0705 0.0047 0.0031 0.0014]	0.0	36	0.0001	18	0.0705	1

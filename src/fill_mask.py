@@ -10,7 +10,7 @@ pd.set_option('mode.chained_assignment', None)
 np.set_printoptions(suppress=True)
 
 
-def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE):
+def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE):
     model_mapping = {'dccuchile/bert-base-spanish-wwm-cased': 'BETO',
                      'google-bert/bert-base-multilingual-cased': 'mBERT',
                      'microsoft/mdeberta-v3-base': 'mDeBERTa'}
@@ -25,7 +25,9 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE
     if TYPE == 'dom-masking':
         REMOVE_DOM = False
         MASK_TYPE = 'dom'
-    full_data = load_targets(input_path, source=SOURCE, mask_type=MASK_TYPE, remove_dom=REMOVE_DOM)
+    else:
+        MASK_TYPE = 'dobj'
+    full_data = load_targets(input_path, source=SOURCE, remove_dom=REMOVE_DOM, mask_type=MASK_TYPE)
     if PRINT_MODE:
         print(full_data.head())
         print(full_data.shape)

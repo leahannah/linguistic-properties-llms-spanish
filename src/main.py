@@ -3,7 +3,6 @@ import os
 import pathlib
 import time
 import fill_mask, sentence_score
-#TODO: remove MASK_TYPE parameter from code
 
 # measure time
 start_time = time.time()
@@ -22,7 +21,7 @@ SOURCE = config['SOURCE']
 PRINT_MODE = config['PRINT_TO_CONSOLE']
 SAVE_MODE = config['SAVE_RESULTS']
 TYPE = config['TYPE']
-MASK_TYPE = config['MASK_TYPE']
+# MASK_TYPE = config['MASK_TYPE']
 REMOVE_DOM = config['REMOVE_DOM']
 
 # run fill-mask experiment
@@ -33,11 +32,11 @@ if EXPERIMENT == 'fill-mask':
         print(f'TYPE parameter {TYPE} is not in the set of valid options.\n'
               f'Choose from: {valid_types}.')
     # sanity check to check is MASK_TYPE is valid
-    valid_mask_types = ['det', 'noun']
-    if TYPE == 'dobject-masking' and MASK_TYPE not in valid_mask_types:
-        print(f'MASK_TYPE parameter {MASK_TYPE} is not in the set of valid options.\n'
-              f'Choose from: {valid_mask_types}.')
-    fill_mask.main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, MASK_TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE)
+    # valid_mask_types = ['det', 'noun']
+    # if TYPE == 'dobject-masking' and MASK_TYPE not in valid_mask_types:
+    #     print(f'MASK_TYPE parameter {MASK_TYPE} is not in the set of valid options.\n'
+    #           f'Choose from: {valid_mask_types}.')
+    fill_mask.main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE)
 # run sentence-score experiment
 elif EXPERIMENT == 'sentence-score':
     sentence_score.main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE)
