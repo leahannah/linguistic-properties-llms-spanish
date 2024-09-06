@@ -1,0 +1,33 @@
+id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank	def_prob	def_rank	indef_prob	indef_rank
+1	affected	Felipe eliminó un rehén en pocos segundos.	un	['al', 'el', 'un', 'la', 'su']	[0.9418 0.0255 0.0132 0.0064 0.0031]	0.9418	0	0.0255	1	0.0132	2
+2	affected	Amaya neutralizó un enemigo en cinco minutos.	un	['al', 'el', 'su', 'fuego', 'a']	[0.9325 0.0477 0.0047 0.003  0.0026]	0.9325	0	0.0477	1	0.0024	5
+3	affected	Joaquín abatió un contrincante en unos minutos.	un	['al', 'su', 'un', 'el', 'otro']	[0.5857 0.3033 0.0449 0.0225 0.0194]	0.5857	0	0.0225	3	0.0449	2
+4	affected	Martina arrolló un peatón en cuestión de segundos.	un	['al', 'un', 'el', 'otro', 'a']	[0.702  0.2761 0.0115 0.0032 0.0024]	0.702	0	0.0115	2	0.2761	1
+5	affected	Carlos derribó un futbolista en dos segundos.	un	['al', 'el', 'a', 'un', 'del']	[0.9843 0.0082 0.003  0.0017 0.0007]	0.9843	0	0.0082	1	0.0017	3
+6	affected	Lucía destrozó un oponente en dos asaltos.	un	['al', 'su', 'el', 'un', 'otro']	[0.5621 0.3897 0.0212 0.016  0.0029]	0.5621	0	0.0212	2	0.016	3
+7	affected	Mateo quemó una bruja en poco más de media hora.	una	['la', 'una', 'su', 'esa', 'esta']	[0.7655 0.0983 0.0549 0.0136 0.0095]	0.0078	5	0.7655	0	0.0983	1
+8	affected	Valentina venció un adversario en menos de una hora.	un	['al', 'su', 'el', 'a', 'un']	[0.5305 0.4339 0.0077 0.0068 0.0053]	0.5305	0	0.0077	2	0.0053	4
+9	affected	Luis zarandeó un hombre durante algunos minutos.	un	['al', 'el', 'del', 'su', 'un']	[0.9085 0.0389 0.0167 0.0109 0.0068]	0.9085	0	0.0389	1	0.0068	4
+10	affected	María transportó un mochilero durante todo el día.	un	['al', 'el', 'a', 'un', 'su']	[0.9592 0.0213 0.0062 0.0047 0.0014]	0.9592	0	0.0213	1	0.0047	3
+11	affected	Lucas arrastró un soldado durante un buen rato.	un	['al', 'el', 'su', 'un', 'a']	[0.8992 0.0709 0.0058 0.0055 0.0038]	0.8992	0	0.0709	1	0.0055	3
+12	affected	Claudia maltrató una compañera durante varios años.	una	['su', 'a', 'una', 'como', 'la']	[0.7476 0.0646 0.04   0.0394 0.0227]	0.0646	1	0.0227	4	0.04	2
+13	affected	Hugo apaleó un rebelde durante varios minutos.	un	['al', 'el', 'a', 'la', 'un']	[0.942  0.0175 0.0164 0.0122 0.0016]	0.942	0	0.0175	1	0.0016	4
+14	affected	Carla asedió una contrincante durante bastante tiempo.	una	['al', 'su', 'el', 'un', 'como']	[0.4452 0.4206 0.0307 0.0287 0.0221]	0.4452	0	0.0307	2	0.0287	3
+15	affected	Daniel remolcó un enfermo durante algunos minutos.	un	['al', 'el', 'la', 'su', 'a']	[0.5647 0.2043 0.0511 0.05   0.0314]	0.5647	0	0.2043	1	0.0105	5
+16	affected	Coral guio un turista durante toda la mañana.	un	['al', 'el', 'de', 'un', 'a']	[0.9411 0.0136 0.0098 0.0068 0.006 ]	0.9411	0	0.0136	1	0.0068	3
+17	nonaffected	Carlos vigiló un bebé durante unos minutos.	un	['al', 'el', 'del', 'su', 'la']	[0.9441 0.0433 0.0036 0.0034 0.0026]	0.9441	0	0.0433	1	0.0008	6
+18	nonaffected	Irene oyó una niña durante horas.	una	['la', 'al', 'a', 'una', 'su']	[0.4162 0.1068 0.0583 0.0488 0.0347]	0.1068	1	0.4162	0	0.0488	3
+19	nonaffected	Pablo tuvo un ayudante durante varios años.	un	['un', 'como', 'su', 'una', 'este']	[0.335  0.1166 0.0942 0.0849 0.0539]	0.0108	10	0.0102	11	0.335	0
+20	nonaffected	Isabel vio un estudiante durante toda la mañana.	un	['al', 'el', 'la', 'un', 'su']	[0.7912 0.0419 0.0322 0.0178 0.0126]	0.7912	0	0.0419	1	0.0178	3
+21	nonaffected	Unai amó una joven durante varios años.	una	['al', 'la', 'a', 'el', 'muy']	[0.9391 0.024  0.0115 0.0103 0.002 ]	0.9391	0	0.024	1	0.0016	7
+22	nonaffected	Valeria admiró un cantante durante toda su vida.	un	['al', 'la', 'como', 'el', 'su']	[0.8156 0.0875 0.0242 0.0175 0.012 ]	0.8156	0	0.0875	1	0.0005	13
+23	nonaffected	Adrián percibió una mujer durante algunos minutos.	una	['la', 'una', 'su', 'a', 'esta']	[0.3681 0.2592 0.0467 0.0462 0.0315]	0.0462	3	0.3681	0	0.2592	1
+24	nonaffected	Emma investigó un político durante varias semanas.	un	['al', 'el', 'lo', 'su', 'este']	[0.3265 0.1896 0.1046 0.0275 0.0257]	0.3265	0	0.1896	1	0.02	6
+25	nonaffected	Ismael encontró un conocido en cuestión de segundos.	un	['al', 'un', 'su', 'el', 'otro']	[0.3982 0.1928 0.1498 0.1068 0.0378]	0.3982	0	0.1068	3	0.1928	1
+26	nonaffected	Sofía conoció un chico en un par de días.	un	['al', 'un', 'este', 'el', 'ese']	[0.8884 0.0558 0.0169 0.0161 0.0062]	0.8884	0	0.0161	3	0.0558	1
+27	nonaffected	Martín detectó un intruso en un par de minutos.	un	['un', 'al', 'otro', 'el', 'a']	[0.4333 0.412  0.0665 0.0616 0.004 ]	0.412	1	0.0616	3	0.4333	0
+28	nonaffected	Elena localizó una amiga al cabo de dos horas.	una	['su', 'al', 'la', 'a', 'el']	[0.3745 0.3054 0.1259 0.0505 0.0226]	0.3054	1	0.1259	2	0.0199	6
+29	nonaffected	Alejandro identificó un agresor en menos de dos minutos.	un	['al', 'el', 'su', 'un', 'como']	[0.9788 0.008  0.0069 0.0045 0.0005]	0.9788	0	0.008	1	0.0045	3
+30	nonaffected	Marta descartó un aspirante en un minuto.	un	['al', 'el', 'la', 'un', 'a']	[0.8501 0.0511 0.0344 0.0132 0.0118]	0.8501	0	0.0511	1	0.0132	3
+31	nonaffected	Samuel descubrió un infiltrado en un par de días.	un	['al', 'un', 'el', 'su', 'nuestro']	[0.591  0.1681 0.0875 0.0476 0.0149]	0.591	0	0.0875	2	0.1681	1
+32	nonaffected	Alba mencionó un actor tras varios minutos de reflexión.	un	['al', 'el', 'del', 'ser', 'como']	[0.8525 0.0804 0.02   0.0159 0.0103]	0.8525	0	0.0804	1	0.0017	7

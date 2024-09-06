@@ -9,7 +9,7 @@ from mlm_sentence import MLMSentence
 pd.set_option('mode.chained_assignment', None)
 np.set_printoptions(suppress=True)
 
-
+# conduct fill-mask experiment (dom and article masking) for a given dataset and model
 def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE):
     model_mapping = {'dccuchile/bert-base-spanish-wwm-cased': 'BETO',
                      'google-bert/bert-base-multilingual-cased': 'mBERT',
@@ -26,12 +26,30 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
         REMOVE_DOM = False
         MASK_TYPE = 'dom'
     else:
-        MASK_TYPE = 'dobj'
+        MASK_TYPE = 'article'
     full_data = load_targets(input_path, source=SOURCE, remove_dom=REMOVE_DOM, mask_type=MASK_TYPE)
     if PRINT_MODE:
         print(full_data.head())
         print(full_data.shape)
         print()
+
+    # initialize output
+    if SAVE_MODE:
+        str_type = ''
+        modelname = model_mapping[MODEL_NAME] if MODEL_NAME in model_mapping else MODEL_NAME
+        if TYPE == 'article-masking':
+            str_type = 'unmarked' if REMOVE_DOM else 'dom'
+            output_path = os.path.join(pathlib.Path(__file__).parent.absolute(),
+                                        f'../results/fill-mask/{TYPE}/{str_type}/{modelname}/')
+        else:
+            output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/fill-mask/{TYPE}/{modelname}/')
+        if not os.path.exists(output_path):
+            os.makedirs(output_path)
+        stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'statistics.tsv')
+        if not os.path.exists(stats_path):
+            with open(stats_path, mode='w', encoding='utf-8') as f:
+                f.write(f'source\tcondition\texperiment\tmodel\tfiller_type\tmean\tstd\tmedian\trank\n')
+
 
     # create list of sources in data if no source specified
     if SOURCE is None:
@@ -50,7 +68,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
         conditions = list(data['condition'].unique())
         statistics = []
         inputs, fillers, probabilities, masked_tokens, dom_ranks, dom_probs, condis = [], [], [], [], [], [], []
-        if TYPE == 'dobject-masking':
+        if TYPE == 'article-masking':
             def_ranks, def_probs, indef_ranks, indef_probs = [], [], [], []
         for cond in conditions:
             # filter data for condition
@@ -62,11 +80,11 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
 
             # initialize lists
             dom_rank, dom_prob = [], []
-            if TYPE == 'dobject-masking':
+            if TYPE == 'article-masking':
                 def_rank, def_prob, indef_rank, indef_prob = [], [], [], []
             # compute masked language model probabilites for sentence
             for index, row in df.iterrows():
-                mlm_sent = MLMSentence(row['sentence'], model, tokenizer, index=row['mask_idx'], top_k=-1)
+                mlm_sent = MLMSentence(row['sentence'], row['mask_idx'], model, tokenizer)
                 mlm_sent.compute_mlm_fillers_probs()  # compute mask fillers and probabilities
                 input_sent = mlm_sent.get_sentence()  # get input sentence as string
                 inputs.append(input_sent)
@@ -81,7 +99,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
                 dom_rank.append(rank1)
                 dom_prob.append(prob1)
                 condis.append(cond)
-                if TYPE == 'dobject-masking':
+                if TYPE == 'article-masking':
                     # get rank and probability for most likely definite article
                     rank2, prob2 = mlm_sent.get_list_prob_rank(['el', 'la', 'las', 'los'])
                     def_rank.append(rank2)
@@ -92,6 +110,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
                     indef_prob.append(prob3)
                 if PRINT_MODE:
                     print(input_sent)
+                    print(row['mask_idx'])
                     print(row['en_sentence'])
                     print(f'masked token: {mlm_sent.get_masked_token()}')
                     print(f'top predictions: {top_fillers}')
@@ -109,7 +128,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
             dom_ranks.extend(dom_rank)
             stats = {'dom': [round(np.mean(dom_prob), 4), round(np.std(dom_prob), 4), round(np.median(dom_prob), 4),
                              round(np.mean(dom_rank), 4)]}
-            if TYPE == 'dobject-masking':
+            if TYPE == 'article-masking':
                 stats['def'] = [round(np.mean(def_prob), 4), round(np.std(def_prob), 4), round(np.median(def_prob), 4),
                                 round(np.mean(def_rank), 4)]
                 stats['indef'] = [round(np.mean(indef_prob), 4), round(np.std(indef_prob), 4),
@@ -128,7 +147,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
         data['condition'] = condis
         data['dom_prob'] = [round(x, 4) for x in dom_probs]
         data['dom_rank'] = [round(x, 4) for x in dom_ranks]
-        if TYPE == 'dobject-masking':
+        if TYPE == 'article-masking':
             data['def_prob'] = [round(x, 4) for x in def_probs]
             data['def_rank'] = [round(x, 4) for x in def_ranks]
             data['indef_prob'] = [round(x, 4) for x in indef_probs]
@@ -152,20 +171,9 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
         if SAVE_MODE:
             print('save results')
             print()
-            # initialize output
-            str_type = ''
-            modelname = model_mapping[MODEL_NAME] if MODEL_NAME in model_mapping else MODEL_NAME
-            if TYPE == 'dobject-masking':
-                str_type = 'unmarked' if REMOVE_DOM else 'dom'
-                output_path = os.path.join(pathlib.Path(__file__).parent.absolute(),
-                                           f'../results/fill-mask/{TYPE}/{str_type}/', modelname)
-            else:
-                output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/fill-mask/{TYPE}/', modelname)
-            if not os.path.exists(output_path):
-                os.makedirs(output_path)
             # save
             filename = f'{source}-results.tsv'
-            if TYPE == 'dobject-masking':
+            if TYPE == 'article-masking':
                 df_print = data[['id', 'condition', 'input_sentence', 'masked', 'top_fillers', 'probabilities',
                                  'dom_prob', 'dom_rank', 'def_prob', 'def_rank', 'indef_prob', 'indef_rank']]
             else:
@@ -173,8 +181,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
                                  'probabilities', 'dom_prob', 'dom_rank']]
             full_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, filename)
             df_print.to_csv(full_path, index=False, sep='\t')
-            stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'statistics.tsv')
-            exp_type = TYPE + '-' + str_type if TYPE == 'dobject' else TYPE
+            exp_type = TYPE + '-' + str_type if TYPE == 'article' else TYPE
             for i, cond in enumerate(conditions):
                 stats = statistics[i]
                 with open(stats_path, mode='a', encoding='utf-8') as f:

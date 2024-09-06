@@ -4,7 +4,7 @@ import pandas as pd
 from transformers import BertForMaskedLM, BertTokenizer
 
 
-def load_targets(input_path, source, mask_type=None, remove_dom=False):
+def load_targets(input_path, source, mask_type='dom', remove_dom=False):
     df = pd.read_csv(input_path, sep='\t')
     idx = []
     if source is not None:
@@ -18,26 +18,26 @@ def load_targets(input_path, source, mask_type=None, remove_dom=False):
             dom_idx = row['dom_idx']
             sent_list = sent.split()
             if remove_dom:
-                if row['dom'] == 'al':
-                    sent_list[dom_idx] = '[el'
-                    sent_list[dom_idx+1] = sent_list[dom_idx+1][1:]
-                else:
-                    sent_list.pop(dom_idx)
-                    dom_idx -= 1
+                sent_list.pop(dom_idx)
+                dom_idx -= 1
+            print(f'sent_list: {sent_list}')
             sentences.append(' '.join(sent_list)) # join to string
+            print(f'dobj: {row["dobject"]}')
             article = row['dobject'].split()[0]
-            # if mask_type == 'noun':
-            #     idx.append(dom_idx+dobj_len)
-            # else:
-            if article in ['el', 'la', 'los', 'las', 'un', 'una', 'su']: # filter out dobjects without article
+            if article in ['la', 'los', 'las', 'un', 'una', 'su']: # filter out dobjects without article
                 idx.append(dom_idx+1)
+                # print(f'index: {dom_idx+1}')
             else: # skip sentence, no separate article
                 idx.append(-1)
+                # print(f'index: {-1}')
         df['sentence'] = sentences
     df['sentence'] = df['sentence'].str.replace('[', '').str.replace(']', '') # remove brackets
-    if mask_type is not None:
-        df['mask_idx'] = idx
+    # filter for sentences with separate article
+    # print(f'df shape before filtering: {df.shape}')
+    df['mask_idx'] = idx
+    if mask_type == 'article':
         df = df[df['mask_idx'] > 0] # remove sentences that have no tokens to mask
+    # print(f'df shape after: {df.shape}')
     return df
 
 

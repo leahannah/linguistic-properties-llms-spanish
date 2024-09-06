@@ -9,11 +9,10 @@ from mlm_sentence import MLMSentence
 pd.set_option('mode.chained_assignment', None)
 np.set_printoptions(suppress=True)
 
-
+# execute sentence score experiment for a given dataset and model
 def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
     model_mapping = {'dccuchile/bert-base-spanish-wwm-cased': 'BETO',
-                     'google-bert/bert-base-multilingual-cased': 'mBERT',
-                     'microsoft/mdeberta-v3-base': 'mDeBERTa'}
+                     'google-bert/bert-base-multilingual-cased': 'mBERT'}
 
     print(f'Start sentence score experiment with {INPUT_FILE}')
 
@@ -28,6 +27,19 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
         print(full_data.columns)
         print(full_data.shape)
         print()
+    
+    # initialize output
+    if SAVE_MODE:
+        # define outputpath
+        modelname = model_mapping[MODEL_NAME]
+        output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), 
+                                   f'../results/sentence-score/', modelname)
+        if not os.path.exists(output_path):
+            os.makedirs(output_path)
+        stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'statistics.tsv')
+        if not os.path.exists(stats_path):
+            with open(stats_path, mode='w', encoding='utf-8') as f:
+                f.write(f'source\tcondition\tmodelname\tdiscrepancy\tmean\tstd\tmedian\n')
 
     # create list of sources in data if no source specified
     if SOURCE is None:
@@ -59,15 +71,16 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
             for index, row in df.iterrows():
                 condis.append(cond)
                 sent = row['sentence']
+                print(sent)
                 # get score with dom
-                mlm_sent1 = MLMSentence(sent, model, tokenizer, index=-1, top_k=-1)
+                mlm_sent1 = MLMSentence(sent, -1, model, tokenizer)
                 input_sent1 = mlm_sent1.get_sentence()
                 score = mlm_sent1.sentence_score(log=False)
                 prob = mlm_sent1.sentence_score()
                 token_scores, ranks = mlm_sent1.sentence_score(log=False, per_token=True, return_ranks=True)
                 # get score without dom
                 sent_unmarked = sent.replace(' a ', ' ').replace(' al ', ' el ')
-                mlm_sent2 = MLMSentence(sent_unmarked, model, tokenizer, index=-1, top_k=-1)
+                mlm_sent2 = MLMSentence(sent_unmarked, -1, model, tokenizer)
                 input_sent2 = mlm_sent2.get_sentence()
                 score_unmarked = mlm_sent2.sentence_score(log=False)
                 prob_unmarked = mlm_sent2.sentence_score()
@@ -118,13 +131,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
             print('save results')
             print()
             # save
-            # define outputpath
-            modelname = model_mapping[MODEL_NAME]
-            output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/sentence-score/non-log/',
-                                       modelname)
-            if not os.path.exists(output_path):
-                os.makedirs(output_path)
-            filename = f'{source}-nonlog-results.tsv'
+            filename = f'{source}-results.tsv'
             df_print = data[['id', 'condition', 'input_sentence', 'score_dom', 'score_unmarked', 'discrepancy']]
             full_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, filename)
             df_print.to_csv(full_path, index=False, sep='\t')

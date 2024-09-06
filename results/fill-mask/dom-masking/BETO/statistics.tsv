@@ -1,4 +1,4 @@
-input	condition	experiment_type	model	filler_type	mean	median	std	mean_rank
+source	condition	experiment	model	filler_type	mean	std	median	rank
 hg-2023	affected	dom-masking	BETO	dom	0.9658	0.0469	0.9883	0.0
 hg-2023	nonaffected	dom-masking	BETO	dom	0.839	0.2599	0.9547	0.125
 ms-2013	animate	dom-masking	BETO	dom	0.9181	0.1912	0.9882	0.0

@@ -4,6 +4,8 @@ import pathlib
 import time
 import fill_mask, sentence_score
 
+# execute experiments based on config.json file
+
 # measure time
 start_time = time.time()
 print(f'Start time: {time.ctime()}')
@@ -21,19 +23,18 @@ SOURCE = config['SOURCE']
 PRINT_MODE = config['PRINT_TO_CONSOLE']
 SAVE_MODE = config['SAVE_RESULTS']
 TYPE = config['TYPE']
-# MASK_TYPE = config['MASK_TYPE']
 REMOVE_DOM = config['REMOVE_DOM']
 
 # run fill-mask experiment
 if EXPERIMENT == 'fill-mask':
     # sanity check to check if TYPE parameter is valid
-    valid_types = ['dom-masking', 'dobject-masking']
+    valid_types = ['dom-masking', 'article-masking']
     if TYPE not in valid_types:
         print(f'TYPE parameter {TYPE} is not in the set of valid options.\n'
               f'Choose from: {valid_types}.')
     # sanity check to check is MASK_TYPE is valid
     # valid_mask_types = ['det', 'noun']
-    # if TYPE == 'dobject-masking' and MASK_TYPE not in valid_mask_types:
+    # if TYPE == 'article-masking' and MASK_TYPE not in valid_mask_types:
     #     print(f'MASK_TYPE parameter {MASK_TYPE} is not in the set of valid options.\n'
     #           f'Choose from: {valid_mask_types}.')
     fill_mask.main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE)

@@ -1,0 +1,28 @@
+id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank	def_prob	def_rank	indef_prob	indef_rank
+123	animate-human	La cebra que ensució a la turista descansaba plácidamente.	la	['la', 'un', 'ese', 'nuestro', 'aquel']	[0.5927 0.084  0.0753 0.0496 0.0434]	0.001	24	0.5927	0	0.084	1
+124	animate-human	La cabra que empujó a la pastora respiraba velozmente.	la	['la', 'su', 'una', 'aquella', 'esta']	[0.976  0.0091 0.0086 0.0015 0.0008]	0.0	52	0.976	0	0.0086	2
+125	animate-human	La serpiente que detestaba a la veterinaria entró sigilosamente.	la	['la', 'su', 'una', 'esa', 'esta']	[0.9173 0.0287 0.0106 0.0101 0.007 ]	0.0	282	0.9173	0	0.0106	2
+126	animate-human	La leoparda que oyó a la dueña corrió repentinamente.	la	['su', 'la', 'lad', 'sus', 'ser']	[0.511  0.4448 0.0058 0.0047 0.0033]	0.0	181	0.4448	1	0.001	6
+132	animate-human	Las panteras que atacaron a las empleadas descansaban tranquilamente.	las	['las', 'sus', 'la', 'los', 'ambas']	[0.7239 0.0676 0.0373 0.0243 0.0111]	0.0	463	0.7239	0	0.001	20
+133	animate-human	Las burras que pisaron a las mujeres gruñían claramente.	las	['las', 'esas', 'sus', 'estas', 'nuestras']	[0.5768 0.146  0.0749 0.0695 0.0466]	0.0	132	0.5768	0	0.0007	19
+134	animate-human	Las conejas que olieron a las chicas saltaban continuamente.	las	['las', 'esas', 'estas', 'sus', 'otras']	[0.6174 0.2155 0.0678 0.0243 0.0183]	0.0	76	0.6174	0	0.0018	10
+135	animate-human	Las gallinas que detestaban a las señoras comían lentamente.	las	['las', 'sus', 'estas', 'otras', 'esas']	[0.8712 0.0781 0.0123 0.0067 0.0066]	0.0	404	0.8712	0	0.0004	17
+136	animate-human	Las lobas que empujaron a las ecólogas salieron repentinamente.	las	['las', 'sus', 'estas', 'esas', 'ambas']	[0.9171 0.0209 0.0124 0.0064 0.0051]	0.0001	49	0.9171	0	0.0009	16
+137	animate-human	Los pájaros que miraban a los críos cantaban alegremente.	los	['los', 'sus', 'aquellos', 'esos', 'estos']	[0.9485 0.0334 0.0042 0.0034 0.0026]	0.0	86	0.9485	0	0.0002	12
+138	animate-human	Los delfines que mataron a los pescadores gemían fuertemente.	los	['los', 'estos', 'ambos', 'esos', 'sus']	[0.9085 0.0191 0.0107 0.0089 0.0084]	0.0	345	0.9085	0	0.0009	16
+139	animate-human	Los cocodrilos que vieron a los asistentes nadaban frenéticamente.	los	['los', 'sus', 'la', 'las', 'su']	[0.5145 0.1124 0.0504 0.0315 0.0208]	0.0001	325	0.5145	0	0.0011	22
+140	animate-human	Los flamencos que escucharon a los ayudantes dormían felizmente.	los	['sus', 'los', 'estos', 'esos', 'mis']	[0.5098 0.4198 0.0257 0.0066 0.0053]	0.0	123	0.4198	1	0.0002	25
+105	animate-animal	La artista que pisó a la perra andaba sigilosamente.	la	['la', 'su', 'esa', 'mi', 'esta']	[0.7635 0.0829 0.0426 0.0313 0.0249]	0.0	69	0.7635	0	0.0081	6
+106	animate-animal	La bióloga que abrazó a la gorila sonreía incesantemente.	la	['este', 'un', 'ese', 'su', 'aquel']	[0.265  0.2524 0.125  0.1214 0.0507]	0.0053	12	0.0369	5	0.2524	1
+107	animate-animal	La voluntaria que tocó a la tortuga bebía continuamente.	la	['la', 'una', 'esta', 'esa', 'su']	[0.9198 0.0221 0.0207 0.0092 0.006 ]	0.0	37	0.9198	0	0.0221	1
+108	animate-animal	La ciclista que vio a la vaca comía distraídamente.	la	['la', 'una', 'esta', 'su', 'esa']	[0.9157 0.0446 0.0174 0.0079 0.006 ]	0.0	39	0.9157	0	0.0446	1
+109	animate-animal	La granjera que olió a la cerda salió inesperadamente.	la	['la', 'una', 'esa', 'su', 'esta']	[0.723  0.2154 0.0145 0.0119 0.0069]	0.0002	27	0.723	0	0.2154	1
+114	animate-animal	Las zoólogas que observaron a las palomas bebían plácidamente.	las	['las', 'estas', 'esas', 'sus', 'unas']	[0.7347 0.2151 0.0172 0.0033 0.0022]	0.0	146	0.7347	0	0.0022	4
+115	animate-animal	Las hermanas que buscaron a las gatas entraron inesperadamente.	las	['las', 'sus', 'estas', 'esas', 'aquellas']	[0.9034 0.0649 0.0065 0.0064 0.0024]	0.0	80	0.9034	0	0.0014	7
+116	animate-animal	Las niñas que adoraban a las ardillas chillaban alegremente.	las	['las', 'estas', 'esas', 'sus', 'la']	[0.9668 0.0107 0.0096 0.0062 0.0011]	0.0	189	0.9668	0	0.0004	8
+117	animate-animal	Las estudiantes que pegaron a las monas paseaban tristemente.	las	['las', 'esas', 'estas', 'sus', 'aquellas']	[0.8444 0.0757 0.024  0.0164 0.0059]	0.0	110	0.8444	0	0.0029	6
+118	animate-animal	Los payasos que abrazaron a los chimpancés caminaban rápidamente.	los	['los', 'estos', 'sus', 'otros', 'esos']	[0.9721 0.0092 0.0045 0.0023 0.0022]	0.0	102	0.9721	0	0.0006	9
+119	animate-animal	Los trabajadores que perseguían a los guepardos corrían velozmente.	los	['los', 'sus', 'estos', 'esos', 'las']	[0.9603 0.0196 0.0073 0.0031 0.0025]	0.0	177	0.9603	0	0.0004	9
+120	animate-animal	Los niños que ensuciaron a los macacos sonreían frenéticamente.	los	['los', 'sus', 'esos', 'nuestros', 'mis']	[0.8482 0.0886 0.0138 0.0136 0.0085]	0.0	150	0.8482	0	0.0004	16
+121	animate-animal	Los viejos que oyeron a los pollos respiraban fuertemente.	los	['los', 'esos', 'estos', 'sus', 'aquellos']	[0.8622 0.0493 0.0329 0.0167 0.007 ]	0.0	196	0.8622	0	0.0011	8
+122	animate-animal	Los técnicos que tocaron a los hámsters andaban distraídamente.	los	['los', 'sus', 'esos', 'estos', 'nuestros']	[0.9065 0.0535 0.0138 0.0106 0.0032]	0.0	146	0.9065	0	0.0008	9

@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 def create_barplot(inpath, modelname, errorbar=False):
     measure = 'probability' if 'fill-mask' in inpath else 'discrepancy'
     add_str = ''
-    if 'dobject-masking' in inpath:
+    if 'article-masking' in inpath:
         add_str = ' unmarked' if 'unmarked' in inpath else ' dom'
     df = pd.read_csv(inpath, sep='\t')
     print(df.head())
@@ -70,7 +70,7 @@ def create_barplot(inpath, modelname, errorbar=False):
 def create_probability_boxplot(dir, modelname):
     measure = 'Probability'
     add_str = ''
-    if 'dobject-masking' in dir:
+    if 'article-masking' in dir:
         add_str = ' unmarked' if 'unmarked' in dir else ' dom'
     dfs = []
     for file in os.listdir(dir):
