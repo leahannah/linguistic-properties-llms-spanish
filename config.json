@@ -1,10 +1,10 @@
 {
-    "EXPERIMENT": "sentence-score",
-    "MODEL_NAME": "dccuchile/bert-base-spanish-wwm-cased",
+    "EXPERIMENT": "fill-mask",
+    "MODEL_NAME": "google-bert/bert-base-multilingual-cased",
     "INPUT_FILE": "testdata-merged.tsv",
     "SOURCE": null,
     "PRINT_TO_CONSOLE": true,
     "SAVE_RESULTS": true,
     "TYPE": "article-masking",
-    "REMOVE_DOM": true
+    "REMOVE_DOM": false
 }

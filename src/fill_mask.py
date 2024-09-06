@@ -14,8 +14,9 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
     model_mapping = {'dccuchile/bert-base-spanish-wwm-cased': 'BETO',
                      'google-bert/bert-base-multilingual-cased': 'mBERT',
                      'microsoft/mdeberta-v3-base': 'mDeBERTa'}
+    modelname = model_mapping[MODEL_NAME] if MODEL_NAME in model_mapping else MODEL_NAME
 
-    print(f'Start fill mask experiment {TYPE} with {INPUT_FILE}')
+    print(f'Start fill mask experiment {TYPE} with {INPUT_FILE} and model {modelname}')
 
     # load model
     tokenizer, model = load_model(MODEL_NAME)
@@ -36,7 +37,6 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
     # initialize output
     if SAVE_MODE:
         str_type = ''
-        modelname = model_mapping[MODEL_NAME] if MODEL_NAME in model_mapping else MODEL_NAME
         if TYPE == 'article-masking':
             str_type = 'unmarked' if REMOVE_DOM else 'dom'
             output_path = os.path.join(pathlib.Path(__file__).parent.absolute(),

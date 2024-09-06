@@ -13,8 +13,9 @@ np.set_printoptions(suppress=True)
 def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
     model_mapping = {'dccuchile/bert-base-spanish-wwm-cased': 'BETO',
                      'google-bert/bert-base-multilingual-cased': 'mBERT'}
+    modelname = model_mapping[MODEL_NAME]
 
-    print(f'Start sentence score experiment with {INPUT_FILE}')
+    print(f'Start sentence score experiment with {INPUT_FILE} and model {modelname}')
 
     # load model
     tokenizer, model = load_model(MODEL_NAME)
@@ -31,7 +32,6 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
     # initialize output
     if SAVE_MODE:
         # define outputpath
-        modelname = model_mapping[MODEL_NAME]
         output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), 
                                    f'../results/sentence-score/', modelname)
         if not os.path.exists(output_path):
@@ -39,7 +39,8 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
         stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'statistics.tsv')
         if not os.path.exists(stats_path):
             with open(stats_path, mode='w', encoding='utf-8') as f:
-                f.write(f'source\tcondition\tmodelname\tdiscrepancy\tmean\tstd\tmedian\n')
+                f.write(f'source\tcondition\tmodel\tmean_score_dom\tmean_score_unmarked')
+                f.write(f'\tmean_disc\tstd_disc\tmedian_disc\n')
 
     # create list of sources in data if no source specified
     if SOURCE is None:
@@ -71,20 +72,19 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
             for index, row in df.iterrows():
                 condis.append(cond)
                 sent = row['sentence']
-                print(sent)
                 # get score with dom
                 mlm_sent1 = MLMSentence(sent, -1, model, tokenizer)
                 input_sent1 = mlm_sent1.get_sentence()
                 score = mlm_sent1.sentence_score(log=False)
                 prob = mlm_sent1.sentence_score()
-                token_scores, ranks = mlm_sent1.sentence_score(log=False, per_token=True, return_ranks=True)
+                token_scores = mlm_sent1.sentence_score(log=False, per_token=True, return_ranks=False)
                 # get score without dom
                 sent_unmarked = sent.replace(' a ', ' ').replace(' al ', ' el ')
                 mlm_sent2 = MLMSentence(sent_unmarked, -1, model, tokenizer)
                 input_sent2 = mlm_sent2.get_sentence()
                 score_unmarked = mlm_sent2.sentence_score(log=False)
                 prob_unmarked = mlm_sent2.sentence_score()
-                token_scores_unmarked, ranks_unmarked = mlm_sent2.sentence_score(log=False, per_token=True, return_ranks=True)
+                token_scores_unmarked = mlm_sent2.sentence_score(log=False, per_token=True, return_ranks=False)
                 scores_dom.append(np.round(score, 4))
                 scores_unmarked.append(np.round(score_unmarked, 4))
                 disc = score - score_unmarked
@@ -94,14 +94,16 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
                     print(input_sent1)
                     print(row['en_sentence'])
                     print(f'score with dom: {score :4f}')
-                    print(f'token scores: {np.round(token_scores, 4)}, ranks: {ranks}')
+                    print(f'token scores: {np.round(token_scores, 4)}')
                     print(input_sent2)
                     print(f'score unmarked: {score_unmarked :4f}')
-                    print(f'token scores: {np.round(token_scores_unmarked, 4)}, ranks: {ranks_unmarked}')
+                    print(f'token scores: {np.round(token_scores_unmarked, 4)}')
                     print(f'discrepancy: {disc :4f}')
                     print()
             discrepancies.extend(discs)
-            stats = {'discrepancy': [round(np.mean(discs), 4), round(np.std(discs), 4), round(np.median(discs), 4), ]}
+            stats = {'score_dom': [round(np.mean(scores_dom), 4), round(np.std(scores_dom), 4), round(np.median(scores_dom), 4)], 
+                     'score_unmarked': [round(np.mean(scores_unmarked), 4), round(np.std(scores_unmarked), 4), round(np.median(scores_unmarked), 4)],
+                    'discrepancy': [round(np.mean(discs), 4), round(np.std(discs), 4), round(np.median(discs), 4)]}
             statistics.append(stats)
 
         # add columns to df
@@ -122,8 +124,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
                 print(f'condition: {cond}')
                 stats = statistics[i]
                 for key in stats.keys():
-                    print(
-                        f'{key} mean: {stats[key][0]}, std: {stats[key][1]}, median: {stats[key][2]}')
+                    print(f'key: {key}, stats: {stats[key]}')
                 print()
 
         # save
@@ -139,8 +140,8 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
             for i, cond in enumerate(conditions):
                 stats = statistics[i]
                 with open(stats_path, mode='a', encoding='utf-8') as f:
-                    for key in stats.keys():
-                        f.write(
-                            f'{source}\t{cond}\t{modelname}\t{key}\t{stats[key][0]}\t{stats[key][1]}\t{stats[key][2]}\n')
+                    f.write(f"{source}\t{cond}\t{modelname}\t{stats['score_dom'][0]}")
+                    f.write(f"\t{stats['score_unmarked'][0]}\t{stats['discrepancy'][0]}")
+                    f.write(f"\t{stats['discrepancy'][1]}\t{stats['discrepancy'][2]}\n")
 
     print(f'Successfully completed sentence-score experiment with {INPUT_FILE}')

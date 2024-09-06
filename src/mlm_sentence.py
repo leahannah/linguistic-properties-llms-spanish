@@ -97,8 +97,8 @@ class MLMSentence:
             rank = self.top_fillers.index(token)
             prob = self.top_probs[rank]
         return rank, prob
-
-    # find instances of list in fillers (e.g. dom markers, (in)definite articles)
+    
+        # find instances of list in fillers (e.g. dom markers, (in)definite articles)
     def get_list_prob_rank(self, li):
         """
         get probability of an item list of tokens being predicted at given mask index
@@ -139,70 +139,11 @@ class MLMSentence:
         self.top_fillers = top_fillers
         self.top_probs = top_probs.tolist()
         return top_fillers, top_probs
-
+    
     # based on https://github.com/simonepri/lm-scorer
-    def sentence_score_old(self, reduce='mean', log=False, per_token=False, return_ranks=False):
-        """
-        function to compute a likelihood score for a sentence based on the softmax (log) probabilities of each token
-        :param reduce: method to reduce token probabilities to a single score, either mean or prod (default mean)
-        :param log: if True, score is based on logarithmic probability (default False)
-        :param per_token: if True, function returns a list of (log) probabilites for each token (default False)
-        :param return_ranks: if True and per_token True, function additionally returns a list of ranks for each token in the probability distribution (default False)
-        :return: the (log) probability score for the sentence or a list of probabilities plus optional: list of ranks
-        """
-        probabilities, ranks = [], []
-        for i in range(len(self.sentence.split())):
-            s, masked = self.prep_input(self.sentence, index=i) # mask token at index i
-            # print(f'sentence: {s}, masked: {masked}')
-            s = '[CLS]' + s + '[SEP]' # add special tokens
-            # tokenize
-            tokens = self.tokenizer.tokenize(s)
-            # print(f'tokens: {tokens}')
-            indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokens)
-            tokens_tensor = torch.tensor([indexed_tokens])
-            tokenized_masked = self.tokenizer.tokenize(masked)
-            indexed_masked = self.tokenizer.convert_tokens_to_ids(tokenized_masked)[0]
-            # predict
-            predictions = self.model(tokens_tensor)[0]
-            # get masked token index
-            mask_idx = self.get_masked_index(tokens)
-            # get (log) probabilities
-            if log:
-                probs = torch.nn.functional.log_softmax(predictions[0, mask_idx], dim=-1)
-            else:
-                probs = torch.nn.functional.softmax(predictions[0, mask_idx], dim=-1)
-            # return rank of masked token
-            top_probs, top_indices = torch.topk(probs, probs.shape[0], sorted=True)  # get highest probabilites
-            top_fillers = self.tokenizer.convert_ids_to_tokens(top_indices)
-            rank = top_fillers.index(masked)
-            prob = top_probs[rank]
-            if per_token and return_ranks:
-                ranks.append(rank)
-            # get probability of masked token being predicted for [MASK]
-            probabilities.append(float(prob))
-        probabilities = torch.tensor(probabilities)
-        # return
-        if per_token: # return list of probabilities
-            probabilities = probabilities.tolist()
-            return (probabilities, ranks) if return_ranks else probabilities
-        else: # return probability
-            if reduce == 'prod': # product
-                if log: # sum for logarithmic probabilities
-                    score = probabilities.sum()
-                else: # product for probabilities
-                    score = probabilities.prod()
-            else: # mean
-                if log:
-                    score = probabilities.logsumexp(0) - math.log(probabilities.shape[0])
-                else:
-                    score = probabilities.mean()
-            return float(score)
-        
-
     def sentence_score(self, reduce='mean', log=False, per_token=False, return_ranks=False):
         """
-        Function to compute a likelihood score for a sentence based on the softmax (log) probabilities of each token.
-        Adjusted to handle WordPiece tokenization and words split into multiple subwords.
+        Function to compute a likelihood score for a sentence based on the softmax (log) probabilities of each subtoken.
         
         :param reduce: method to reduce token probabilities to a single score, either mean or prod (default mean)
         :param log: if True, score is based on logarithmic probability (default False)
@@ -211,16 +152,17 @@ class MLMSentence:
         :return: the (log) probability score for the sentence or a list of probabilities plus optional: list of ranks
         """
         probabilities, ranks = [], []
-        tokens = self.tokenizer.tokenize('[CLS] ' + self.sentence + ' [SEP]')  # tokenize the full sentence including special tokens
-        indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokens)
         
-        for word_idx, word in enumerate(self.sentence.split()):  # loop through words
+        # stopping point should be interpreted as single token
+        sent = self.sentence[:-1] + ' .'
+         # loop through words
+        for word_idx, word in enumerate(sent.split()): 
             word_tokens = self.tokenizer.tokenize(word)  # check if the word is split into subwords
-            word_probs = []  # to accumulate probabilities for subwords of the same word
-            word_ranks = []  # to accumulate ranks for subwords
-            
-            for subword_idx, subword in enumerate(word_tokens):  # handle each subword
-                s, masked = self.prep_input(self.sentence, index=word_idx)  # mask token at index of word
+            word_probs, word_ranks = [], []  # initialize lists for subtokens
+
+            # loop through subwords
+            for subword in word_tokens:  # handle each subword
+                s, masked = self.prep_input(sent, index=word_idx)  # mask token at index of word
                 s = '[CLS] ' + s + ' [SEP]'  # add special tokens
 
                 tokens_masked = self.tokenizer.tokenize(s)  # tokenize the masked sentence
@@ -244,13 +186,14 @@ class MLMSentence:
                 word_probs.append(probs[subword_id].item())
                 
                 # Optionally calculate rank
-                if per_token and return_ranks:
+                if per_token:
                     top_probs, top_indices = torch.topk(probs, probs.shape[0], sorted=True)
-                    rank = (top_indices == subword_id).nonzero(as_tuple=True)[0].item()
-                    word_ranks.append(rank)
+                    if return_ranks:
+                        rank = (top_indices == subword_id).nonzero(as_tuple=True)[0].item()
+                        word_ranks.append(rank)
 
             # Combine probabilities of subwords (average for simplicity)
-            word_prob = sum(word_probs) / len(word_probs)
+            word_prob = np.mean(word_probs)
             probabilities.append(word_prob)
             
             if per_token and return_ranks:
@@ -302,16 +245,21 @@ class MLMSentence:
 # # test
 # from util import load_model
 # tokenizer, model = load_model('dccuchile/bert-base-spanish-wwm-cased')
-# sentence = 'El ladrón secuestró a la señora.'
+# sentence = 'Los payasos que abrazaron a los chimpancés caminaban rápidamente.'
 # mlm = MLMSentence(sentence, 3, model, tokenizer)
 # print(mlm.get_sentence())
+# # experiment 2
+# sentence = 'Los payasos que abrazaron los chimpancés caminaban rápidamente.'
+# mlm2 = MLMSentence(sentence, 3, model, tokenizer)
+# print(mlm2.get_sentence())
+# print(mlm.sentence_score())
+# print(mlm2.sentence_score())
+# print(mlm.sentence_score(per_token=True, return_ranks=True))
+
 # # experiment 1
 # mlm.compute_mlm_fillers_probs()
 # print(mlm.get_top_fillers())
 # print(mlm.get_top_probabilities())
-# # experiment 2
-# print(mlm.sentence_score())
-# print(mlm.sentence_score(per_token=True))
 # # experiment 3
 # mlm.set_mask_index(4)
 # mlm.compute_mlm_fillers_probs()

@@ -1,0 +1,57 @@
+id	condition	input_sentence	score_dom	score_unmarked	discrepancy
+33	animate	Bob Esponja saludó (a) Squidward.	0.1892	0.1539	0.0352583054855799
+34	animate	La abuela recibió (a) los niños.	0.4383	0.2659	0.17239613753649574
+35	animate	El Goblin verde atacó (a) Spiderman.	0.3549	0.2765	0.0783497455293487
+36	animate	La maestra ayudó al/el niño.	0.3477	0.2716	0.07602034489245096
+37	animate	El ladrón secuestró (a) la señora.	0.449	0.3384	0.11069161045463866
+38	animate	Snoopy miró (a) su amigo.	0.2465	0.1768	0.06966148149121049
+39	animate	La maestra castigó al/el estudiante.	0.3016	0.1903	0.11130164472140155
+40	animate	Buzz Lightyear llevó (a) Woody.	0.3024	0.2553	0.047165932212816786
+41	animate	Plankton conoció (a) Bob Esponja.	0.0181	0.0131	0.0049301274457807034
+42	animate	Mickey abrazó (a) Pluto.	0.2285	0.1304	0.09803595429432055
+43	animate	La abuelita visitó al/el niño.	0.2701	0.2731	-0.003038083401008862
+44	animate	Fiona besó (a) Shrek.	0.1226	0.0109	0.11173131174546595
+45	animate	La mamá tocó al/el bebé.	0.2199	0.2847	-0.06479836417832988
+46	animate	Hello Kitty vio (a) Keroppi.	0.1295	0.028	0.10148932952934062
+47	animate	Diego llevó (a) Isabel.	0.3054	0.1609	0.14452962093527227
+48	animate	Eduardo conoció (a) Bella.	0.2431	0.0582	0.1848835347921721
+49	animate	Alejandro abrazó (a) Consuelo.	0.3055	0.1739	0.13155179537759523
+50	animate	Mario vio (a) Jaime.	0.1608	0.0088	0.1520310593276179
+51	animate	El niño visitó (a) su abuela.	0.3167	0.2305	0.08620598689734443
+52	animate	Julieta besó (a) Romeo.	0.096	0.0023	0.09366628046203876
+53	animate	Ana tocó al/el bebé.	0.1868	0.2046	-0.01773982133131541
+54	animate	La familia acogió (a) la inmigrante.	0.3879	0.2866	0.1013570295542241
+55	animate	El ladrón atacó al/el presidente.	0.3662	0.2159	0.15039359005811545
+56	animate	Cristina saludó (a) los novios.	0.3884	0.242	0.1464165334365286
+57	animate	El bandido secuestró (a) la mujer.	0.3293	0.1958	0.13355459838037445
+58	animate	La maestra ayudó al/el niño.	0.3477	0.2716	0.07602034489245096
+59	animate	La maestra castigó al/el estudiante.	0.3016	0.1903	0.11130164472140155
+60	animate	El juez juzgó al/el criminal.	0.2818	0.2999	-0.018073469917142537
+61	inanimate	Alejandra escuchó (a) la música.	0.3626	0.3829	-0.02028526437490097
+62	inanimate	Blanca Nieves comió (a) la manzana.	0.313	0.2862	0.026762185801679883
+63	inanimate	El niño aprendío (a) las matemáticas.	0.3373	0.2779	0.059471809874162174
+64	inanimate	Antonio bebió (a) un refresco.	0.2211	0.1745	0.04661926160325719
+65	inanimate	Alfonso arregló (a) la bicicleta.	0.3073	0.2347	0.07262988799623654
+66	inanimate	Mafalda leyó al/el libro.	0.1762	0.3135	-0.13737789039900578
+67	inanimate	Los amigos firmaron al/el papel.	0.1686	0.2599	-0.09127280306112576
+68	inanimate	El niño tocó (a) la planta.	0.3004	0.2934	0.0069456965714791985
+69	inanimate	El hombre llevó al/el paraguas.	0.2814	0.2952	-0.013796204327168937
+70	inanimate	La niña abrazó al/el oso.	0.2751	0.3393	-0.06423349448426546
+71	inanimate	María besó al/el arbol.	0.0067	0.0073	-0.0005833158706536777
+72	inanimate	Miguel vio (a) la pelota.	0.1735	0.2142	-0.04069414391310602
+73	inanimate	Los niños visitaron (a) museo.	0.2842	0.242	0.04221296133706953
+74	inanimate	Jimmy Newtron conoció (a) Six Flags.	0.2017	0.0419	0.15982679966693344
+75	inanimate	Julián tocó (a) la planta.	0.2082	0.2364	-0.028164343087246385
+76	inanimate	El viejo llevó al/el paraguas.	0.2371	0.294	-0.056938743242881174
+77	inanimate	La niña abrazó al/el osito.	0.2473	0.3292	-0.08192796999807014
+78	inanimate	Beto besó al/el trofeo.	0.1624	0.1881	-0.02574198887294435
+79	inanimate	Victor vio (a) la pelota.	0.1474	0.1673	-0.01988907934131326
+80	inanimate	Los niños visitaron al/el museo.	0.2816	0.3733	-0.09168364619472413
+81	inanimate	Raquel conoció (a) Chicago.	0.2732	0.1755	0.09764187378495459
+82	inanimate	Esteban estudió (a) matemáticas.	0.152	0.206	-0.05405008143861778
+83	inanimate	Alfonso arregló (a) la bicicleta roja.	0.2395	0.1984	0.0410883285032459
+84	inanimate	Antonio bebió (a) la coca cola.	0.3035	0.2152	0.08823523928653151
+85	inanimate	Estefanía compró (a) un auto.	0.2329	0.2	0.03289650743307815
+86	inanimate	Mercedes escuchó (a) música.	0.185	0.2187	-0.03368137339566507
+87	inanimate	Carlos leyó (a) una novela.	0.1449	0.1634	-0.01843753410770055
+88	inanimate	Los novios firmaron al/el contrato.	0.1796	0.275	-0.095324641899424
