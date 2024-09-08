@@ -124,7 +124,7 @@ def create_probability_boxplot(dir, modelname):
             os.makedirs(outpath)
         filename = f'{modelname}-{col_name}-boxplot.png'
         plt.savefig(os.path.join(outpath, filename))
-        # plt.show()
+        plt.show()
 
 
 def create_sentencescore_boxplots(dir, modelname):
@@ -197,5 +197,10 @@ def create_fillmask_boxplots(dir_path):
                 create_probability_boxplot(path, modelname=modelname)
 
 
-dir = os.path.join(pathlib.Path(__file__).parent.absolute(), '..','results/sentence-score/non-log/mBERT')
-create_sentencescore_boxplots(dir, modelname='mBERT')
+if __name__ == '__main__':
+    dir = os.path.join(pathlib.Path(__file__).parent.absolute(), '..', 'results/fill-mask/dom-masking/BETO')
+    create_fillmask_boxplots(dir)
+    import matplotlib
+    print(matplotlib.__version__)
+    import seaborn
+    print(seaborn.__version__)

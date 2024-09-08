@@ -2,5 +2,5 @@ transformers
 torch
 numpy
 pandas
-seaborn
-matplotlib
+seaborn==0.13.1
+matplotlib==3.7.1
