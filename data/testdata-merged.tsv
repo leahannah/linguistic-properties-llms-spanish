@@ -91,7 +91,7 @@ id	source	condition	sentence	dom_idx	dom	dobject	gender	number	other_condition	e
 90	re-2021	definite	Patricio lesionó al [portero] en la discoteca.	2	al	portero	m	sing		Patricio injured [the doorman] at the nightclub
 91	re-2021	definite	Carolina golpeó al [futbolista] en el vestuario.	2	al	futbolista	m	sing		Carolina hit [the soccer] player in the locker room.
 92	re-2021	definite	Elena cuidó al [herido] durante dos semanas.	2	al	herido	m	sing		Elena took care of [the injured person] for two weeks.
-93	re-2021	definite	Irene acusó al [secretario] general en la asamblea.	2	al	secretario	m	sing		Irene accused [the general secretary] at the assembly.
+93	re-2021	definite	Irene acusó al [secretario general] en la asamblea.	2	al	secretario general	m	sing		Irene accused [the general secretary] at the assembly.
 94	re-2021	definite	Cecilia denunció al [ladrón] en la comisaría de policía.	2	al	ladrón	m	sing		Cecilia reported [the thief] at the police station.
 95	re-2021	definite	Josefina vio al [cura] en el parque.	2	al	cura	m	sing		Josefina saw [the priest] in the park.
 96	re-2021	definite	Julio oyó al [basurero] desde la cocina.	2	al	basurero	m	sing		Julio heard [the garbage collector] from the kitchen.

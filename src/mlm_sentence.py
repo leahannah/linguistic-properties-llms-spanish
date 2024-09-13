@@ -242,26 +242,27 @@ class MLMSentence:
                 masked_index = i
         return masked_index
     
-# # test
-# from util import load_model
-# tokenizer, model = load_model('dccuchile/bert-base-spanish-wwm-cased')
-# sentence = 'Los payasos que abrazaron a los chimpancés caminaban rápidamente.'
-# mlm = MLMSentence(sentence, 3, model, tokenizer)
-# print(mlm.get_sentence())
-# # experiment 2
-# sentence = 'Los payasos que abrazaron los chimpancés caminaban rápidamente.'
-# mlm2 = MLMSentence(sentence, 3, model, tokenizer)
-# print(mlm2.get_sentence())
-# print(mlm.sentence_score())
-# print(mlm2.sentence_score())
-# print(mlm.sentence_score(per_token=True, return_ranks=True))
+# test
+from util import load_model
+tokenizer, model = load_model('google-bert/bert-base-multilingual-cased')
+sentence = 'Fiona besó a Shrek.'
+mlm = MLMSentence(sentence, 2, model, tokenizer)
+print(mlm.get_sentence())
 
-# # experiment 1
-# mlm.compute_mlm_fillers_probs()
-# print(mlm.get_top_fillers())
-# print(mlm.get_top_probabilities())
-# # experiment 3
-# mlm.set_mask_index(4)
-# mlm.compute_mlm_fillers_probs()
-# print(mlm.get_top_fillers())
-# print(mlm.get_top_probabilities())
+# experiment 1
+mlm.compute_mlm_fillers_probs()
+print('DOM position top fillers and probabilities')
+print(mlm.get_top_fillers())
+print(mlm.get_top_probabilities())
+
+# experiment 2
+print('sentence score')
+print(mlm.sentence_score())
+print(mlm.sentence_score(per_token=True, return_ranks=True))
+
+# experiment 3
+print('article position top fillers and probabilities')
+mlm.set_mask_index(3)
+mlm.compute_mlm_fillers_probs()
+print(mlm.get_top_fillers())
+print(mlm.get_top_probabilities())
