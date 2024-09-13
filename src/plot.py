@@ -133,7 +133,6 @@ def create_sentencescore_boxplots(dir, modelname=None):
         modelname = 'BETO' if 'BETO' in dir else 'mBERT'
     figure, axis = plt.subplots(2, 3, figsize=(10, 7))
     plt.subplots_adjust(wspace=0.4, hspace=0.4)
-    #figure.subplots_adjust(hspace=0.4, wspace=0.4)
     row, col = 0, 0
     ordered_files = ['ms-2013-results.tsv','sa-2020-results.tsv','re-2021-results.tsv', 
                      're-2021-modified-results.tsv', 'hg-2023-results.tsv']
@@ -156,9 +155,8 @@ def create_sentencescore_boxplots(dir, modelname=None):
         ax.set(xlabel=None)
         ax.set_ylim(ymin=0.0, ymax=0.65)
         ax.set_title(file[:-12])
-        # Manually set the tick label size
-        ax.set_xticklabels(ax.get_xticklabels(), fontsize=14) 
-        ax.set_yticklabels(ax.get_yticklabels(), fontsize=14) 
+        ax.tick_params(axis='x', labelsize=14)  # Set font size for x-axis tick labels
+        ax.tick_params(axis='y', labelsize=14) 
         ax.set_ylabel('Score', fontsize=14)  # Increase y-axis label font size
         ax.legend_.remove()
         if col == 2:
@@ -178,6 +176,54 @@ def create_sentencescore_boxplots(dir, modelname=None):
     plt.savefig(os.path.join(outpath, filename))
     plt.show()
 
+def create_sentencescore_boxplots(dir, modelname=None):
+    if not modelname:
+        modelname = 'BETO' if 'BETO' in dir else 'mBERT'
+    figure, axis = plt.subplots(2, 3, figsize=(10, 7))
+    plt.subplots_adjust(wspace=0.4, hspace=0.4)
+    row, col = 0, 0
+    ordered_files = ['ms-2013-results.tsv','sa-2020-results.tsv','re-2021-results.tsv', 
+                     're-2021-modified-results.tsv', 'hg-2023-results.tsv']
+    for file in ordered_files:
+        df1 = pd.read_csv(os.path.join(dir, file), sep='\t')
+        df1.replace('nonaffected', 'non-affected', inplace=True)
+        df1.replace('animate-human', 'human', inplace=True)
+        df1.replace('animate-animal', 'animal', inplace=True)
+        df2 = df1.copy()
+        df1.drop(columns=['score_unmarked'], inplace=True)
+        df1['type'] = ['DOM' for _ in range(df1.shape[0])]
+        df1.rename(columns={'score_dom': 'score'}, inplace=True)
+        df2.drop(columns=['score_dom'], inplace=True)
+        df2['type'] = ['unmarked' for _ in range(df2.shape[0])]
+        df2.rename(columns={'score_unmarked': 'score'}, inplace=True)
+        df = pd.concat([df1, df2])
+        sns.set_context('paper', rc={'axes.titlesize': 16, 'axes.labelsize': 16, 'xtick.labelsize': 16,                                 'ytick.labelsize': 16, 'legend.fontsize': 16, 'legend.title_fontsize': 16})
+        ax = sns.boxplot(data=df, y='score', x='condition', hue='type', ax=axis[row, col], 
+                            showmeans=True, meanprops={"marker": "d", "markerfacecolor":"black", "markeredgecolor":"black", "markersize":"7"})
+        ax.set(xlabel=None)
+        ax.set_ylim(ymin=0.0, ymax=0.65)
+        ax.set_title(file[:-12])
+        ax.tick_params(axis='x', labelsize=14)  # Set font size for x-axis tick labels
+        ax.tick_params(axis='y', labelsize=14) 
+        ax.set_ylabel('Score', fontsize=14)  # Increase y-axis label font size
+        ax.legend_.remove()
+        if col == 2:
+            row += 1
+            col = 0
+        else:
+            col += 1
+    plt.delaxes(axis[-1, -1])
+    handles, labels = axis[0, 0].get_legend_handles_labels()
+    legend = figure.legend(handles, labels, loc='right', bbox_to_anchor=(1.1, 0.5), 
+                       bbox_transform=figure.transFigure, title='Version', fontsize=14, title_fontsize='x-large')
+    figure.suptitle(f'{modelname} sentence scores', fontsize=18)#, y=1.02)
+    outpath = dir.replace('results', 'plots').replace(f'/{modelname}', '')
+    if not os.path.exists(outpath):
+        os.makedirs(outpath)
+    filename = f'{modelname}-multi-boxplot.png'
+    plt.savefig(os.path.join(outpath, filename))
+    plt.show()
+    
 def create_discrepancy_scatterplot(dir, modelname=None):
     models = ['BETO', 'mBERT']
     figure, axis = plt.subplots(1, 2, figsize=(15, 5))

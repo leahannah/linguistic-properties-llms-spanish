@@ -40,7 +40,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
         if TYPE == 'article-masking':
             str_type = 'unmarked' if REMOVE_DOM else 'dom'
             output_path = os.path.join(pathlib.Path(__file__).parent.absolute(),
-                                        f'../results/fill-mask/{TYPE}/{str_type}/{modelname}/')
+                                        f'../results/fill-mask/{TYPE}/{modelname}/{str_type}')
         else:
             output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/fill-mask/{TYPE}/{modelname}/')
         if not os.path.exists(output_path):
