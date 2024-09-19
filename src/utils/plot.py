@@ -4,7 +4,10 @@ import json
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from util import articlemasking_postprocessing
 
+# suppress warnings
+pd.set_option('mode.chained_assignment', None)
 
 def create_barplot(inpath, modelname, errorbar=False):
     measure = 'probability' if 'fill-mask' in inpath else 'discrepancy'
@@ -81,7 +84,6 @@ def create_probability_boxplot(dir, modelname):
             df['input'] = [source for x in range(df.shape[0])]
             df['input_condition'] = df['input'] + '_' + df['condition']
     merged_df = pd.concat(dfs)
-    # merged_df.sort_values(by='input_condition', inplace=True)
     merged_df = reorder_by_data_condition(merged_df) # get datasets into correct order
     print(merged_df.head())
     print(merged_df.shape)
@@ -223,7 +225,7 @@ def create_sentencescore_boxplots(dir, modelname=None):
     filename = f'{modelname}-multi-boxplot.png'
     plt.savefig(os.path.join(outpath, filename))
     plt.show()
-    
+
 def create_discrepancy_scatterplot(dir, modelname=None):
     models = ['BETO', 'mBERT']
     figure, axis = plt.subplots(1, 2, figsize=(15, 5))
@@ -254,6 +256,7 @@ def create_discrepancy_scatterplot(dir, modelname=None):
         ax.legend_.remove()
         ax.set_ylabel('discrepancy', fontsize=16) 
         ax.set_xlabel('index', fontsize=16) 
+        ax.set_ylim(ymax=1.0, ymin=-0.8)
         ax.tick_params(axis='x', labelsize=16)  # Set font size for x-axis tick labels
         ax.tick_params(axis='y', labelsize=16)
         ax.axhline(0, color='black', linestyle='-', linewidth=0.8)
@@ -270,6 +273,100 @@ def create_discrepancy_scatterplot(dir, modelname=None):
     plt.savefig(os.path.join(outpath, filename))
     # plt.show()
 
+def create_articlemasking_boxplot(dir, remove_masc=True, remove_plural=False):
+    modelname = 'BETO' if 'BETO' in dir else 'mBERT'
+    file = 'merged-results.tsv'
+    if file not in os.listdir():
+        df = articlemasking_postprocessing(dir)
+    else:
+        df = pd.read_csv(os.path.join(dir, file), sep='\t')
+    # filter out inanimate because it is not relevant for this comparison
+    df = df[df['condition'] != 'inanimate']
+    if remove_plural:
+        df = df[df['masked'] != 'los']
+        df = df[df['masked'] != 'las']
+    if remove_masc:
+        df = df[df['masked'] != 'el']
+        df = df[df['masked'] != 'un']
+    print(df.shape)
+    print(df.columns)
+    print(list(df['masked']))
+    # filter relevant columns
+    df1 = df[['id', 'condition', 'input_sentence', 'masked','dom_def_prob', 
+             'dom_indef_prob', 'unmarked_def_prob', 'unmarked_indef_prob']]
+    # create dataframe with single column for probability
+    df2 = df1.copy()
+    df1.drop(columns=['unmarked_def_prob', 'unmarked_indef_prob'], inplace=True)
+    df1['type'] = ['DOM' for _ in range(df1.shape[0])]
+    df1.rename(columns={'dom_def_prob': 'def_prob', 'dom_indef_prob': 'indef_prob'}, inplace=True)
+    df2.drop(columns=['dom_def_prob', 'dom_indef_prob'], inplace=True)
+    df2['type'] = ['unmarked' for _ in range(df2.shape[0])]
+    df2.rename(columns={'unmarked_def_prob': 'def_prob', 'unmarked_indef_prob': 'indef_prob'}, inplace=True)
+    df3 = pd.concat([df1, df2])
+    df4 = df3.copy()
+    df3.drop(columns=['indef_prob'], inplace=True)
+    df3['article'] = ['definite' for _ in range(df3.shape[0])]
+    df3.rename(columns={'def_prob': 'prob'}, inplace=True)
+    df4.drop(columns=['def_prob'], inplace=True)
+    df4['article'] = ['indefinite' for _ in range(df4.shape[0])]
+    df4.rename(columns={'indef_prob': 'prob'}, inplace=True)
+    df = pd.concat([df3, df4])
+    sns.set_context('paper', rc={'axes.titlesize': 22, 'axes.labelsize': 16, 'xtick.labelsize': 16,                                 'ytick.labelsize': 16, 'legend.fontsize': 16, 'legend.title_fontsize': 16})
+    ax = sns.boxplot(data=df, y='prob', x='type', hue='article', palette=sns.color_palette()[6:], 
+                        showmeans=True, meanprops={"marker": "d", "markerfacecolor":"black", "markeredgecolor":"black", "markersize":"7"})
+    ax.set_ylabel('probability', fontsize=16) 
+    ax.set_title(f'{modelname} article probability', loc='center')# , pad=20)
+    sns.move_legend(ax, 'upper left', bbox_to_anchor=(1, 1))
+    plt.tight_layout()
+    outpath = dir.replace('results', 'plots').replace(f'/{modelname}', '')
+    if remove_plural:
+        outpath += '/plurals-removed/'
+    if remove_masc:
+        outpath += '/masc-removed/'
+    if not os.path.exists(outpath):
+        os.makedirs(outpath)
+    filename = f'{modelname}-articlemasking-boxplot.png'
+    plt.savefig(os.path.join(outpath, filename))
+    plt.show()
+
+def create_article_disc_scatter(dir, remove_masc=True, remove_plural=False):
+    modelname = 'BETO' if 'BETO' in dir else 'mBERT'
+    file = 'merged-results.tsv'
+    # create merged results if not exists already
+    if file not in os.listdir():
+        df = articlemasking_postprocessing(dir)
+    else:
+        df = pd.read_csv(os.path.join(dir, file), sep='\t')
+    # filter out inanimate because it is not relevant for this comparison
+    df = df[df['condition'] != 'inanimate']
+    if remove_plural:
+        df = df[df['masked'] != 'los']
+        df = df[df['masked'] != 'las']
+    if remove_masc:
+        df = df[df['masked'] != 'el']
+        df = df[df['masked'] != 'un']
+    df['index'] = [x for x in range(1, df.shape[0]+1)]
+    print(df.shape)
+    print(df.columns)
+    sns.set_context('paper', rc={'axes.titlesize': 20, 'axes.labelsize': 16, 'xtick.labelsize': 16,
+                                            'ytick.labelsize': 16, 'legend.fontsize': 16, 'legend.title_fontsize': 16})
+    ax = sns.scatterplot(data=df, x='index', y='unmarked_discrepancy', s=50)
+    ax.set_ylim(ymax=1.02, ymin=-0.8)
+    ax.axhline(0, color='black', linestyle='-', linewidth=0.8)
+    ax.set_ylabel('discrepancy', fontsize=16) 
+    ax.set_title(f'{modelname} definite-indefinite discrepancy', loc='center')
+    plt.tight_layout()
+    outpath = dir.replace('results', 'plots').replace(f'/{modelname}', '')
+    if remove_plural:
+        outpath += '/plurals-removed/'
+    if remove_masc:
+        outpath += '/masc-removed/'
+    if not os.path.exists(outpath):
+        os.makedirs(outpath)
+    filename = f'{modelname}-article-discrepancy.png'
+    plt.savefig(os.path.join(outpath, filename))
+    plt.show()
+     
 def create_all_barplots(dir_path):
     for subdir, dirs, files in os.walk(dir_path):
         for file in files:
@@ -324,5 +421,6 @@ def reorder_by_condition(df):
     return new_df
 
 if __name__ == '__main__':
-    dir = os.path.join(pathlib.Path(__file__).parent.absolute(), '..', 'results/sentence-score/')
-    create_discrepancy_scatterplot(dir)
+    dir = os.path.join(pathlib.Path(__file__).parent.parent.absolute(), 
+                       '..', 'results/fill-mask/article-masking/BETO/')
+    create_articlemasking_boxplot(dir, remove_masc=True)

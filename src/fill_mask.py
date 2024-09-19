@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 import pathlib
-from util import load_targets, load_model
+from utils.util import load_targets, load_model, articlemasking_postprocessing
 from mlm_sentence import MLMSentence
 
 # suppress warnings

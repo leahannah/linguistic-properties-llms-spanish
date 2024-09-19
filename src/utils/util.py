@@ -40,7 +40,6 @@ def load_targets(input_path, source, mask_type='dom', remove_dom=False):
     # print(f'df shape after: {df.shape}')
     return df
 
-
 # helper function: find index of dom-marker (a/ al) in target sentence
 def find_dom_index(sent_list, char='['):
     idx = -1
@@ -184,3 +183,53 @@ def merge_test_data(directory):
             'en_sentence': en_sents
             })
     return df
+
+def articlemasking_postprocessing(dir):
+    ordered_files = ['ms-2013-results.tsv','sa-2020-results.tsv','re-2021-results.tsv', 
+                     're-2021-modified-results.tsv', 'hg-2023-results.tsv']
+    dfs = []
+    for file in ordered_files:
+        # read in results with dom
+        dom_path = os.path.join(dir, 'dom', file)
+        dom_df = pd.read_csv(dom_path, sep='\t')
+        # drop irrelevant and rename columns
+        dom_df.drop(columns=['dom_rank', 'def_rank', 'indef_rank'], inplace=True)
+        new_columns = ['id', 'condition', 'input_sentence', 'masked', 'dom_top_fillers',
+                       'dom_probabilities', 'dom_dom_prob', 'dom_def_prob', 'dom_indef_prob']
+        dom_df.columns = new_columns
+        # modify sentences a --> (a)
+        new_sentences = []
+        for sent in list(dom_df['input_sentence']):
+            new_sent = sent.replace(' a ', ' (a) ')
+            new_sentences.append(new_sent)
+        dom_df['input_sentence'] = new_sentences
+        # add discrepancy column
+        dom_df['dom_discrepancy'] = dom_df['dom_def_prob'] - dom_df['dom_indef_prob']
+        # read in unmarked results
+        unmarked_path = os.path.join(dir, 'unmarked', file)
+        unmarked_df = pd.read_csv(unmarked_path, sep='\t')
+        # drop irrelevant and rename columns
+        unmarked_df.drop(columns=['condition', 'input_sentence', 'masked', 'dom_rank', 'def_rank', 'indef_rank'], inplace=True)
+        new_columns = ['id', 'unmarked_top_fillers', 'unmarked_probabilities', 
+                       'unmarked_dom_prob', 'unmarked_def_prob', 'unmarked_indef_prob']
+        unmarked_df.columns = new_columns
+        unmarked_df['unmarked_discrepancy'] = unmarked_df['unmarked_def_prob'] - unmarked_df['unmarked_indef_prob']
+        merged_df = pd.merge(dom_df, unmarked_df, on='id', how='inner')
+        dfs.append(merged_df)
+    full_df = pd.concat(dfs)
+    full_df.replace('nonaffected', 'non-affected', inplace=True)
+    full_df.to_csv(os.path.join(dir, 'merged-results.tsv'), sep='\t')
+    return full_df
+
+# if __name__ == '__main__':
+#     df = articlemasking_postprocessing('results/fill-mask/article-masking/mBERT')
+#     df = df[df['condition'] != 'inanimate']
+#     # df = df[df['masked'] != 'los']
+#     # df = df[df['masked'] != 'las']
+#     print(df.head())
+#     print(df.columns)
+#     print(df.shape)
+#     count_greater = (df['unmarked_discrepancy'] > 0.0).sum()
+#     print('greater: ', count_greater)
+#     count_smaller = (df['unmarked_discrepancy'] < 0.0).sum()
+#     print('smaller: ', count_smaller)
