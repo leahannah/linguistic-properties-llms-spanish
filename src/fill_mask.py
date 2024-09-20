@@ -10,10 +10,9 @@ pd.set_option('mode.chained_assignment', None)
 np.set_printoptions(suppress=True)
 
 # conduct fill-mask experiment (dom and article masking) for a given dataset and model
-def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE):
+def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE, OUTPATH):
     model_mapping = {'dccuchile/bert-base-spanish-wwm-cased': 'BETO',
-                     'google-bert/bert-base-multilingual-cased': 'mBERT',
-                     'microsoft/mdeberta-v3-base': 'mDeBERTa'}
+                     'google-bert/bert-base-multilingual-cased': 'mBERT'}
     modelname = model_mapping[MODEL_NAME] if MODEL_NAME in model_mapping else MODEL_NAME
 
     print(f'Start fill mask experiment {TYPE} with {INPUT_FILE} and model {modelname}')
@@ -37,15 +36,18 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
     # initialize output
     if SAVE_MODE:
         str_type = ''
-        if TYPE == 'article-masking':
-            str_type = 'unmarked' if REMOVE_DOM else 'dom'
-            output_path = os.path.join(pathlib.Path(__file__).parent.absolute(),
-                                        f'../results/fill-mask/{TYPE}/{modelname}/{str_type}')
+        if OUTPATH == None:
+            if TYPE == 'article-masking':
+                str_type = 'unmarked' if REMOVE_DOM else 'dom'
+                output_path = os.path.join(pathlib.Path(__file__).parent.absolute(),
+                                            f'../results/fill-mask/{TYPE}/{modelname}/{str_type}')
+            else:
+                output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/fill-mask/{TYPE}/{modelname}/')
         else:
-            output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), f'../results/fill-mask/{TYPE}/{modelname}/')
+            output_path = pathlib.Path(OUTPATH)
         if not os.path.exists(output_path):
             os.makedirs(output_path)
-        stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'statistics.tsv')
+        stats_path = os.path.join(output_path, 'statistics.tsv')
         if not os.path.exists(stats_path):
             with open(stats_path, mode='w', encoding='utf-8') as f:
                 f.write(f'source\tcondition\texperiment\tmodel\tfiller_type\tmean\tstd\tmedian\trank\n')
@@ -179,7 +181,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
             else:
                 df_print = data[['id', 'condition', 'input_sentence', 'masked', 'top_fillers',
                                  'probabilities', 'dom_prob', 'dom_rank']]
-            full_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, filename)
+            full_path = os.path.join(output_path, filename)
             df_print.to_csv(full_path, index=False, sep='\t')
             exp_type = TYPE + '-' + str_type if TYPE == 'article' else TYPE
             for i, cond in enumerate(conditions):

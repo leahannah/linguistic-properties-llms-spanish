@@ -273,7 +273,7 @@ def create_discrepancy_scatterplot(dir, modelname=None):
     plt.savefig(os.path.join(outpath, filename))
     # plt.show()
 
-def create_articlemasking_boxplot(dir, remove_masc=True, remove_plural=False):
+def create_articlemasking_boxplot(dir, remove_masc=False, remove_plural=False):
     modelname = 'BETO' if 'BETO' in dir else 'mBERT'
     file = 'merged-results.tsv'
     if file not in os.listdir():
@@ -329,7 +329,7 @@ def create_articlemasking_boxplot(dir, remove_masc=True, remove_plural=False):
     plt.savefig(os.path.join(outpath, filename))
     plt.show()
 
-def create_article_disc_scatter(dir, remove_masc=True, remove_plural=False):
+def create_article_disc_scatter(dir, remove_masc=False, remove_plural=False):
     modelname = 'BETO' if 'BETO' in dir else 'mBERT'
     file = 'merged-results.tsv'
     # create merged results if not exists already
@@ -422,5 +422,5 @@ def reorder_by_condition(df):
 
 if __name__ == '__main__':
     dir = os.path.join(pathlib.Path(__file__).parent.parent.absolute(), 
-                       '..', 'results/fill-mask/article-masking/BETO/')
-    create_articlemasking_boxplot(dir, remove_masc=True)
+                       '..', 'results/sentence-score/')
+    create_discrepancy_scatterplot(dir)

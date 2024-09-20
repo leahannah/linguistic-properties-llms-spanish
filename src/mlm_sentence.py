@@ -125,7 +125,6 @@ class MLMSentence:
         s, self.masked_token = self.prep_input(self.sentence, self.index)  # prepare sentence
         s = '[CLS]' + s + '[SEP]'
         tokens = self.tokenizer.tokenize(s)
-        print(f'mlm tokens: {tokens}')
         indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokens)
         tokens_tensor = torch.tensor([indexed_tokens])
         # predict
@@ -141,7 +140,7 @@ class MLMSentence:
         return top_fillers, top_probs
     
     # based on https://github.com/simonepri/lm-scorer
-    def sentence_score(self, reduce='mean', log=False, per_token=False, return_ranks=False):
+    def sentence_score(self, reduce='mean', remove_stopping_point=False, log=False, per_token=False, return_ranks=False):
         """
         Function to compute a likelihood score for a sentence based on the softmax (log) probabilities of each subtoken.
         
@@ -153,8 +152,12 @@ class MLMSentence:
         """
         probabilities, ranks = [], []
         
-        # stopping point should be interpreted as single token
-        sent = self.sentence[:-1] + ' .'
+        if self.sentence[-1] == '.':
+            if remove_stopping_point:
+                sent = self.sentence[:-1]
+            else:
+                # stopping point should be interpreted as single token
+                sent = self.sentence[:-1] + ' .'
          # loop through words
         for word_idx, word in enumerate(sent.split()): 
             word_tokens = self.tokenizer.tokenize(word)  # check if the word is split into subwords
@@ -242,27 +245,27 @@ class MLMSentence:
                 masked_index = i
         return masked_index
     
-# test
-from util import load_model
-tokenizer, model = load_model('google-bert/bert-base-multilingual-cased')
-sentence = 'Fiona besó a Shrek.'
-mlm = MLMSentence(sentence, 2, model, tokenizer)
-print(mlm.get_sentence())
+# # test
+# from utils.util import load_model
+# tokenizer, model = load_model('google-bert/bert-base-multilingual-cased')
+# sentence = 'Fiona besó a Shrek.'
+# mlm = MLMSentence(sentence, 2, model, tokenizer)
+# print(mlm.get_sentence())
 
-# experiment 1
-mlm.compute_mlm_fillers_probs()
-print('DOM position top fillers and probabilities')
-print(mlm.get_top_fillers())
-print(mlm.get_top_probabilities())
+# # experiment 1
+# mlm.compute_mlm_fillers_probs()
+# print('DOM position top fillers and probabilities')
+# print(mlm.get_top_fillers())
+# print(mlm.get_top_probabilities())
 
-# experiment 2
-print('sentence score')
-print(mlm.sentence_score())
-print(mlm.sentence_score(per_token=True, return_ranks=True))
+# # experiment 2
+# print('sentence score')
+# print(mlm.sentence_score())
+# print(mlm.sentence_score(per_token=True, return_ranks=True))
 
-# experiment 3
-print('article position top fillers and probabilities')
-mlm.set_mask_index(3)
-mlm.compute_mlm_fillers_probs()
-print(mlm.get_top_fillers())
-print(mlm.get_top_probabilities())
+# # experiment 3
+# print('article position top fillers and probabilities')
+# mlm.set_mask_index(3)
+# mlm.compute_mlm_fillers_probs()
+# print(mlm.get_top_fillers())
+# print(mlm.get_top_probabilities())

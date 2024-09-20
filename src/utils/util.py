@@ -18,16 +18,22 @@ def load_targets(input_path, source, mask_type='dom', remove_dom=False):
             dom_idx = row['dom_idx']
             sent_list = sent.split()
             if remove_dom:
-                sent_list.pop(dom_idx)
-                dom_idx -= 1
-            print(f'sent_list: {sent_list}')
+                if sent_list[dom_idx] == 'al':
+                    sent_list[dom_idx] == 'el'
+                else:
+                    sent_list.pop(dom_idx)
+                    dom_idx -= 1
+            # print(f'sent_list: {sent_list}')
             sentences.append(' '.join(sent_list)) # join to string
-            print(f'dobj: {row["dobject"]}')
+            # print(f'dobj: {row["dobject"]}')
             article = row['dobject'].split()[0]
-            if article in ['la', 'los', 'las', 'un', 'una', 'su']: # filter out dobjects without article
+            if article in ['la', 'los', 'las', 'un', 'una', 'su']: # , 'el']: # filter out dobjects without article
                 idx.append(dom_idx+1)
                 # print(f'index: {dom_idx+1}')
+            # elif sent_list[dom_idx] == 'al':
+            #     idx.append(dom_idx)
             else: # skip sentence, no separate article
+                print(f'SKIP SENTENCE: {sent_list}')
                 idx.append(-1)
                 # print(f'index: {-1}')
         df['sentence'] = sentences
@@ -221,15 +227,46 @@ def articlemasking_postprocessing(dir):
     full_df.to_csv(os.path.join(dir, 'merged-results.tsv'), sep='\t')
     return full_df
 
-# if __name__ == '__main__':
-#     df = articlemasking_postprocessing('results/fill-mask/article-masking/mBERT')
-#     df = df[df['condition'] != 'inanimate']
-#     # df = df[df['masked'] != 'los']
-#     # df = df[df['masked'] != 'las']
-#     print(df.head())
-#     print(df.columns)
-#     print(df.shape)
-#     count_greater = (df['unmarked_discrepancy'] > 0.0).sum()
-#     print('greater: ', count_greater)
-#     count_smaller = (df['unmarked_discrepancy'] < 0.0).sum()
-#     print('smaller: ', count_smaller)
+def count_article_disc(df):
+    df = df[df['condition'] != 'inanimate']
+    df = df[df['masked'] != 'el']
+    df = df[df['masked'] != 'un']
+    print(df.shape)
+    print('DOM')
+    count_greater = (df['dom_discrepancy'] > 0.0).sum()
+    # print('def > indef: ', count_greater)
+    count_smaller = (df['dom_discrepancy'] < 0.0).sum()
+    print('indef > def: ', count_smaller)
+    print('UNMARKED')
+    count_greater = (df['unmarked_discrepancy'] > 0.0).sum()
+    print('def > indef: ', count_greater)
+    count_smaller = (df['unmarked_discrepancy'] < 0.0).sum()
+    print('indef > def: ', count_smaller)
+    return count_greater, count_smaller
+
+def count_dom_rank(dir):
+    ordered_files = ['ms-2013-results.tsv','sa-2020-results.tsv','re-2021-results.tsv', 
+                     're-2021-modified-results.tsv', 'hg-2023-results.tsv']
+    dfs = []
+    for file in ordered_files:
+        # read in results with dom
+        dom_path = os.path.join(dir, file)
+        df = pd.read_csv(dom_path, sep='\t')
+        dfs.append(df)
+    full_df = pd.concat(dfs)
+    print(full_df.shape)
+    count_dom = (full_df['dom_rank'] == 0).sum()
+    count_other = (full_df['dom_rank'] > 0).sum()
+    return count_dom, count_other
+    
+
+if __name__ == '__main__':
+    # df = articlemasking_postprocessing('results/fill-mask/article-masking/BETO')
+    # count_article_disc(df)
+    dir = 'results/fill-mask/dom-masking/BETO/'
+    count_dom, count_other = count_dom_rank(dir)
+    print(f'BETO dom count: {count_dom}, other count: {count_other}')
+
+    dir = 'results/fill-mask/dom-masking/mBERT/'
+    count_dom, count_other = count_dom_rank(dir)
+    print(f'mBERT dom count: {count_dom}, other count: {count_other}')

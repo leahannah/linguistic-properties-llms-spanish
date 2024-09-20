@@ -10,7 +10,7 @@ pd.set_option('mode.chained_assignment', None)
 np.set_printoptions(suppress=True)
 
 # execute sentence score experiment for a given dataset and model
-def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
+def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE, OUTPATH):
     model_mapping = {'dccuchile/bert-base-spanish-wwm-cased': 'BETO',
                      'google-bert/bert-base-multilingual-cased': 'mBERT'}
     modelname = model_mapping[MODEL_NAME]
@@ -31,12 +31,17 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE):
     
     # initialize output
     if SAVE_MODE:
-        # define outputpath
-        output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), 
-                                   f'../results/sentence-score/', modelname)
+        if OUTPATH == None:
+            # define outputpath if not specified
+            output_path = os.path.join(pathlib.Path(__file__).parent.absolute(), 
+                                    f'../results/sentence-score/', modelname)
+        else:
+            output_path = pathlib.Path(OUTPATH)
+        # create folder if does not exist
         if not os.path.exists(output_path):
-            os.makedirs(output_path)
-        stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'statistics.tsv')
+                os.makedirs(output_path)
+        # initialize statistics
+        stats_path = os.path.join(output_path, 'statistics.tsv')
         if not os.path.exists(stats_path):
             with open(stats_path, mode='w', encoding='utf-8') as f:
                 f.write(f'source\tcondition\tmodel\tmean_score_dom\tmean_score_unmarked')

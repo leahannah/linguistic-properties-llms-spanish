@@ -82,7 +82,7 @@ id	source	condition	sentence	dom_idx	dom	dobject	gender	number	other_condition	e
 81	ms-2013	inanimate	Raquel conoció a [Chicago].	2	a	Chicago	m	sing	adult	Raquel went to [Chicago] (for the first time).
 82	ms-2013	inanimate	Esteban estudió a [matemáticas].	2	a	matemáticas	m	sing	adult	Esteban studied [math].
 83	ms-2013	inanimate	Alfonso arregló a [la bicicleta roja].	2	a	la bicicleta roja	f	sing	adult	Alfonso fixed [the red bike].
-84	ms-2013	inanimate	Antonio bebió a [la coca cola].	2	a	coca cola	m	pl	adult	Antonio drank [a coke].
+84	ms-2013	inanimate	Antonio bebió a [la coca cola].	2	a	la coca cola	m	pl	adult	Antonio drank [a coke].
 85	ms-2013	inanimate	Estefanía compró a [un auto].	2	a	un auto	m	sing	adult	Estefanía bought [a car].
 86	ms-2013	inanimate	Mercedes escuchó a [música].	2	a	música	m	sing	adult	Mercedes listened to [music].
 87	ms-2013	inanimate	Carlos leyó a [una novela].	2	a	una novela	f	sing	adult	Carlos read [a novel].
