@@ -1,0 +1,4 @@
+measurement	dom_mean	dom_std	dom_median	unmarked_mean	unmarked_std	unmarked_median
+definite probability	0.5696	0.3317	0.6959	0.395	0.3089	0.3681
+indefinite probability	0.1248	0.2011	0.0221	0.1334	0.2451	0.0142
+discrepancy	0.4448	0.4633	0.5761	0.2616	0.4707	0.3454

@@ -125,6 +125,7 @@ class MLMSentence:
         s, self.masked_token = self.prep_input(self.sentence, self.index)  # prepare sentence
         s = '[CLS]' + s + '[SEP]'
         tokens = self.tokenizer.tokenize(s)
+        print(f'TOKENS: {tokens}')
         indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokens)
         tokens_tensor = torch.tensor([indexed_tokens])
         # predict
@@ -245,27 +246,28 @@ class MLMSentence:
                 masked_index = i
         return masked_index
     
-# # test
-# from utils.util import load_model
-# tokenizer, model = load_model('google-bert/bert-base-multilingual-cased')
-# sentence = 'Fiona besó a Shrek.'
-# mlm = MLMSentence(sentence, 2, model, tokenizer)
-# print(mlm.get_sentence())
+# if __name__ == '__main__':
+#     # test
+#     from utils.util import load_model
+#     tokenizer, model = load_model('google-bert/bert-base-multilingual-cased')
+#     sentence = 'Hello Kitty vio a Keroppi.'
+#     mlm = MLMSentence(sentence, 3, model, tokenizer)
+#     print(mlm.get_sentence())
 
-# # experiment 1
-# mlm.compute_mlm_fillers_probs()
-# print('DOM position top fillers and probabilities')
-# print(mlm.get_top_fillers())
-# print(mlm.get_top_probabilities())
+#     # experiment 1
+#     mlm.compute_mlm_fillers_probs()
+#     print('DOM position top fillers and probabilities')
+#     print(mlm.get_top_fillers())
+#     print(mlm.get_top_probabilities())
 
-# # experiment 2
-# print('sentence score')
-# print(mlm.sentence_score())
-# print(mlm.sentence_score(per_token=True, return_ranks=True))
+    # # experiment 2
+    # print('sentence score')
+    # print(mlm.sentence_score())
+    # print(mlm.sentence_score(per_token=True, return_ranks=True))
 
-# # experiment 3
-# print('article position top fillers and probabilities')
-# mlm.set_mask_index(3)
-# mlm.compute_mlm_fillers_probs()
-# print(mlm.get_top_fillers())
-# print(mlm.get_top_probabilities())
+    # # experiment 3
+    # print('article position top fillers and probabilities')
+    # mlm.set_mask_index(3)
+    # mlm.compute_mlm_fillers_probs()
+    # print(mlm.get_top_fillers())
+    # print(mlm.get_top_probabilities())

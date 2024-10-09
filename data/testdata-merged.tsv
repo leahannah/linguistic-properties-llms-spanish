@@ -140,7 +140,7 @@ id	source	condition	sentence	dom_idx	dom	dobject	gender	number	other_condition	e
 121	sa-2020	animate-animal	Los viejos que oyeron a [los pollos] respiraban fuertemente.	4	a	los pollos	m	pl	animal	The old men that heard [the chickens] breathed loudly
 122	sa-2020	animate-animal	Los técnicos que tocaron a [los hámsters] andaban distraídamente.	4	a	los hámsters	m	pl	animal	The technicians that touched [the hamsters] walked absent-minded
 141	re-2021-modified	definite	Gonzalo mató a [la mujer] en el parque.	2	a	la mujer	f	sing		Gonzalo killed [the woman] in the park.
-142	re-2021-modified	definite	Patricio lesionó a [la camarera] en la discoteca.	2	a	la camarera	f	sing		Patricio injured [the waitress] at the nightclub
+142	re-2021-modified	definite	Patricio lesionó a [la camarera] en la discoteca.	2	a	la camarera	f	sing		Patricio injured [the waitress] at the nightclub.
 143	re-2021-modified	definite	Carolina golpeó a [la jugadora] en el vestuario.	2	a	la jugadora	f	sing		Carolina hit [the player] in the locker room.
 144	re-2021-modified	definite	Elena cuidó a [la paciente] durante dos semanas.	2	a	la paciente	f	sing		Elena took care of [the patient] for two weeks.
 145	re-2021-modified	definite	Irene acusó a [la secretaria general] en la asamblea.	2	a	la secretaria general	f	sing		Irene accused [the general secretary] at the assembly.

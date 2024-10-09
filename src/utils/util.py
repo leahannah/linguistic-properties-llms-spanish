@@ -1,6 +1,7 @@
 import re
 import os
 import pandas as pd
+import numpy as np
 from transformers import BertForMaskedLM, BertTokenizer
 
 
@@ -224,7 +225,7 @@ def articlemasking_postprocessing(dir):
         dfs.append(merged_df)
     full_df = pd.concat(dfs)
     full_df.replace('nonaffected', 'non-affected', inplace=True)
-    full_df.to_csv(os.path.join(dir, 'merged-results.tsv'), sep='\t')
+    full_df.to_csv(os.path.join(dir, 'merged-results.tsv'), sep='\t', index=False)
     return full_df
 
 def count_article_disc(df):
@@ -233,16 +234,18 @@ def count_article_disc(df):
     df = df[df['masked'] != 'un']
     print(df.shape)
     print('DOM')
-    count_greater = (df['dom_discrepancy'] > 0.0).sum()
+    dom_greater = (df['dom_discrepancy'] > 0.0).sum()
     # print('def > indef: ', count_greater)
-    count_smaller = (df['dom_discrepancy'] < 0.0).sum()
-    print('indef > def: ', count_smaller)
+    dom_smaller = df['dom_discrepancy'] < 0.0
+    print(dom_smaller)
+    print('indef > def: ', dom_smaller.sum())
     print('UNMARKED')
-    count_greater = (df['unmarked_discrepancy'] > 0.0).sum()
-    print('def > indef: ', count_greater)
-    count_smaller = (df['unmarked_discrepancy'] < 0.0).sum()
-    print('indef > def: ', count_smaller)
-    return count_greater, count_smaller
+    unmarked_greater = (df['unmarked_discrepancy'] > 0.0).sum()
+    # print('def > indef: ', unmarked_greater)
+    unmarked_smaller = df['unmarked_discrepancy'] < 0.0
+    print(unmarked_smaller)
+    print('indef > def: ', unmarked_smaller.sum())
+    return dom_smaller, unmarked_smaller
 
 def count_dom_rank(dir):
     ordered_files = ['ms-2013-results.tsv','sa-2020-results.tsv','re-2021-results.tsv', 
@@ -259,14 +262,71 @@ def count_dom_rank(dir):
     count_other = (full_df['dom_rank'] > 0).sum()
     return count_dom, count_other
     
+def merge_stats_dom(results_path):
+    dfs = []
+    for model in ['BETO', 'mBERT']:
+        path = os.path.join(results_path, model, 'statistics.tsv')
+        df = pd.read_csv(path, sep='\t')
+        df.drop(columns=['experiment', 'model', 'filler_type'], inplace=True)
+        df.rename(columns={'mean': f'{model}-mean', 'std': f'{model}-std', 
+                           'median': f'{model}-median', 'rank': f'{model}-mean-rank'}, inplace=True)
+        dfs.append(df)
+    merged_df = pd.merge(dfs[0], dfs[1], on=['source', 'condition'], how='inner')
+    # merged_df = merged_df.drop(columns=['experiment_x', 'experiment_y'])
+    print(merged_df.head())
+    print(merged_df.columns)
+    print(merged_df.shape)
+    merged_df.to_csv(os.path.join(results_path, 'merged_stats.tsv'), sep='\t', index=False)
 
-if __name__ == '__main__':
-    # df = articlemasking_postprocessing('results/fill-mask/article-masking/BETO')
-    # count_article_disc(df)
-    dir = 'results/fill-mask/dom-masking/BETO/'
-    count_dom, count_other = count_dom_rank(dir)
-    print(f'BETO dom count: {count_dom}, other count: {count_other}')
+def merge_stats_sentscore(results_path):
+    dfs = []
+    for model in ['BETO', 'mBERT']:
+        path = os.path.join(results_path, model, 'statistics.tsv')
+        df = pd.read_csv(path, sep='\t')
+        df.drop(columns=['model'], inplace=True)
+        df.rename(columns={'mean_score_dom': f'{model}-mean_score_dom', 
+                           'mean_score_unmarked': f'{model}-mean_score_unmarked', 
+                           'mean_disc': f'{model}-mean_disc', 
+                           'std_disc': f'{model}-std_disc'}, inplace=True)
+        dfs.append(df)
+    merged_df = pd.merge(dfs[0], dfs[1], on=['source', 'condition'], how='inner')
+    # merged_df = merged_df.drop(columns=['experiment_x', 'experiment_y'])
+    print(merged_df.head())
+    print(merged_df.columns)
+    print(merged_df.shape)
+    merged_df.to_csv(os.path.join(results_path, 'merged_stats.tsv'), sep='\t', index=False)
 
-    dir = 'results/fill-mask/dom-masking/mBERT/'
-    count_dom, count_other = count_dom_rank(dir)
-    print(f'mBERT dom count: {count_dom}, other count: {count_other}')
+def calculate_articlemasking_stats(results_file, remove_masc=True):
+    df = pd.read_csv(results_file, sep='\t')
+    df = df[df['condition'] != 'inanimate']
+    if remove_masc:
+        df = df[df['masked'] != 'el']
+        df = df[df['masked'] != 'un']
+    print(df.head())
+    print(df.columns)
+    print(df.shape)
+    df.drop(columns=['dom_dom_prob', 'unmarked_dom_prob'])
+    dom_columns = ['dom_def_prob', 'dom_indef_prob', 'dom_discrepancy']
+    unmarked_columns = ['unmarked_def_prob', 'unmarked_indef_prob', 'unmarked_discrepancy']
+    # calculate statistics
+    means1, stds1, medians1 = [], [], []
+    for col in dom_columns:
+        stat_list = list(df[col])
+        means1.append(round(np.mean(stat_list), 4))
+        stds1.append(round(np.std(stat_list), 4))
+        medians1.append(round(np.median(stat_list), 4))
+    means2, stds2, medians2 = [], [], []
+    for col in unmarked_columns:
+        stat_list = list(df[col])
+        means2.append(round(np.mean(stat_list), 4))
+        stds2.append(round(np.std(stat_list), 4))
+        medians2.append(round(np.median(stat_list), 4))
+    out_df = pd.DataFrame({'measurement': ['definite probability', 'indefinite probability', 'discrepancy'],
+                           'dom_mean': means1, 'dom_std': stds1, 'dom_median': medians1,
+                           'unmarked_mean': means2, 'unmarked_std': stds2, 'unmarked_median': medians2})
+    out_path = os.path.dirname(results_file)
+    out_df.to_csv(os.path.join(out_path, 'merged_stats.tsv'), sep='\t', index=False)
+
+
+# if __name__ == '__main__':
+#     calculate_articlemasking_stats('results/fill-mask/article-masking/mBERT/merged-results.tsv')
