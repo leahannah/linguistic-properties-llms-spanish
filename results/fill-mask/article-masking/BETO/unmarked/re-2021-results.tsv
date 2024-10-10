@@ -1,9 +1,9 @@
 id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank	def_prob	def_rank	indef_prob	indef_rank
-97	indefinite	Pablo mató un rehén durante el secuestro.	un	['un', 'al', 'una', 'otro', 'el']	[0.4824 0.4326 0.0425 0.0238 0.0058]	0.4326	1	0.0058	4	0.4824	0
-98	indefinite	Alberto lesionó un defensa en el partido de la semana pasada.	un	['su', 'una', 'la', 'al', 'un']	[0.3114 0.277  0.1577 0.1179 0.0572]	0.1179	3	0.1577	2	0.277	1
-99	indefinite	Andrea golpeó un fotógrafo a la salida del restaurante.	un	['al', 'un', 'a', 'el', 'una']	[0.9509 0.0215 0.0143 0.0077 0.0008]	0.9509	0	0.0077	3	0.0215	1
-100	indefinite	Javier cuidó un enfermo con gran profesionalidad.	un	['al', 'del', 'el', 'aquel', 'su']	[0.6427 0.3134 0.0387 0.0013 0.0011]	0.6427	0	0.0387	2	0.0001	9
-101	indefinite	Laura acusó un trabajador en la reunión.	un	['al', 'de', 'a', 'un', 'del']	[0.7117 0.0741 0.063  0.0472 0.0141]	0.7117	0	0.0123	5	0.0472	3
-102	indefinite	Carlos denunció un camarero tras una disputa.	un	['al', 'un', 'a', 'su', 'el']	[0.9172 0.0203 0.0157 0.0124 0.0111]	0.9172	0	0.0111	4	0.0203	1
-103	indefinite	Ana vio un político en la tienda del barrio.	un	['al', 'el', 'un', 'lo', 'a']	[0.5795 0.1472 0.0979 0.0387 0.0268]	0.5795	0	0.1472	1	0.0979	2
-104	indefinite	Esther oyó un bebé en el apartamento de al lado.	un	['al', 'un', 'del', 'el', 'una']	[0.5655 0.1976 0.1215 0.0613 0.0142]	0.5655	0	0.0613	3	0.1976	1
+101	indefinite	Pablo mató un rehén durante el secuestro.	un	['un', 'al', 'una', 'otro', 'el']	[0.4824 0.4326 0.0425 0.0238 0.0058]	0.4326	1	0.0058	4	0.4824	0
+102	indefinite	Alberto lesionó un defensa en el partido de la semana pasada.	un	['su', 'una', 'la', 'al', 'un']	[0.3114 0.277  0.1577 0.1179 0.0572]	0.1179	3	0.1577	2	0.277	1
+103	indefinite	Andrea golpeó un fotógrafo a la salida del restaurante.	un	['al', 'un', 'a', 'el', 'una']	[0.9509 0.0215 0.0143 0.0077 0.0008]	0.9509	0	0.0077	3	0.0215	1
+104	indefinite	Javier cuidó un enfermo con gran profesionalidad.	un	['al', 'del', 'el', 'aquel', 'su']	[0.6427 0.3134 0.0387 0.0013 0.0011]	0.6427	0	0.0387	2	0.0001	9
+105	indefinite	Laura acusó un trabajador en la reunión.	un	['al', 'de', 'a', 'un', 'del']	[0.7117 0.0741 0.063  0.0472 0.0141]	0.7117	0	0.0123	5	0.0472	3
+106	indefinite	Carlos denunció un camarero tras una disputa.	un	['al', 'un', 'a', 'su', 'el']	[0.9172 0.0203 0.0157 0.0124 0.0111]	0.9172	0	0.0111	4	0.0203	1
+107	indefinite	Ana vio un político en la tienda del barrio.	un	['al', 'el', 'un', 'lo', 'a']	[0.5795 0.1472 0.0979 0.0387 0.0268]	0.5795	0	0.1472	1	0.0979	2
+108	indefinite	Esther oyó un bebé en el apartamento de al lado.	un	['al', 'un', 'del', 'el', 'una']	[0.5655 0.1976 0.1215 0.0613 0.0142]	0.5655	0	0.0613	3	0.1976	1

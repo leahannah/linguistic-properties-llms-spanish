@@ -1,37 +1,37 @@
 id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank
-123	animate-human	La cebra que ensució a la turista descansaba plácidamente.	a	['a', 'con', 'tanto', ',', 'toda']	[0.9759 0.0022 0.0019 0.0016 0.0009]	0.9759	0
-124	animate-human	La cabra que empujó a la pastora respiraba velozmente.	a	['a', 'sobre', 'de', ',', 'era']	[0.9795 0.0026 0.0023 0.0022 0.0016]	0.9795	0
-125	animate-human	La serpiente que detestaba a la veterinaria entró sigilosamente.	a	['a', 'era', 'de', ',', 'ser']	[0.7911 0.0723 0.0473 0.0282 0.0133]	0.7911	0
-126	animate-human	La leoparda que oyó a la dueña corrió repentinamente.	a	['a', 'de', 'gritar', 'hablar', 'llorar']	[0.8362 0.0501 0.0109 0.0089 0.0069]	0.8362	0
-127	animate-human	El pony que buscaba al jinete chillaba tristemente.	al	['al', 'el', 'un', 'su', 'otro']	[0.4939 0.2067 0.1448 0.0855 0.0303]	0.4939	0
-128	animate-human	El león que mató al cazador caminaba lentamente.	al	['al', 'el', 'un', 'a', 'del']	[0.9795 0.0182 0.0008 0.0003 0.0003]	0.9795	0
-129	animate-human	El caballo que miraba al cuidador gruñía desconsoladamente.	al	['al', 'el', 'del', 'su', 'a']	[0.6617 0.3126 0.0061 0.0056 0.0036]	0.6617	0
-130	animate-human	El tigre que atacó al domador dormía tranquilamente.	al	['al', 'el', 'su', 'y', 'a']	[0.9103 0.0619 0.0171 0.0031 0.0011]	0.9103	0
-131	animate-human	El loro que observó al cantante cantaba claramente.	al	['al', 'la', 'el', 'como', 'del']	[0.3621 0.3073 0.2402 0.0286 0.0083]	0.3621	0
-132	animate-human	Las panteras que atacaron a las empleadas descansaban tranquilamente.	a	['a', 'contra', '##on', 'y', '##ban']	[0.9974 0.0006 0.0004 0.0003 0.0001]	0.9974	0
-133	animate-human	Las burras que pisaron a las mujeres gruñían claramente.	a	[',', 'a', 'y', 'por', 'de']	[0.3868 0.2852 0.1526 0.0317 0.0178]	0.2852	1
-134	animate-human	Las conejas que olieron a las chicas saltaban continuamente.	a	['a', 'y', 'de', 'por', ',']	[0.8328 0.0275 0.0211 0.02   0.0189]	0.8328	0
-135	animate-human	Las gallinas que detestaban a las señoras comían lentamente.	a	['a', ',', 'y', 'de', 'eran']	[0.9342 0.0227 0.0175 0.0062 0.0039]	0.9342	0
-136	animate-human	Las lobas que empujaron a las ecólogas salieron repentinamente.	a	['a', 'contra', 'por', 'sobre', 'hacia']	[0.9869 0.0018 0.0015 0.0015 0.0013]	0.9869	0
-137	animate-human	Los pájaros que miraban a los críos cantaban alegremente.	a	['a', 'y', 'hacia', ',', 'con']	[0.9576 0.012  0.0103 0.0033 0.0024]	0.9576	0
-138	animate-human	Los delfines que mataron a los pescadores gemían fuertemente.	a	['a', 'de', '##on', 'y', 'con']	[0.9978 0.0003 0.0002 0.0002 0.0002]	0.9978	0
-139	animate-human	Los cocodrilos que vieron a los asistentes nadaban frenéticamente.	a	['a', 'en', 'entre', 'y', 'por']	[0.7216 0.0834 0.0414 0.0364 0.0272]	0.7216	0
-140	animate-human	Los flamencos que escucharon a los ayudantes dormían felizmente.	a	['a', 'y', 'por', 'de', 'con']	[0.8335 0.0653 0.0241 0.0192 0.0108]	0.8335	0
-105	animate-animal	La artista que pisó a la perra andaba sigilosamente.	a	['a', 'en', ',', 'con', 'sobre']	[0.9234 0.0099 0.0087 0.0083 0.0035]	0.9234	0
-106	animate-animal	La bióloga que abrazó a la gorila sonreía incesantemente.	a	['a', 'de', 'con', 'como', ',']	[0.9981 0.0003 0.0002 0.0002 0.0001]	0.9981	0
-107	animate-animal	La voluntaria que tocó a la tortuga bebía continuamente.	a	['a', 'con', ',', 'tocó', 'fue']	[0.9652 0.0089 0.0035 0.003  0.0019]	0.9652	0
-108	animate-animal	La ciclista que vio a la vaca comía distraídamente.	a	['a', 'era', ',', 'en', 'pasar']	[0.8876 0.0167 0.0133 0.0093 0.0066]	0.8876	0
-109	animate-animal	La granjera que olió a la cerda salió inesperadamente.	a	['a', 'como', 'en', 'mal', 'de']	[0.8334 0.1006 0.0061 0.006  0.0055]	0.8334	0
-110	animate-animal	El entrenador que escuchó al delfín nadaba rápidamente.	al	['al', 'del', 'el', 'este', 'un']	[0.5583 0.2109 0.1764 0.011  0.0095]	0.5583	0
-111	animate-animal	El conductor que persiguió al camello paseaba felizmente.	al	['al', 'el', 'su', 'un', 'ese']	[0.7189 0.2144 0.051  0.0049 0.0021]	0.7189	0
-112	animate-animal	El hombre que adoraba al canguro saltaba incesantemente.	al	['al', 'el', 'la', 'su', 'ser']	[0.7308 0.1435 0.0615 0.0155 0.0139]	0.7308	0
-113	animate-animal	El amo que pegó al orangután gemía desconsoladamente.	al	['al', 'el', 'ese', 'un', 'a']	[0.9247 0.0603 0.0039 0.0025 0.0017]	0.9247	0
-114	animate-animal	Las zoólogas que observaron a las palomas bebían plácidamente.	a	['que', 'a', ',', 'en', 'como']	[0.5969 0.19   0.122  0.008  0.007 ]	0.19	1
-115	animate-animal	Las hermanas que buscaron a las gatas entraron inesperadamente.	a	['a', 'por', 'entre', 'en', ',']	[0.926  0.0128 0.0097 0.0095 0.0074]	0.926	0
-116	animate-animal	Las niñas que adoraban a las ardillas chillaban alegremente.	a	['a', 'de', 'todas', 'tanto', ',']	[0.9967 0.0005 0.0002 0.0002 0.0001]	0.9967	0
-117	animate-animal	Las estudiantes que pegaron a las monas paseaban tristemente.	a	['a', 'en', 'con', 'contra', 'por']	[0.9649 0.0092 0.0089 0.0065 0.0015]	0.9649	0
-118	animate-animal	Los payasos que abrazaron a los chimpancés caminaban rápidamente.	a	['a', 'de', 'y', 'como', 'por']	[0.9956 0.0006 0.0005 0.0004 0.0002]	0.9956	0
-119	animate-animal	Los trabajadores que perseguían a los guepardos corrían velozmente.	a	['a', 'eran', 'de', ',', 'y']	[0.9912 0.0024 0.0015 0.0007 0.0004]	0.9912	0
-120	animate-animal	Los niños que ensuciaron a los macacos sonreían frenéticamente.	a	['a', 'en', 'con', 'todos', 'tanto']	[0.9755 0.0066 0.0044 0.0025 0.0009]	0.9755	0
-121	animate-animal	Los viejos que oyeron a los pollos respiraban fuertemente.	a	['a', 'de', 'cantar', 'sobre', 'tocar']	[0.7406 0.0411 0.0222 0.0166 0.0166]	0.7406	0
-122	animate-animal	Los técnicos que tocaron a los hámsters andaban distraídamente.	a	['a', 'con', 'para', 'en', 'como']	[0.7898 0.1278 0.0189 0.01   0.0078]	0.7898	0
+57	human	La cebra que ensució a la turista descansaba plácidamente.	a	['a', 'con', 'tanto', ',', 'toda']	[0.9759 0.0022 0.0019 0.0016 0.0009]	0.9759	0
+58	human	La cabra que empujó a la pastora respiraba velozmente.	a	['a', 'sobre', 'de', ',', 'era']	[0.9795 0.0026 0.0023 0.0022 0.0016]	0.9795	0
+59	human	La serpiente que detestaba a la veterinaria entró sigilosamente.	a	['a', 'era', 'de', ',', 'ser']	[0.7911 0.0723 0.0473 0.0282 0.0133]	0.7911	0
+60	human	La leoparda que oyó a la dueña corrió repentinamente.	a	['a', 'de', 'gritar', 'hablar', 'llorar']	[0.8362 0.0501 0.0109 0.0089 0.0069]	0.8362	0
+61	human	El pony que buscaba al jinete chillaba tristemente.	al	['al', 'el', 'un', 'su', 'otro']	[0.4939 0.2067 0.1448 0.0855 0.0303]	0.4939	0
+62	human	El león que mató al cazador caminaba lentamente.	al	['al', 'el', 'un', 'a', 'del']	[0.9795 0.0182 0.0008 0.0003 0.0003]	0.9795	0
+63	human	El caballo que miraba al cuidador gruñía desconsoladamente.	al	['al', 'el', 'del', 'su', 'a']	[0.6617 0.3126 0.0061 0.0056 0.0036]	0.6617	0
+64	human	El tigre que atacó al domador dormía tranquilamente.	al	['al', 'el', 'su', 'y', 'a']	[0.9103 0.0619 0.0171 0.0031 0.0011]	0.9103	0
+65	human	El loro que observó al cantante cantaba claramente.	al	['al', 'la', 'el', 'como', 'del']	[0.3621 0.3073 0.2402 0.0286 0.0083]	0.3621	0
+66	human	Las panteras que atacaron a las empleadas descansaban tranquilamente.	a	['a', 'contra', '##on', 'y', '##ban']	[0.9974 0.0006 0.0004 0.0003 0.0001]	0.9974	0
+67	human	Las burras que pisaron a las mujeres gruñían claramente.	a	[',', 'a', 'y', 'por', 'de']	[0.3868 0.2852 0.1526 0.0317 0.0178]	0.2852	1
+68	human	Las conejas que olieron a las chicas saltaban continuamente.	a	['a', 'y', 'de', 'por', ',']	[0.8328 0.0275 0.0211 0.02   0.0189]	0.8328	0
+69	human	Las gallinas que detestaban a las señoras comían lentamente.	a	['a', ',', 'y', 'de', 'eran']	[0.9342 0.0227 0.0175 0.0062 0.0039]	0.9342	0
+70	human	Las lobas que empujaron a las ecólogas salieron repentinamente.	a	['a', 'contra', 'por', 'sobre', 'hacia']	[0.9869 0.0018 0.0015 0.0015 0.0013]	0.9869	0
+71	human	Los pájaros que miraban a los críos cantaban alegremente.	a	['a', 'y', 'hacia', ',', 'con']	[0.9576 0.012  0.0103 0.0033 0.0024]	0.9576	0
+72	human	Los delfines que mataron a los pescadores gemían fuertemente.	a	['a', 'de', '##on', 'y', 'con']	[0.9978 0.0003 0.0002 0.0002 0.0002]	0.9978	0
+73	human	Los cocodrilos que vieron a los asistentes nadaban frenéticamente.	a	['a', 'en', 'entre', 'y', 'por']	[0.7216 0.0834 0.0414 0.0364 0.0272]	0.7216	0
+74	human	Los flamencos que escucharon a los ayudantes dormían felizmente.	a	['a', 'y', 'por', 'de', 'con']	[0.8335 0.0653 0.0241 0.0192 0.0108]	0.8335	0
+75	animal	La artista que pisó a la perra andaba sigilosamente.	a	['a', 'en', ',', 'con', 'sobre']	[0.9234 0.0099 0.0087 0.0083 0.0035]	0.9234	0
+76	animal	La bióloga que abrazó a la gorila sonreía incesantemente.	a	['a', 'de', 'con', 'como', ',']	[0.9981 0.0003 0.0002 0.0002 0.0001]	0.9981	0
+77	animal	La voluntaria que tocó a la tortuga bebía continuamente.	a	['a', 'con', ',', 'tocó', 'fue']	[0.9652 0.0089 0.0035 0.003  0.0019]	0.9652	0
+78	animal	La ciclista que vio a la vaca comía distraídamente.	a	['a', 'era', ',', 'en', 'pasar']	[0.8876 0.0167 0.0133 0.0093 0.0066]	0.8876	0
+79	animal	La granjera que olió a la cerda salió inesperadamente.	a	['a', 'como', 'en', 'mal', 'de']	[0.8334 0.1006 0.0061 0.006  0.0055]	0.8334	0
+80	animal	El entrenador que escuchó al delfín nadaba rápidamente.	al	['al', 'del', 'el', 'este', 'un']	[0.5583 0.2109 0.1764 0.011  0.0095]	0.5583	0
+81	animal	El conductor que persiguió al camello paseaba felizmente.	al	['al', 'el', 'su', 'un', 'ese']	[0.7189 0.2144 0.051  0.0049 0.0021]	0.7189	0
+82	animal	El hombre que adoraba al canguro saltaba incesantemente.	al	['al', 'el', 'la', 'su', 'ser']	[0.7308 0.1435 0.0615 0.0155 0.0139]	0.7308	0
+83	animal	El amo que pegó al orangután gemía desconsoladamente.	al	['al', 'el', 'ese', 'un', 'a']	[0.9247 0.0603 0.0039 0.0025 0.0017]	0.9247	0
+84	animal	Las zoólogas que observaron a las palomas bebían plácidamente.	a	['que', 'a', ',', 'en', 'como']	[0.5969 0.19   0.122  0.008  0.007 ]	0.19	1
+85	animal	Las hermanas que buscaron a las gatas entraron inesperadamente.	a	['a', 'por', 'entre', 'en', ',']	[0.926  0.0128 0.0097 0.0095 0.0074]	0.926	0
+86	animal	Las niñas que adoraban a las ardillas chillaban alegremente.	a	['a', 'de', 'todas', 'tanto', ',']	[0.9967 0.0005 0.0002 0.0002 0.0001]	0.9967	0
+87	animal	Las estudiantes que pegaron a las monas paseaban tristemente.	a	['a', 'en', 'con', 'contra', 'por']	[0.9649 0.0092 0.0089 0.0065 0.0015]	0.9649	0
+88	animal	Los payasos que abrazaron a los chimpancés caminaban rápidamente.	a	['a', 'de', 'y', 'como', 'por']	[0.9956 0.0006 0.0005 0.0004 0.0002]	0.9956	0
+89	animal	Los trabajadores que perseguían a los guepardos corrían velozmente.	a	['a', 'eran', 'de', ',', 'y']	[0.9912 0.0024 0.0015 0.0007 0.0004]	0.9912	0
+90	animal	Los niños que ensuciaron a los macacos sonreían frenéticamente.	a	['a', 'en', 'con', 'todos', 'tanto']	[0.9755 0.0066 0.0044 0.0025 0.0009]	0.9755	0
+91	animal	Los viejos que oyeron a los pollos respiraban fuertemente.	a	['a', 'de', 'cantar', 'sobre', 'tocar']	[0.7406 0.0411 0.0222 0.0166 0.0166]	0.7406	0
+92	animal	Los técnicos que tocaron a los hámsters andaban distraídamente.	a	['a', 'con', 'para', 'en', 'como']	[0.7898 0.1278 0.0189 0.01   0.0078]	0.7898	0

@@ -1,37 +1,37 @@
 id	condition	input_sentence	score_dom	score_unmarked	discrepancy
-123	animate-human	La cebra que ensució (a) la turista descansaba plácidamente.	0.4375	0.2279	0.2095863903902752
-124	animate-human	La cabra que empujó (a) la pastora respiraba velozmente.	0.4877	0.3821	0.10562120946524717
-125	animate-human	La serpiente que detestaba (a) la veterinaria entró sigilosamente.	0.443	0.356	0.08697207612358426
-126	animate-human	La leoparda que oyó (a) la dueña corrió repentinamente.	0.4117	0.3532	0.05849516232184837
-127	animate-human	El pony que buscaba al/el jinete chillaba tristemente.	0.3554	0.3299	0.025536007433388686
-128	animate-human	El león que mató al/el cazador caminaba lentamente.	0.4644	0.2908	0.17358641160914584
-129	animate-human	El caballo que miraba al/el cuidador gruñía desconsoladamente.	0.3767	0.3379	0.03883063083160876
-130	animate-human	El tigre que atacó al/el domador dormía tranquilamente.	0.4337	0.2976	0.1361013126556227
-131	animate-human	El loro que observó al/el cantante cantaba claramente.	0.3439	0.3114	0.032563567798774784
-132	animate-human	Las panteras que atacaron (a) las empleadas descansaban tranquilamente.	0.4713	0.336	0.13528203958746648
-133	animate-human	Las burras que pisaron (a) las mujeres gruñían claramente.	0.3719	0.3148	0.05705107628873757
-134	animate-human	Las conejas que olieron (a) las chicas saltaban continuamente.	0.4356	0.337	0.0986174238106502
-135	animate-human	Las gallinas que detestaban (a) las señoras comían lentamente.	0.4529	0.3039	0.14907104147016803
-136	animate-human	Las lobas que empujaron (a) las ecólogas salieron repentinamente.	0.4856	0.4101	0.07552193087030401
-137	animate-human	Los pájaros que miraban (a) los críos cantaban alegremente.	0.4856	0.3787	0.10691185469426046
-138	animate-human	Los delfines que mataron (a) los pescadores gemían fuertemente.	0.492	0.3527	0.13931791958091755
-139	animate-human	Los cocodrilos que vieron (a) los asistentes nadaban frenéticamente.	0.4155	0.382	0.03341230766436387
-140	animate-human	Los flamencos que escucharon (a) los ayudantes dormían felizmente.	0.4166	0.3415	0.07510342376327073
-105	animate-animal	La artista que pisó (a) la perra andaba sigilosamente.	0.3827	0.3229	0.05982641254973847
-106	animate-animal	La bióloga que abrazó (a) la gorila sonreía incesantemente.	0.3816	0.2942	0.08744382570471332
-107	animate-animal	La voluntaria que tocó (a) la tortuga bebía continuamente.	0.4364	0.3188	0.11764918757221748
-108	animate-animal	La ciclista que vio (a) la vaca comía distraídamente.	0.3814	0.2726	0.10883281756887725
-109	animate-animal	La granjera que olió (a) la cerda salió inesperadamente.	0.4045	0.3638	0.04070759874491314
-110	animate-animal	El entrenador que escuchó al/el delfín nadaba rápidamente.	0.2701	0.2203	0.04980338830055886
-111	animate-animal	El conductor que persiguió al/el camello paseaba felizmente.	0.4095	0.3226	0.08698274539995532
-112	animate-animal	El hombre que adoraba al/el canguro saltaba incesantemente.	0.4021	0.3352	0.0669223346292348
-113	animate-animal	El amo que pegó al/el orangután gemía desconsoladamente.	0.4084	0.1942	0.21424398819672377
-114	animate-animal	Las zoólogas que observaron (a) las palomas bebían plácidamente.	0.3702	0.3462	0.024039524421006597
-115	animate-animal	Las hermanas que buscaron (a) las gatas entraron inesperadamente.	0.4662	0.3689	0.09729168906907798
-116	animate-animal	Las niñas que adoraban (a) las ardillas chillaban alegremente.	0.4888	0.4216	0.06717139312943332
-117	animate-animal	Las estudiantes que pegaron (a) las monas paseaban tristemente.	0.3479	0.1775	0.1704874920917685
-118	animate-animal	Los payasos que abrazaron (a) los chimpancés caminaban rápidamente.	0.4839	0.2929	0.1910407958613516
-119	animate-animal	Los trabajadores que perseguían (a) los guepardos corrían velozmente.	0.4803	0.3857	0.09462232907248164
-120	animate-animal	Los niños que ensuciaron (a) los macacos sonreían frenéticamente.	0.4816	0.3761	0.10552531883975519
-121	animate-animal	Los viejos que oyeron (a) los pollos respiraban fuertemente.	0.4265	0.2807	0.145755705799133
-122	animate-animal	Los técnicos que tocaron (a) los hámsters andaban distraídamente.	0.4607	0.4114	0.04936093882518866
+57	human	La cebra que ensució (a) la turista descansaba plácidamente.	0.4375	0.2279	0.2095863903902752
+58	human	La cabra que empujó (a) la pastora respiraba velozmente.	0.4877	0.3821	0.10562120946524717
+59	human	La serpiente que detestaba (a) la veterinaria entró sigilosamente.	0.443	0.356	0.08697207612358426
+60	human	La leoparda que oyó (a) la dueña corrió repentinamente.	0.4117	0.3532	0.05849516232184837
+61	human	El pony que buscaba al/el jinete chillaba tristemente.	0.3554	0.3299	0.025536007433388686
+62	human	El león que mató al/el cazador caminaba lentamente.	0.4644	0.2908	0.17358641160914584
+63	human	El caballo que miraba al/el cuidador gruñía desconsoladamente.	0.3767	0.3379	0.03883063083160876
+64	human	El tigre que atacó al/el domador dormía tranquilamente.	0.4337	0.2976	0.1361013126556227
+65	human	El loro que observó al/el cantante cantaba claramente.	0.3439	0.3114	0.032563567798774784
+66	human	Las panteras que atacaron (a) las empleadas descansaban tranquilamente.	0.4713	0.336	0.13528203958746648
+67	human	Las burras que pisaron (a) las mujeres gruñían claramente.	0.3719	0.3148	0.05705107628873757
+68	human	Las conejas que olieron (a) las chicas saltaban continuamente.	0.4356	0.337	0.0986174238106502
+69	human	Las gallinas que detestaban (a) las señoras comían lentamente.	0.4529	0.3039	0.14907104147016803
+70	human	Las lobas que empujaron (a) las ecólogas salieron repentinamente.	0.4856	0.4101	0.07552193087030401
+71	human	Los pájaros que miraban (a) los críos cantaban alegremente.	0.4856	0.3787	0.10691185469426046
+72	human	Los delfines que mataron (a) los pescadores gemían fuertemente.	0.492	0.3527	0.13931791958091755
+73	human	Los cocodrilos que vieron (a) los asistentes nadaban frenéticamente.	0.4155	0.382	0.03341230766436387
+74	human	Los flamencos que escucharon (a) los ayudantes dormían felizmente.	0.4166	0.3415	0.07510342376327073
+75	animal	La artista que pisó (a) la perra andaba sigilosamente.	0.3827	0.3229	0.05982641254973847
+76	animal	La bióloga que abrazó (a) la gorila sonreía incesantemente.	0.3816	0.2942	0.08744382570471332
+77	animal	La voluntaria que tocó (a) la tortuga bebía continuamente.	0.4364	0.3188	0.11764918757221748
+78	animal	La ciclista que vio (a) la vaca comía distraídamente.	0.3814	0.2726	0.10883281756887725
+79	animal	La granjera que olió (a) la cerda salió inesperadamente.	0.4045	0.3638	0.04070759874491314
+80	animal	El entrenador que escuchó al/el delfín nadaba rápidamente.	0.2701	0.2203	0.04980338830055886
+81	animal	El conductor que persiguió al/el camello paseaba felizmente.	0.4095	0.3226	0.08698274539995532
+82	animal	El hombre que adoraba al/el canguro saltaba incesantemente.	0.4021	0.3352	0.0669223346292348
+83	animal	El amo que pegó al/el orangután gemía desconsoladamente.	0.4084	0.1942	0.21424398819672377
+84	animal	Las zoólogas que observaron (a) las palomas bebían plácidamente.	0.3702	0.3462	0.024039524421006597
+85	animal	Las hermanas que buscaron (a) las gatas entraron inesperadamente.	0.4662	0.3689	0.09729168906907798
+86	animal	Las niñas que adoraban (a) las ardillas chillaban alegremente.	0.4888	0.4216	0.06717139312943332
+87	animal	Las estudiantes que pegaron (a) las monas paseaban tristemente.	0.3479	0.1775	0.1704874920917685
+88	animal	Los payasos que abrazaron (a) los chimpancés caminaban rápidamente.	0.4839	0.2929	0.1910407958613516
+89	animal	Los trabajadores que perseguían (a) los guepardos corrían velozmente.	0.4803	0.3857	0.09462232907248164
+90	animal	Los niños que ensuciaron (a) los macacos sonreían frenéticamente.	0.4816	0.3761	0.10552531883975519
+91	animal	Los viejos que oyeron (a) los pollos respiraban fuertemente.	0.4265	0.2807	0.145755705799133
+92	animal	Los técnicos que tocaron (a) los hámsters andaban distraídamente.	0.4607	0.4114	0.04936093882518866

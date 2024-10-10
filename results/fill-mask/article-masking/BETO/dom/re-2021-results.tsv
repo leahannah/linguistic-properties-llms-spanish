@@ -1,9 +1,9 @@
 id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank	def_prob	def_rank	indef_prob	indef_rank
-97	indefinite	Pablo mató a un rehén durante el secuestro.	un	['un', 'otro', 'una', 'su', 'la']	[0.834  0.0777 0.0393 0.026  0.0063]	0.0001	32	0.0063	4	0.834	0
-98	indefinite	Alberto lesionó a un defensa en el partido de la semana pasada.	un	['un', 'su', 'una', 'la', 'otro']	[0.5844 0.22   0.108  0.0566 0.0137]	0.0001	28	0.0566	3	0.5844	0
-99	indefinite	Andrea golpeó a un fotógrafo a la salida del restaurante.	un	['un', 'su', 'una', 'la', 'otro']	[0.7186 0.0511 0.0227 0.0208 0.006 ]	0.0003	139	0.0208	3	0.7186	0
-100	indefinite	Javier cuidó a un enfermo con gran profesionalidad.	un	['su', 'este', 'aquel', 'un', 'ese']	[0.3047 0.219  0.1494 0.0954 0.049 ]	0.0014	22	0.0147	7	0.0954	3
-101	indefinite	Laura acusó a un trabajador en la reunión.	un	['un', 'su', 'otro', 'algún', 'este']	[0.7569 0.0698 0.0665 0.0161 0.0079]	0.0001	69	0.0028	8	0.7569	0
-102	indefinite	Carlos denunció a un camarero tras una disputa.	un	['un', 'su', 'otro', 'este', 'la']	[0.6993 0.2243 0.0108 0.0073 0.007 ]	0.0002	37	0.007	4	0.6993	0
-103	indefinite	Ana vio a un político en la tienda del barrio.	un	['un', 'su', 'este', 'ese', 'la']	[0.4239 0.06   0.0201 0.0174 0.0147]	0.0005	234	0.0147	4	0.4239	0
-104	indefinite	Esther oyó a un bebé en el apartamento de al lado.	un	['su', 'la', 'un', 'una', 'los']	[0.4037 0.267  0.2362 0.0346 0.0112]	0.0011	12	0.267	1	0.2362	2
+101	indefinite	Pablo mató a un rehén durante el secuestro.	un	['un', 'otro', 'una', 'su', 'la']	[0.834  0.0777 0.0393 0.026  0.0063]	0.0001	32	0.0063	4	0.834	0
+102	indefinite	Alberto lesionó a un defensa en el partido de la semana pasada.	un	['un', 'su', 'una', 'la', 'otro']	[0.5844 0.22   0.108  0.0566 0.0137]	0.0001	28	0.0566	3	0.5844	0
+103	indefinite	Andrea golpeó a un fotógrafo a la salida del restaurante.	un	['un', 'su', 'una', 'la', 'otro']	[0.7186 0.0511 0.0227 0.0208 0.006 ]	0.0003	139	0.0208	3	0.7186	0
+104	indefinite	Javier cuidó a un enfermo con gran profesionalidad.	un	['su', 'este', 'aquel', 'un', 'ese']	[0.3047 0.219  0.1494 0.0954 0.049 ]	0.0014	22	0.0147	7	0.0954	3
+105	indefinite	Laura acusó a un trabajador en la reunión.	un	['un', 'su', 'otro', 'algún', 'este']	[0.7569 0.0698 0.0665 0.0161 0.0079]	0.0001	69	0.0028	8	0.7569	0
+106	indefinite	Carlos denunció a un camarero tras una disputa.	un	['un', 'su', 'otro', 'este', 'la']	[0.6993 0.2243 0.0108 0.0073 0.007 ]	0.0002	37	0.007	4	0.6993	0
+107	indefinite	Ana vio a un político en la tienda del barrio.	un	['un', 'su', 'este', 'ese', 'la']	[0.4239 0.06   0.0201 0.0174 0.0147]	0.0005	234	0.0147	4	0.4239	0
+108	indefinite	Esther oyó a un bebé en el apartamento de al lado.	un	['su', 'la', 'un', 'una', 'los']	[0.4037 0.267  0.2362 0.0346 0.0112]	0.0011	12	0.267	1	0.2362	2

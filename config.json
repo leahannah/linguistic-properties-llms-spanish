@@ -4,7 +4,7 @@
     "PRINT_TO_CONSOLE": true,
     "SAVE_RESULTS": true,
     "OUTPATH": null,
-    "MODEL_NAME": "dccuchile/bert-base-spanish-wwm-cased",
+    "MODEL_NAME": "google-bert/bert-base-multilingual-cased",
     "EXPERIMENT": "sentence-score",
     "TYPE": "article-masking",
     "REMOVE_DOM": true

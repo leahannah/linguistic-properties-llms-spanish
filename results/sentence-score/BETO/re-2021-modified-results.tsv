@@ -1,17 +1,17 @@
 id	condition	input_sentence	score_dom	score_unmarked	discrepancy
-141	definite	Gonzalo mató (a) la mujer en el parque.	0.4383	0.3506	0.08770921340023008
-142	definite	Patricio lesionó (a) la camarera en la discoteca.	0.2778	0.1897	0.08810685020753328
-143	definite	Carolina golpeó (a) la jugadora en el vestuario.	0.5275	0.4258	0.10172762615295927
-144	definite	Elena cuidó (a) la paciente durante dos semanas.	0.3944	0.2713	0.12308876086227527
-145	definite	Irene acusó (a) la secretaria general en la asamblea.	0.3382	0.2742	0.06400083137192103
-146	definite	Cecilia denunció (a) la mujer en la comisaría de policía.	0.5616	0.5205	0.041134950846658636
-147	definite	Josefina vio (a) la pastora en el parque.	0.4993	0.3559	0.1434141754358429
-148	definite	Julio oyó (a) la madre desde la cocina.	0.3432	0.2377	0.10547010922517125
-149	indefinite	Pablo mató (a) una mujer durante el secuestro.	0.3904	0.3592	0.031237953306370192
-150	indefinite	Alberto lesionó (a) una adversaria en el partido de la semana pasada.	0.4816	0.4623	0.019334303747794712
-151	indefinite	Andrea golpeó (a) una fotógrafa (a) la salida del restaurante.	0.5479	0.2406	0.3073618071703671
-152	indefinite	Javier cuidó (a) una paciente con gran profesionalidad.	0.3395	0.2303	0.10916992061564951
-153	indefinite	Laura acusó (a) una trabajadora en la reunión.	0.3556	0.2382	0.11733580462308169
-154	indefinite	Carlos denunció (a) una camarera tras una disputa.	0.3355	0.1853	0.1502863871042892
-155	indefinite	Ana vio (a) una política en la tienda del barrio.	0.2952	0.2517	0.043469658608352224
-156	indefinite	Esther oyó (a) una niña en el apartamento de al/el lado.	0.5765	0.3098	0.26674055156911086
+109	definite	Gonzalo mató (a) la mujer en el parque.	0.4383	0.3506	0.08770921340023008
+110	definite	Patricio lesionó (a) la camarera en la discoteca.	0.2778	0.1897	0.08810685020753328
+111	definite	Carolina golpeó (a) la jugadora en el vestuario.	0.5275	0.4258	0.10172762615295927
+112	definite	Elena cuidó (a) la paciente durante dos semanas.	0.3944	0.2713	0.12308876086227527
+113	definite	Irene acusó (a) la secretaria general en la asamblea.	0.3382	0.2742	0.06400083137192103
+114	definite	Cecilia denunció (a) la mujer en la comisaría de policía.	0.5616	0.5205	0.041134950846658636
+115	definite	Josefina vio (a) la pastora en el parque.	0.4993	0.3559	0.1434141754358429
+116	definite	Julio oyó (a) la madre desde la cocina.	0.3432	0.2377	0.10547010922517125
+117	indefinite	Pablo mató (a) una mujer durante el secuestro.	0.3904	0.3592	0.031237953306370192
+118	indefinite	Alberto lesionó (a) una adversaria en el partido de la semana pasada.	0.4816	0.4623	0.019334303747794712
+119	indefinite	Andrea golpeó (a) una fotógrafa (a) la salida del restaurante.	0.5479	0.2406	0.3073618071703671
+120	indefinite	Javier cuidó (a) una paciente con gran profesionalidad.	0.3395	0.2303	0.10916992061564951
+121	indefinite	Laura acusó (a) una trabajadora en la reunión.	0.3556	0.2382	0.11733580462308169
+122	indefinite	Carlos denunció (a) una camarera tras una disputa.	0.3355	0.1853	0.1502863871042892
+123	indefinite	Ana vio (a) una política en la tienda del barrio.	0.2952	0.2517	0.043469658608352224
+124	indefinite	Esther oyó (a) una niña en el apartamento de al/el lado.	0.5765	0.3098	0.26674055156911086

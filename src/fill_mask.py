@@ -110,6 +110,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
                     rank3, prob3 = mlm_sent.get_list_prob_rank(['un', 'una', 'unas', 'unos'])
                     indef_rank.append(rank3)
                     indef_prob.append(prob3)
+                # print results for sentence
                 if PRINT_MODE:
                     print(input_sent)
                     print(row['mask_idx'])
@@ -126,8 +127,10 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE
                         print(f'definite article probability: {prob2:.4f} rank: {rank2}')
                         print(f'indefinite article probability: {prob3:.4f} rank: {rank3}')
                     print()
+            # save outcomes to lists
             dom_probs.extend(dom_prob)
             dom_ranks.extend(dom_rank)
+            # save statistics
             stats = {'dom': [round(np.mean(dom_prob), 4), round(np.std(dom_prob), 4), round(np.median(dom_prob), 4),
                              round(np.mean(dom_rank), 4)]}
             if TYPE == 'article-masking':

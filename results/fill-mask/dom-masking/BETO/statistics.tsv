@@ -1,11 +1,11 @@
 source	condition	experiment	model	filler_type	mean	std	median	rank
-hg-2023	affected	dom-masking	BETO	dom	0.9658	0.0469	0.9883	0.0
-hg-2023	nonaffected	dom-masking	BETO	dom	0.839	0.2599	0.9547	0.125
 ms-2013	animate	dom-masking	BETO	dom	0.9181	0.1912	0.9882	0.0
 ms-2013	inanimate	dom-masking	BETO	dom	0.148	0.2696	0.0136	9.8214
+sa-2020	human	dom-masking	BETO	dom	0.8076	0.2162	0.8732	0.0556
+sa-2020	animal	dom-masking	BETO	dom	0.8395	0.1987	0.9241	0.0556
 re-2021	definite	dom-masking	BETO	dom	0.7615	0.2424	0.8569	0.25
 re-2021	indefinite	dom-masking	BETO	dom	0.8963	0.1542	0.9766	0.0
-sa-2020	animate-human	dom-masking	BETO	dom	0.8076	0.2162	0.8732	0.0556
-sa-2020	animate-animal	dom-masking	BETO	dom	0.8395	0.1987	0.9241	0.0556
 re-2021-modified	definite	dom-masking	BETO	dom	0.9256	0.1205	0.9952	0.0
 re-2021-modified	indefinite	dom-masking	BETO	dom	0.8559	0.1771	0.9295	0.0
+hg-2023	affected	dom-masking	BETO	dom	0.9658	0.0469	0.9883	0.0
+hg-2023	non-affected	dom-masking	BETO	dom	0.839	0.2599	0.9547	0.125

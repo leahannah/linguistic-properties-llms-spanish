@@ -9,7 +9,7 @@ class MLMSentence:
         """
         constructor to create a new MLMSentence object
         :param sentence: a sentence
-        :param index: token index to be masked
+        :param index: word index to be masked
         :param model: a loaded pretrained Spanish model suitable for MLM
         :param tokenizer: a loaded tokenizer based on the same model
         :param top_k: number of most likely fillers to predict for a [MASK]
@@ -20,13 +20,6 @@ class MLMSentence:
         self.tokenizer = tokenizer
         self.top_fillers, self.top_probs  = None, None  # will be calculated in function
 
-    def set_mask_index(self, new_index):
-        """
-        Set the index of the token to be masked
-        :return:
-        """
-        self.index = new_index
-
     def get_sentence(self):
         """
         Get the string sentence that is input to the model
@@ -36,14 +29,22 @@ class MLMSentence:
 
     def get_masked_token(self):
         """
-        Get the masked token
-        :return: string masked token
+        Get the masked word
+        :return: string masked word
         """
         return self.masked_token
+    
+    def set_mask_index(self, new_index):
+        """
+        Set the index of the word to be masked
+        :param new_index: int word index to be masked
+        :return:
+        """
+        self.index = new_index
 
     def get_top_fillers(self, num=5):
         """
-        get the top_k fillers for masked token
+        get the top_k fillers for masked word
         :param num: number of most likely fillers to return
         :return: list of lists containing most likely fillers
         """
@@ -85,8 +86,8 @@ class MLMSentence:
 
     def get_token_prob_rank(self, token):
         """
-        get rank and probability for given token being predicted at given mask index
-        :param token: list of tokens to look for
+        get rank and probability for given word being predicted at given mask index
+        :param token: word to look for in fillers
         :return: rank and probability for token, if not found 5 and 0.0
         """
         rank, prob = self.vocab_size, 0.0
@@ -102,8 +103,8 @@ class MLMSentence:
     def get_list_prob_rank(self, li):
         """
         get probability of an item list of tokens being predicted at given mask index
-        :param li: list of tokens to look for
-        :return: rank and probability for most likely from list, if none found top_k and 0.0
+        :param li: list of tokens to look for in fillers
+        :return: rank and probability for most likely wird from list, if none found vocab_size and 0.0
         """
         rank, prob = self.vocab_size, 0.0
         if self.top_fillers is None or self.top_probs is None:
@@ -125,7 +126,7 @@ class MLMSentence:
         s, self.masked_token = self.prep_input(self.sentence, self.index)  # prepare sentence
         s = '[CLS]' + s + '[SEP]'
         tokens = self.tokenizer.tokenize(s)
-        print(f'TOKENS: {tokens}')
+        # print(f'TOKENS: {tokens}')
         indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokens)
         tokens_tensor = torch.tensor([indexed_tokens])
         # predict
@@ -143,8 +144,7 @@ class MLMSentence:
     # based on https://github.com/simonepri/lm-scorer
     def sentence_score(self, reduce='mean', remove_stopping_point=False, log=False, per_token=False, return_ranks=False):
         """
-        Function to compute a likelihood score for a sentence based on the softmax (log) probabilities of each subtoken.
-        
+        compute a probability score for a sentence based on the softmax (log) probabilities of each subtoken.
         :param reduce: method to reduce token probabilities to a single score, either mean or prod (default mean)
         :param log: if True, score is based on logarithmic probability (default False)
         :param per_token: if True, function returns a list of (log) probabilities for each token (default False)
@@ -160,16 +160,17 @@ class MLMSentence:
                 # stopping point should be interpreted as single token
                 sent = self.sentence[:-1] + ' .'
          # loop through words
-        for word_idx, word in enumerate(sent.split()): 
+        for i, word in enumerate(sent.split()): 
             word_tokens = self.tokenizer.tokenize(word)  # check if the word is split into subwords
             word_probs, word_ranks = [], []  # initialize lists for subtokens
 
             # loop through subwords
             for subword in word_tokens:  # handle each subword
-                s, masked = self.prep_input(sent, index=word_idx)  # mask token at index of word
+                s, masked = self.prep_input(sent, index=i)  # mask token at index of word
                 s = '[CLS] ' + s + ' [SEP]'  # add special tokens
 
                 tokens_masked = self.tokenizer.tokenize(s)  # tokenize the masked sentence
+                # print(f'TOKENS: {tokens_masked}')
                 indexed_masked = self.tokenizer.convert_tokens_to_ids(tokens_masked)
                 tokens_tensor = torch.tensor([indexed_masked])
 

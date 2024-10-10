@@ -228,22 +228,23 @@ def articlemasking_postprocessing(dir):
     full_df.to_csv(os.path.join(dir, 'merged-results.tsv'), sep='\t', index=False)
     return full_df
 
-def count_article_disc(df):
+def count_article_disc(df, remove_masc=True):
     df = df[df['condition'] != 'inanimate']
-    df = df[df['masked'] != 'el']
-    df = df[df['masked'] != 'un']
+    if remove_masc:
+        df = df[df['masked'] != 'el']
+        df = df[df['masked'] != 'un']
     print(df.shape)
     print('DOM')
     dom_greater = (df['dom_discrepancy'] > 0.0).sum()
     # print('def > indef: ', count_greater)
     dom_smaller = df['dom_discrepancy'] < 0.0
-    print(dom_smaller)
+    # print(dom_smaller)
     print('indef > def: ', dom_smaller.sum())
     print('UNMARKED')
     unmarked_greater = (df['unmarked_discrepancy'] > 0.0).sum()
     # print('def > indef: ', unmarked_greater)
     unmarked_smaller = df['unmarked_discrepancy'] < 0.0
-    print(unmarked_smaller)
+    # print(unmarked_smaller)
     print('indef > def: ', unmarked_smaller.sum())
     return dom_smaller, unmarked_smaller
 
@@ -296,7 +297,7 @@ def merge_stats_sentscore(results_path):
     print(merged_df.shape)
     merged_df.to_csv(os.path.join(results_path, 'merged_stats.tsv'), sep='\t', index=False)
 
-def calculate_articlemasking_stats(results_file, remove_masc=True):
+def merge_articlemasking_stats(results_file, remove_masc=True):
     df = pd.read_csv(results_file, sep='\t')
     df = df[df['condition'] != 'inanimate']
     if remove_masc:
@@ -327,6 +328,31 @@ def calculate_articlemasking_stats(results_file, remove_masc=True):
     out_path = os.path.dirname(results_file)
     out_df.to_csv(os.path.join(out_path, 'merged_stats.tsv'), sep='\t', index=False)
 
+def reorder_test_data(filename):
+    # read data and correct minor things
+    df = pd.read_csv(filename, sep='\t')
+    df.replace('nonaffected', 'non-affected', inplace=True)
+    df.replace('animate-animal', 'animal', inplace=True)
+    df.replace('animate-human', 'human', inplace=True)
 
-# if __name__ == '__main__':
-#     calculate_articlemasking_stats('results/fill-mask/article-masking/mBERT/merged-results.tsv')
+    # define order
+    sources = ['ms-2013','sa-2020','re-2021', 're-2021-modified', 'hg-2023']
+    conditions = ['animate', 'inanimate', 'human', 'animal', 'definite', 'indefinite', 'affected', 'non-affected']
+
+    # sort df based on categorical column
+    df['source'] = pd.Categorical(df['source'], categories=sources, ordered=True)
+    df['condition'] = pd.Categorical(df['condition'], categories=conditions, ordered=True)
+    df_sorted = df.sort_values(['source', 'condition'])
+    
+    # add ids based on order
+    ids = list(range(1, df.shape[0]+1))
+    df_sorted['id'] = ids
+
+    # print(df_sorted)
+    df_sorted.to_csv(f'{filename[:-4]}-sorted.tsv', index=False, sep='\t')
+    return df_sorted
+
+if __name__ == '__main__':
+    df = articlemasking_postprocessing('results/fill-mask/article-masking/mBERT/')
+    count_article_disc(df)
+    merge_articlemasking_stats('results/fill-mask/article-masking/mBERT/merged-results.tsv')

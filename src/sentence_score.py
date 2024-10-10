@@ -90,11 +90,13 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE, OUTPATH):
                 score_unmarked = mlm_sent2.sentence_score(log=False)
                 prob_unmarked = mlm_sent2.sentence_score()
                 token_scores_unmarked = mlm_sent2.sentence_score(log=False, per_token=True, return_ranks=False)
+                # save outputs to lists
                 scores_dom.append(np.round(score, 4))
                 scores_unmarked.append(np.round(score_unmarked, 4))
                 disc = score - score_unmarked
                 inputs.append(sent.replace(' a ', ' (a) ').replace(' al ', ' al/el '))
-                discs.append(disc) #np.round(disc, 4))
+                discs.append(disc) 
+                # print results for sentence
                 if PRINT_MODE:
                     print(input_sent1)
                     print(row['en_sentence'])
@@ -106,6 +108,7 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE, OUTPATH):
                     print(f'discrepancy: {disc :4f}')
                     print()
             discrepancies.extend(discs)
+            # add to statistics
             stats = {'score_dom': [round(np.mean(scores_dom), 4), round(np.std(scores_dom), 4), round(np.median(scores_dom), 4)], 
                      'score_unmarked': [round(np.mean(scores_unmarked), 4), round(np.std(scores_unmarked), 4), round(np.median(scores_unmarked), 4)],
                     'discrepancy': [round(np.mean(discs), 4), round(np.std(discs), 4), round(np.median(discs), 4)]}
@@ -129,19 +132,19 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE, OUTPATH):
                 print(f'condition: {cond}')
                 stats = statistics[i]
                 for key in stats.keys():
-                    print(f'key: {key}, stats: {stats[key]}')
+                    print(f'key: {key}, mean: {stats[key][0]} std: {stats[key][1]} median: {stats[key][2]}')
                 print()
 
-        # save
+        # save results
         if SAVE_MODE:
             print('save results')
             print()
-            # save
             filename = f'{source}-results.tsv'
             df_print = data[['id', 'condition', 'input_sentence', 'score_dom', 'score_unmarked', 'discrepancy']]
             full_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, filename)
             df_print.to_csv(full_path, index=False, sep='\t')
             stats_path = os.path.join(pathlib.Path(__file__).parent.absolute(), output_path, 'statistics.tsv')
+            # save statistics
             for i, cond in enumerate(conditions):
                 stats = statistics[i]
                 with open(stats_path, mode='a', encoding='utf-8') as f:
@@ -149,4 +152,4 @@ def main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE, OUTPATH):
                     f.write(f"\t{stats['score_unmarked'][0]}\t{stats['discrepancy'][0]}")
                     f.write(f"\t{stats['discrepancy'][1]}\t{stats['discrepancy'][2]}\n")
 
-    print(f'Successfully completed sentence-score experiment with {INPUT_FILE}')
+    print(f'Successfully completed sentence-score experiment with {MODEL_NAME}')

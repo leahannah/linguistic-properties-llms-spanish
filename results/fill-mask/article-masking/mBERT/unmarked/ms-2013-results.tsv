@@ -1,20 +1,21 @@
 id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank	def_prob	def_rank	indef_prob	indef_rank
-34	animate	La abuela recibió los niños.	los	['12', 'los', 'dos', '10', 'cuatro']	[0.0654 0.0574 0.0495 0.0444 0.0377]	0.0105	24	0.0574	1	0.0029	45
-37	animate	El ladrón secuestró la señora.	la	['la', 'una', 'a', 'al', 'otra']	[0.7058 0.1649 0.0626 0.0116 0.0075]	0.0626	2	0.7058	0	0.1649	1
-38	animate	Snoopy miró su amigo.	su	['su', 'un', 'al', 'o', 'a']	[0.1303 0.1184 0.0978 0.0485 0.0339]	0.0978	2	0.0254	6	0.1184	1
-51	animate	El niño visitó su abuela.	su	['su', 'una', 'la', 'otra', 'a']	[0.4413 0.2741 0.1926 0.0075 0.0075]	0.0075	4	0.1926	2	0.2741	1
-54	animate	La familia acogió la inmigrante.	la	['un', 'al', 'el', 'otro', 'a']	[0.3807 0.334  0.0743 0.0323 0.0262]	0.334	1	0.0743	2	0.3807	0
-56	animate	Cristina saludó los novios.	los	['los', 'a', 'sus', 'al', 'y']	[0.3755 0.1678 0.1617 0.028  0.0208]	0.1678	1	0.3755	0	0.0024	21
-57	animate	El bandido secuestró la mujer.	la	['una', 'la', 'otra', 'a', 'su']	[0.7514 0.1169 0.071  0.0149 0.0124]	0.0149	3	0.1169	1	0.7514	0
-61	inanimate	Alejandra escuchó la música.	la	['la', 'una', 'a', 'con', 'de']	[0.9342 0.0151 0.0116 0.002  0.0019]	0.0116	2	0.9342	0	0.0151	1
-62	inanimate	Blanca Nieves comió la manzana.	la	['la', 'una', 'a', 'el', 'en']	[0.8123 0.054  0.0372 0.0102 0.0085]	0.0372	2	0.8123	0	0.054	1
-63	inanimate	El niño aprendío las matemáticas.	las	['las', 'aprender', 'les', 'sus', 'algunas']	[0.7732 0.0194 0.0172 0.0149 0.0121]	0.0077	7	0.7732	0	0.0052	14
-64	inanimate	Antonio bebió un refresco.	un	['de', 'el', 'un', 'del', 'al']	[0.2689 0.2116 0.1181 0.1138 0.0483]	0.0483	4	0.2116	1	0.1181	2
-65	inanimate	Alfonso arregló la bicicleta.	la	['la', 'una', 'en', 'de', 'su']	[0.31   0.1825 0.1472 0.1032 0.0996]	0.0127	6	0.31	0	0.1825	1
-68	inanimate	El niño tocó la planta.	la	['una', 'la', 'su', 'de', 'otra']	[0.4416 0.326  0.0302 0.0231 0.0229]	0.0079	7	0.326	1	0.4416	0
-72	inanimate	Miguel vio la pelota.	la	['a', 'la', 'vio', 'una', 'na']	[0.2502 0.1756 0.1557 0.0316 0.0274]	0.2502	0	0.1756	1	0.0316	3
-75	inanimate	Julián tocó la planta.	la	['la', 'una', 'na', 'a', 'de']	[0.3351 0.1017 0.0995 0.0678 0.028 ]	0.0678	3	0.3351	0	0.1017	1
-79	inanimate	Victor vio la pelota.	la	['a', 'vio', '##l', '##leta', 'na']	[0.1041 0.1019 0.0876 0.0442 0.0402]	0.1041	0	0.0029	51	0.0002	289
-83	inanimate	Alfonso arregló la bicicleta roja.	la	['una', 'la', 'su', 'con', 'en']	[0.5393 0.3053 0.0477 0.0151 0.0144]	0.0117	6	0.3053	1	0.5393	0
-85	inanimate	Estefanía compró un auto.	un	['el', 'un', 'o', 'la', 'a']	[0.3639 0.1436 0.137  0.0533 0.0235]	0.0235	4	0.3639	0	0.1436	1
-87	inanimate	Carlos leyó una novela.	una	['la', 'una', 'esta', 'La', 'su']	[0.896  0.0237 0.0108 0.0094 0.009 ]	0.0023	8	0.896	0	0.0237	1
+2	animate	La abuela recibió los niños.	los	['12', 'los', 'dos', '10', 'cuatro']	[0.0654 0.0574 0.0495 0.0444 0.0377]	0.0105	24	0.0574	1	0.0029	45
+5	animate	El ladrón secuestró la señora.	la	['la', 'una', 'a', 'al', 'otra']	[0.7058 0.1649 0.0626 0.0116 0.0075]	0.0626	2	0.7058	0	0.1649	1
+6	animate	Snoopy miró su amigo.	su	['su', 'un', 'al', 'o', 'a']	[0.1303 0.1184 0.0978 0.0485 0.0339]	0.0978	2	0.0254	6	0.1184	1
+19	animate	El niño visitó su abuela.	su	['su', 'una', 'la', 'otra', 'a']	[0.4413 0.2741 0.1926 0.0075 0.0075]	0.0075	4	0.1926	2	0.2741	1
+22	animate	La familia acogió la inmigrante.	la	['un', 'al', 'el', 'otro', 'a']	[0.3807 0.334  0.0743 0.0323 0.0262]	0.334	1	0.0743	2	0.3807	0
+24	animate	Cristina saludó los novios.	los	['los', 'a', 'sus', 'al', 'y']	[0.3755 0.1678 0.1617 0.028  0.0208]	0.1678	1	0.3755	0	0.0024	21
+25	animate	El bandido secuestró la mujer.	la	['una', 'la', 'otra', 'a', 'su']	[0.7514 0.1169 0.071  0.0149 0.0124]	0.0149	3	0.1169	1	0.7514	0
+29	inanimate	Alejandra escuchó la música.	la	['la', 'una', 'a', 'con', 'de']	[0.9342 0.0151 0.0116 0.002  0.0019]	0.0116	2	0.9342	0	0.0151	1
+30	inanimate	Blanca Nieves comió la manzana.	la	['la', 'una', 'a', 'el', 'en']	[0.8123 0.054  0.0372 0.0102 0.0085]	0.0372	2	0.8123	0	0.054	1
+31	inanimate	El niño aprendío las matemáticas.	las	['las', 'aprender', 'les', 'sus', 'algunas']	[0.7732 0.0194 0.0172 0.0149 0.0121]	0.0077	7	0.7732	0	0.0052	14
+32	inanimate	Antonio bebió un refresco.	un	['de', 'el', 'un', 'del', 'al']	[0.2689 0.2116 0.1181 0.1138 0.0483]	0.0483	4	0.2116	1	0.1181	2
+33	inanimate	Alfonso arregló la bicicleta.	la	['la', 'una', 'en', 'de', 'su']	[0.31   0.1825 0.1472 0.1032 0.0996]	0.0127	6	0.31	0	0.1825	1
+36	inanimate	El niño tocó la planta.	la	['una', 'la', 'su', 'de', 'otra']	[0.4416 0.326  0.0302 0.0231 0.0229]	0.0079	7	0.326	1	0.4416	0
+40	inanimate	Miguel vio la pelota.	la	['a', 'la', 'vio', 'una', 'na']	[0.2502 0.1756 0.1557 0.0316 0.0274]	0.2502	0	0.1756	1	0.0316	3
+43	inanimate	Julián tocó la planta.	la	['la', 'una', 'na', 'a', 'de']	[0.3351 0.1017 0.0995 0.0678 0.028 ]	0.0678	3	0.3351	0	0.1017	1
+47	inanimate	Victor vio la pelota.	la	['a', 'vio', '##l', '##leta', 'na']	[0.1041 0.1019 0.0876 0.0442 0.0402]	0.1041	0	0.0029	51	0.0002	289
+51	inanimate	Alfonso arregló la bicicleta roja.	la	['una', 'la', 'su', 'con', 'en']	[0.5393 0.3053 0.0477 0.0151 0.0144]	0.0117	6	0.3053	1	0.5393	0
+52	inanimate	Antonio bebió la coca cola.	la	['la', 'de', 'con', 'una', 'a']	[0.4606 0.1235 0.0761 0.0743 0.0586]	0.0586	4	0.4606	0	0.0743	3
+53	inanimate	Estefanía compró un auto.	un	['el', 'un', 'o', 'la', 'a']	[0.3639 0.1436 0.137  0.0533 0.0235]	0.0235	4	0.3639	0	0.1436	1
+55	inanimate	Carlos leyó una novela.	una	['la', 'una', 'esta', 'La', 'su']	[0.896  0.0237 0.0108 0.0094 0.009 ]	0.0023	8	0.896	0	0.0237	1

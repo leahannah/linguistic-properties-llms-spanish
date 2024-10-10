@@ -1,17 +1,17 @@
 id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank	def_prob	def_rank	indef_prob	indef_rank
-141	definite	Gonzalo mató la mujer en el parque.	la	['una', 'su', 'a', 'otra', 'la']	[0.7414 0.1298 0.0467 0.0287 0.0138]	0.0467	2	0.0138	4	0.7414	0
-142	definite	Patricio lesionó la camarera en la discoteca.	la	['una', 'a', 'al', 'la', 'su']	[0.5266 0.2451 0.1268 0.05   0.0153]	0.2451	1	0.05	3	0.5266	0
-143	definite	Carolina golpeó la jugadora en el vestuario.	la	['la', 'una', 'al', 'otra', 'ala']	[0.6598 0.1436 0.0589 0.041  0.0352]	0.0589	2	0.6598	0	0.1436	1
-144	definite	Elena cuidó la paciente durante dos semanas.	la	['al', 'del', 'el', 'la', 'su']	[0.8263 0.122  0.0287 0.0116 0.0021]	0.8263	0	0.0287	2	0.0021	5
-145	definite	Irene acusó la secretaria general en la asamblea.	la	['elegida', 'como', 'la', 'de', 'fue']	[0.2548 0.2237 0.1412 0.1167 0.0444]	0.0211	7	0.1412	2	0.0053	12
-146	definite	Cecilia denunció la mujer en la comisaría de policía.	la	['su', 'la', 'esta', 'una', 'ser']	[0.3711 0.2712 0.0764 0.0744 0.0714]	0.0158	6	0.2712	1	0.0744	3
-147	definite	Josefina vio la pastora en el parque.	la	['una', 'la', 'otra', 'su', 'a']	[0.8191 0.1061 0.0368 0.0097 0.0062]	0.0062	4	0.1061	1	0.8191	0
-148	definite	Julio oyó la madre desde la cocina.	la	['a', 'su', 'la', 'de', 'una']	[0.512  0.2063 0.1417 0.0244 0.0142]	0.512	0	0.1417	2	0.0142	4
-149	indefinite	Pablo mató una mujer durante el secuestro.	una	['una', 'su', 'otra', 'a', 'la']	[0.7592 0.1015 0.0521 0.0405 0.0159]	0.0405	3	0.0159	4	0.7592	0
-150	indefinite	Alberto lesionó una adversaria en el partido de la semana pasada.	una	['una', 'su', 'a', 'la', 'ala']	[0.6857 0.1849 0.0361 0.019  0.011 ]	0.0361	2	0.019	3	0.6857	0
-151	indefinite	Andrea golpeó una fotógrafa a la salida del restaurante.	una	['una', 'la', 'al', 'como', 'a']	[0.4282 0.3619 0.0607 0.0413 0.0302]	0.0607	2	0.3619	1	0.4282	0
-152	indefinite	Javier cuidó una paciente con gran profesionalidad.	una	['al', 'del', 'el', 'su', 'cada']	[0.855  0.1044 0.0313 0.003  0.0026]	0.855	0	0.0313	2	0.0004	6
-153	indefinite	Laura acusó una trabajadora en la reunión.	una	['de', 'a', 'una', 'la', 'ser']	[0.5217 0.1618 0.0604 0.0317 0.0266]	0.1618	1	0.0317	3	0.0604	2
-154	indefinite	Carlos denunció una camarera tras una disputa.	una	['la', 'una', 'su', 'a', 'ser']	[0.2156 0.2083 0.1662 0.1477 0.0935]	0.1477	3	0.2156	0	0.2083	1
-155	indefinite	Ana vio una política en la tienda del barrio.	una	['la', 'su', 'una', 'mucha', 'influencia']	[0.83   0.0309 0.0157 0.0108 0.0057]	0.0039	6	0.83	0	0.0157	2
-156	indefinite	Esther oyó una niña en el apartamento de al lado.	una	['una', 'la', 'de', 'esa', 'a']	[0.6455 0.1636 0.0259 0.0195 0.0195]	0.0195	4	0.1636	1	0.6455	0
+109	definite	Gonzalo mató la mujer en el parque.	la	['una', 'su', 'a', 'otra', 'la']	[0.7414 0.1298 0.0467 0.0287 0.0138]	0.0467	2	0.0138	4	0.7414	0
+110	definite	Patricio lesionó la camarera en la discoteca.	la	['una', 'a', 'al', 'la', 'su']	[0.5266 0.2451 0.1268 0.05   0.0153]	0.2451	1	0.05	3	0.5266	0
+111	definite	Carolina golpeó la jugadora en el vestuario.	la	['la', 'una', 'al', 'otra', 'ala']	[0.6598 0.1436 0.0589 0.041  0.0352]	0.0589	2	0.6598	0	0.1436	1
+112	definite	Elena cuidó la paciente durante dos semanas.	la	['al', 'del', 'el', 'la', 'su']	[0.8263 0.122  0.0287 0.0116 0.0021]	0.8263	0	0.0287	2	0.0021	5
+113	definite	Irene acusó la secretaria general en la asamblea.	la	['elegida', 'como', 'la', 'de', 'fue']	[0.2548 0.2237 0.1412 0.1167 0.0444]	0.0211	7	0.1412	2	0.0053	12
+114	definite	Cecilia denunció la mujer en la comisaría de policía.	la	['su', 'la', 'esta', 'una', 'ser']	[0.3711 0.2712 0.0764 0.0744 0.0714]	0.0158	6	0.2712	1	0.0744	3
+115	definite	Josefina vio la pastora en el parque.	la	['una', 'la', 'otra', 'su', 'a']	[0.8191 0.1061 0.0368 0.0097 0.0062]	0.0062	4	0.1061	1	0.8191	0
+116	definite	Julio oyó la madre desde la cocina.	la	['a', 'su', 'la', 'de', 'una']	[0.512  0.2063 0.1417 0.0244 0.0142]	0.512	0	0.1417	2	0.0142	4
+117	indefinite	Pablo mató una mujer durante el secuestro.	una	['una', 'su', 'otra', 'a', 'la']	[0.7592 0.1015 0.0521 0.0405 0.0159]	0.0405	3	0.0159	4	0.7592	0
+118	indefinite	Alberto lesionó una adversaria en el partido de la semana pasada.	una	['una', 'su', 'a', 'la', 'ala']	[0.6857 0.1849 0.0361 0.019  0.011 ]	0.0361	2	0.019	3	0.6857	0
+119	indefinite	Andrea golpeó una fotógrafa a la salida del restaurante.	una	['una', 'la', 'al', 'como', 'a']	[0.4282 0.3619 0.0607 0.0413 0.0302]	0.0607	2	0.3619	1	0.4282	0
+120	indefinite	Javier cuidó una paciente con gran profesionalidad.	una	['al', 'del', 'el', 'su', 'cada']	[0.855  0.1044 0.0313 0.003  0.0026]	0.855	0	0.0313	2	0.0004	6
+121	indefinite	Laura acusó una trabajadora en la reunión.	una	['de', 'a', 'una', 'la', 'ser']	[0.5217 0.1618 0.0604 0.0317 0.0266]	0.1618	1	0.0317	3	0.0604	2
+122	indefinite	Carlos denunció una camarera tras una disputa.	una	['la', 'una', 'su', 'a', 'ser']	[0.2156 0.2083 0.1662 0.1477 0.0935]	0.1477	3	0.2156	0	0.2083	1
+123	indefinite	Ana vio una política en la tienda del barrio.	una	['la', 'su', 'una', 'mucha', 'influencia']	[0.83   0.0309 0.0157 0.0108 0.0057]	0.0039	6	0.83	0	0.0157	2
+124	indefinite	Esther oyó una niña en el apartamento de al lado.	una	['una', 'la', 'de', 'esa', 'a']	[0.6455 0.1636 0.0259 0.0195 0.0195]	0.0195	4	0.1636	1	0.6455	0

@@ -1,33 +1,33 @@
 id	condition	input_sentence	masked	top_fillers	probabilities	dom_prob	dom_rank
-1	affected	Felipe eliminó a un rehén en pocos segundos.	a	['a', 'también', 'rápidamente', 'de', 'solo']	[0.9932 0.0011 0.0004 0.0004 0.0003]	0.9932	0
-2	affected	Amaya neutralizó a un enemigo en cinco minutos.	a	['a', 'rápidamente', 'fácilmente', 'completamente', 'definitivamente']	[0.9904 0.0014 0.0007 0.0006 0.0003]	0.9904	0
-3	affected	Joaquín abatió a un contrincante en unos minutos.	a	['a', 'sobre', 'contra', 'de', 'ante']	[0.9794 0.0063 0.005  0.0014 0.001 ]	0.9794	0
-4	affected	Martina arrolló a un peatón en cuestión de segundos.	a	['a', 'contra', 'por', 'sobre', 'accidentalmente']	[0.9979 0.0006 0.0004 0.0003 0.0002]	0.9979	0
-5	affected	Carlos derribó a un futbolista en dos segundos.	a	['a', 'contra', 'de', 'por', 'sobre']	[0.9978 0.0003 0.0002 0.0002 0.0001]	0.9978	0
-6	affected	Lucía destrozó a un oponente en dos asaltos.	a	['a', 'contra', 'fácilmente', 'ante', 'de']	[0.9963 0.0004 0.0003 0.0002 0.0002]	0.9963	0
-7	affected	Mateo quemó a una bruja en poco más de media hora.	a	['a', 'con', 'viva', 'como', 'también']	[0.9863 0.0031 0.0019 0.0011 0.0008]	0.9863	0
-8	affected	Valentina venció a un adversario en menos de una hora.	a	['a', 'ante', 'contra', 'fácilmente', 'nuevamente']	[0.992  0.0013 0.0008 0.0005 0.0003]	0.992	0
-9	affected	Luis zarandeó a un hombre durante algunos minutos.	a	['a', 'como', 'con', 'contra', 'de']	[0.8395 0.0596 0.0529 0.0105 0.0091]	0.8395	0
-10	affected	María transportó a un mochilero durante todo el día.	a	['a', 'como', 'con', 'consigo', 'de']	[0.9409 0.0255 0.0097 0.0029 0.0017]	0.9409	0
-11	affected	Lucas arrastró a un soldado durante un buen rato.	a	['a', 'como', 'con', 'de', 'por']	[0.9846 0.0054 0.0025 0.0005 0.0004]	0.9846	0
-12	affected	Claudia maltrató a una compañera durante varios años.	a	['a', 'con', 'de', 'constantemente', 'como']	[0.9989 0.0003 0.0001 0.0001 0.    ]	0.9989	0
-13	affected	Hugo apaleó a un rebelde durante varios minutos.	a	['a', 'con', 'como', 'contra', 'en']	[0.9965 0.0008 0.0007 0.0003 0.0003]	0.9965	0
-14	affected	Carla asedió a una contrincante durante bastante tiempo.	a	['a', 'como', 'con', 'ser', 'contra']	[0.9085 0.045  0.0061 0.005  0.0034]	0.9085	0
-15	affected	Daniel remolcó a un enfermo durante algunos minutos.	a	['a', 'como', 'con', 'por', 'de']	[0.8807 0.0828 0.0099 0.0047 0.0019]	0.8807	0
-16	affected	Coral guio a un turista durante toda la mañana.	a	['a', 'como', 'por', 'con', 'en']	[0.9699 0.0097 0.0086 0.0024 0.0012]	0.9699	0
-17	nonaffected	Carlos vigiló a un bebé durante unos minutos.	a	['a', 'como', 'con', 'por', 'de']	[0.967  0.0093 0.0066 0.003  0.0013]	0.967	0
-18	nonaffected	Irene oyó a una niña durante horas.	a	['a', 'de', 'como', 'llorar', 'sobre']	[0.7181 0.0595 0.046  0.0325 0.0086]	0.7181	0
-19	nonaffected	Pablo tuvo a un ayudante durante varios años.	a	['también', 'a', 'allí', 'sólo', 'además']	[0.3022 0.2982 0.0603 0.0419 0.0331]	0.2982	1
-20	nonaffected	Isabel vio a un estudiante durante toda la mañana.	a	['a', 'con', 'como', 'ser', 'sólo']	[0.943  0.0119 0.0101 0.0034 0.0021]	0.943	0
-21	nonaffected	Unai amó a una joven durante varios años.	a	['a', 'de', 'solo', 'sólo', 'con']	[0.996  0.0019 0.0002 0.0002 0.0002]	0.996	0
-22	nonaffected	Valeria admiró a un cantante durante toda su vida.	a	['ser', 'a', 'como', 'siendo', 'volverse']	[0.888  0.0873 0.0148 0.0012 0.001 ]	0.0873	1
-23	nonaffected	Adrián percibió a una mujer durante algunos minutos.	a	['a', 'ser', 'como', 'también', 'de']	[0.9483 0.0202 0.0076 0.0026 0.0021]	0.9483	0
-24	nonaffected	Emma investigó a un político durante varias semanas.	a	['a', 'sobre', 'con', 'para', 'por']	[0.875  0.0724 0.015  0.0088 0.0082]	0.875	0
-25	nonaffected	Ismael encontró a un conocido en cuestión de segundos.	a	['a', 'con', 'finalmente', 'ser', 'allí']	[0.9589 0.0304 0.001  0.0008 0.0007]	0.9589	0
-26	nonaffected	Sofía conoció a un chico en un par de días.	a	['a', 'con', 'de', 'en', 'allí']	[0.997  0.0023 0.0001 0.0001 0.    ]	0.997	0
-27	nonaffected	Martín detectó a un intruso en un par de minutos.	a	['a', 'nuevamente', 'definitivamente', 'también', 'primero']	[0.9694 0.0051 0.0029 0.0017 0.0014]	0.9694	0
-28	nonaffected	Elena localizó a una amiga al cabo de dos horas.	a	['a', 'con', 'por', 'allí', 'hasta']	[0.9913 0.0063 0.0002 0.0002 0.0002]	0.9913	0
-29	nonaffected	Alejandro identificó a un agresor en menos de dos minutos.	a	['a', 'como', 'definitivamente', 'nuevamente', 'claramente']	[0.9923 0.0009 0.0008 0.0005 0.0004]	0.9923	0
-30	nonaffected	Marta descartó a un aspirante en un minuto.	a	['a', 'ser', 'todo', 'como', 'tener']	[0.9505 0.0084 0.0023 0.0022 0.0022]	0.9505	0
-31	nonaffected	Samuel descubrió a un infiltrado en un par de días.	a	['a', 'de', 'ser', '##ó', 'tener']	[0.9813 0.0011 0.0009 0.0009 0.0009]	0.9813	0
-32	nonaffected	Alba mencionó a un actor tras varios minutos de reflexión.	a	['a', 'ser', 'también', 'tener', 'como']	[0.75   0.1271 0.0109 0.0071 0.0066]	0.75	0
+125	affected	Felipe eliminó a un rehén en pocos segundos.	a	['a', 'también', 'rápidamente', 'de', 'solo']	[0.9932 0.0011 0.0004 0.0004 0.0003]	0.9932	0
+126	affected	Amaya neutralizó a un enemigo en cinco minutos.	a	['a', 'rápidamente', 'fácilmente', 'completamente', 'definitivamente']	[0.9904 0.0014 0.0007 0.0006 0.0003]	0.9904	0
+127	affected	Joaquín abatió a un contrincante en unos minutos.	a	['a', 'sobre', 'contra', 'de', 'ante']	[0.9794 0.0063 0.005  0.0014 0.001 ]	0.9794	0
+128	affected	Martina arrolló a un peatón en cuestión de segundos.	a	['a', 'contra', 'por', 'sobre', 'accidentalmente']	[0.9979 0.0006 0.0004 0.0003 0.0002]	0.9979	0
+129	affected	Carlos derribó a un futbolista en dos segundos.	a	['a', 'contra', 'de', 'por', 'sobre']	[0.9978 0.0003 0.0002 0.0002 0.0001]	0.9978	0
+130	affected	Lucía destrozó a un oponente en dos asaltos.	a	['a', 'contra', 'fácilmente', 'ante', 'de']	[0.9963 0.0004 0.0003 0.0002 0.0002]	0.9963	0
+131	affected	Mateo quemó a una bruja en poco más de media hora.	a	['a', 'con', 'viva', 'como', 'también']	[0.9863 0.0031 0.0019 0.0011 0.0008]	0.9863	0
+132	affected	Valentina venció a un adversario en menos de una hora.	a	['a', 'ante', 'contra', 'fácilmente', 'nuevamente']	[0.992  0.0013 0.0008 0.0005 0.0003]	0.992	0
+133	affected	Luis zarandeó a un hombre durante algunos minutos.	a	['a', 'como', 'con', 'contra', 'de']	[0.8395 0.0596 0.0529 0.0105 0.0091]	0.8395	0
+134	affected	María transportó a un mochilero durante todo el día.	a	['a', 'como', 'con', 'consigo', 'de']	[0.9409 0.0255 0.0097 0.0029 0.0017]	0.9409	0
+135	affected	Lucas arrastró a un soldado durante un buen rato.	a	['a', 'como', 'con', 'de', 'por']	[0.9846 0.0054 0.0025 0.0005 0.0004]	0.9846	0
+136	affected	Claudia maltrató a una compañera durante varios años.	a	['a', 'con', 'de', 'constantemente', 'como']	[0.9989 0.0003 0.0001 0.0001 0.    ]	0.9989	0
+137	affected	Hugo apaleó a un rebelde durante varios minutos.	a	['a', 'con', 'como', 'contra', 'en']	[0.9965 0.0008 0.0007 0.0003 0.0003]	0.9965	0
+138	affected	Carla asedió a una contrincante durante bastante tiempo.	a	['a', 'como', 'con', 'ser', 'contra']	[0.9085 0.045  0.0061 0.005  0.0034]	0.9085	0
+139	affected	Daniel remolcó a un enfermo durante algunos minutos.	a	['a', 'como', 'con', 'por', 'de']	[0.8807 0.0828 0.0099 0.0047 0.0019]	0.8807	0
+140	affected	Coral guio a un turista durante toda la mañana.	a	['a', 'como', 'por', 'con', 'en']	[0.9699 0.0097 0.0086 0.0024 0.0012]	0.9699	0
+141	non-affected	Carlos vigiló a un bebé durante unos minutos.	a	['a', 'como', 'con', 'por', 'de']	[0.967  0.0093 0.0066 0.003  0.0013]	0.967	0
+142	non-affected	Irene oyó a una niña durante horas.	a	['a', 'de', 'como', 'llorar', 'sobre']	[0.7181 0.0595 0.046  0.0325 0.0086]	0.7181	0
+143	non-affected	Pablo tuvo a un ayudante durante varios años.	a	['también', 'a', 'allí', 'sólo', 'además']	[0.3022 0.2982 0.0603 0.0419 0.0331]	0.2982	1
+144	non-affected	Isabel vio a un estudiante durante toda la mañana.	a	['a', 'con', 'como', 'ser', 'sólo']	[0.943  0.0119 0.0101 0.0034 0.0021]	0.943	0
+145	non-affected	Unai amó a una joven durante varios años.	a	['a', 'de', 'solo', 'sólo', 'con']	[0.996  0.0019 0.0002 0.0002 0.0002]	0.996	0
+146	non-affected	Valeria admiró a un cantante durante toda su vida.	a	['ser', 'a', 'como', 'siendo', 'volverse']	[0.888  0.0873 0.0148 0.0012 0.001 ]	0.0873	1
+147	non-affected	Adrián percibió a una mujer durante algunos minutos.	a	['a', 'ser', 'como', 'también', 'de']	[0.9483 0.0202 0.0076 0.0026 0.0021]	0.9483	0
+148	non-affected	Emma investigó a un político durante varias semanas.	a	['a', 'sobre', 'con', 'para', 'por']	[0.875  0.0724 0.015  0.0088 0.0082]	0.875	0
+149	non-affected	Ismael encontró a un conocido en cuestión de segundos.	a	['a', 'con', 'finalmente', 'ser', 'allí']	[0.9589 0.0304 0.001  0.0008 0.0007]	0.9589	0
+150	non-affected	Sofía conoció a un chico en un par de días.	a	['a', 'con', 'de', 'en', 'allí']	[0.997  0.0023 0.0001 0.0001 0.    ]	0.997	0
+151	non-affected	Martín detectó a un intruso en un par de minutos.	a	['a', 'nuevamente', 'definitivamente', 'también', 'primero']	[0.9694 0.0051 0.0029 0.0017 0.0014]	0.9694	0
+152	non-affected	Elena localizó a una amiga al cabo de dos horas.	a	['a', 'con', 'por', 'allí', 'hasta']	[0.9913 0.0063 0.0002 0.0002 0.0002]	0.9913	0
+153	non-affected	Alejandro identificó a un agresor en menos de dos minutos.	a	['a', 'como', 'definitivamente', 'nuevamente', 'claramente']	[0.9923 0.0009 0.0008 0.0005 0.0004]	0.9923	0
+154	non-affected	Marta descartó a un aspirante en un minuto.	a	['a', 'ser', 'todo', 'como', 'tener']	[0.9505 0.0084 0.0023 0.0022 0.0022]	0.9505	0
+155	non-affected	Samuel descubrió a un infiltrado en un par de días.	a	['a', 'de', 'ser', '##ó', 'tener']	[0.9813 0.0011 0.0009 0.0009 0.0009]	0.9813	0
+156	non-affected	Alba mencionó a un actor tras varios minutos de reflexión.	a	['a', 'ser', 'también', 'tener', 'como']	[0.75   0.1271 0.0109 0.0071 0.0066]	0.75	0

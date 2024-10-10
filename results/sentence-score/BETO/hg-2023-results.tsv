@@ -1,33 +1,33 @@
 id	condition	input_sentence	score_dom	score_unmarked	discrepancy
-1	affected	Felipe eliminó (a) un rehén en pocos segundos.	0.3992	0.2762	0.12301005986875979
-2	affected	Amaya neutralizó (a) un enemigo en cinco minutos.	0.3699	0.2796	0.09027985998612092
-3	affected	Joaquín abatió (a) un contrincante en unos minutos.	0.2739	0.1825	0.09138572417808433
-4	affected	Martina arrolló (a) un peatón en cuestión de segundos.	0.6592	0.5293	0.12994955034701616
-5	affected	Carlos derribó (a) un futbolista en dos segundos.	0.3836	0.2103	0.17331583257805355
-6	affected	Lucía destrozó (a) un oponente en dos asaltos.	0.3416	0.2433	0.09823282640767339
-7	affected	Mateo quemó (a) una bruja en poco más de media hora.	0.5385	0.4909	0.047617723618962104
-8	affected	Valentina venció (a) un adversario en menos de una hora.	0.6024	0.5411	0.0612640602042982
-9	affected	Luis zarandeó (a) un hombre durante algunos minutos.	0.2897	0.1655	0.12413531646125553
-10	affected	María transportó (a) un mochilero durante todo el día.	0.4786	0.3785	0.10012958737998401
-11	affected	Lucas arrastró (a) un soldado durante un buen rato.	0.4231	0.3378	0.08533670907352042
-12	affected	Claudia maltrató (a) una compañera durante varios años.	0.3823	0.2935	0.08879866142596304
-13	affected	Hugo apaleó (a) un rebelde durante varios minutos.	0.3284	0.207	0.12147128823726705
-14	affected	Carla asedió (a) una contrincante durante bastante tiempo.	0.3845	0.3173	0.06724467220327357
-15	affected	Daniel remolcó (a) un enfermo durante algunos minutos.	0.2599	0.1427	0.11717820495614545
-16	affected	Coral guio (a) un turista durante toda la mañana.	0.4498	0.3568	0.0929197259384485
-17	nonaffected	Carlos vigiló (a) un bebé durante unos minutos.	0.274	0.178	0.09604722567401236
-18	nonaffected	Irene oyó (a) una niña durante horas.	0.3068	0.1674	0.13943217016484205
-19	nonaffected	Pablo tuvo (a) un ayudante durante varios años.	0.3215	0.3589	-0.0374074746097095
-20	nonaffected	Isabel vio (a) un estudiante durante toda la mañana.	0.408	0.3056	0.10234379130779414
-21	nonaffected	Unai amó (a) una joven durante varios años.	0.3959	0.2916	0.10429955974452082
-22	nonaffected	Valeria admiró (a) un cantante durante toda su vida.	0.3787	0.4236	-0.044839360582225984
-23	nonaffected	Adrián percibió (a) una mujer durante algunos minutos.	0.3298	0.2244	0.10543128666418333
-24	nonaffected	Emma investigó (a) un político durante varias semanas.	0.3949	0.2885	0.1064216798069953
-25	nonaffected	Ismael encontró (a) un conocido en cuestión de segundos.	0.4491	0.3644	0.08471116698984182
-26	nonaffected	Sofía conoció (a) un chico en un par de días.	0.5278	0.4299	0.09782607932561821
-27	nonaffected	Martín detectó (a) un intruso en un par de minutos.	0.5385	0.4459	0.09264578099502635
-28	nonaffected	Elena localizó (a) una amiga al/el cabo de dos horas.	0.4753	0.2457	0.229558178813434
-29	nonaffected	Alejandro identificó (a) un agresor en menos de dos minutos.	0.4542	0.3868	0.06744969482547164
-30	nonaffected	Marta descartó (a) un aspirante en un minuto.	0.3624	0.2571	0.10530193711686414
-31	nonaffected	Samuel descubrió (a) un infiltrado en un par de días.	0.5069	0.4298	0.07710159265533367
-32	nonaffected	Alba mencionó (a) un actor tras varios minutos de reflexión.	0.2663	0.1962	0.07019552516847563
+125	affected	Felipe eliminó (a) un rehén en pocos segundos.	0.3992	0.2762	0.12301005986875979
+126	affected	Amaya neutralizó (a) un enemigo en cinco minutos.	0.3699	0.2796	0.09027985998612092
+127	affected	Joaquín abatió (a) un contrincante en unos minutos.	0.2739	0.1825	0.09138572417808433
+128	affected	Martina arrolló (a) un peatón en cuestión de segundos.	0.6592	0.5293	0.12994955034701616
+129	affected	Carlos derribó (a) un futbolista en dos segundos.	0.3836	0.2103	0.17331583257805355
+130	affected	Lucía destrozó (a) un oponente en dos asaltos.	0.3416	0.2433	0.09823282640767339
+131	affected	Mateo quemó (a) una bruja en poco más de media hora.	0.5385	0.4909	0.047617723618962104
+132	affected	Valentina venció (a) un adversario en menos de una hora.	0.6024	0.5411	0.0612640602042982
+133	affected	Luis zarandeó (a) un hombre durante algunos minutos.	0.2897	0.1655	0.12413531646125553
+134	affected	María transportó (a) un mochilero durante todo el día.	0.4786	0.3785	0.10012958737998401
+135	affected	Lucas arrastró (a) un soldado durante un buen rato.	0.4231	0.3378	0.08533670907352042
+136	affected	Claudia maltrató (a) una compañera durante varios años.	0.3823	0.2935	0.08879866142596304
+137	affected	Hugo apaleó (a) un rebelde durante varios minutos.	0.3284	0.207	0.12147128823726705
+138	affected	Carla asedió (a) una contrincante durante bastante tiempo.	0.3845	0.3173	0.06724467220327357
+139	affected	Daniel remolcó (a) un enfermo durante algunos minutos.	0.2599	0.1427	0.11717820495614545
+140	affected	Coral guio (a) un turista durante toda la mañana.	0.4498	0.3568	0.0929197259384485
+141	non-affected	Carlos vigiló (a) un bebé durante unos minutos.	0.274	0.178	0.09604722567401236
+142	non-affected	Irene oyó (a) una niña durante horas.	0.3068	0.1674	0.13943217016484205
+143	non-affected	Pablo tuvo (a) un ayudante durante varios años.	0.3215	0.3589	-0.0374074746097095
+144	non-affected	Isabel vio (a) un estudiante durante toda la mañana.	0.408	0.3056	0.10234379130779414
+145	non-affected	Unai amó (a) una joven durante varios años.	0.3959	0.2916	0.10429955974452082
+146	non-affected	Valeria admiró (a) un cantante durante toda su vida.	0.3787	0.4236	-0.044839360582225984
+147	non-affected	Adrián percibió (a) una mujer durante algunos minutos.	0.3298	0.2244	0.10543128666418333
+148	non-affected	Emma investigó (a) un político durante varias semanas.	0.3949	0.2885	0.1064216798069953
+149	non-affected	Ismael encontró (a) un conocido en cuestión de segundos.	0.4491	0.3644	0.08471116698984182
+150	non-affected	Sofía conoció (a) un chico en un par de días.	0.5278	0.4299	0.09782607932561821
+151	non-affected	Martín detectó (a) un intruso en un par de minutos.	0.5385	0.4459	0.09264578099502635
+152	non-affected	Elena localizó (a) una amiga al/el cabo de dos horas.	0.4753	0.2457	0.229558178813434
+153	non-affected	Alejandro identificó (a) un agresor en menos de dos minutos.	0.4542	0.3868	0.06744969482547164
+154	non-affected	Marta descartó (a) un aspirante en un minuto.	0.3624	0.2571	0.10530193711686414
+155	non-affected	Samuel descubrió (a) un infiltrado en un par de días.	0.5069	0.4298	0.07710159265533367
+156	non-affected	Alba mencionó (a) un actor tras varios minutos de reflexión.	0.2663	0.1962	0.07019552516847563
