@@ -3,13 +3,14 @@
 ## Description
 This repository contains code used to analyze how multilingual BERT (Devlin et al, 2019) and BETO (Canete et al, 2020) deal with Differential Object Marking (DOM) in Spanish. Three experiments are used, all leveraging the Masked Language Model (MLM) property of BERT. More precisely, the fill-mask experiments analyze the predictions when masking DOM and the article in a sentence, and the sentence-scoree experiment compares the probability assigned to a sentence with and without DOM. This is done on the basis of stimuli data from four linguistic studies ().
 
-## Content
+## Contents
 * `data/`: Tables containing test sentences from linguistic studies.
 * `plots/`: Plots generated from the results.
 * `results/`: Outcomes of the three experiments.
 * `src/`: Python scripts implementing the experiments. 
 	* `fill_mask.py` is the implementation of the fill-mask experiments for DOM-masking and article-masking.
-	* `sentence_score.py` is for the sentence score experiment. The sentence score is implemented based on the [lm-scorer library](https://github.com/simonepri/lm-scorer).  		* `mlm_sentence.py` contains a class that receives a sentence and generates fillers and probabilities for a masked token, or assigns a single probability to a sentence. This class is used for all three experiments.
+	* `sentence_score.py` is for the sentence score experiment. The sentence score is implemented based on the [lm-scorer library](https://github.com/simonepri/lm-scorer).
+ 	* `mlm_sentence.py` contains a class that receives a sentence and generates fillers and probabilities for a masked token, or assigns a single probability to a sentence. This class is used for all three experiments.
 	*  `utils/` contains scripts with functions for pre- and postprocessing of data, and for plotting the results.
 * `config.json`: Configuration file where experiments, input data and experimental parameters are specified.
 * `main.py` main script accessing `config.json` and executing the specified experiment.
@@ -27,13 +28,13 @@ This repository contains code used to analyze how multilingual BERT (Devlin et a
 * `en-en.py`:  Additional experiment done for completeness. Get WEAT bias scores from embeddings trained on two different English Corpora, plot and save the results.
 * `weat.py` Implements bias score, effect size and test statistic for WEAT based on https://github.com/e-mckinnie/WEAT, and bias score and test statistic for mWEAT based on https://github.com/shaoxia57/Bias_in_Gendered_Languages
 * `util.py`: Contains useful functions needed in the experiment scripts
+
 ### Execution
 * modify config
 * run main.py
 
 ### Outputs
-* `plots`: Plots of the results with different languages and measures
-* `results`: Bias scores and vocabulary frequencies for the wordlists, plus statistics of those
+* results saved to results, plotted in plots 
 
 ## Structure
 ```
