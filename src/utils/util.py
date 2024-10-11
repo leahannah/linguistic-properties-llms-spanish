@@ -5,7 +5,14 @@ import numpy as np
 from transformers import BertForMaskedLM, BertTokenizer
 
 
-def load_targets(input_path, source, mask_type='dom', remove_dom=False):
+def load_targets(input_path, source=None, mask_type='dom', remove_dom=False):
+    """ load targets from csv file
+    :param input_path: path to csv file containing test sentences
+    :param source: optional, filters for given source dataset (default None)
+    :param mask_type: word to be masked, either 'dom' or 'article' (default 'dom')
+    :param remove_dom: if True, dom gets removed from sentences (default False)
+    :return: pandas dataframe containing test sentences, translations, dom indices, and some additional info
+    """
     df = pd.read_csv(input_path, sep='\t')
     idx = []
     if source is not None:
@@ -24,31 +31,37 @@ def load_targets(input_path, source, mask_type='dom', remove_dom=False):
                 else:
                     sent_list.pop(dom_idx)
                     dom_idx -= 1
-            # print(f'sent_list: {sent_list}')
             sentences.append(' '.join(sent_list)) # join to string
-            # print(f'dobj: {row["dobject"]}')
             article = row['dobject'].split()[0]
-            if article in ['la', 'los', 'las', 'un', 'una', 'su']: # , 'el']: # filter out dobjects without article
+            if article in ['la', 'los', 'las', 'un', 'una', 'su']: 
                 idx.append(dom_idx+1)
-                # print(f'index: {dom_idx+1}')
-            # elif sent_list[dom_idx] == 'al':
-            #     idx.append(dom_idx)
             else: # skip sentence, no separate article
                 print(f'SKIP SENTENCE: {sent_list}')
                 idx.append(-1)
-                # print(f'index: {-1}')
         df['sentence'] = sentences
     df['sentence'] = df['sentence'].str.replace('[', '').str.replace(']', '') # remove brackets
     # filter for sentences with separate article
-    # print(f'df shape before filtering: {df.shape}')
     df['mask_idx'] = idx
     if mask_type == 'article':
         df = df[df['mask_idx'] > 0] # remove sentences that have no tokens to mask
-    # print(f'df shape after: {df.shape}')
     return df
 
-# helper function: find index of dom-marker (a/ al) in target sentence
+# setup tokenizer and model
+def load_model(modelname):
+    """ load tokenizer and model from huggingface transformers library
+    :param modelname: name of the model
+    :return: loaded tokenizer and model
+    """
+    tokenizer = BertTokenizer.from_pretrained(modelname, do_lower_case=False)
+    model = BertForMaskedLM.from_pretrained(modelname)
+    return tokenizer, model
+
 def find_dom_index(sent_list, char='['):
+    """ helper function: find index of dom-marker (a/ al) in test sentence based on DO tagged with []
+    :param sent_list: list of words in sentence
+    :param char: character indicating the start of the DO (default '[')
+    :return: index of DOM preposition
+    """
     idx = -1
     for i, w in enumerate(sent_list):
         if w in ['a', 'al'] and sent_list[i+1][0] == char:
@@ -58,8 +71,13 @@ def find_dom_index(sent_list, char='['):
         print('Index not found in sentence: {}'.format(sent_list))
     return idx
 
-# helper function: find index of direct object in target sentence
 def find_dobj_indices(sent_list, start='[', end=']'):
+    """ helper function: find index of direct object in test sentence
+    :param sent_list: list of words in sentence
+    :param start: character indicating the start of the DO (default '[')
+    :param end: character indicating the end of the DO (default ']')
+    :return: list of direct object indices
+    """
     idx1, idx2 = 0, 0
     for i, w in enumerate(sent_list):
         if w[0] == start:
@@ -71,24 +89,12 @@ def find_dobj_indices(sent_list, start='[', end=']'):
         print('Index not found in sentence: {}'.format(sent_list))
     return idx
 
-# setup tokenizer and model
-def load_model(modelname):
-    tokenizer = BertTokenizer.from_pretrained(modelname, do_lower_case=False)
-    model = BertForMaskedLM.from_pretrained(modelname)
-    return tokenizer, model
-
-# look for specific words in MLM predictions
-def search_fillers(fillers, probs, wordlist):
-    fillers_found, filler_probs, filler_ranks = [], [], []
-    for i, filler in enumerate(fillers):
-        if filler in wordlist:
-            fillers_found.append(filler)
-            filler_probs.append(probs[i])
-            filler_ranks.append(i)
-    return fillers_found, filler_probs, filler_ranks
-
-# get targets into correct format
-def prep_input(inputfile, outputfile, idx=5):
+def preprocess_input(inputfile, outputfile, idx=5):
+    """ preprocess test data, add [] to tag direct objects (manual postprocessing applied)
+    :param inputfile: path to file containing ids, test sentences, translations
+    :param outputfile: output path
+    :param idx: index where direct object is expected to start
+    """
     with open(outputfile, mode='w', encoding='utf-8') as out_f:
         out_f.write('id\tes\ten\n')
         with open(inputfile, mode='r', encoding='utf-8') as f:
@@ -125,10 +131,16 @@ def prep_input(inputfile, outputfile, idx=5):
                     out_f.write('\t'.join([id, sentence, en_sentence+'\n']))
 
 def merge_test_data(directory):
+    """ merge test data from different sources into single file
+    :param directory: path to directory containing test data files
+    :return: pandas df containing merged data
+    """
     es_sents, en_sents, dom_markers, dobjects, dom_idxs, genus, numerus, source, conditions = [], [], [], [], [], [], [], [], []
     cnt = 0 
+    # iterate over data files
     for file in os.listdir(directory):
         print(file)
+        # get source and condition
         sou = file.split('_')[0]
         name = file.split('_')[1]
         cond = name.split('-')[0]
@@ -136,7 +148,9 @@ def merge_test_data(directory):
         path = directory + file
         with open(path, mode='r', encoding='utf-8') as f:
             next(f)
+            # iterate over lines
             for line in f.readlines():
+                # extract information
                 cnt += 1
                 line_list = line.split('\t')
                 es_sent = line_list[1]
@@ -146,6 +160,7 @@ def merge_test_data(directory):
                 sent_list = es_sent.split()
                 dom_idx = find_dom_index(sent_list)
                 dom = sent_list[dom_idx] if dom_idx > -1 else ''
+                # add info on gender and number of DO
                 if len(dobject.split()) > 1:
                     det = dobject.split()[0]
                     det_sing = ['la', 'el', 'un', 'una']
@@ -161,6 +176,7 @@ def merge_test_data(directory):
                 else:
                     num = 'sing'
                     gen = 'm'
+                # add info to lists
                 source.append(sou)
                 conditions.append(cond)
                 es_sents.append(es_sent)
@@ -170,10 +186,11 @@ def merge_test_data(directory):
                 genus.append(gen)
                 numerus.append(num)
                 en_sents.append(line_list[2].strip('\n'))
-    ids = list(range(1, cnt+1)) 
-    animate = ['?' for x in ids]
-    definite = animate
-    affected = animate
+    ids = list(range(1, cnt+1))  # add ids
+    # animate = ['?' for x in ids]
+    # definite = animate
+    # affected = animate
+    # create dataframe
     df = pd.DataFrame(
             {'id': ids,
              'source': source,
@@ -184,14 +201,46 @@ def merge_test_data(directory):
              'dobjects': dobjects,
              'gender': genus, 
              'number': numerus,
-             'animate': animate,
-             'definite': definite,
-             'affected': affected,
+            #  'animate': animate,
+            #  'definite': definite,
+            #  'affected': affected,
             'en_sentence': en_sents
             })
     return df
 
+def reorder_test_data(filename):
+    """ reorder test data so that it aligns with order presented in thesis, save to file
+    :param filename: path to merged test data file
+    :return: pandas df containing reordered data
+    """
+    # read data and correct minor things
+    df = pd.read_csv(filename, sep='\t')
+    df.replace('nonaffected', 'non-affected', inplace=True)
+    df.replace('animate-animal', 'animal', inplace=True)
+    df.replace('animate-human', 'human', inplace=True)
+
+    # define order
+    sources = ['ms-2013','sa-2020','re-2021', 're-2021-modified', 'hg-2023']
+    conditions = ['animate', 'inanimate', 'human', 'animal', 'definite', 'indefinite', 'affected', 'non-affected']
+
+    # sort df based on categorical column
+    df['source'] = pd.Categorical(df['source'], categories=sources, ordered=True)
+    df['condition'] = pd.Categorical(df['condition'], categories=conditions, ordered=True)
+    df_sorted = df.sort_values(['source', 'condition'])
+    
+    # add ids based on order
+    ids = list(range(1, df.shape[0]+1))
+    df_sorted['id'] = ids
+
+    # print(df_sorted)
+    df_sorted.to_csv(f'{filename[:-4]}-sorted.tsv', index=False, sep='\t')
+    return df_sorted
+
 def articlemasking_postprocessing(dir):
+    """ postprocess results from article masking experiments, create single table with all predictions
+    :param dir: directory containing marked and unmarked folder
+    :return: pandas df with merged predictions for a model
+    """
     ordered_files = ['ms-2013-results.tsv','sa-2020-results.tsv','re-2021-results.tsv', 
                      're-2021-modified-results.tsv', 'hg-2023-results.tsv']
     dfs = []
@@ -229,6 +278,11 @@ def articlemasking_postprocessing(dir):
     return full_df
 
 def count_article_disc(df, remove_masc=True):
+    """ count the number of test sentences where the model prefers a definite, and indefinite, article
+    :param df: dataframe containing article-masking results
+    :param remove_masc: if True, sentences with masc. sing. DOs are removed (default True)
+    :return: counts of definite preferred, indefinite preferred for DOM and unmarked sentences
+    """
     df = df[df['condition'] != 'inanimate']
     if remove_masc:
         df = df[df['masked'] != 'el']
@@ -236,19 +290,19 @@ def count_article_disc(df, remove_masc=True):
     print(df.shape)
     print('DOM')
     dom_greater = (df['dom_discrepancy'] > 0.0).sum()
-    # print('def > indef: ', count_greater)
-    dom_smaller = df['dom_discrepancy'] < 0.0
-    # print(dom_smaller)
+    dom_smaller = (df['dom_discrepancy'] < 0.0).sum()
     print('indef > def: ', dom_smaller.sum())
     print('UNMARKED')
     unmarked_greater = (df['unmarked_discrepancy'] > 0.0).sum()
-    # print('def > indef: ', unmarked_greater)
-    unmarked_smaller = df['unmarked_discrepancy'] < 0.0
-    # print(unmarked_smaller)
+    unmarked_smaller = (df['unmarked_discrepancy'] < 0.0).sum()
     print('indef > def: ', unmarked_smaller.sum())
-    return dom_smaller, unmarked_smaller
+    return dom_greater, dom_smaller, unmarked_greater, unmarked_smaller
 
 def count_dom_rank(dir):
+    """ count how often DOM is the top prediction in dom-masking
+    :param dir: directory containing dom-masking results for model
+    :return: count where DOM is top prediction, count where other word is top prediction
+    """
     ordered_files = ['ms-2013-results.tsv','sa-2020-results.tsv','re-2021-results.tsv', 
                      're-2021-modified-results.tsv', 'hg-2023-results.tsv']
     dfs = []
@@ -264,6 +318,10 @@ def count_dom_rank(dir):
     return count_dom, count_other
     
 def merge_stats_dom(results_path):
+    """ merge statistics of dom-masking results for both models
+    :param results_path: path to results
+    :return: pandas df containing merged statistics
+    """
     dfs = []
     for model in ['BETO', 'mBERT']:
         path = os.path.join(results_path, model, 'statistics.tsv')
@@ -278,8 +336,13 @@ def merge_stats_dom(results_path):
     print(merged_df.columns)
     print(merged_df.shape)
     merged_df.to_csv(os.path.join(results_path, 'merged_stats.tsv'), sep='\t', index=False)
+    return merged_df
 
 def merge_stats_sentscore(results_path):
+    """ merge statistics of sentence-score results for both models
+    :param results_path: path to results
+    :return: pandas df containing merged statistics
+    """
     dfs = []
     for model in ['BETO', 'mBERT']:
         path = os.path.join(results_path, model, 'statistics.tsv')
@@ -291,14 +354,20 @@ def merge_stats_sentscore(results_path):
                            'std_disc': f'{model}-std_disc'}, inplace=True)
         dfs.append(df)
     merged_df = pd.merge(dfs[0], dfs[1], on=['source', 'condition'], how='inner')
-    # merged_df = merged_df.drop(columns=['experiment_x', 'experiment_y'])
     print(merged_df.head())
     print(merged_df.columns)
     print(merged_df.shape)
     merged_df.to_csv(os.path.join(results_path, 'merged_stats.tsv'), sep='\t', index=False)
+    return merged_df
 
 def merge_articlemasking_stats(results_file, remove_masc=True):
+    """ calculate statistics of article-masking results for one model
+    :param results_path: path to results file
+    :param remove_masc: if True, sentences with masc. sing. DOs are removed (default True)
+    :return: pandas df containing statistics
+    """
     df = pd.read_csv(results_file, sep='\t')
+    # remove undesired test sentences
     df = df[df['condition'] != 'inanimate']
     if remove_masc:
         df = df[df['masked'] != 'el']
@@ -322,37 +391,10 @@ def merge_articlemasking_stats(results_file, remove_masc=True):
         means2.append(round(np.mean(stat_list), 4))
         stds2.append(round(np.std(stat_list), 4))
         medians2.append(round(np.median(stat_list), 4))
+    # create dataframe and save
     out_df = pd.DataFrame({'measurement': ['definite probability', 'indefinite probability', 'discrepancy'],
                            'dom_mean': means1, 'dom_std': stds1, 'dom_median': medians1,
                            'unmarked_mean': means2, 'unmarked_std': stds2, 'unmarked_median': medians2})
     out_path = os.path.dirname(results_file)
     out_df.to_csv(os.path.join(out_path, 'merged_stats.tsv'), sep='\t', index=False)
-
-def reorder_test_data(filename):
-    # read data and correct minor things
-    df = pd.read_csv(filename, sep='\t')
-    df.replace('nonaffected', 'non-affected', inplace=True)
-    df.replace('animate-animal', 'animal', inplace=True)
-    df.replace('animate-human', 'human', inplace=True)
-
-    # define order
-    sources = ['ms-2013','sa-2020','re-2021', 're-2021-modified', 'hg-2023']
-    conditions = ['animate', 'inanimate', 'human', 'animal', 'definite', 'indefinite', 'affected', 'non-affected']
-
-    # sort df based on categorical column
-    df['source'] = pd.Categorical(df['source'], categories=sources, ordered=True)
-    df['condition'] = pd.Categorical(df['condition'], categories=conditions, ordered=True)
-    df_sorted = df.sort_values(['source', 'condition'])
-    
-    # add ids based on order
-    ids = list(range(1, df.shape[0]+1))
-    df_sorted['id'] = ids
-
-    # print(df_sorted)
-    df_sorted.to_csv(f'{filename[:-4]}-sorted.tsv', index=False, sep='\t')
-    return df_sorted
-
-if __name__ == '__main__':
-    df = articlemasking_postprocessing('results/fill-mask/article-masking/mBERT/')
-    count_article_disc(df)
-    merge_articlemasking_stats('results/fill-mask/article-masking/mBERT/merged-results.tsv')
+    return out_df

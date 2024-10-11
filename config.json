@@ -2,9 +2,9 @@
     "INPUT_FILE": "testdata-merged.tsv",
     "SOURCE": null,
     "PRINT_TO_CONSOLE": true,
-    "SAVE_RESULTS": true,
+    "SAVE_RESULTS": false,
     "OUTPATH": null,
-    "MODEL_NAME": "google-bert/bert-base-multilingual-cased",
+    "MODEL_NAME": "dccuchile/bert-base-spanish-wwm-cased",
     "EXPERIMENT": "sentence-score",
     "TYPE": "article-masking",
     "REMOVE_DOM": true

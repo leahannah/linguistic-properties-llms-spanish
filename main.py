@@ -2,8 +2,7 @@ import json
 import os
 import pathlib
 import time
-import fill_mask, sentence_score
-
+from src import fill_mask, sentence_score
 # execute experiments based on config.json file
 
 # measure time
@@ -11,7 +10,7 @@ start_time = time.time()
 print(f'Start time: {time.ctime()}')
 
 # parse config file
-config_path = os.path.join(pathlib.Path(__file__).parent.absolute(), '..', 'config.json')
+config_path = 'config.json'
 with open(config_path) as f:
     config = json.load(f)
 

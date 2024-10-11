@@ -10,6 +10,11 @@ from util import articlemasking_postprocessing
 pd.set_option('mode.chained_assignment', None)
 
 def create_barplot(inpath, modelname, errorbar=False):
+    """ create barplot for fill-mask results, save to plots/
+    :param inpath: path to results
+    :param modelname: name of the model used to obtain results
+    :param errorbar: if True, standard deviation is added as errorbar (default False)
+    """
     measure = 'probability' if 'fill-mask' in inpath else 'discrepancy'
     add_str = ''
     if 'article-masking' in inpath:
@@ -67,10 +72,15 @@ def create_barplot(inpath, modelname, errorbar=False):
                 os.makedirs(outpath)
             filename = f'{modelname}-mean-{ftype}-{measure}'
             plt.savefig(os.path.join(outpath, filename))
-            plt.show()
+            # plt.show()
 
 
 def create_probability_boxplot(dir, modelname):
+    """
+    create boxplots for probabilities obtained from fill-mask experiments, save to plots/
+    :param dir: path to results
+    :param modelname: name of model
+    """
     measure = 'Probability'
     add_str = ''
     if 'article-masking' in dir:
@@ -127,10 +137,14 @@ def create_probability_boxplot(dir, modelname):
         filename = f'{modelname}-{col_name}-boxplot.png'
         filename = filename.replace('_', '-')
         plt.savefig(os.path.join(outpath, filename))
-        plt.show()
+        # plt.show()
 
 
 def create_sentencescore_boxplots(dir, modelname=None):
+    """ create boxplots for sentencescore results, save to plots/
+    :param dir: path to results
+    :param modelname: name of model, extracted from path if None
+    """
     if not modelname:
         modelname = 'BETO' if 'BETO' in dir else 'mBERT'
     figure, axis = plt.subplots(2, 3, figsize=(10, 7))
@@ -141,8 +155,6 @@ def create_sentencescore_boxplots(dir, modelname=None):
     for file in ordered_files:
         df1 = pd.read_csv(os.path.join(dir, file), sep='\t')
         df1.replace('nonaffected', 'non-affected', inplace=True)
-        df1.replace('animate-human', 'human', inplace=True)
-        df1.replace('animate-animal', 'animal', inplace=True)
         df2 = df1.copy()
         df1.drop(columns=['score_unmarked'], inplace=True)
         df1['type'] = ['DOM' for _ in range(df1.shape[0])]
@@ -176,57 +188,12 @@ def create_sentencescore_boxplots(dir, modelname=None):
         os.makedirs(outpath)
     filename = f'{modelname}-multi-boxplot.png'
     plt.savefig(os.path.join(outpath, filename))
-    plt.show()
+    # plt.show()
 
-def create_sentencescore_boxplots(dir, modelname=None):
-    if not modelname:
-        modelname = 'BETO' if 'BETO' in dir else 'mBERT'
-    figure, axis = plt.subplots(2, 3, figsize=(10, 7))
-    plt.subplots_adjust(wspace=0.4, hspace=0.4)
-    row, col = 0, 0
-    ordered_files = ['ms-2013-results.tsv','sa-2020-results.tsv','re-2021-results.tsv', 
-                     're-2021-modified-results.tsv', 'hg-2023-results.tsv']
-    for file in ordered_files:
-        df1 = pd.read_csv(os.path.join(dir, file), sep='\t')
-        df1.replace('nonaffected', 'non-affected', inplace=True)
-        df1.replace('animate-human', 'human', inplace=True)
-        df1.replace('animate-animal', 'animal', inplace=True)
-        df2 = df1.copy()
-        df1.drop(columns=['score_unmarked'], inplace=True)
-        df1['type'] = ['DOM' for _ in range(df1.shape[0])]
-        df1.rename(columns={'score_dom': 'score'}, inplace=True)
-        df2.drop(columns=['score_dom'], inplace=True)
-        df2['type'] = ['unmarked' for _ in range(df2.shape[0])]
-        df2.rename(columns={'score_unmarked': 'score'}, inplace=True)
-        df = pd.concat([df1, df2])
-        sns.set_context('paper', rc={'axes.titlesize': 16, 'axes.labelsize': 16, 'xtick.labelsize': 16,                                 'ytick.labelsize': 16, 'legend.fontsize': 16, 'legend.title_fontsize': 16})
-        ax = sns.boxplot(data=df, y='score', x='condition', hue='type', ax=axis[row, col], 
-                            showmeans=True, meanprops={"marker": "d", "markerfacecolor":"black", "markeredgecolor":"black", "markersize":"7"})
-        ax.set(xlabel=None)
-        ax.set_ylim(ymin=0.0, ymax=0.65)
-        ax.set_title(file[:-12])
-        ax.tick_params(axis='x', labelsize=14)  # Set font size for x-axis tick labels
-        ax.tick_params(axis='y', labelsize=14) 
-        ax.set_ylabel('Score', fontsize=14)  # Increase y-axis label font size
-        ax.legend_.remove()
-        if col == 2:
-            row += 1
-            col = 0
-        else:
-            col += 1
-    plt.delaxes(axis[-1, -1])
-    handles, labels = axis[0, 0].get_legend_handles_labels()
-    legend = figure.legend(handles, labels, loc='right', bbox_to_anchor=(1.1, 0.5), 
-                       bbox_transform=figure.transFigure, title='Version', fontsize=14, title_fontsize='x-large')
-    figure.suptitle(f'{modelname} sentence scores', fontsize=18)#, y=1.02)
-    outpath = dir.replace('results', 'plots').replace(f'/{modelname}', '')
-    if not os.path.exists(outpath):
-        os.makedirs(outpath)
-    filename = f'{modelname}-multi-boxplot.png'
-    plt.savefig(os.path.join(outpath, filename))
-    plt.show()
-
-def create_discrepancy_scatterplot(dir, modelname=None):
+def create_discrepancy_scatterplot(dir):
+    """ create scatterplots for sentencescore discrepancies, save to plots/
+    :param dir: path to results
+    """
     models = ['BETO', 'mBERT']
     figure, axis = plt.subplots(1, 2, figsize=(15, 5))
     plt.subplots_adjust(wspace=0.2, hspace=0.2, right=1.8) 
@@ -266,15 +233,22 @@ def create_discrepancy_scatterplot(dir, modelname=None):
     legend = figure.legend(handles, labels, loc='right', bbox_to_anchor=(1.0, 0.50), 
                        bbox_transform=figure.transFigure, title='condition', fontsize=16, title_fontsize=16)
     plt.tight_layout(rect=[0, 0, 0.85, 1])
-    outpath = dir.replace('results', 'plots').replace(f'/{modelname}', '')
+    outpath = dir.replace('results', 'plots')
     if not os.path.exists(outpath):
         os.makedirs(outpath)
     filename = f'sentencescore-discrepancy.png'
     plt.savefig(os.path.join(outpath, filename))
     # plt.show()
 
-def create_articlemasking_boxplot(dir, remove_masc=False, remove_plural=False):
-    modelname = 'BETO' if 'BETO' in dir else 'mBERT'
+def create_articlemasking_boxplot(dir, modelname=None, remove_masc=False, remove_plural=False):
+    """ create boxplot for article-masking, save to plots/
+    :param dir: path to results
+    :param modelname: name of model, extracted from path if None
+    :param remove_masc: if True, remove masc. sing. DO sentences before plotting
+    :param remove_plural: if True, remove plural DO sentences before plotting
+    """
+    if not modelname:
+        modelname = 'BETO' if 'BETO' in dir else 'mBERT'
     file = 'merged-results.tsv'
     if file not in os.listdir():
         df = articlemasking_postprocessing(dir)
@@ -327,10 +301,17 @@ def create_articlemasking_boxplot(dir, remove_masc=False, remove_plural=False):
         os.makedirs(outpath)
     filename = f'{modelname}-articlemasking-boxplot.png'
     plt.savefig(os.path.join(outpath, filename))
-    plt.show()
+    # plt.show()
 
-def create_article_disc_scatter(dir, remove_masc=False, remove_plural=False):
-    modelname = 'BETO' if 'BETO' in dir else 'mBERT'
+def create_article_disc_scatter(dir, modelname=None, remove_masc=False, remove_plural=False):
+    """ create boxplot for article-masking discrepancy, save to plots/
+    :param dir: path to results
+    :param modelname: name of model, extracted from path if None
+    :param remove_masc: if True, remove masc. sing. DO sentences before plotting
+    :param remove_plural: if True, remove plural DO sentences before plotting
+    """
+    if not modelname:
+        modelname = 'BETO' if 'BETO' in dir else 'mBERT'
     file = 'merged-results.tsv'
     # create merged results if not exists already
     if file not in os.listdir():
@@ -365,52 +346,25 @@ def create_article_disc_scatter(dir, remove_masc=False, remove_plural=False):
         os.makedirs(outpath)
     filename = f'{modelname}-article-discrepancy.png'
     plt.savefig(os.path.join(outpath, filename))
-    plt.show()
-     
-def create_all_barplots(dir_path):
-    for subdir, dirs, files in os.walk(dir_path):
-        for file in files:
-            print(subdir)
-            print(file)
-            if file == 'statistics.tsv':
-                if 'BETO' in subdir:
-                    modelname = 'BETO'
-                else:
-                    modelname = 'mBERT'
-                path = os.path.join(subdir, file)
-                create_barplot(path, modelname=modelname)
+    # plt.show()
 
-
-def create_fillmask_boxplots(dir_path):
-    for subdir, dirs, files in os.walk(dir_path):
-        for file in files:
-            print(subdir)
-            print(file)
-            if file == 'statistics.tsv':
-                if 'BETO' in subdir:
-                    modelname = 'BETO'
-                else:
-                    modelname = 'mBERT'
-                path = subdir
-                create_probability_boxplot(path, modelname=modelname)
-
+# helper function to reorder data
 def reorder_by_data_condition(df):
     new_df = df
     new_df = new_df.replace('nonaffected', 'non-affected')
     data_mapping = {'ms-2013': 1, 'sa-2020': 2, 're-2021': 3, 're-2021-modified': 4, 'hg-2023': 5}
     new_df['data_index'] = [data_mapping[x] for x in list(new_df['input'])]
     cond_mapping = {'animate': 1, 'inanimate': 2,
-                    'animate-human': 1, 'animate-animal':2,
+                    'human': 1, 'animal':2,
                     'definite': 1, 'indefinite': 2,
                     'affected': 1,  'non-affected': 2}
     new_df['cond_index'] = [cond_mapping[x] for x in list(new_df['condition'])]
     return new_df.sort_values(by=['data_index', 'cond_index'])
 
+# helper function to reorder data
 def reorder_by_condition(df):
     new_df = df
     new_df = new_df.replace('nonaffected', 'non-affected')
-    new_df = new_df.replace('animate-human', 'human')
-    new_df = new_df.replace('animate-animal', 'animal')
     cond_mapping = {'animate': 1, 'inanimate': 2,
                     'human': 3, 'animal': 4,
                     'definite': 5, 'indefinite': 6,
@@ -419,8 +373,3 @@ def reorder_by_condition(df):
     new_df.sort_values(by=['cond_index'], inplace=True)
     new_df['index'] = [x for x in range(1, new_df.shape[0]+1)]
     return new_df
-
-if __name__ == '__main__':
-    dir = os.path.join(pathlib.Path(__file__).parent.parent.absolute(), 
-                       '..', 'results/sentence-score/')
-    create_discrepancy_scatterplot(dir)
