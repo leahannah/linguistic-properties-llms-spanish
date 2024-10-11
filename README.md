@@ -4,7 +4,7 @@
 This repository contains code used to analyze how multilingual BERT (Devlin et al, 2019) and BETO (Canete et al, 2020) deal with Differential Object Marking (DOM) in Spanish. Three experiments are used, all leveraging the Masked Language Model (MLM) property of BERT. More precisely, the fill-mask experiments analyze the predictions when masking DOM and the direct object article in a sentence, and the sentence-score experiment compares the probability assigned to a sentence with and without DOM. This is done on the basis of stimuli data from four linguistic studies ().
 
 ## Contents
-* `data/`: Tables containing test sentences from linguistic studies.
+* `data/`: Tables containing test input data from linguistic studies.
 * `plots/`: Plots generated from the results.
 * `results/`: Outcomes of the three experiments.
 * `src/`: Python scripts implementing the experiments. 
