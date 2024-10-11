@@ -10,7 +10,7 @@ This repository contains code used to analyze how multilingual BERT (Devlin et a
 * `src/`: Python scripts implementing the experiments. 
 	* `fill_mask.py` is the implementation of the fill-mask experiments for DOM-masking and article-masking.
 	* `sentence_score.py` is for the sentence score experiment. The sentence score is implemented based on the [lm-scorer library](https://github.com/simonepri/lm-scorer).  		* `mlm_sentence.py` contains a class that receives a sentence and generates fillers and probabilities for a masked token, or assigns a single probability to a sentence. This class is used for all three experiments.
-	* The subfolder `utils/` contains python functions for pre- and postprocessing of data, and for plotting the results.
+	*  `utils/` contains scripts with functions for pre- and postprocessing of data, and for plotting the results.
 * `config.json`: Configuration file where experiments, input data and experimental parameters are specified.
 * `main.py` main script accessing `config.json` and executing the specified experiment.
 * `requirements.txt`: Python libraries required to run the experiments.
