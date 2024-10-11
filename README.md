@@ -18,16 +18,8 @@ This repository contains code used to analyze how multilingual BERT (Devlin et a
 
 ## Run experiments
 ### Requirements
-* `experiment1.py`: Monolingual experiment where German and Spanish common nouns and occupations are scored with WEAT to predict grammatical gender. Results and plots are saved. Script can be executed directly, the two parameters at the top can be modified:
-	* `lang`: Language of wordlists to used for the experiment, either *de* for German or *es* for Spanish
-	* `num_nouns`: Amount of common nouns per gender to use for the experiment, maximum is 3000
-* `experiment2.py`: Bilingual experiment where gender bias in occupations is compared for either English and German, or English and Spanish.  English words are scored with WEAT, German and Spanish words are scored using mWEAT.  Results and plots are saved. Script can be executed directly, the three parameters at the top can be modified:
-	*   `lang`: Language of wordlists to used for the experiment, either *de* for German or *es* for Spanish
-	* `useDot`: If true, dot product is used instead of cosine similarity to get similarity of two vectors (in line with code from Zhou et al, 2019)
-	* `getFreqs`: If true, vocabulary frequencies for attributes and occupational targets are determined, saved and analyzed
-* `en-en.py`:  Additional experiment done for completeness. Get WEAT bias scores from embeddings trained on two different English Corpora, plot and save the results.
-* `weat.py` Implements bias score, effect size and test statistic for WEAT based on https://github.com/e-mckinnie/WEAT, and bias score and test statistic for mWEAT based on https://github.com/shaoxia57/Bias_in_Gendered_Languages
-* `util.py`: Contains useful functions needed in the experiment scripts
+* create venv
+* install requirements
 
 ### Execution
 * modify config
@@ -116,9 +108,9 @@ GenderBias
 
 
 ## References
-Cañete, J., Chaperon, G., Fuentes, R., Ho, J.-H., Kang, H., & Pérez, J. (2020). Spanish pre-trained BERT model and evaluation data. In Proceedings of PML4DC at ICLR 2020.<br>
-Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In J. Burstein, C. Doran, & T. Solorio (Eds.), Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers) (pp. 4171–4186). Association for Computational Linguistics. [https://doi.org/10.18653/v1/N19-1423     ](https://doi.org/10.18653/v1/N19-1423      )      <br>
-Heredero, D. R., & García, M. G. (2023). Differential object marking in Spanish: The effect of affectedness. Caplletra. Revista Internacional de Filologia, (74), 259-285. [https://doi.org/10.7203/Caplletra.74.26043     ](https://doi.org/10.7203/Caplletra.74.26043     )           <br>
-Montrul, S., & Sánchez-Walker, N. (2013). Differential object marking in child and adult Spanish heritage speakers. Language Acquisition, 20(2), 109-132.<br>
-Reina, J. C., García, M. G., & Von Heusinger, K. (2021). Differential object marking in Cuban Spanish. Differential object marking in romance, 339.<br>
-Sagarra, N., Bel, A., & Sánchez, L. (2020). Animacy hierarchy effects on L2 processing of Differential Object Marking. The Acquisition of Differential Object Marking, 26, 183-206.
+[1] Cañete, J., Chaperon, G., Fuentes, R., Ho, J.-H., Kang, H., & Pérez, J. (2020). Spanish pre-trained BERT model and evaluation data. In Proceedings of PML4DC at ICLR 2020.
+[2] Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In J. Burstein, C. Doran, & T. Solorio (Eds.), Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers) (pp. 4171–4186). Association for Computational Linguistics. [https://doi.org/10.18653/v1/N19-1423          ](https://doi.org/10.18653/v1/N19-1423           )      <br>
+[3] Heredero, D. R., & García, M. G. (2023). Differential object marking in Spanish: The effect of affectedness. Caplletra. Revista Internacional de Filologia, (74), 259-285. [https://doi.org/10.7203/Caplletra.74.26043          ](https://doi.org/10.7203/Caplletra.74.26043          )           <br>
+[4] Montrul, S., & Sánchez-Walker, N. (2013). Differential object marking in child and adult Spanish heritage speakers. Language Acquisition, 20(2), 109-132.<br>
+[5] Reina, J. C., García, M. G., & Von Heusinger, K. (2021). Differential object marking in Cuban Spanish. Differential object marking in romance, 339.<br>
+[6] Sagarra, N., Bel, A., & Sánchez, L. (2020). Animacy hierarchy effects on L2 processing of Differential Object Marking. The Acquisition of Differential Object Marking, 26, 183-206.
