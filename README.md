@@ -1,12 +1,12 @@
 # Examining linguistic properties of Large Language Models in Spanish
 
 ## Description
-This repository contains code used to analyze how multilingual BERT (Devlin et al, 2019) and BETO (Canete et al, 2020) deal with Differential Object Marking (DOM) in Spanish. Three experiments are used, all leveraging the Masked Language Model (MLM) property of BERT. More precisely, the fill-mask experiments analyze the predictions when masking DOM and the direct object article in a sentence, and the sentence-score experiment compares the probability assigned to a sentence with and without DOM. This is done on the basis of stimuli data from four linguistic studies ().
+This repository contains code used to analyze how multilingual BERT [2] and BETO [1] deal with Differential Object Marking (DOM) in Spanish. Three experiments are used, all leveraging the Masked Language Model (MLM) property of BERT. More precisely, the fill-mask experiments analyze the predictions when masking DOM and the direct object article in a sentence, and the sentence-score experiment compares the probability assigned to a sentence with and without DOM. This is done on the basis of stimuli data from four linguistic studies [3, 4, 5, 6].
 
 ## Contents
-* `data/`: Tables containing test input data from linguistic studies.
+* `data/`: Tables containing test input data from linguistic studies [3, 4, 5, 6].
 * `plots/`: Plots generated from the results.
-* `results/`: Outcomes of the three experiments.
+* `results/`: Tables with experimental outputs.
 * `src/`: Python scripts implementing the experiments. 
 	* `fill_mask.py` is the implementation of the fill-mask experiments for DOM-masking and article-masking.
 	* `sentence_score.py` is for the sentence score experiment. The sentence score is implemented based on the [lm-scorer library](https://github.com/simonepri/lm-scorer).
@@ -17,9 +17,12 @@ This repository contains code used to analyze how multilingual BERT (Devlin et a
 * `requirements.txt`: Python libraries required to run the experiments.
 
 ## Run experiments
+The code for this repository is written in Python 3.X on Ubuntu 18.04.6 LTS. 
+
 ### Requirements
-* create venv
-* install requirements
+* Optional: create a virtual environment with `python3 -m venv .venv`
+	* activate virtual environment: `source .venv/bin/activate`
+* Install the required packages into the .venv using `python3 -m pip install -r requirements.txt`
 
 ### Execution
 First modify the parameters in `config.json` as needed:
@@ -53,6 +56,7 @@ To execute the specified experiment with the parameters specified in `config.jso
 
 ## Structure
 ```
+linguistic-properties-llms-spanish
 │   .gitignore
 │   config.json
 │   main.py
@@ -188,18 +192,18 @@ To execute the specified experiment with the parameters specified in `config.jso
    │   sentence_score.py
    │
    ├───utils
-      │   plot.py
-      │   util.py
-      │   __init__.py
+         plot.py
+         util.py
+         __init__.py
 
 ```
 
 
 ## References
-1.  Cañete, J., Chaperon, G., Fuentes, R., Ho, J.-H., Kang, H., & Pérez, J. (2020). Spanish pre-trained BERT model and evaluation data. In Proceedings of PML4DC at ICLR 2020.
-2. Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In J. Burstein, C. Doran, & T. Solorio 	(Eds.), Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short 	Papers) (pp. 4171–4186). Association for Computational Linguistics. [https://doi.org/10.18653/v1/N19-1423                                ](https://doi.org/10.18653/v1/N19-1423                                 )      <br>
-3.  Heredero, D. R., & García, M. G. (2023). Differential object marking in Spanish: The effect of affectedness. Caplletra. Revista Internacional de Filologia, (74), 259-285. 	
-	[https://doi.org/10.7203/Caplletra.74.26043                              ](https://doi.org/10.7203/Caplletra.74.26043                              )           <br>
+1. Cañete, J., Chaperon, G., Fuentes, R., Ho, J.-H., Kang, H., & Pérez, J. (2020). Spanish pre-trained BERT model and evaluation data. In Proceedings of PML4DC at ICLR 2020.
+2. Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In J. Burstein, C. Doran, & T. Solorio 	(Eds.), Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short 	Papers) (pp. 4171–4186). Association for Computational Linguistics. [https://doi.org/10.18653/v1/N19-1423                                                 ](https://doi.org/10.18653/v1/N19-1423                                                  )      <br>
+3. Heredero, D. R., & García, M. G. (2023). Differential object marking in Spanish: The effect of affectedness. Caplletra. Revista Internacional de Filologia, (74), 259-285. 	
+	[https://doi.org/10.7203/Caplletra.74.26043                                              ](https://doi.org/10.7203/Caplletra.74.26043                                              )           <br>
 4. Montrul, S., & Sánchez-Walker, N. (2013). Differential object marking in child and adult Spanish heritage speakers. Language Acquisition, 20(2), 109-132.<br>
 5. Reina, J. C., García, M. G., & Von Heusinger, K. (2021). Differential object marking in Cuban Spanish. Differential object marking in romance, 339.<br>
 6. Sagarra, N., Bel, A., & Sánchez, L. (2020). Animacy hierarchy effects on L2 processing of Differential Object Marking. The Acquisition of Differential Object Marking, 26, 183-206.
