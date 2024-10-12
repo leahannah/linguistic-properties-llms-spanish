@@ -57,6 +57,7 @@ To execute the specified experiment with the parameters specified in `config.jso
 ## Structure
 ```
 linguistic-properties-llms-spanish
+|
 │   .gitignore
 │   config.json
 │   main.py
