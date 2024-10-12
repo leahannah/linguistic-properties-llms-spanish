@@ -17,7 +17,7 @@ This repository contains code used to analyze how multilingual BERT [2] and BETO
 * `requirements.txt`: Python libraries required to run the experiments.
 
 ## Run experiments
-The code for this repository is written in Python 3.X on Ubuntu 18.04.6 LTS. 
+The code for this repository is written in Python 3.11.0 on Ubuntu 18.04.6 LTS. 
 
 ### Requirements
 * Optional: create a virtual environment with `python3 -m venv .venv`
