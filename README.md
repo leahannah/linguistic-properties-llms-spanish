@@ -68,124 +68,32 @@ linguistic-properties-llms-spanish
 │   │   testdata-merged.tsv
 │   │
 │   └───single-files
-│           hg-2023_affected-targets.tsv
-│           hg-2023_nonaffected-targets.tsv
-│           ms-2013_animate-targets.tsv
-│           ms-2013_inanimate-targets.tsv
-│           re-2021_definite-targets.tsv
-│           re-2021_indefinite-targets.tsv
-│           sa-2020_animate-animal-targets.tsv
-│           sa-2020_animate-human-targets.tsv
-│           self-re_definite-fem-targets.tsv
-│           self-re_indefinite-fem-targets.tsv
 │
 ├───plots
 │   ├───fill-mask
 │   │   ├───article-masking
-│   │   │   │   BETO-article-discrepancy.png
-│   │   │   │   BETO-articlemasking-boxplot.png
-│   │   │   │   mBERT-article-discrepancy.png
-│   │   │   │   mBERT-articlemasking-boxplot.png
-│   │   │   │
-│   │   │   └───masc-removed
-│   │   │           BETO-article-discrepancy.png
-│   │   │           BETO-articlemasking-boxplot.png
-│   │   │           mBERT-article-discrepancy.png
-│   │   │           mBERT-articlemasking-boxplot.png
 │   │   │
 │   │   └───dom-masking
-│   │           BETO-dom-prob-boxplot.png
-│   │           BETO-mean_dom_probability-.png
-│   │           mBERT-dom-prob-boxplot.png
-│   │           mBERT-mean_dom_probability-.png
-│   │
+|   |
 │   └───sentence-score
-│           BETO-multi-boxplot.png
-│           BETO-sentencescore-discrepancy.png
-│           mBERT-multi-boxplot.png
-│           mBERT-sentencescore-discrepancy.png
-│           sentencescore-discrepancy.png
 │
 ├───results
 │   ├───fill-mask
 │   │   ├───article-masking
 │   │   │   ├───BETO
-│   │   │   │   │   merged-results.tsv
-│   │   │   │   │   merged_stats.tsv
-│   │   │   │   │
-│   │   │   │   ├───dom
-│   │   │   │   │       hg-2023-results.tsv
-│   │   │   │   │       ms-2013-results.tsv
-│   │   │   │   │       re-2021-modified-results.tsv
-│   │   │   │   │       re-2021-results.tsv
-│   │   │   │   │       sa-2020-results.tsv
-│   │   │   │   │       statistics.tsv
-│   │   │   │   │
-│   │   │   │   └───unmarked
-│   │   │   │           hg-2023-results.tsv
-│   │   │   │           ms-2013-results.tsv
-│   │   │   │           re-2021-modified-results.tsv
-│   │   │   │           re-2021-results.tsv
-│   │   │   │           sa-2020-results.tsv
-│   │   │   │           statistics.tsv
 │   │   │   │
 │   │   │   └───mBERT
-│   │   │       │   merged-results.tsv
-│   │   │       │   merged_stats.tsv
-│   │   │       │
-│   │   │       ├───dom
-│   │   │       │       hg-2023-results.tsv
-│   │   │       │       ms-2013-results.tsv
-│   │   │       │       re-2021-modified-results.tsv
-│   │   │       │       re-2021-results.tsv
-│   │   │       │       sa-2020-results.tsv
-│   │   │       │       statistics.tsv
-│   │   │       │
-│   │   │       └───unmarked
-│   │   │               hg-2023-results.tsv
-│   │   │               ms-2013-results.tsv
-│   │   │               re-2021-modified-results.tsv
-│   │   │               re-2021-results.tsv
-│   │   │               sa-2020-results.tsv
-│   │   │               statistics.tsv
-│   │   │
 │   │   └───dom-masking
-│   │       │   merged_stats.tsv
 │   │       │
 │   │       ├───BETO
-│   │       │       hg-2023-results.tsv
-│   │       │       ms-2013-results.tsv
-│   │       │       re-2021-modified-results.tsv
-│   │       │       re-2021-results.tsv
-│   │       │       sa-2020-results.tsv
-│   │       │       statistics.tsv
-│   │       │
+|   |       |
 │   │       └───mBERT
-│   │               hg-2023-results.tsv
-│   │               ms-2013-results.tsv
-│   │               re-2021-modified-results.tsv
-│   │               re-2021-results.tsv
-│   │               sa-2020-results.tsv
-│   │               statistics.tsv
 │   │
 │   └───sentence-score
-│       │   merged_stats.tsv
 │       │
 │       ├───BETO
-│       │       hg-2023-results.tsv
-│       │       ms-2013-results.tsv
-│       │       re-2021-modified-results.tsv
-│       │       re-2021-results.tsv
-│       │       sa-2020-results.tsv
-│       │       statistics.tsv
 │       │
 │       └───mBERT
-│               hg-2023-results.tsv
-│               ms-2013-results.tsv
-│               re-2021-modified-results.tsv
-│               re-2021-results.tsv
-│               sa-2020-results.tsv
-│               statistics.tsv
 │
 ├───src
    │   fill_mask.py
@@ -202,9 +110,9 @@ linguistic-properties-llms-spanish
 
 ## References
 1. Cañete, J., Chaperon, G., Fuentes, R., Ho, J.-H., Kang, H., & Pérez, J. (2020). Spanish pre-trained BERT model and evaluation data. In Proceedings of PML4DC at ICLR 2020.
-2. Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In J. Burstein, C. Doran, & T. Solorio 	(Eds.), Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short 	Papers) (pp. 4171–4186). Association for Computational Linguistics. [https://doi.org/10.18653/v1/N19-1423                                                    ](https://doi.org/10.18653/v1/N19-1423                                                     )      <br>
+2. Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In J. Burstein, C. Doran, & T. Solorio 	(Eds.), Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short 	Papers) (pp. 4171–4186). Association for Computational Linguistics. [https://doi.org/10.18653/v1/N19-1423                                                      ](https://doi.org/10.18653/v1/N19-1423                                                       )      <br>
 3. Heredero, D. R., & García, M. G. (2023). Differential object marking in Spanish: The effect of affectedness. Caplletra. Revista Internacional de Filologia, (74), 259-285. 	
-	[https://doi.org/10.7203/Caplletra.74.26043                                                 ](https://doi.org/10.7203/Caplletra.74.26043                                                 )           <br>
+	[https://doi.org/10.7203/Caplletra.74.26043                                                   ](https://doi.org/10.7203/Caplletra.74.26043                                                   )           <br>
 4. Montrul, S., & Sánchez-Walker, N. (2013). Differential object marking in child and adult Spanish heritage speakers. Language Acquisition, 20(2), 109-132.<br>
 5. Reina, J. C., García, M. G., & Von Heusinger, K. (2021). Differential object marking in Cuban Spanish. Differential object marking in romance, 339.<br>
 6. Sagarra, N., Bel, A., & Sánchez, L. (2020). Animacy hierarchy effects on L2 processing of Differential Object Marking. The Acquisition of Differential Object Marking, 26, 183-206.
