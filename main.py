@@ -36,7 +36,7 @@ if EXPERIMENT == 'fill-mask':
 # run sentence-score experiment
 elif EXPERIMENT == 'sentence-score':
     sentence_score.main(MODEL_NAME, INPUT_FILE, SOURCE, PRINT_MODE, SAVE_MODE, OUTPATH)
-# invalid EXPERIMENT PARAMETER
+# invalid EXPERIMENT param
 else:
     valid_experiments = ['fill-mask', 'sentence-score']
     print(f'EXPERIMENT parameter {EXPERIMENT} is not in the set of valid experiments.\n'

@@ -42,13 +42,13 @@ First modify the parameters in `config.json` as needed:
 * `INPUT_FILE`: Input tsv file containing test data. Required to contain correctly formatted data, at least the columns (SPECIFY).
 * `SOURCE`: Option to run experiment only using data from one specific source study, insert one of the abbreviations "ms-2013" [4], "sa-2020" [6], "re-2021", "re-2021-modified" [5], "hg-2023" [3].
 * `PRINT_TO_CONSOLE`: If true, outputs will be printed to console while running experiment.
-* `SAVE_RESULTS`: If true, outputs will be saved to automatically created subdirectory in  `results/` foler.
+* `SAVE_RESULTS`: If true, outputs will be saved to automatically created subdirectory in  `results/` folder.
 * `OUTPATH`: Option to specify customized path where results should be saved.
 * `MODEL_NAME`: Name of huggingface transformers BERT model. Experiments are written for [BETO](https://huggingface.co/dccuchile/bert-base-spanish-wwm-cased/discussions) and [multilingual BERT](https://huggingface.co/google-bert/bert-base-multilingual-cased), but can be executed with other Spanish BERT-like models as well.
 * `EXPERIMENT`: Experiment type, either "fill-mask" or "sentence-score".
 * `TYPE`: If `EXPERIMENT` is "fill-mask", choose between "dom-masking" and "article-masking".
 * `REMOVE_DOM`: If `TYPE` is "article-masking", input False to execute with sentences containing DOM, and True to run with sentences where DOM is removed.
-\\
+<br>
 To execute the specified experiment with the parameters specified in `config.json`, execute `main.py`
 
 ### Outputs
