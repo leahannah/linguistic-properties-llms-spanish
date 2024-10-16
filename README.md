@@ -45,7 +45,7 @@ First modify the parameters in `config.json` as needed:
 * `SAVE_RESULTS`: If true, outputs will be saved to automatically created subdirectory in  `results/` folder.
 * `OUTPATH`: Option to specify customized path where results should be saved.
 * `MODEL_NAME`: Name of huggingface transformers BERT model. Experiments are written for [BETO](https://huggingface.co/dccuchile/bert-base-spanish-wwm-cased/discussions) and [multilingual BERT](https://huggingface.co/google-bert/bert-base-multilingual-cased), but can be executed with other Spanish BERT-like models as well.
-* `EXPERIMENT`: Experiment type, either "fill-mask" or "sentence-score". Please note that this experiment can take more than 30 minutes, depending on hardware.
+* `EXPERIMENT`: Experiment type, either "fill-mask" or "sentence-score". Please note that the latter can take more than 30 minutes, depending on hardware.
 * `TYPE`: If `EXPERIMENT` is "fill-mask", choose between "dom-masking" and "article-masking".
 * `REMOVE_DOM`: If `TYPE` is "article-masking", input False to execute with sentences containing DOM, and True to run with sentences where DOM is removed.
 <br>
@@ -101,9 +101,9 @@ linguistic-properties-llms-spanish
 
 ## References
 1. Cañete, J., Chaperon, G., Fuentes, R., Ho, J.-H., Kang, H., & Pérez, J. (2020). Spanish pre-trained BERT model and evaluation data. In Proceedings of PML4DC at ICLR 2020.
-2. Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In J. Burstein, C. Doran, & T. Solorio 	(Eds.), Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short 	Papers) (pp. 4171–4186). Association for Computational Linguistics. [https://doi.org/10.18653/v1/N19-1423                                                               ](https://doi.org/10.18653/v1/N19-1423                                                                )      <br>
+2. Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In J. Burstein, C. Doran, & T. Solorio 	(Eds.), Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short 	Papers) (pp. 4171–4186). Association for Computational Linguistics. [https://doi.org/10.18653/v1/N19-1423                                                                ](https://doi.org/10.18653/v1/N19-1423                                                                 )      <br>
 3. Heredero, D. R., & García, M. G. (2023). Differential object marking in Spanish: The effect of affectedness. Caplletra. Revista Internacional de Filologia, (74), 259-285. 	
-	[https://doi.org/10.7203/Caplletra.74.26043                                                           ](https://doi.org/10.7203/Caplletra.74.26043                                                           )           <br>
+	[https://doi.org/10.7203/Caplletra.74.26043                                                            ](https://doi.org/10.7203/Caplletra.74.26043                                                            )           <br>
 4. Montrul, S., & Sánchez-Walker, N. (2013). Differential object marking in child and adult Spanish heritage speakers. Language Acquisition, 20(2), 109-132.<br>
 5. Reina, J. C., García, M. G., & Von Heusinger, K. (2021). Differential object marking in Cuban Spanish. Differential object marking in romance, 339.<br>
 6. Sagarra, N., Bel, A., & Sánchez, L. (2020). Animacy hierarchy effects on L2 processing of Differential Object Marking. The Acquisition of Differential Object Marking, 26, 183-206.
