@@ -47,7 +47,8 @@ First modify the parameters in `config.json` as needed:
 * `MODEL_NAME`: Name of huggingface transformers BERT model. Experiments are written for [BETO](https://huggingface.co/dccuchile/bert-base-spanish-wwm-cased/discussions) and [multilingual BERT](https://huggingface.co/google-bert/bert-base-multilingual-cased), but can be executed with other Spanish BERT-like models as well.
 * `EXPERIMENT`: Experiment type, either "fill-mask" or "sentence-score".
 * `TYPE`: If `EXPERIMENT` is "fill-mask", choose between "dom-masking" and "article-masking".
-* `REMOVE_DOM`: If `TYPE` is "article-masking", input False to execute with sentences containing DOM, and True to run with sentences where DOM is removed.<br>
+* `REMOVE_DOM`: If `TYPE` is "article-masking", input False to execute with sentences containing DOM, and True to run with sentences where DOM is removed.
+<br>
 To execute the specified experiment with the parameters specified in `config.json`, execute `main.py`
 
 ### Outputs
