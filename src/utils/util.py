@@ -1,5 +1,6 @@
 import re
 import os
+import torch
 import pandas as pd
 import numpy as np
 from transformers import BertForMaskedLM, BertTokenizer
@@ -52,8 +53,9 @@ def load_model(modelname):
     :param modelname: name of the model
     :return: loaded tokenizer and model
     """
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     tokenizer = BertTokenizer.from_pretrained(modelname, do_lower_case=False)
-    model = BertForMaskedLM.from_pretrained(modelname)
+    model = BertForMaskedLM.from_pretrained(modelname).to(device)
     return tokenizer, model
 
 def find_dom_index(sent_list, char='['):

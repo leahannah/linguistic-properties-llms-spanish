@@ -2,6 +2,7 @@ import json
 import os
 import pathlib
 import time
+import sys
 from src import fill_mask, sentence_score
 # execute experiments based on config.json file
 
@@ -32,6 +33,7 @@ if EXPERIMENT == 'fill-mask':
     if TYPE not in valid_types:
         print(f'TYPE parameter {TYPE} is not in the set of valid options.\n'
               f'Choose from: {valid_types}.')
+        sys.exit(1)
     fill_mask.main(MODEL_NAME, INPUT_FILE, SOURCE, TYPE, REMOVE_DOM, PRINT_MODE, SAVE_MODE, OUTPATH)
 # run sentence-score experiment
 elif EXPERIMENT == 'sentence-score':
@@ -41,6 +43,7 @@ else:
     valid_experiments = ['fill-mask', 'sentence-score']
     print(f'EXPERIMENT parameter {EXPERIMENT} is not in the set of valid experiments.\n'
           f'Choose from: {valid_experiments}.')
+    sys.exit(1)
 
 # measure time
 end_time = time.time()

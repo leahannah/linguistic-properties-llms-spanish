@@ -5,7 +5,7 @@
     "SAVE_RESULTS": false,
     "OUTPATH": null,
     "MODEL_NAME": "dccuchile/bert-base-spanish-wwm-cased",
-    "EXPERIMENT": "fill-mask",
+    "EXPERIMENT": "sentence-score",
     "TYPE": "dom-masking",
     "REMOVE_DOM": false
 }

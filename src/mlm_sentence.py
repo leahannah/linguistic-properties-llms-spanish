@@ -46,7 +46,7 @@ class MLMSentence:
         """
         get the top_k fillers for masked word
         :param num: number of most likely fillers to return
-        :return: list of lists containing most likely fillers
+        :return: list containing most likely fillers
         """
         if self.top_fillers is None:
             print(f'No top fillers have been computed yet. Run function compute_mlm_fillers_probs first.')
@@ -60,7 +60,7 @@ class MLMSentence:
         """
         get the probabilities for the top_k filler tokens for masked token
         :param num: number of highest probabilities to return
-        :return: list of lists containing softmax probabilities
+        :return: list containing softmax probabilities
         """
         if self.top_fillers is None:
             print(f'No top probabilities have been computed yet. Run function compute_mlm_fillers_probs first.')
@@ -88,7 +88,7 @@ class MLMSentence:
         """
         get rank and probability for given word being predicted at given mask index
         :param token: word to look for in fillers
-        :return: rank and probability for token, if not found 5 and 0.0
+        :return: rank and probability for token, if not found vocab_size and 0.0
         """
         rank, prob = self.vocab_size, 0.0
         if self.top_fillers is None or self.top_probs is None:
@@ -99,12 +99,12 @@ class MLMSentence:
             prob = self.top_probs[rank]
         return rank, prob
     
-        # find instances of list in fillers (e.g. dom markers, (in)definite articles)
+    # find instances of list in fillers (e.g. dom markers, (in)definite articles)
     def get_list_prob_rank(self, li):
         """
         get probability of an item list of tokens being predicted at given mask index
         :param li: list of tokens to look for in fillers
-        :return: rank and probability for most likely wird from list, if none found vocab_size and 0.0
+        :return: rank and probability for most likely word from list, if none found vocab_size and 0.0
         """
         rank, prob = self.vocab_size, 0.0
         if self.top_fillers is None or self.top_probs is None:
@@ -120,13 +120,12 @@ class MLMSentence:
     def compute_mlm_fillers_probs(self):
         """
         compute most likely fillers and their softmax probabilities for masked token
-        :return: two lists of lists containing most likely fillers and their probability
+        :return: lists containing most likely fillers and their probability
         """
         # prepare input
         s, self.masked_token = self.prep_input(self.sentence, self.index)  # prepare sentence
         s = '[CLS]' + s + '[SEP]'
         tokens = self.tokenizer.tokenize(s)
-        # print(f'TOKENS: {tokens}')
         indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokens)
         tokens_tensor = torch.tensor([indexed_tokens])
         # predict
@@ -170,7 +169,6 @@ class MLMSentence:
                 s = '[CLS] ' + s + ' [SEP]'  # add special tokens
 
                 tokens_masked = self.tokenizer.tokenize(s)  # tokenize the masked sentence
-                # print(f'TOKENS: {tokens_masked}')
                 indexed_masked = self.tokenizer.convert_tokens_to_ids(tokens_masked)
                 tokens_tensor = torch.tensor([indexed_masked])
 
