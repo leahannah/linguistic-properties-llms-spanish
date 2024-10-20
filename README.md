@@ -39,7 +39,7 @@ First modify the parameters in `config.json` as needed:
     "REMOVE_DOM": true
 }
 ```
-* `INPUT_FILE`: Input tsv file containing test data. Required to contain correctly formatted data, at least the columns: id, source, condition, sentence, dom_idx, dobject, en_sentence.
+* `INPUT_FILE`: Input tsv file containing test data, should be located in `data/` folder. Required to contain correctly formatted data, at least the columns: id, source, condition, sentence, dom_idx, dobject, en_sentence. Default `testdata-merged.tsv` includes test sentences from all four linguistic studies [3, 4, 5, 6].
 * `SOURCE`: Option to run experiment only using data from one specific source study, insert one of the abbreviations "ms-2013" [4], "sa-2020" [6], "re-2021", "re-2021-modified" [5], "hg-2023" [3].
 * `PRINT_TO_CONSOLE`: If true, outputs will be printed to console while running experiment.
 * `SAVE_RESULTS`: If true, outputs will be saved to automatically created subdirectory in  `results/` folder.
@@ -101,9 +101,9 @@ linguistic-properties-llms-spanish
 
 ## References
 1. Cañete, J., Chaperon, G., Fuentes, R., Ho, J.-H., Kang, H., & Pérez, J. (2020). Spanish pre-trained BERT model and evaluation data. In Proceedings of PML4DC at ICLR 2020.
-2. Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In J. Burstein, C. Doran, & T. Solorio 	(Eds.), Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short 	Papers) (pp. 4171–4186). Association for Computational Linguistics. [https://doi.org/10.18653/v1/N19-1423                                                                ](https://doi.org/10.18653/v1/N19-1423                                                                 )      <br>
+2. Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In J. Burstein, C. Doran, & T. Solorio 	(Eds.), Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short 	Papers) (pp. 4171–4186). Association for Computational Linguistics. [https://doi.org/10.18653/v1/N19-1423                                                                 ](https://doi.org/10.18653/v1/N19-1423                                                                  )      <br>
 3. Heredero, D. R., & García, M. G. (2023). Differential object marking in Spanish: The effect of affectedness. Caplletra. Revista Internacional de Filologia, (74), 259-285. 	
-	[https://doi.org/10.7203/Caplletra.74.26043                                                            ](https://doi.org/10.7203/Caplletra.74.26043                                                            )           <br>
+	[https://doi.org/10.7203/Caplletra.74.26043                                                             ](https://doi.org/10.7203/Caplletra.74.26043                                                             )           <br>
 4. Montrul, S., & Sánchez-Walker, N. (2013). Differential object marking in child and adult Spanish heritage speakers. Language Acquisition, 20(2), 109-132.<br>
 5. Reina, J. C., García, M. G., & Von Heusinger, K. (2021). Differential object marking in Cuban Spanish. Differential object marking in romance, 339.<br>
 6. Sagarra, N., Bel, A., & Sánchez, L. (2020). Animacy hierarchy effects on L2 processing of Differential Object Marking. The Acquisition of Differential Object Marking, 26, 183-206.
